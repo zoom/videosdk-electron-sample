@@ -1,0 +1,399 @@
+$primaryColor: #0E72ED;
+
+:root {
+  --video-top-level: 300;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'SF Pro Text' ,'Microsoft YaHei';
+  overflow: hidden;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  background: rgba(9, 10, 10, 0.8);
+  backdrop-filter: blur(45px);
+  user-select: none;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-close {
+  -webkit-app-region: no-drag;
+  display: inline-block;
+  padding: 8px 9px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.meeting-render {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .meeting-name {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+.meeting {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  border-radius: 8px;
+  .meeting-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .connecting-content {
+    padding: 15px 30px;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 36px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity .5s;
+    text-align: center;
+    z-index: 100;
+  }
+  .meeting-max {
+    width: 100%;
+  }
+  .meeting-min {
+    width: calc(100% - 176px);
+  }
+  .main-window {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .emoji {
+      position: absolute;
+      top: 50px;
+      left: 16px;
+      img {
+        width: 64px;
+      }
+    }
+    .emoji-position {
+      left: 230px;
+    }
+  }
+  >canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .meeting-wrap {
+    height: 100%;
+    position: relative;
+    transition: width .01s;
+    .meeting-name {
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 60px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 500;
+      font-size: 64px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.18);
+    }
+  }
+}
+
+.video-list {
+  width: 176px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: width .5s;
+  .video-list-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(26, 26, 26, 0.7);
+  }
+  .video-page {
+    width: 160px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 6px;
+    margin: 5px 8px;
+    cursor: pointer;
+    i {
+      font-size: 14px;
+      color: #f5f5f5;
+    }
+    &:last-child {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .video-header {
+    height: 23px;
+    overflow: hidden;
+    .icon {
+      display: inline-block;
+      margin-top: 1px;
+      .iconfont {
+        color: rgba(255, 255, 255, 0.54);
+        font-size: 18px;
+        cursor: pointer;
+        &:first-child {
+          margin-left: 5px;
+        }
+      }
+      .icon-active {
+        color: $primaryColor;
+      }
+    }
+  }
+  ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    li {
+      width: 161px;
+      height: 91px;
+      background: rgba(255, 255, 255, 0.09);
+      border-radius: 6px;
+      margin: 3px 0;
+      box-sizing: content-box;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      .emoji {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        img {
+          width: 32px;
+        }
+      }
+      .video-tag {
+        background: rgba(9, 10, 10, 0.6);
+        border-radius: 4px;
+        padding: 0px 4px;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        color: #F5F5F5;
+        svg {
+          position: relative;
+          top: 3px;
+        }
+        .lower-third-user {
+          font-weight: bold;
+          font-size: 13px;
+          line-height: 16px;
+          margin-bottom: 2px;
+          color: #F5F5F5;
+        }
+        .lower-third-title {
+          font-size: 10px;
+          line-height: 12px;
+          color: rgba(255, 255, 255, 0.54);
+        }
+        .lower-third-mute {
+          display: inline-block;
+          width: 20px;
+          height: 16px;
+          background: rgba(4, 4, 19, 0.56);
+          border-radius: 4px;
+          text-align: center;
+          margin-right: 4px;
+          svg {
+            margin-right: 0;
+          }
+        }
+        .lower-third-mute-hover {
+          margin-top: 6px;
+        }
+      }
+      .name-tag {
+        position: absolute;
+        left: 2px;
+        bottom: 2px;
+        max-width: 92.6%;
+        .icon-muted {
+          position: relative;
+          top: 2px;
+          margin-right: 2px;
+        }
+      }
+      .lower-third {
+        background: #444B53;
+        .user-name {
+          display: inline-block;
+        }
+        .user-desc span {
+          display: inline-block;
+          max-width: 55px;
+        }
+      }
+      .lower-third-oneline {
+        height: 20px;
+      }
+      .lower-third-hoverd {
+        width: 100%;
+        padding: 4px;
+      }
+      .video-name {
+        width: 72px;
+        height: 72px;
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 20px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 500;
+        font-size: 2em;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: -0.01em;
+        color: #E8C0C3;
+        img {
+          border-radius: 20px;
+        }
+      }
+    }
+    .video-active {
+      border: 1px solid #00A832;
+    }
+  }
+}
+
+.statistic-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.remote-control-layer {
+  position: absolute;
+  bottom: 70px;
+  right: 15px;
+  z-index: 10;
+}
+
+.content {
+  align-items: center;
+  .el-form-item {
+    margin-bottom: 19px;
+  }
+  .el-form-item__label {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .el-form--label-top .el-form-item__label {
+    color: rgba(255, 255, 255, 0.54);
+    padding-bottom: 7px;
+  }
+  .el-input__inner {
+    color: #F5F5F5;
+    background: transparent;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    &::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.54);
+    }
+  }
+  .el-checkbox__inner {
+    background: transparent;
+    border-color: #707070;
+    border-radius: 4px;
+  }
+  .el-checkbox__label, .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #F5F5F5;
+    font-weight: normal;
+    font-size: 13px;
+  }
+}
+
+.outer {
+  .el-dialog__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: #232333;
+  }
+  .el-dialog__body {
+    padding: 25px 20px 0 !important;
+  }
+}
+
+.layer-password .el-input__inner {
+  border-radius: 10px;
+}
+
+:export {
+  primaryColor: $primaryColor;
+}

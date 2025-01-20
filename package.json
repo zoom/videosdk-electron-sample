@@ -1,0 +1,41 @@
+{
+  "name": "electron-video-sdk",
+  "version": "2.1.0",
+  "author": "zoom <sdk@zoom.us>",
+  "description": "electron-video-sdk-demo",
+  "homepage": "https://www.zoom.us",
+  "private": true,
+  "scripts": {
+    "install": "node scripts/electron_video_sdk_install.js",
+    "electron:build": "node scripts/electron_video_sdk_build.js",
+    "electron:serve": "node scripts/electron_video_sdk_serve.js",
+    "electron:start": "node scripts/electron_video_sdk_start.js",
+    "electron:buildNode": "node scripts/electron_video_sdk_buildNode.js",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
+  },
+  "main": "background.js",
+  "config": {},
+  "dependencies": {
+    "@electron/remote": "^2.0.5",
+    "electron": "^33.0.0",
+    "element-ui": "^2.13.0",
+    "google-protobuf": "^3.21.4",
+    "terser-webpack-plugin": "^4.2.3",
+    "vue": "~2.6.11",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.4",
+    "native-ext-loader": "^2.3.0",
+    "sass": "~1.32.6",
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-electron-builder": "^2.1.1",
+    "vue-template-compiler": "~2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

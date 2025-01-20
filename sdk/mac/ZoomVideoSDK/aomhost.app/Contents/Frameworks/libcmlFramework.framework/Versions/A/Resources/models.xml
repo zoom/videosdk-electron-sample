@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<features>
+  <feature name="virtual_background">
+    <model name="afn_mac" version="102.20240610"/>
+    <model name="afn_mac_premium" version="114.20240911"/>
+    <model name="afn_mac_ultimate" version="129.00000000"/>
+    <model name="bgr_mac" version="101.20240610"/>
+    <model name="bgr_mac_premium" version="113.20240911"/>
+    <model name="bgr_mac_ultimate" version="128.00000000"/>
+    <model name="vb_basic_base_ov_model" version="109.20240610"/>
+    <model name="vb_standard_affine_ov_model" version="102.20240610"/>
+    <model name="vb_standard_base_ov_model" version="101.20240610"/>
+    <model name="vb_ultimate_cpu_affine_ov_model" version="131.00000000"/>
+    <model name="vb_ultimate_cpu_base_ov_model" version="130.00000000"/>
+  </feature>
+</features>

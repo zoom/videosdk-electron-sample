@@ -1,0 +1,68 @@
+[
+  {
+    "shortDescription" : "Super-Resolution mlmodel.",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "height" : "1080",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "1920",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 1920 × 1080)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "",
+        "name" : "output"
+      }
+    ],
+    "version" : "1.0",
+    "modelParameters" : [
+
+    ],
+    "author" : "Zoom Video Process Group",
+    "specificationVersion" : 5,
+    "storagePrecision" : "Float32",
+    "license" : "Unpublished Work © 2021 ZOOM Inc. All rights reserved.",
+    "computePrecision" : "Float16",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "11.0",
+      "tvOS" : "14.0",
+      "visionOS" : "1.0",
+      "watchOS" : "7.0",
+      "iOS" : "14.0",
+      "macCatalyst" : "14.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "inputSchema" : [
+      {
+        "height" : "360",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "640",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 640 × 360)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "LR Y-channel image",
+        "name" : "input1"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "5.0b1",
+      "com.github.apple.coremltools.source" : "torch==1.7.0"
+    },
+    "generatedClassName" : "sr_360p",
+    "neuralNetworkLayerTypeHistogram" : {
+      "ReorganizeDataPixelShuffle" : 2,
+      "UpsampleBiLinear" : 1,
+      "Convolution" : 8,
+      "ActivationPReLU" : 4,
+      "Add" : 4
+    },
+    "method" : "predict"
+  }
+]

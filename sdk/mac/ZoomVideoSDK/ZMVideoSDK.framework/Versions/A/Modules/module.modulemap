@@ -1,0 +1,6 @@
+framework module ZMVideoSDK {
+  umbrella header "ZMVideoSDK.h"
+  export *
+
+  module * { export * }
+}

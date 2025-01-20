@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  aomhost
+
+  Created by Jeffery Lai on 24/9/27.
+  Copyright © 2024 zoom.us. All rights reserved.
+*/
+"CFBundleDisplayName" = "Zoom Workplace Aomhost";
