@@ -96,9 +96,6 @@ extern CallbackBody_onErrorParamsDefaultTypeInternal _CallbackBody_onErrorParams
 class CallbackBody_onFailedToStartShareParams;
 struct CallbackBody_onFailedToStartShareParamsDefaultTypeInternal;
 extern CallbackBody_onFailedToStartShareParamsDefaultTypeInternal _CallbackBody_onFailedToStartShareParams_default_instance_;
-class CallbackBody_onHostAskUnmuteParams;
-struct CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal;
-extern CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal _CallbackBody_onHostAskUnmuteParams_default_instance_;
 class CallbackBody_onIncomingLiveStreamStatusResponseParams;
 struct CallbackBody_onIncomingLiveStreamStatusResponseParamsDefaultTypeInternal;
 extern CallbackBody_onIncomingLiveStreamStatusResponseParamsDefaultTypeInternal _CallbackBody_onIncomingLiveStreamStatusResponseParams_default_instance_;
@@ -135,9 +132,6 @@ extern CallbackBody_onRemoteControlServiceInstallResultParamsDefaultTypeInternal
 class CallbackBody_onRemoteControlStatusParams;
 struct CallbackBody_onRemoteControlStatusParamsDefaultTypeInternal;
 extern CallbackBody_onRemoteControlStatusParamsDefaultTypeInternal _CallbackBody_onRemoteControlStatusParams_default_instance_;
-class CallbackBody_onSelectedAudioDeviceChangedParams;
-struct CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal;
-extern CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal _CallbackBody_onSelectedAudioDeviceChangedParams_default_instance_;
 class CallbackBody_onSessionLeaveParams;
 struct CallbackBody_onSessionLeaveParamsDefaultTypeInternal;
 extern CallbackBody_onSessionLeaveParamsDefaultTypeInternal _CallbackBody_onSessionLeaveParams_default_instance_;
@@ -553,8 +547,6 @@ template <>
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams>(Arena*);
 template <>
-::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams>(Arena*);
-template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams>(Arena*);
@@ -578,8 +570,6 @@ template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams>(Arena*);
-template <>
-::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams>(Arena*);
 template <>
@@ -7403,128 +7393,6 @@ class CallbackBody_onRemoteControlServiceInstallResultParams final :
   friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
 };// -------------------------------------------------------------------
 
-class CallbackBody_onHostAskUnmuteParams final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams) */ {
- public:
-  inline CallbackBody_onHostAskUnmuteParams() : CallbackBody_onHostAskUnmuteParams(nullptr) {}
-  ~CallbackBody_onHostAskUnmuteParams() override;
-  explicit PROTOBUF_CONSTEXPR CallbackBody_onHostAskUnmuteParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CallbackBody_onHostAskUnmuteParams(const CallbackBody_onHostAskUnmuteParams& from);
-  CallbackBody_onHostAskUnmuteParams(CallbackBody_onHostAskUnmuteParams&& from) noexcept
-    : CallbackBody_onHostAskUnmuteParams() {
-    *this = ::std::move(from);
-  }
-
-  inline CallbackBody_onHostAskUnmuteParams& operator=(const CallbackBody_onHostAskUnmuteParams& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CallbackBody_onHostAskUnmuteParams& operator=(CallbackBody_onHostAskUnmuteParams&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const std::string& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
-  }
-  inline std::string* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<std::string>();
-  }
-
-  static const CallbackBody_onHostAskUnmuteParams& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CallbackBody_onHostAskUnmuteParams* internal_default_instance() {
-    return reinterpret_cast<const CallbackBody_onHostAskUnmuteParams*>(
-               &_CallbackBody_onHostAskUnmuteParams_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    40;
-
-  friend void swap(CallbackBody_onHostAskUnmuteParams& a, CallbackBody_onHostAskUnmuteParams& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CallbackBody_onHostAskUnmuteParams* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CallbackBody_onHostAskUnmuteParams* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CallbackBody_onHostAskUnmuteParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CallbackBody_onHostAskUnmuteParams>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const CallbackBody_onHostAskUnmuteParams& from);
-  void MergeFrom(const CallbackBody_onHostAskUnmuteParams& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(CallbackBody_onHostAskUnmuteParams* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams";
-  }
-  protected:
-  explicit CallbackBody_onHostAskUnmuteParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
-};// -------------------------------------------------------------------
-
 class CallbackBody_onMultiCameraStreamStatusChangedParams final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParams) */ {
  public:
@@ -7571,7 +7439,7 @@ class CallbackBody_onMultiCameraStreamStatusChangedParams final :
                &_CallbackBody_onMultiCameraStreamStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    40;
 
   friend void swap(CallbackBody_onMultiCameraStreamStatusChangedParams& a, CallbackBody_onMultiCameraStreamStatusChangedParams& b) {
     a.Swap(&b);
@@ -7738,7 +7606,7 @@ class CallbackBody_onMicSpeakerVolumeChangedParams final :
                &_CallbackBody_onMicSpeakerVolumeChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    41;
 
   friend void swap(CallbackBody_onMicSpeakerVolumeChangedParams& a, CallbackBody_onMicSpeakerVolumeChangedParams& b) {
     a.Swap(&b);
@@ -7889,7 +7757,7 @@ class CallbackBody_onAudioDeviceStatusChangedParams final :
                &_CallbackBody_onAudioDeviceStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    42;
 
   friend void swap(CallbackBody_onAudioDeviceStatusChangedParams& a, CallbackBody_onAudioDeviceStatusChangedParams& b) {
     a.Swap(&b);
@@ -8040,7 +7908,7 @@ class CallbackBody_onTestMicStatusChangedParams final :
                &_CallbackBody_onTestMicStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    43;
 
   friend void swap(CallbackBody_onTestMicStatusChangedParams& a, CallbackBody_onTestMicStatusChangedParams& b) {
     a.Swap(&b);
@@ -8132,128 +8000,6 @@ class CallbackBody_onTestMicStatusChangedParams final :
   friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
 };// -------------------------------------------------------------------
 
-class CallbackBody_onSelectedAudioDeviceChangedParams final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams) */ {
- public:
-  inline CallbackBody_onSelectedAudioDeviceChangedParams() : CallbackBody_onSelectedAudioDeviceChangedParams(nullptr) {}
-  ~CallbackBody_onSelectedAudioDeviceChangedParams() override;
-  explicit PROTOBUF_CONSTEXPR CallbackBody_onSelectedAudioDeviceChangedParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CallbackBody_onSelectedAudioDeviceChangedParams(const CallbackBody_onSelectedAudioDeviceChangedParams& from);
-  CallbackBody_onSelectedAudioDeviceChangedParams(CallbackBody_onSelectedAudioDeviceChangedParams&& from) noexcept
-    : CallbackBody_onSelectedAudioDeviceChangedParams() {
-    *this = ::std::move(from);
-  }
-
-  inline CallbackBody_onSelectedAudioDeviceChangedParams& operator=(const CallbackBody_onSelectedAudioDeviceChangedParams& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CallbackBody_onSelectedAudioDeviceChangedParams& operator=(CallbackBody_onSelectedAudioDeviceChangedParams&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const std::string& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
-  }
-  inline std::string* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<std::string>();
-  }
-
-  static const CallbackBody_onSelectedAudioDeviceChangedParams& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CallbackBody_onSelectedAudioDeviceChangedParams* internal_default_instance() {
-    return reinterpret_cast<const CallbackBody_onSelectedAudioDeviceChangedParams*>(
-               &_CallbackBody_onSelectedAudioDeviceChangedParams_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    45;
-
-  friend void swap(CallbackBody_onSelectedAudioDeviceChangedParams& a, CallbackBody_onSelectedAudioDeviceChangedParams& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CallbackBody_onSelectedAudioDeviceChangedParams* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CallbackBody_onSelectedAudioDeviceChangedParams* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CallbackBody_onSelectedAudioDeviceChangedParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CallbackBody_onSelectedAudioDeviceChangedParams>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const CallbackBody_onSelectedAudioDeviceChangedParams& from);
-  void MergeFrom(const CallbackBody_onSelectedAudioDeviceChangedParams& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(CallbackBody_onSelectedAudioDeviceChangedParams* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams";
-  }
-  protected:
-  explicit CallbackBody_onSelectedAudioDeviceChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
-};// -------------------------------------------------------------------
-
 class CallbackBody_onLiveTranscriptionStatusParams final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParams) */ {
  public:
@@ -8300,7 +8046,7 @@ class CallbackBody_onLiveTranscriptionStatusParams final :
                &_CallbackBody_onLiveTranscriptionStatusParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    44;
 
   friend void swap(CallbackBody_onLiveTranscriptionStatusParams& a, CallbackBody_onLiveTranscriptionStatusParams& b) {
     a.Swap(&b);
@@ -8438,7 +8184,7 @@ class CallbackBody_onLiveTranscriptionMsgErrorParams final :
                &_CallbackBody_onLiveTranscriptionMsgErrorParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    45;
 
   friend void swap(CallbackBody_onLiveTranscriptionMsgErrorParams& a, CallbackBody_onLiveTranscriptionMsgErrorParams& b) {
     a.Swap(&b);
@@ -8595,7 +8341,7 @@ class CallbackBody_liveTranscriptionMsgInfoParams final :
                &_CallbackBody_liveTranscriptionMsgInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    46;
 
   friend void swap(CallbackBody_liveTranscriptionMsgInfoParams& a, CallbackBody_liveTranscriptionMsgInfoParams& b) {
     a.Swap(&b);
@@ -8838,7 +8584,7 @@ class CallbackBody_onCalloutJoinSuccessParams final :
                &_CallbackBody_onCalloutJoinSuccessParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    47;
 
   friend void swap(CallbackBody_onCalloutJoinSuccessParams& a, CallbackBody_onCalloutJoinSuccessParams& b) {
     a.Swap(&b);
@@ -9002,7 +8748,7 @@ class CallbackBody_onSessionLeaveParams final :
                &_CallbackBody_onSessionLeaveParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    48;
 
   friend void swap(CallbackBody_onSessionLeaveParams& a, CallbackBody_onSessionLeaveParams& b) {
     a.Swap(&b);
@@ -9140,7 +8886,7 @@ class CallbackBody_onShareCursorDataReceivedParams final :
                &_CallbackBody_onShareCursorDataReceivedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    49;
 
   friend void swap(CallbackBody_onShareCursorDataReceivedParams& a, CallbackBody_onShareCursorDataReceivedParams& b) {
     a.Swap(&b);
@@ -9281,7 +9027,7 @@ class CallbackBody_onSpotlightVideoChangedParams final :
                &_CallbackBody_onSpotlightVideoChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    50;
 
   friend void swap(CallbackBody_onSpotlightVideoChangedParams& a, CallbackBody_onSpotlightVideoChangedParams& b) {
     a.Swap(&b);
@@ -9422,7 +9168,7 @@ class CallbackBody_onBindIncomingLiveStreamResponseParams final :
                &_CallbackBody_onBindIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    51;
 
   friend void swap(CallbackBody_onBindIncomingLiveStreamResponseParams& a, CallbackBody_onBindIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9583,7 +9329,7 @@ class CallbackBody_onUnbindIncomingLiveStreamResponseParams final :
                &_CallbackBody_onUnbindIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    52;
 
   friend void swap(CallbackBody_onUnbindIncomingLiveStreamResponseParams& a, CallbackBody_onUnbindIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9744,7 +9490,7 @@ class CallbackBody_onIncomingLiveStreamStatusResponseParams final :
                &_CallbackBody_onIncomingLiveStreamStatusResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    53;
 
   friend void swap(CallbackBody_onIncomingLiveStreamStatusResponseParams& a, CallbackBody_onIncomingLiveStreamStatusResponseParams& b) {
     a.Swap(&b);
@@ -9898,7 +9644,7 @@ class CallbackBody_onStartIncomingLiveStreamResponseParams final :
                &_CallbackBody_onStartIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    54;
 
   friend void swap(CallbackBody_onStartIncomingLiveStreamResponseParams& a, CallbackBody_onStartIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -10059,7 +9805,7 @@ class CallbackBody_onStopIncomingLiveStreamResponseParams final :
                &_CallbackBody_onStopIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    55;
 
   friend void swap(CallbackBody_onStopIncomingLiveStreamResponseParams& a, CallbackBody_onStopIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -10220,7 +9966,7 @@ class CallbackBody final :
                &_CallbackBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    56;
 
   friend void swap(CallbackBody& a, CallbackBody& b) {
     a.Swap(&b);
@@ -10306,12 +10052,10 @@ class CallbackBody final :
   typedef CallbackBody_onRemoteControlStatusParams onRemoteControlStatusParams;
   typedef CallbackBody_onRemoteControlRequestReceivedParams onRemoteControlRequestReceivedParams;
   typedef CallbackBody_onRemoteControlServiceInstallResultParams onRemoteControlServiceInstallResultParams;
-  typedef CallbackBody_onHostAskUnmuteParams onHostAskUnmuteParams;
   typedef CallbackBody_onMultiCameraStreamStatusChangedParams onMultiCameraStreamStatusChangedParams;
   typedef CallbackBody_onMicSpeakerVolumeChangedParams onMicSpeakerVolumeChangedParams;
   typedef CallbackBody_onAudioDeviceStatusChangedParams onAudioDeviceStatusChangedParams;
   typedef CallbackBody_onTestMicStatusChangedParams onTestMicStatusChangedParams;
-  typedef CallbackBody_onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParams;
   typedef CallbackBody_onLiveTranscriptionStatusParams onLiveTranscriptionStatusParams;
   typedef CallbackBody_onLiveTranscriptionMsgErrorParams onLiveTranscriptionMsgErrorParams;
   typedef CallbackBody_liveTranscriptionMsgInfoParams liveTranscriptionMsgInfoParams;
@@ -10348,13 +10092,11 @@ class CallbackBody final :
     kOnCameraControlRequestResultParamFieldNumber = 19,
     kOnCameraControlRequestReceivedParamFieldNumber = 20,
     kOnCommandChannelConnectResultParamFieldNumber = 21,
-    kOnHostAskUnmuteParamFieldNumber = 22,
     kOnInviteByPhoneStatusParamFieldNumber = 23,
     kOnMultiCameraStreamStatusChangedParamFieldNumber = 24,
     kOnMicSpeakerVolumeChangedParamFieldNumber = 25,
     kOnAudioDeviceStatusChangedParamFieldNumber = 26,
     kOnTestMicStatusChangedParamFieldNumber = 27,
-    kOnSelectedAudioDeviceChangedParamFieldNumber = 28,
     kOnLiveTranscriptionStatusParamFieldNumber = 29,
     kOnLiveTranscriptionMsgErrorParamFieldNumber = 31,
     kOnChatMsgDeleteNotificationParamFieldNumber = 32,
@@ -10654,20 +10396,6 @@ class CallbackBody final :
   void unsafe_arena_set_allocated_oncommandchannelconnectresultparam(
       ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCommandChannelConnectResultParams* oncommandchannelconnectresultparam);
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCommandChannelConnectResultParams* unsafe_arena_release_oncommandchannelconnectresultparam();
-  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams onHostAskUnmuteParam = 22;
-  bool has_onhostaskunmuteparam() const;
-  void clear_onhostaskunmuteparam() ;
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams& onhostaskunmuteparam() const;
-  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* release_onhostaskunmuteparam();
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* mutable_onhostaskunmuteparam();
-  void set_allocated_onhostaskunmuteparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* onhostaskunmuteparam);
-  private:
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams& _internal_onhostaskunmuteparam() const;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* _internal_mutable_onhostaskunmuteparam();
-  public:
-  void unsafe_arena_set_allocated_onhostaskunmuteparam(
-      ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* onhostaskunmuteparam);
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* unsafe_arena_release_onhostaskunmuteparam();
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
   bool has_oninvitebyphonestatusparam() const;
   void clear_oninvitebyphonestatusparam() ;
@@ -10738,20 +10466,6 @@ class CallbackBody final :
   void unsafe_arena_set_allocated_ontestmicstatuschangedparam(
       ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* ontestmicstatuschangedparam);
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* unsafe_arena_release_ontestmicstatuschangedparam();
-  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
-  bool has_onselectedaudiodevicechangedparam() const;
-  void clear_onselectedaudiodevicechangedparam() ;
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams& onselectedaudiodevicechangedparam() const;
-  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* release_onselectedaudiodevicechangedparam();
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* mutable_onselectedaudiodevicechangedparam();
-  void set_allocated_onselectedaudiodevicechangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* onselectedaudiodevicechangedparam);
-  private:
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams& _internal_onselectedaudiodevicechangedparam() const;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* _internal_mutable_onselectedaudiodevicechangedparam();
-  public:
-  void unsafe_arena_set_allocated_onselectedaudiodevicechangedparam(
-      ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* onselectedaudiodevicechangedparam);
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* unsafe_arena_release_onselectedaudiodevicechangedparam();
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParams onLiveTranscriptionStatusParam = 29;
   bool has_onlivetranscriptionstatusparam() const;
   void clear_onlivetranscriptionstatusparam() ;
@@ -11031,13 +10745,11 @@ class CallbackBody final :
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCameraControlRequestResultParams* oncameracontrolrequestresultparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCameraControlRequestReceivedParams* oncameracontrolrequestreceivedparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCommandChannelConnectResultParams* oncommandchannelconnectresultparam_;
-    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* onhostaskunmuteparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* oninvitebyphonestatusparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* onmulticamerastreamstatuschangedparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* onmicspeakervolumechangedparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* onaudiodevicestatuschangedparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* ontestmicstatuschangedparam_;
-    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* onselectedaudiodevicechangedparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* onlivetranscriptionstatusparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* onlivetranscriptionmsgerrorparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* onchatmsgdeletenotificationparam_;
@@ -11107,7 +10819,7 @@ class CreateVideoSDKObjParam final :
                &_CreateVideoSDKObjParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    57;
 
   friend void swap(CreateVideoSDKObjParam& a, CreateVideoSDKObjParam& b) {
     a.Swap(&b);
@@ -11255,7 +10967,7 @@ class VideoSDKInitParams final :
                &_VideoSDKInitParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    58;
 
   friend void swap(VideoSDKInitParams& a, VideoSDKInitParams& b) {
     a.Swap(&b);
@@ -11501,7 +11213,7 @@ class VideoSDKSessionContext final :
                &_VideoSDKSessionContext_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    59;
 
   friend void swap(VideoSDKSessionContext& a, VideoSDKSessionContext& b) {
     a.Swap(&b);
@@ -11796,7 +11508,7 @@ class LeaveSessionParams final :
                &_LeaveSessionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    60;
 
   friend void swap(LeaveSessionParams& a, LeaveSessionParams& b) {
     a.Swap(&b);
@@ -11934,7 +11646,7 @@ class SessionPasswordParams final :
                &_SessionPasswordParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    61;
 
   friend void swap(SessionPasswordParams& a, SessionPasswordParams& b) {
     a.Swap(&b);
@@ -12082,7 +11794,7 @@ class MuteAudioParams final :
                &_MuteAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    62;
 
   friend void swap(MuteAudioParams& a, MuteAudioParams& b) {
     a.Swap(&b);
@@ -12223,7 +11935,7 @@ class UnMuteAudioParams final :
                &_UnMuteAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    63;
 
   friend void swap(UnMuteAudioParams& a, UnMuteAudioParams& b) {
     a.Swap(&b);
@@ -12364,7 +12076,7 @@ class SetSpeakerParams final :
                &_SetSpeakerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    64;
 
   friend void swap(SetSpeakerParams& a, SetSpeakerParams& b) {
     a.Swap(&b);
@@ -12502,7 +12214,7 @@ class SelectSpeakerParams final :
                &_SelectSpeakerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    65;
 
   friend void swap(SelectSpeakerParams& a, SelectSpeakerParams& b) {
     a.Swap(&b);
@@ -12673,7 +12385,7 @@ class SelectMicParams final :
                &_SelectMicParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    66;
 
   friend void swap(SelectMicParams& a, SelectMicParams& b) {
     a.Swap(&b);
@@ -12844,7 +12556,7 @@ class SendChatToUserParams final :
                &_SendChatToUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    67;
 
   friend void swap(SendChatToUserParams& a, SendChatToUserParams& b) {
     a.Swap(&b);
@@ -13008,7 +12720,7 @@ class SendChatToAllParams final :
                &_SendChatToAllParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    68;
 
   friend void swap(SendChatToAllParams& a, SendChatToAllParams& b) {
     a.Swap(&b);
@@ -13156,7 +12868,7 @@ class StartLiveStreamParams final :
                &_StartLiveStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    69;
 
   friend void swap(StartLiveStreamParams& a, StartLiveStreamParams& b) {
     a.Swap(&b);
@@ -13350,7 +13062,7 @@ class IncomingLiveStreamParams final :
                &_IncomingLiveStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    70;
 
   friend void swap(IncomingLiveStreamParams& a, IncomingLiveStreamParams& b) {
     a.Swap(&b);
@@ -13498,7 +13210,7 @@ class StartShareViewParams final :
                &_StartShareViewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    71;
 
   friend void swap(StartShareViewParams& a, StartShareViewParams& b) {
     a.Swap(&b);
@@ -13672,7 +13384,7 @@ class StartShareScreenParams final :
                &_StartShareScreenParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    72;
 
   friend void swap(StartShareScreenParams& a, StartShareScreenParams& b) {
     a.Swap(&b);
@@ -13846,7 +13558,7 @@ class LockShareParams final :
                &_LockShareParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    73;
 
   friend void swap(LockShareParams& a, LockShareParams& b) {
     a.Swap(&b);
@@ -13984,7 +13696,7 @@ class EnableShareDeviceAudioParams final :
                &_EnableShareDeviceAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    74;
 
   friend void swap(EnableShareDeviceAudioParams& a, EnableShareDeviceAudioParams& b) {
     a.Swap(&b);
@@ -14122,7 +13834,7 @@ class EnableOptimizeForSharedVideoParams final :
                &_EnableOptimizeForSharedVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    75;
 
   friend void swap(EnableOptimizeForSharedVideoParams& a, EnableOptimizeForSharedVideoParams& b) {
     a.Swap(&b);
@@ -14260,7 +13972,7 @@ class StartShare2ndCameraParams final :
                &_StartShare2ndCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    76;
 
   friend void swap(StartShare2ndCameraParams& a, StartShare2ndCameraParams& b) {
     a.Swap(&b);
@@ -14408,7 +14120,7 @@ class GetRemoteUsersParams final :
                &_GetRemoteUsersParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    77;
 
   friend void swap(GetRemoteUsersParams& a, GetRemoteUsersParams& b) {
     a.Swap(&b);
@@ -14546,7 +14258,7 @@ class GetMyInfoParams final :
                &_GetMyInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    78;
 
   friend void swap(GetMyInfoParams& a, GetMyInfoParams& b) {
     a.Swap(&b);
@@ -14684,7 +14396,7 @@ class ChangeNameParams final :
                &_ChangeNameParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    79;
 
   friend void swap(ChangeNameParams& a, ChangeNameParams& b) {
     a.Swap(&b);
@@ -14848,7 +14560,7 @@ class MakeHostParams final :
                &_MakeHostParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    80;
 
   friend void swap(MakeHostParams& a, MakeHostParams& b) {
     a.Swap(&b);
@@ -15012,7 +14724,7 @@ class MakeManagerParams final :
                &_MakeManagerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    81;
 
   friend void swap(MakeManagerParams& a, MakeManagerParams& b) {
     a.Swap(&b);
@@ -15153,7 +14865,7 @@ class RevokeManagerParams final :
                &_RevokeManagerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    82;
 
   friend void swap(RevokeManagerParams& a, RevokeManagerParams& b) {
     a.Swap(&b);
@@ -15294,7 +15006,7 @@ class RemoveUserParams final :
                &_RemoveUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    83;
 
   friend void swap(RemoveUserParams& a, RemoveUserParams& b) {
     a.Swap(&b);
@@ -15435,7 +15147,7 @@ class RotateMyVideoParams final :
                &_RotateMyVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    84;
 
   friend void swap(RotateMyVideoParams& a, RotateMyVideoParams& b) {
     a.Swap(&b);
@@ -15573,7 +15285,7 @@ class SelectCameraParams final :
                &_SelectCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    85;
 
   friend void swap(SelectCameraParams& a, SelectCameraParams& b) {
     a.Swap(&b);
@@ -15721,7 +15433,7 @@ class CreateRenderParams final :
                &_CreateRenderParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    86;
 
   friend void swap(CreateRenderParams& a, CreateRenderParams& b) {
     a.Swap(&b);
@@ -15859,7 +15571,7 @@ class DestroyRendererParams final :
                &_DestroyRendererParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    87;
 
   friend void swap(DestroyRendererParams& a, DestroyRendererParams& b) {
     a.Swap(&b);
@@ -15997,7 +15709,7 @@ class SubscribeParams final :
                &_SubscribeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    88;
 
   friend void swap(SubscribeParams& a, SubscribeParams& b) {
     a.Swap(&b);
@@ -16177,7 +15889,7 @@ class UnSubscribeParams final :
                &_UnSubscribeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    89;
 
   friend void swap(UnSubscribeParams& a, UnSubscribeParams& b) {
     a.Swap(&b);
@@ -16344,7 +16056,7 @@ class SubscribeMultiCameraStreamParams final :
                &_SubscribeMultiCameraStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    90;
 
   friend void swap(SubscribeMultiCameraStreamParams& a, SubscribeMultiCameraStreamParams& b) {
     a.Swap(&b);
@@ -16524,7 +16236,7 @@ class UnSubscribeMultiCameraStreamParams final :
                &_UnSubscribeMultiCameraStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    91;
 
   friend void swap(UnSubscribeMultiCameraStreamParams& a, UnSubscribeMultiCameraStreamParams& b) {
     a.Swap(&b);
@@ -16691,7 +16403,7 @@ class SetRawDataResolutionParams final :
                &_SetRawDataResolutionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    92;
 
   friend void swap(SetRawDataResolutionParams& a, SetRawDataResolutionParams& b) {
     a.Swap(&b);
@@ -16842,7 +16554,7 @@ class GetResolutionParams final :
                &_GetResolutionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    93;
 
   friend void swap(GetResolutionParams& a, GetResolutionParams& b) {
     a.Swap(&b);
@@ -16980,7 +16692,7 @@ class GetRawDataTypeParams final :
                &_GetRawDataTypeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    94;
 
   friend void swap(GetRawDataTypeParams& a, GetRawDataTypeParams& b) {
     a.Swap(&b);
@@ -17118,7 +16830,7 @@ class CameraInfos final :
                &_CameraInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    95;
 
   friend void swap(CameraInfos& a, CameraInfos& b) {
     a.Swap(&b);
@@ -17328,7 +17040,7 @@ class GetCameraList final :
                &_GetCameraList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    96;
 
   friend void swap(GetCameraList& a, GetCameraList& b) {
     a.Swap(&b);
@@ -17472,7 +17184,7 @@ class MultiCameraStreamInfos final :
                &_MultiCameraStreamInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    97;
 
   friend void swap(MultiCameraStreamInfos& a, MultiCameraStreamInfos& b) {
     a.Swap(&b);
@@ -17610,7 +17322,7 @@ class MultiCameraStreamList final :
                &_MultiCameraStreamList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    98;
 
   friend void swap(MultiCameraStreamList& a, MultiCameraStreamList& b) {
     a.Swap(&b);
@@ -17754,7 +17466,7 @@ class GetMultiCameraStreamList final :
                &_GetMultiCameraStreamList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    99;
 
   friend void swap(GetMultiCameraStreamList& a, GetMultiCameraStreamList& b) {
     a.Swap(&b);
@@ -17895,7 +17607,7 @@ class MicInfos final :
                &_MicInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    100;
 
   friend void swap(MicInfos& a, MicInfos& b) {
     a.Swap(&b);
@@ -18079,7 +17791,7 @@ class GetMicList final :
                &_GetMicList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    101;
 
   friend void swap(GetMicList& a, GetMicList& b) {
     a.Swap(&b);
@@ -18223,7 +17935,7 @@ class SpeakerInfos final :
                &_SpeakerInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    102;
 
   friend void swap(SpeakerInfos& a, SpeakerInfos& b) {
     a.Swap(&b);
@@ -18407,7 +18119,7 @@ class GetSpeakerList final :
                &_GetSpeakerList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    103;
 
   friend void swap(GetSpeakerList& a, GetSpeakerList& b) {
     a.Swap(&b);
@@ -18551,7 +18263,7 @@ class SendCommandParams final :
                &_SendCommandParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    104;
 
   friend void swap(SendCommandParams& a, SendCommandParams& b) {
     a.Swap(&b);
@@ -18715,7 +18427,7 @@ class PhoneSupportCountryInfos final :
                &_PhoneSupportCountryInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    105;
 
   friend void swap(PhoneSupportCountryInfos& a, PhoneSupportCountryInfos& b) {
     a.Swap(&b);
@@ -18909,7 +18621,7 @@ class GetPhoneSupportCountryList final :
                &_GetPhoneSupportCountryList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    106;
 
   friend void swap(GetPhoneSupportCountryList& a, GetPhoneSupportCountryList& b) {
     a.Swap(&b);
@@ -19053,7 +18765,7 @@ class InviteByPhoneParams final :
                &_InviteByPhoneParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    107;
 
   friend void swap(InviteByPhoneParams& a, InviteByPhoneParams& b) {
     a.Swap(&b);
@@ -19247,7 +18959,7 @@ class InvitePhoneUserParams final :
                &_InvitePhoneUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    108;
 
   friend void swap(InvitePhoneUserParams& a, InvitePhoneUserParams& b) {
     a.Swap(&b);
@@ -19467,7 +19179,7 @@ class LocalCameraCtrlTurnLeftParams final :
                &_LocalCameraCtrlTurnLeftParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    109;
 
   friend void swap(LocalCameraCtrlTurnLeftParams& a, LocalCameraCtrlTurnLeftParams& b) {
     a.Swap(&b);
@@ -19605,7 +19317,7 @@ class LocalCameraCtrlTurnRightParams final :
                &_LocalCameraCtrlTurnRightParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    110;
 
   friend void swap(LocalCameraCtrlTurnRightParams& a, LocalCameraCtrlTurnRightParams& b) {
     a.Swap(&b);
@@ -19743,7 +19455,7 @@ class LocalCameraCtrlTurnUpParams final :
                &_LocalCameraCtrlTurnUpParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    111;
 
   friend void swap(LocalCameraCtrlTurnUpParams& a, LocalCameraCtrlTurnUpParams& b) {
     a.Swap(&b);
@@ -19881,7 +19593,7 @@ class LocalCameraCtrlTurnDownParams final :
                &_LocalCameraCtrlTurnDownParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    112;
 
   friend void swap(LocalCameraCtrlTurnDownParams& a, LocalCameraCtrlTurnDownParams& b) {
     a.Swap(&b);
@@ -20019,7 +19731,7 @@ class LocalCameraCtrlZoomInParams final :
                &_LocalCameraCtrlZoomInParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    113;
 
   friend void swap(LocalCameraCtrlZoomInParams& a, LocalCameraCtrlZoomInParams& b) {
     a.Swap(&b);
@@ -20157,7 +19869,7 @@ class LocalCameraCtrlZoomOutParams final :
                &_LocalCameraCtrlZoomOutParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    114;
 
   friend void swap(LocalCameraCtrlZoomOutParams& a, LocalCameraCtrlZoomOutParams& b) {
     a.Swap(&b);
@@ -20295,7 +20007,7 @@ class RequestControlRemoteCameraParams final :
                &_RequestControlRemoteCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    115;
 
   friend void swap(RequestControlRemoteCameraParams& a, RequestControlRemoteCameraParams& b) {
     a.Swap(&b);
@@ -20436,7 +20148,7 @@ class GiveUpControlRemoteCameraParams final :
                &_GiveUpControlRemoteCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    116;
 
   friend void swap(GiveUpControlRemoteCameraParams& a, GiveUpControlRemoteCameraParams& b) {
     a.Swap(&b);
@@ -20577,7 +20289,7 @@ class RemoteCameraCtrlTurnLeftParams final :
                &_RemoteCameraCtrlTurnLeftParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    117;
 
   friend void swap(RemoteCameraCtrlTurnLeftParams& a, RemoteCameraCtrlTurnLeftParams& b) {
     a.Swap(&b);
@@ -20731,7 +20443,7 @@ class RemoteCameraCtrlTurnRightParams final :
                &_RemoteCameraCtrlTurnRightParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    118;
 
   friend void swap(RemoteCameraCtrlTurnRightParams& a, RemoteCameraCtrlTurnRightParams& b) {
     a.Swap(&b);
@@ -20885,7 +20597,7 @@ class RemoteCameraCtrlTurnUpParams final :
                &_RemoteCameraCtrlTurnUpParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    119;
 
   friend void swap(RemoteCameraCtrlTurnUpParams& a, RemoteCameraCtrlTurnUpParams& b) {
     a.Swap(&b);
@@ -21039,7 +20751,7 @@ class RemoteCameraCtrlTurnDownParams final :
                &_RemoteCameraCtrlTurnDownParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    120;
 
   friend void swap(RemoteCameraCtrlTurnDownParams& a, RemoteCameraCtrlTurnDownParams& b) {
     a.Swap(&b);
@@ -21193,7 +20905,7 @@ class RemoteCameraCtrlZoomInParams final :
                &_RemoteCameraCtrlZoomInParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    121;
 
   friend void swap(RemoteCameraCtrlZoomInParams& a, RemoteCameraCtrlZoomInParams& b) {
     a.Swap(&b);
@@ -21347,7 +21059,7 @@ class RemoteCameraCtrlZoomOutParams final :
                &_RemoteCameraCtrlZoomOutParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    122;
 
   friend void swap(RemoteCameraCtrlZoomOutParams& a, RemoteCameraCtrlZoomOutParams& b) {
     a.Swap(&b);
@@ -21501,7 +21213,7 @@ class SetVideoQualityPreferenceParams final :
                &_SetVideoQualityPreferenceParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    125;
+    123;
 
   friend void swap(SetVideoQualityPreferenceParams& a, SetVideoQualityPreferenceParams& b) {
     a.Swap(&b);
@@ -21665,7 +21377,7 @@ class SetSuppressBackgroundNoiseLevelParams final :
                &_SetSuppressBackgroundNoiseLevelParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    124;
 
   friend void swap(SetSuppressBackgroundNoiseLevelParams& a, SetSuppressBackgroundNoiseLevelParams& b) {
     a.Swap(&b);
@@ -21803,7 +21515,7 @@ class SetEchoCancellationLevelParams final :
                &_SetEchoCancellationLevelParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    127;
+    125;
 
   friend void swap(SetEchoCancellationLevelParams& a, SetEchoCancellationLevelParams& b) {
     a.Swap(&b);
@@ -21941,7 +21653,7 @@ class EnableMicOriginalInputParams final :
                &_EnableMicOriginalInputParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    128;
+    126;
 
   friend void swap(EnableMicOriginalInputParams& a, EnableMicOriginalInputParams& b) {
     a.Swap(&b);
@@ -22079,7 +21791,7 @@ class EnableHighFidelityMusicModeParams final :
                &_EnableHighFidelityMusicModeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    129;
+    127;
 
   friend void swap(EnableHighFidelityMusicModeParams& a, EnableHighFidelityMusicModeParams& b) {
     a.Swap(&b);
@@ -22217,7 +21929,7 @@ class EnableEchoCancellationParams final :
                &_EnableEchoCancellationParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    130;
+    128;
 
   friend void swap(EnableEchoCancellationParams& a, EnableEchoCancellationParams& b) {
     a.Swap(&b);
@@ -22355,7 +22067,7 @@ class EnableStereoAudioParams final :
                &_EnableStereoAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    131;
+    129;
 
   friend void swap(EnableStereoAudioParams& a, EnableStereoAudioParams& b) {
     a.Swap(&b);
@@ -22493,7 +22205,7 @@ class StartMicTestRecordingParams final :
                &_StartMicTestRecordingParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    132;
+    130;
 
   friend void swap(StartMicTestRecordingParams& a, StartMicTestRecordingParams& b) {
     a.Swap(&b);
@@ -22641,7 +22353,7 @@ class StartSpeakerTestParams final :
                &_StartSpeakerTestParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    131;
 
   friend void swap(StartSpeakerTestParams& a, StartSpeakerTestParams& b) {
     a.Swap(&b);
@@ -22789,7 +22501,7 @@ class SetTimerIntervalParams final :
                &_SetTimerIntervalParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    132;
 
   friend void swap(SetTimerIntervalParams& a, SetTimerIntervalParams& b) {
     a.Swap(&b);
@@ -22927,7 +22639,7 @@ class EnableMultiStreamVideoParams final :
                &_EnableMultiStreamVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    135;
+    133;
 
   friend void swap(EnableMultiStreamVideoParams& a, EnableMultiStreamVideoParams& b) {
     a.Swap(&b);
@@ -23075,7 +22787,7 @@ class DisableMultiStreamVideoParams final :
                &_DisableMultiStreamVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    136;
+    134;
 
   friend void swap(DisableMultiStreamVideoParams& a, DisableMultiStreamVideoParams& b) {
     a.Swap(&b);
@@ -23223,7 +22935,7 @@ class StartVideoPreviewParams final :
                &_StartVideoPreviewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    137;
+    135;
 
   friend void swap(StartVideoPreviewParams& a, StartVideoPreviewParams& b) {
     a.Swap(&b);
@@ -23384,7 +23096,7 @@ class StopVideoPreviewParams final :
                &_StopVideoPreviewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    138;
+    136;
 
   friend void swap(StopVideoPreviewParams& a, StopVideoPreviewParams& b) {
     a.Swap(&b);
@@ -23522,7 +23234,7 @@ class SpotLightVideoParams final :
                &_SpotLightVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    139;
+    137;
 
   friend void swap(SpotLightVideoParams& a, SpotLightVideoParams& b) {
     a.Swap(&b);
@@ -23663,7 +23375,7 @@ class UnSpotLightVideoParams final :
                &_UnSpotLightVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    140;
+    138;
 
   friend void swap(UnSpotLightVideoParams& a, UnSpotLightVideoParams& b) {
     a.Swap(&b);
@@ -23804,7 +23516,7 @@ class SetSpokenLanguageParams final :
                &_SetSpokenLanguageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    141;
+    139;
 
   friend void swap(SetSpokenLanguageParams& a, SetSpokenLanguageParams& b) {
     a.Swap(&b);
@@ -23942,7 +23654,7 @@ class LTTLanguagesList final :
                &_LTTLanguagesList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    142;
+    140;
 
   friend void swap(LTTLanguagesList& a, LTTLanguagesList& b) {
     a.Swap(&b);
@@ -24086,7 +23798,7 @@ class SetTranslationLanguageParams final :
                &_SetTranslationLanguageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    143;
+    141;
 
   friend void swap(SetTranslationLanguageParams& a, SetTranslationLanguageParams& b) {
     a.Swap(&b);
@@ -24224,7 +23936,7 @@ class CanChatMessageBeDeletedParams final :
                &_CanChatMessageBeDeletedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    144;
+    142;
 
   friend void swap(CanChatMessageBeDeletedParams& a, CanChatMessageBeDeletedParams& b) {
     a.Swap(&b);
@@ -24372,7 +24084,7 @@ class DeleteChatMessageParams final :
                &_DeleteChatMessageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    145;
+    143;
 
   friend void swap(DeleteChatMessageParams& a, DeleteChatMessageParams& b) {
     a.Swap(&b);
@@ -24520,7 +24232,7 @@ class VBItemInfo final :
                &_VBItemInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    146;
+    144;
 
   friend void swap(VBItemInfo& a, VBItemInfo& b) {
     a.Swap(&b);
@@ -24717,7 +24429,7 @@ class VBItemHandleList final :
                &_VBItemHandleList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    147;
+    145;
 
   friend void swap(VBItemHandleList& a, VBItemHandleList& b) {
     a.Swap(&b);
@@ -24863,7 +24575,7 @@ class AddVirtualBackgroundItemParams final :
                &_AddVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    148;
+    146;
 
   friend void swap(AddVirtualBackgroundItemParams& a, AddVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -25011,7 +24723,7 @@ class RemoveVirtualBackgroundItemParams final :
                &_RemoveVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    149;
+    147;
 
   friend void swap(RemoveVirtualBackgroundItemParams& a, RemoveVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -25149,7 +24861,7 @@ class SetVirtualBackgroundItemParams final :
                &_SetVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    150;
+    148;
 
   friend void swap(SetVirtualBackgroundItemParams& a, SetVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -25287,7 +24999,7 @@ class GetVirtualBackgroundItemInfoParams final :
                &_GetVirtualBackgroundItemInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    151;
+    149;
 
   friend void swap(GetVirtualBackgroundItemInfoParams& a, GetVirtualBackgroundItemInfoParams& b) {
     a.Swap(&b);
@@ -25425,7 +25137,7 @@ class SetScreenCaptureModeParams final :
                &_SetScreenCaptureModeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    152;
+    150;
 
   friend void swap(SetScreenCaptureModeParams& a, SetScreenCaptureModeParams& b) {
     a.Swap(&b);
@@ -25563,7 +25275,7 @@ class EnableGreenBorderParams final :
                &_EnableGreenBorderParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    153;
+    151;
 
   friend void swap(EnableGreenBorderParams& a, EnableGreenBorderParams& b) {
     a.Swap(&b);
@@ -25701,7 +25413,7 @@ class EnableAdminRemoteControlParams final :
                &_EnableAdminRemoteControlParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    154;
+    152;
 
   friend void swap(EnableAdminRemoteControlParams& a, EnableAdminRemoteControlParams& b) {
     a.Swap(&b);
@@ -30414,10 +30126,6 @@ inline void CallbackBody_onRemoteControlServiceInstallResultParams::_internal_se
 
 // -------------------------------------------------------------------
 
-// CallbackBody_onHostAskUnmuteParams
-
-// -------------------------------------------------------------------
-
 // CallbackBody_onMultiCameraStreamStatusChangedParams
 
 // optional int32 status = 1;
@@ -30693,10 +30401,6 @@ inline void CallbackBody_onTestMicStatusChangedParams::_internal_set_status(::in
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.status_ = value;
 }
-
-// -------------------------------------------------------------------
-
-// CallbackBody_onSelectedAudioDeviceChangedParams
 
 // -------------------------------------------------------------------
 
@@ -32084,12 +31788,12 @@ inline void CallbackBody_onStopIncomingLiveStreamResponseParams::set_allocated_s
 
 // optional int32 msgtype = 1;
 inline bool CallbackBody::has_msgtype() const {
-  bool value = (_impl_._has_bits_[1] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
   return value;
 }
 inline void CallbackBody::clear_msgtype() {
   _impl_.msgtype_ = 0;
-  _impl_._has_bits_[1] &= ~0x00001000u;
+  _impl_._has_bits_[1] &= ~0x00000400u;
 }
 inline ::int32_t CallbackBody::msgtype() const {
   // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.msgtype)
@@ -32103,7 +31807,7 @@ inline ::int32_t CallbackBody::_internal_msgtype() const {
   return _impl_.msgtype_;
 }
 inline void CallbackBody::_internal_set_msgtype(::int32_t value) {
-  _impl_._has_bits_[1] |= 0x00001000u;
+  _impl_._has_bits_[1] |= 0x00000400u;
   _impl_.msgtype_ = value;
 }
 
@@ -33847,102 +33551,15 @@ inline void CallbackBody::set_allocated_oncommandchannelconnectresultparam(::com
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onCommandChannelConnectResultParam)
 }
 
-// optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams onHostAskUnmuteParam = 22;
-inline bool CallbackBody::has_onhostaskunmuteparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.onhostaskunmuteparam_ != nullptr);
-  return value;
-}
-inline void CallbackBody::clear_onhostaskunmuteparam() {
-  if (_impl_.onhostaskunmuteparam_ != nullptr) _impl_.onhostaskunmuteparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x00100000u;
-}
-inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams& CallbackBody::_internal_onhostaskunmuteparam() const {
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* p = _impl_.onhostaskunmuteparam_;
-  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams&>(
-      ::com::electron::zoomvideo::sdk::proto::_CallbackBody_onHostAskUnmuteParams_default_instance_);
-}
-inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams& CallbackBody::onhostaskunmuteparam() const {
-  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParam)
-  return _internal_onhostaskunmuteparam();
-}
-inline void CallbackBody::unsafe_arena_set_allocated_onhostaskunmuteparam(
-    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* onhostaskunmuteparam) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.onhostaskunmuteparam_);
-  }
-  _impl_.onhostaskunmuteparam_ = onhostaskunmuteparam;
-  if (onhostaskunmuteparam) {
-    _impl_._has_bits_[0] |= 0x00100000u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00100000u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParam)
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* CallbackBody::release_onhostaskunmuteparam() {
-  _impl_._has_bits_[0] &= ~0x00100000u;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* temp = _impl_.onhostaskunmuteparam_;
-  _impl_.onhostaskunmuteparam_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* CallbackBody::unsafe_arena_release_onhostaskunmuteparam() {
-  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParam)
-  _impl_._has_bits_[0] &= ~0x00100000u;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* temp = _impl_.onhostaskunmuteparam_;
-  _impl_.onhostaskunmuteparam_ = nullptr;
-  return temp;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* CallbackBody::_internal_mutable_onhostaskunmuteparam() {
-  _impl_._has_bits_[0] |= 0x00100000u;
-  if (_impl_.onhostaskunmuteparam_ == nullptr) {
-    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams>(GetArenaForAllocation());
-    _impl_.onhostaskunmuteparam_ = p;
-  }
-  return _impl_.onhostaskunmuteparam_;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* CallbackBody::mutable_onhostaskunmuteparam() {
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* _msg = _internal_mutable_onhostaskunmuteparam();
-  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParam)
-  return _msg;
-}
-inline void CallbackBody::set_allocated_onhostaskunmuteparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* onhostaskunmuteparam) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.onhostaskunmuteparam_;
-  }
-  if (onhostaskunmuteparam) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(onhostaskunmuteparam);
-    if (message_arena != submessage_arena) {
-      onhostaskunmuteparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, onhostaskunmuteparam, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x00100000u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00100000u;
-  }
-  _impl_.onhostaskunmuteparam_ = onhostaskunmuteparam;
-  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParam)
-}
-
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
 inline bool CallbackBody::has_oninvitebyphonestatusparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.oninvitebyphonestatusparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_oninvitebyphonestatusparam() {
   if (_impl_.oninvitebyphonestatusparam_ != nullptr) _impl_.oninvitebyphonestatusparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams& CallbackBody::_internal_oninvitebyphonestatusparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* p = _impl_.oninvitebyphonestatusparam_;
@@ -33960,14 +33577,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_oninvitebyphonestatusparam(
   }
   _impl_.oninvitebyphonestatusparam_ = oninvitebyphonestatusparam;
   if (oninvitebyphonestatusparam) {
-    _impl_._has_bits_[0] |= 0x00200000u;
+    _impl_._has_bits_[0] |= 0x00100000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00200000u;
+    _impl_._has_bits_[0] &= ~0x00100000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* CallbackBody::release_oninvitebyphonestatusparam() {
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* temp = _impl_.oninvitebyphonestatusparam_;
   _impl_.oninvitebyphonestatusparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -33983,13 +33600,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatu
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* CallbackBody::unsafe_arena_release_oninvitebyphonestatusparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParam)
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* temp = _impl_.oninvitebyphonestatusparam_;
   _impl_.oninvitebyphonestatusparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams* CallbackBody::_internal_mutable_oninvitebyphonestatusparam() {
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x00100000u;
   if (_impl_.oninvitebyphonestatusparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams>(GetArenaForAllocation());
     _impl_.oninvitebyphonestatusparam_ = p;
@@ -34013,9 +33630,9 @@ inline void CallbackBody::set_allocated_oninvitebyphonestatusparam(::com::electr
       oninvitebyphonestatusparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, oninvitebyphonestatusparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00200000u;
+    _impl_._has_bits_[0] |= 0x00100000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00200000u;
+    _impl_._has_bits_[0] &= ~0x00100000u;
   }
   _impl_.oninvitebyphonestatusparam_ = oninvitebyphonestatusparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParam)
@@ -34023,13 +33640,13 @@ inline void CallbackBody::set_allocated_oninvitebyphonestatusparam(::com::electr
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParams onMultiCameraStreamStatusChangedParam = 24;
 inline bool CallbackBody::has_onmulticamerastreamstatuschangedparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onmulticamerastreamstatuschangedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onmulticamerastreamstatuschangedparam() {
   if (_impl_.onmulticamerastreamstatuschangedparam_ != nullptr) _impl_.onmulticamerastreamstatuschangedparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams& CallbackBody::_internal_onmulticamerastreamstatuschangedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* p = _impl_.onmulticamerastreamstatuschangedparam_;
@@ -34047,14 +33664,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onmulticamerastreamstatusch
   }
   _impl_.onmulticamerastreamstatuschangedparam_ = onmulticamerastreamstatuschangedparam;
   if (onmulticamerastreamstatuschangedparam) {
-    _impl_._has_bits_[0] |= 0x00400000u;
+    _impl_._has_bits_[0] |= 0x00200000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00400000u;
+    _impl_._has_bits_[0] &= ~0x00200000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* CallbackBody::release_onmulticamerastreamstatuschangedparam() {
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* temp = _impl_.onmulticamerastreamstatuschangedparam_;
   _impl_.onmulticamerastreamstatuschangedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34070,13 +33687,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamS
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* CallbackBody::unsafe_arena_release_onmulticamerastreamstatuschangedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParam)
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* temp = _impl_.onmulticamerastreamstatuschangedparam_;
   _impl_.onmulticamerastreamstatuschangedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams* CallbackBody::_internal_mutable_onmulticamerastreamstatuschangedparam() {
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x00200000u;
   if (_impl_.onmulticamerastreamstatuschangedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams>(GetArenaForAllocation());
     _impl_.onmulticamerastreamstatuschangedparam_ = p;
@@ -34100,9 +33717,9 @@ inline void CallbackBody::set_allocated_onmulticamerastreamstatuschangedparam(::
       onmulticamerastreamstatuschangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onmulticamerastreamstatuschangedparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00400000u;
+    _impl_._has_bits_[0] |= 0x00200000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00400000u;
+    _impl_._has_bits_[0] &= ~0x00200000u;
   }
   _impl_.onmulticamerastreamstatuschangedparam_ = onmulticamerastreamstatuschangedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParam)
@@ -34110,13 +33727,13 @@ inline void CallbackBody::set_allocated_onmulticamerastreamstatuschangedparam(::
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParams onMicSpeakerVolumeChangedParam = 25;
 inline bool CallbackBody::has_onmicspeakervolumechangedparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onmicspeakervolumechangedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onmicspeakervolumechangedparam() {
   if (_impl_.onmicspeakervolumechangedparam_ != nullptr) _impl_.onmicspeakervolumechangedparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x00400000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams& CallbackBody::_internal_onmicspeakervolumechangedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* p = _impl_.onmicspeakervolumechangedparam_;
@@ -34134,14 +33751,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onmicspeakervolumechangedpa
   }
   _impl_.onmicspeakervolumechangedparam_ = onmicspeakervolumechangedparam;
   if (onmicspeakervolumechangedparam) {
-    _impl_._has_bits_[0] |= 0x00800000u;
+    _impl_._has_bits_[0] |= 0x00400000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00800000u;
+    _impl_._has_bits_[0] &= ~0x00400000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* CallbackBody::release_onmicspeakervolumechangedparam() {
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x00400000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* temp = _impl_.onmicspeakervolumechangedparam_;
   _impl_.onmicspeakervolumechangedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34157,13 +33774,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeCh
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* CallbackBody::unsafe_arena_release_onmicspeakervolumechangedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParam)
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x00400000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* temp = _impl_.onmicspeakervolumechangedparam_;
   _impl_.onmicspeakervolumechangedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams* CallbackBody::_internal_mutable_onmicspeakervolumechangedparam() {
-  _impl_._has_bits_[0] |= 0x00800000u;
+  _impl_._has_bits_[0] |= 0x00400000u;
   if (_impl_.onmicspeakervolumechangedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams>(GetArenaForAllocation());
     _impl_.onmicspeakervolumechangedparam_ = p;
@@ -34187,9 +33804,9 @@ inline void CallbackBody::set_allocated_onmicspeakervolumechangedparam(::com::el
       onmicspeakervolumechangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onmicspeakervolumechangedparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00800000u;
+    _impl_._has_bits_[0] |= 0x00400000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00800000u;
+    _impl_._has_bits_[0] &= ~0x00400000u;
   }
   _impl_.onmicspeakervolumechangedparam_ = onmicspeakervolumechangedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParam)
@@ -34197,13 +33814,13 @@ inline void CallbackBody::set_allocated_onmicspeakervolumechangedparam(::com::el
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParams onAudioDeviceStatusChangedParam = 26;
 inline bool CallbackBody::has_onaudiodevicestatuschangedparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onaudiodevicestatuschangedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onaudiodevicestatuschangedparam() {
   if (_impl_.onaudiodevicestatuschangedparam_ != nullptr) _impl_.onaudiodevicestatuschangedparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams& CallbackBody::_internal_onaudiodevicestatuschangedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* p = _impl_.onaudiodevicestatuschangedparam_;
@@ -34221,14 +33838,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onaudiodevicestatuschangedp
   }
   _impl_.onaudiodevicestatuschangedparam_ = onaudiodevicestatuschangedparam;
   if (onaudiodevicestatuschangedparam) {
-    _impl_._has_bits_[0] |= 0x01000000u;
+    _impl_._has_bits_[0] |= 0x00800000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x01000000u;
+    _impl_._has_bits_[0] &= ~0x00800000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* CallbackBody::release_onaudiodevicestatuschangedparam() {
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* temp = _impl_.onaudiodevicestatuschangedparam_;
   _impl_.onaudiodevicestatuschangedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34244,13 +33861,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusC
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* CallbackBody::unsafe_arena_release_onaudiodevicestatuschangedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParam)
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* temp = _impl_.onaudiodevicestatuschangedparam_;
   _impl_.onaudiodevicestatuschangedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams* CallbackBody::_internal_mutable_onaudiodevicestatuschangedparam() {
-  _impl_._has_bits_[0] |= 0x01000000u;
+  _impl_._has_bits_[0] |= 0x00800000u;
   if (_impl_.onaudiodevicestatuschangedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams>(GetArenaForAllocation());
     _impl_.onaudiodevicestatuschangedparam_ = p;
@@ -34274,9 +33891,9 @@ inline void CallbackBody::set_allocated_onaudiodevicestatuschangedparam(::com::e
       onaudiodevicestatuschangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onaudiodevicestatuschangedparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x01000000u;
+    _impl_._has_bits_[0] |= 0x00800000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x01000000u;
+    _impl_._has_bits_[0] &= ~0x00800000u;
   }
   _impl_.onaudiodevicestatuschangedparam_ = onaudiodevicestatuschangedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParam)
@@ -34284,13 +33901,13 @@ inline void CallbackBody::set_allocated_onaudiodevicestatuschangedparam(::com::e
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParams onTestMicStatusChangedParam = 27;
 inline bool CallbackBody::has_ontestmicstatuschangedparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.ontestmicstatuschangedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_ontestmicstatuschangedparam() {
   if (_impl_.ontestmicstatuschangedparam_ != nullptr) _impl_.ontestmicstatuschangedparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams& CallbackBody::_internal_ontestmicstatuschangedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* p = _impl_.ontestmicstatuschangedparam_;
@@ -34308,14 +33925,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_ontestmicstatuschangedparam
   }
   _impl_.ontestmicstatuschangedparam_ = ontestmicstatuschangedparam;
   if (ontestmicstatuschangedparam) {
-    _impl_._has_bits_[0] |= 0x02000000u;
+    _impl_._has_bits_[0] |= 0x01000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x02000000u;
+    _impl_._has_bits_[0] &= ~0x01000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* CallbackBody::release_ontestmicstatuschangedparam() {
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* temp = _impl_.ontestmicstatuschangedparam_;
   _impl_.ontestmicstatuschangedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34331,13 +33948,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChang
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* CallbackBody::unsafe_arena_release_ontestmicstatuschangedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParam)
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* temp = _impl_.ontestmicstatuschangedparam_;
   _impl_.ontestmicstatuschangedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams* CallbackBody::_internal_mutable_ontestmicstatuschangedparam() {
-  _impl_._has_bits_[0] |= 0x02000000u;
+  _impl_._has_bits_[0] |= 0x01000000u;
   if (_impl_.ontestmicstatuschangedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams>(GetArenaForAllocation());
     _impl_.ontestmicstatuschangedparam_ = p;
@@ -34361,110 +33978,23 @@ inline void CallbackBody::set_allocated_ontestmicstatuschangedparam(::com::elect
       ontestmicstatuschangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ontestmicstatuschangedparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x02000000u;
+    _impl_._has_bits_[0] |= 0x01000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x02000000u;
+    _impl_._has_bits_[0] &= ~0x01000000u;
   }
   _impl_.ontestmicstatuschangedparam_ = ontestmicstatuschangedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParam)
 }
 
-// optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
-inline bool CallbackBody::has_onselectedaudiodevicechangedparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.onselectedaudiodevicechangedparam_ != nullptr);
-  return value;
-}
-inline void CallbackBody::clear_onselectedaudiodevicechangedparam() {
-  if (_impl_.onselectedaudiodevicechangedparam_ != nullptr) _impl_.onselectedaudiodevicechangedparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x04000000u;
-}
-inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams& CallbackBody::_internal_onselectedaudiodevicechangedparam() const {
-  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* p = _impl_.onselectedaudiodevicechangedparam_;
-  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams&>(
-      ::com::electron::zoomvideo::sdk::proto::_CallbackBody_onSelectedAudioDeviceChangedParams_default_instance_);
-}
-inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams& CallbackBody::onselectedaudiodevicechangedparam() const {
-  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParam)
-  return _internal_onselectedaudiodevicechangedparam();
-}
-inline void CallbackBody::unsafe_arena_set_allocated_onselectedaudiodevicechangedparam(
-    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* onselectedaudiodevicechangedparam) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.onselectedaudiodevicechangedparam_);
-  }
-  _impl_.onselectedaudiodevicechangedparam_ = onselectedaudiodevicechangedparam;
-  if (onselectedaudiodevicechangedparam) {
-    _impl_._has_bits_[0] |= 0x04000000u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x04000000u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParam)
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* CallbackBody::release_onselectedaudiodevicechangedparam() {
-  _impl_._has_bits_[0] &= ~0x04000000u;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* temp = _impl_.onselectedaudiodevicechangedparam_;
-  _impl_.onselectedaudiodevicechangedparam_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* CallbackBody::unsafe_arena_release_onselectedaudiodevicechangedparam() {
-  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParam)
-  _impl_._has_bits_[0] &= ~0x04000000u;
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* temp = _impl_.onselectedaudiodevicechangedparam_;
-  _impl_.onselectedaudiodevicechangedparam_ = nullptr;
-  return temp;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* CallbackBody::_internal_mutable_onselectedaudiodevicechangedparam() {
-  _impl_._has_bits_[0] |= 0x04000000u;
-  if (_impl_.onselectedaudiodevicechangedparam_ == nullptr) {
-    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams>(GetArenaForAllocation());
-    _impl_.onselectedaudiodevicechangedparam_ = p;
-  }
-  return _impl_.onselectedaudiodevicechangedparam_;
-}
-inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* CallbackBody::mutable_onselectedaudiodevicechangedparam() {
-  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* _msg = _internal_mutable_onselectedaudiodevicechangedparam();
-  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParam)
-  return _msg;
-}
-inline void CallbackBody::set_allocated_onselectedaudiodevicechangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* onselectedaudiodevicechangedparam) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.onselectedaudiodevicechangedparam_;
-  }
-  if (onselectedaudiodevicechangedparam) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(onselectedaudiodevicechangedparam);
-    if (message_arena != submessage_arena) {
-      onselectedaudiodevicechangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, onselectedaudiodevicechangedparam, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x04000000u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x04000000u;
-  }
-  _impl_.onselectedaudiodevicechangedparam_ = onselectedaudiodevicechangedparam;
-  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParam)
-}
-
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParams onLiveTranscriptionStatusParam = 29;
 inline bool CallbackBody::has_onlivetranscriptionstatusparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onlivetranscriptionstatusparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onlivetranscriptionstatusparam() {
   if (_impl_.onlivetranscriptionstatusparam_ != nullptr) _impl_.onlivetranscriptionstatusparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams& CallbackBody::_internal_onlivetranscriptionstatusparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* p = _impl_.onlivetranscriptionstatusparam_;
@@ -34482,14 +34012,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onlivetranscriptionstatuspa
   }
   _impl_.onlivetranscriptionstatusparam_ = onlivetranscriptionstatusparam;
   if (onlivetranscriptionstatusparam) {
-    _impl_._has_bits_[0] |= 0x08000000u;
+    _impl_._has_bits_[0] |= 0x02000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x08000000u;
+    _impl_._has_bits_[0] &= ~0x02000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* CallbackBody::release_onlivetranscriptionstatusparam() {
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* temp = _impl_.onlivetranscriptionstatusparam_;
   _impl_.onlivetranscriptionstatusparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34505,13 +34035,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionS
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* CallbackBody::unsafe_arena_release_onlivetranscriptionstatusparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParam)
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* temp = _impl_.onlivetranscriptionstatusparam_;
   _impl_.onlivetranscriptionstatusparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams* CallbackBody::_internal_mutable_onlivetranscriptionstatusparam() {
-  _impl_._has_bits_[0] |= 0x08000000u;
+  _impl_._has_bits_[0] |= 0x02000000u;
   if (_impl_.onlivetranscriptionstatusparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams>(GetArenaForAllocation());
     _impl_.onlivetranscriptionstatusparam_ = p;
@@ -34535,9 +34065,9 @@ inline void CallbackBody::set_allocated_onlivetranscriptionstatusparam(::com::el
       onlivetranscriptionstatusparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onlivetranscriptionstatusparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x08000000u;
+    _impl_._has_bits_[0] |= 0x02000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x08000000u;
+    _impl_._has_bits_[0] &= ~0x02000000u;
   }
   _impl_.onlivetranscriptionstatusparam_ = onlivetranscriptionstatusparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParam)
@@ -34545,13 +34075,13 @@ inline void CallbackBody::set_allocated_onlivetranscriptionstatusparam(::com::el
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParams onLiveTranscriptionMsgErrorParam = 31;
 inline bool CallbackBody::has_onlivetranscriptionmsgerrorparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onlivetranscriptionmsgerrorparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onlivetranscriptionmsgerrorparam() {
   if (_impl_.onlivetranscriptionmsgerrorparam_ != nullptr) _impl_.onlivetranscriptionmsgerrorparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams& CallbackBody::_internal_onlivetranscriptionmsgerrorparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* p = _impl_.onlivetranscriptionmsgerrorparam_;
@@ -34569,14 +34099,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onlivetranscriptionmsgerror
   }
   _impl_.onlivetranscriptionmsgerrorparam_ = onlivetranscriptionmsgerrorparam;
   if (onlivetranscriptionmsgerrorparam) {
-    _impl_._has_bits_[0] |= 0x10000000u;
+    _impl_._has_bits_[0] |= 0x04000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x10000000u;
+    _impl_._has_bits_[0] &= ~0x04000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* CallbackBody::release_onlivetranscriptionmsgerrorparam() {
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* temp = _impl_.onlivetranscriptionmsgerrorparam_;
   _impl_.onlivetranscriptionmsgerrorparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34592,13 +34122,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionM
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* CallbackBody::unsafe_arena_release_onlivetranscriptionmsgerrorparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParam)
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* temp = _impl_.onlivetranscriptionmsgerrorparam_;
   _impl_.onlivetranscriptionmsgerrorparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams* CallbackBody::_internal_mutable_onlivetranscriptionmsgerrorparam() {
-  _impl_._has_bits_[0] |= 0x10000000u;
+  _impl_._has_bits_[0] |= 0x04000000u;
   if (_impl_.onlivetranscriptionmsgerrorparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams>(GetArenaForAllocation());
     _impl_.onlivetranscriptionmsgerrorparam_ = p;
@@ -34622,9 +34152,9 @@ inline void CallbackBody::set_allocated_onlivetranscriptionmsgerrorparam(::com::
       onlivetranscriptionmsgerrorparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onlivetranscriptionmsgerrorparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x10000000u;
+    _impl_._has_bits_[0] |= 0x04000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x10000000u;
+    _impl_._has_bits_[0] &= ~0x04000000u;
   }
   _impl_.onlivetranscriptionmsgerrorparam_ = onlivetranscriptionmsgerrorparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParam)
@@ -34632,13 +34162,13 @@ inline void CallbackBody::set_allocated_onlivetranscriptionmsgerrorparam(::com::
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParams onChatMsgDeleteNotificationParam = 32;
 inline bool CallbackBody::has_onchatmsgdeletenotificationparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onchatmsgdeletenotificationparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onchatmsgdeletenotificationparam() {
   if (_impl_.onchatmsgdeletenotificationparam_ != nullptr) _impl_.onchatmsgdeletenotificationparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x20000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams& CallbackBody::_internal_onchatmsgdeletenotificationparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* p = _impl_.onchatmsgdeletenotificationparam_;
@@ -34656,14 +34186,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onchatmsgdeletenotification
   }
   _impl_.onchatmsgdeletenotificationparam_ = onchatmsgdeletenotificationparam;
   if (onchatmsgdeletenotificationparam) {
-    _impl_._has_bits_[0] |= 0x20000000u;
+    _impl_._has_bits_[0] |= 0x08000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x20000000u;
+    _impl_._has_bits_[0] &= ~0x08000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* CallbackBody::release_onchatmsgdeletenotificationparam() {
-  _impl_._has_bits_[0] &= ~0x20000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* temp = _impl_.onchatmsgdeletenotificationparam_;
   _impl_.onchatmsgdeletenotificationparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34679,13 +34209,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotif
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* CallbackBody::unsafe_arena_release_onchatmsgdeletenotificationparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParam)
-  _impl_._has_bits_[0] &= ~0x20000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* temp = _impl_.onchatmsgdeletenotificationparam_;
   _impl_.onchatmsgdeletenotificationparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams* CallbackBody::_internal_mutable_onchatmsgdeletenotificationparam() {
-  _impl_._has_bits_[0] |= 0x20000000u;
+  _impl_._has_bits_[0] |= 0x08000000u;
   if (_impl_.onchatmsgdeletenotificationparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams>(GetArenaForAllocation());
     _impl_.onchatmsgdeletenotificationparam_ = p;
@@ -34709,9 +34239,9 @@ inline void CallbackBody::set_allocated_onchatmsgdeletenotificationparam(::com::
       onchatmsgdeletenotificationparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onchatmsgdeletenotificationparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x20000000u;
+    _impl_._has_bits_[0] |= 0x08000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x20000000u;
+    _impl_._has_bits_[0] &= ~0x08000000u;
   }
   _impl_.onchatmsgdeletenotificationparam_ = onchatmsgdeletenotificationparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParam)
@@ -34719,13 +34249,13 @@ inline void CallbackBody::set_allocated_onchatmsgdeletenotificationparam(::com::
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParams liveTranscriptionMsgInfoParam = 33;
 inline bool CallbackBody::has_livetranscriptionmsginfoparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x40000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.livetranscriptionmsginfoparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_livetranscriptionmsginfoparam() {
   if (_impl_.livetranscriptionmsginfoparam_ != nullptr) _impl_.livetranscriptionmsginfoparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x40000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams& CallbackBody::_internal_livetranscriptionmsginfoparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* p = _impl_.livetranscriptionmsginfoparam_;
@@ -34743,14 +34273,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_livetranscriptionmsginfopar
   }
   _impl_.livetranscriptionmsginfoparam_ = livetranscriptionmsginfoparam;
   if (livetranscriptionmsginfoparam) {
-    _impl_._has_bits_[0] |= 0x40000000u;
+    _impl_._has_bits_[0] |= 0x10000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x40000000u;
+    _impl_._has_bits_[0] &= ~0x10000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* CallbackBody::release_livetranscriptionmsginfoparam() {
-  _impl_._has_bits_[0] &= ~0x40000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* temp = _impl_.livetranscriptionmsginfoparam_;
   _impl_.livetranscriptionmsginfoparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34766,13 +34296,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsg
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* CallbackBody::unsafe_arena_release_livetranscriptionmsginfoparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParam)
-  _impl_._has_bits_[0] &= ~0x40000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* temp = _impl_.livetranscriptionmsginfoparam_;
   _impl_.livetranscriptionmsginfoparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams* CallbackBody::_internal_mutable_livetranscriptionmsginfoparam() {
-  _impl_._has_bits_[0] |= 0x40000000u;
+  _impl_._has_bits_[0] |= 0x10000000u;
   if (_impl_.livetranscriptionmsginfoparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams>(GetArenaForAllocation());
     _impl_.livetranscriptionmsginfoparam_ = p;
@@ -34796,9 +34326,9 @@ inline void CallbackBody::set_allocated_livetranscriptionmsginfoparam(::com::ele
       livetranscriptionmsginfoparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, livetranscriptionmsginfoparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x40000000u;
+    _impl_._has_bits_[0] |= 0x10000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x40000000u;
+    _impl_._has_bits_[0] &= ~0x10000000u;
   }
   _impl_.livetranscriptionmsginfoparam_ = livetranscriptionmsginfoparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParam)
@@ -34806,13 +34336,13 @@ inline void CallbackBody::set_allocated_livetranscriptionmsginfoparam(::com::ele
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParams onCalloutJoinSuccessParam = 34;
 inline bool CallbackBody::has_oncalloutjoinsuccessparam() const {
-  bool value = (_impl_._has_bits_[0] & 0x80000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.oncalloutjoinsuccessparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_oncalloutjoinsuccessparam() {
   if (_impl_.oncalloutjoinsuccessparam_ != nullptr) _impl_.oncalloutjoinsuccessparam_->Clear();
-  _impl_._has_bits_[0] &= ~0x80000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams& CallbackBody::_internal_oncalloutjoinsuccessparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* p = _impl_.oncalloutjoinsuccessparam_;
@@ -34830,14 +34360,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_oncalloutjoinsuccessparam(
   }
   _impl_.oncalloutjoinsuccessparam_ = oncalloutjoinsuccessparam;
   if (oncalloutjoinsuccessparam) {
-    _impl_._has_bits_[0] |= 0x80000000u;
+    _impl_._has_bits_[0] |= 0x20000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x80000000u;
+    _impl_._has_bits_[0] &= ~0x20000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* CallbackBody::release_oncalloutjoinsuccessparam() {
-  _impl_._has_bits_[0] &= ~0x80000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* temp = _impl_.oncalloutjoinsuccessparam_;
   _impl_.oncalloutjoinsuccessparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34853,13 +34383,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccess
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* CallbackBody::unsafe_arena_release_oncalloutjoinsuccessparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParam)
-  _impl_._has_bits_[0] &= ~0x80000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* temp = _impl_.oncalloutjoinsuccessparam_;
   _impl_.oncalloutjoinsuccessparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams* CallbackBody::_internal_mutable_oncalloutjoinsuccessparam() {
-  _impl_._has_bits_[0] |= 0x80000000u;
+  _impl_._has_bits_[0] |= 0x20000000u;
   if (_impl_.oncalloutjoinsuccessparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams>(GetArenaForAllocation());
     _impl_.oncalloutjoinsuccessparam_ = p;
@@ -34883,9 +34413,9 @@ inline void CallbackBody::set_allocated_oncalloutjoinsuccessparam(::com::electro
       oncalloutjoinsuccessparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, oncalloutjoinsuccessparam, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x80000000u;
+    _impl_._has_bits_[0] |= 0x20000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x80000000u;
+    _impl_._has_bits_[0] &= ~0x20000000u;
   }
   _impl_.oncalloutjoinsuccessparam_ = oncalloutjoinsuccessparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParam)
@@ -34893,13 +34423,13 @@ inline void CallbackBody::set_allocated_oncalloutjoinsuccessparam(::com::electro
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParams onSessionLeaveParam = 35;
 inline bool CallbackBody::has_onsessionleaveparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000001u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x40000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onsessionleaveparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onsessionleaveparam() {
   if (_impl_.onsessionleaveparam_ != nullptr) _impl_.onsessionleaveparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x40000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams& CallbackBody::_internal_onsessionleaveparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* p = _impl_.onsessionleaveparam_;
@@ -34917,14 +34447,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onsessionleaveparam(
   }
   _impl_.onsessionleaveparam_ = onsessionleaveparam;
   if (onsessionleaveparam) {
-    _impl_._has_bits_[1] |= 0x00000001u;
+    _impl_._has_bits_[0] |= 0x40000000u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000001u;
+    _impl_._has_bits_[0] &= ~0x40000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* CallbackBody::release_onsessionleaveparam() {
-  _impl_._has_bits_[1] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x40000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* temp = _impl_.onsessionleaveparam_;
   _impl_.onsessionleaveparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -34940,13 +34470,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* CallbackBody::unsafe_arena_release_onsessionleaveparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParam)
-  _impl_._has_bits_[1] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x40000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* temp = _impl_.onsessionleaveparam_;
   _impl_.onsessionleaveparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* CallbackBody::_internal_mutable_onsessionleaveparam() {
-  _impl_._has_bits_[1] |= 0x00000001u;
+  _impl_._has_bits_[0] |= 0x40000000u;
   if (_impl_.onsessionleaveparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams>(GetArenaForAllocation());
     _impl_.onsessionleaveparam_ = p;
@@ -34970,9 +34500,9 @@ inline void CallbackBody::set_allocated_onsessionleaveparam(::com::electron::zoo
       onsessionleaveparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onsessionleaveparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000001u;
+    _impl_._has_bits_[0] |= 0x40000000u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000001u;
+    _impl_._has_bits_[0] &= ~0x40000000u;
   }
   _impl_.onsessionleaveparam_ = onsessionleaveparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParam)
@@ -34980,13 +34510,13 @@ inline void CallbackBody::set_allocated_onsessionleaveparam(::com::electron::zoo
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParams onShareCursorDataReceivedParam = 36;
 inline bool CallbackBody::has_onsharecursordatareceivedparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x80000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onsharecursordatareceivedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onsharecursordatareceivedparam() {
   if (_impl_.onsharecursordatareceivedparam_ != nullptr) _impl_.onsharecursordatareceivedparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x80000000u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams& CallbackBody::_internal_onsharecursordatareceivedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* p = _impl_.onsharecursordatareceivedparam_;
@@ -35004,14 +34534,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onsharecursordatareceivedpa
   }
   _impl_.onsharecursordatareceivedparam_ = onsharecursordatareceivedparam;
   if (onsharecursordatareceivedparam) {
-    _impl_._has_bits_[1] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x80000000u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x80000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* CallbackBody::release_onsharecursordatareceivedparam() {
-  _impl_._has_bits_[1] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x80000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* temp = _impl_.onsharecursordatareceivedparam_;
   _impl_.onsharecursordatareceivedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35027,13 +34557,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataRec
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* CallbackBody::unsafe_arena_release_onsharecursordatareceivedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParam)
-  _impl_._has_bits_[1] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x80000000u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* temp = _impl_.onsharecursordatareceivedparam_;
   _impl_.onsharecursordatareceivedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* CallbackBody::_internal_mutable_onsharecursordatareceivedparam() {
-  _impl_._has_bits_[1] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x80000000u;
   if (_impl_.onsharecursordatareceivedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams>(GetArenaForAllocation());
     _impl_.onsharecursordatareceivedparam_ = p;
@@ -35057,9 +34587,9 @@ inline void CallbackBody::set_allocated_onsharecursordatareceivedparam(::com::el
       onsharecursordatareceivedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onsharecursordatareceivedparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x80000000u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x80000000u;
   }
   _impl_.onsharecursordatareceivedparam_ = onsharecursordatareceivedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParam)
@@ -35067,13 +34597,13 @@ inline void CallbackBody::set_allocated_onsharecursordatareceivedparam(::com::el
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParams onRemoteControlStatusParam = 37;
 inline bool CallbackBody::has_onremotecontrolstatusparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onremotecontrolstatusparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onremotecontrolstatusparam() {
   if (_impl_.onremotecontrolstatusparam_ != nullptr) _impl_.onremotecontrolstatusparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000004u;
+  _impl_._has_bits_[1] &= ~0x00000001u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams& CallbackBody::_internal_onremotecontrolstatusparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* p = _impl_.onremotecontrolstatusparam_;
@@ -35091,14 +34621,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onremotecontrolstatusparam(
   }
   _impl_.onremotecontrolstatusparam_ = onremotecontrolstatusparam;
   if (onremotecontrolstatusparam) {
-    _impl_._has_bits_[1] |= 0x00000004u;
+    _impl_._has_bits_[1] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000004u;
+    _impl_._has_bits_[1] &= ~0x00000001u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* CallbackBody::release_onremotecontrolstatusparam() {
-  _impl_._has_bits_[1] &= ~0x00000004u;
+  _impl_._has_bits_[1] &= ~0x00000001u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* temp = _impl_.onremotecontrolstatusparam_;
   _impl_.onremotecontrolstatusparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35114,13 +34644,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatu
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* CallbackBody::unsafe_arena_release_onremotecontrolstatusparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParam)
-  _impl_._has_bits_[1] &= ~0x00000004u;
+  _impl_._has_bits_[1] &= ~0x00000001u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* temp = _impl_.onremotecontrolstatusparam_;
   _impl_.onremotecontrolstatusparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* CallbackBody::_internal_mutable_onremotecontrolstatusparam() {
-  _impl_._has_bits_[1] |= 0x00000004u;
+  _impl_._has_bits_[1] |= 0x00000001u;
   if (_impl_.onremotecontrolstatusparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams>(GetArenaForAllocation());
     _impl_.onremotecontrolstatusparam_ = p;
@@ -35144,9 +34674,9 @@ inline void CallbackBody::set_allocated_onremotecontrolstatusparam(::com::electr
       onremotecontrolstatusparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onremotecontrolstatusparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000004u;
+    _impl_._has_bits_[1] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000004u;
+    _impl_._has_bits_[1] &= ~0x00000001u;
   }
   _impl_.onremotecontrolstatusparam_ = onremotecontrolstatusparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParam)
@@ -35154,13 +34684,13 @@ inline void CallbackBody::set_allocated_onremotecontrolstatusparam(::com::electr
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParams onRemoteControlRequestReceivedParam = 38;
 inline bool CallbackBody::has_onremotecontrolrequestreceivedparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000002u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onremotecontrolrequestreceivedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onremotecontrolrequestreceivedparam() {
   if (_impl_.onremotecontrolrequestreceivedparam_ != nullptr) _impl_.onremotecontrolrequestreceivedparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000008u;
+  _impl_._has_bits_[1] &= ~0x00000002u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams& CallbackBody::_internal_onremotecontrolrequestreceivedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* p = _impl_.onremotecontrolrequestreceivedparam_;
@@ -35178,14 +34708,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onremotecontrolrequestrecei
   }
   _impl_.onremotecontrolrequestreceivedparam_ = onremotecontrolrequestreceivedparam;
   if (onremotecontrolrequestreceivedparam) {
-    _impl_._has_bits_[1] |= 0x00000008u;
+    _impl_._has_bits_[1] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000008u;
+    _impl_._has_bits_[1] &= ~0x00000002u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* CallbackBody::release_onremotecontrolrequestreceivedparam() {
-  _impl_._has_bits_[1] &= ~0x00000008u;
+  _impl_._has_bits_[1] &= ~0x00000002u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* temp = _impl_.onremotecontrolrequestreceivedparam_;
   _impl_.onremotecontrolrequestreceivedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35201,13 +34731,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlReque
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* CallbackBody::unsafe_arena_release_onremotecontrolrequestreceivedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParam)
-  _impl_._has_bits_[1] &= ~0x00000008u;
+  _impl_._has_bits_[1] &= ~0x00000002u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* temp = _impl_.onremotecontrolrequestreceivedparam_;
   _impl_.onremotecontrolrequestreceivedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams* CallbackBody::_internal_mutable_onremotecontrolrequestreceivedparam() {
-  _impl_._has_bits_[1] |= 0x00000008u;
+  _impl_._has_bits_[1] |= 0x00000002u;
   if (_impl_.onremotecontrolrequestreceivedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams>(GetArenaForAllocation());
     _impl_.onremotecontrolrequestreceivedparam_ = p;
@@ -35231,9 +34761,9 @@ inline void CallbackBody::set_allocated_onremotecontrolrequestreceivedparam(::co
       onremotecontrolrequestreceivedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onremotecontrolrequestreceivedparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000008u;
+    _impl_._has_bits_[1] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000008u;
+    _impl_._has_bits_[1] &= ~0x00000002u;
   }
   _impl_.onremotecontrolrequestreceivedparam_ = onremotecontrolrequestreceivedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParam)
@@ -35241,13 +34771,13 @@ inline void CallbackBody::set_allocated_onremotecontrolrequestreceivedparam(::co
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParams onRemoteControlServiceInstallResultParam = 39;
 inline bool CallbackBody::has_onremotecontrolserviceinstallresultparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000004u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onremotecontrolserviceinstallresultparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onremotecontrolserviceinstallresultparam() {
   if (_impl_.onremotecontrolserviceinstallresultparam_ != nullptr) _impl_.onremotecontrolserviceinstallresultparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000010u;
+  _impl_._has_bits_[1] &= ~0x00000004u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams& CallbackBody::_internal_onremotecontrolserviceinstallresultparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* p = _impl_.onremotecontrolserviceinstallresultparam_;
@@ -35265,14 +34795,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onremotecontrolserviceinsta
   }
   _impl_.onremotecontrolserviceinstallresultparam_ = onremotecontrolserviceinstallresultparam;
   if (onremotecontrolserviceinstallresultparam) {
-    _impl_._has_bits_[1] |= 0x00000010u;
+    _impl_._has_bits_[1] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000010u;
+    _impl_._has_bits_[1] &= ~0x00000004u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* CallbackBody::release_onremotecontrolserviceinstallresultparam() {
-  _impl_._has_bits_[1] &= ~0x00000010u;
+  _impl_._has_bits_[1] &= ~0x00000004u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* temp = _impl_.onremotecontrolserviceinstallresultparam_;
   _impl_.onremotecontrolserviceinstallresultparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35288,13 +34818,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServi
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* CallbackBody::unsafe_arena_release_onremotecontrolserviceinstallresultparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParam)
-  _impl_._has_bits_[1] &= ~0x00000010u;
+  _impl_._has_bits_[1] &= ~0x00000004u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* temp = _impl_.onremotecontrolserviceinstallresultparam_;
   _impl_.onremotecontrolserviceinstallresultparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams* CallbackBody::_internal_mutable_onremotecontrolserviceinstallresultparam() {
-  _impl_._has_bits_[1] |= 0x00000010u;
+  _impl_._has_bits_[1] |= 0x00000004u;
   if (_impl_.onremotecontrolserviceinstallresultparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams>(GetArenaForAllocation());
     _impl_.onremotecontrolserviceinstallresultparam_ = p;
@@ -35318,9 +34848,9 @@ inline void CallbackBody::set_allocated_onremotecontrolserviceinstallresultparam
       onremotecontrolserviceinstallresultparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onremotecontrolserviceinstallresultparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000010u;
+    _impl_._has_bits_[1] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000010u;
+    _impl_._has_bits_[1] &= ~0x00000004u;
   }
   _impl_.onremotecontrolserviceinstallresultparam_ = onremotecontrolserviceinstallresultparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParam)
@@ -35328,13 +34858,13 @@ inline void CallbackBody::set_allocated_onremotecontrolserviceinstallresultparam
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParams onSpotlightVideoChangedParam = 40;
 inline bool CallbackBody::has_onspotlightvideochangedparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000008u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onspotlightvideochangedparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onspotlightvideochangedparam() {
   if (_impl_.onspotlightvideochangedparam_ != nullptr) _impl_.onspotlightvideochangedparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000020u;
+  _impl_._has_bits_[1] &= ~0x00000008u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams& CallbackBody::_internal_onspotlightvideochangedparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* p = _impl_.onspotlightvideochangedparam_;
@@ -35352,14 +34882,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onspotlightvideochangedpara
   }
   _impl_.onspotlightvideochangedparam_ = onspotlightvideochangedparam;
   if (onspotlightvideochangedparam) {
-    _impl_._has_bits_[1] |= 0x00000020u;
+    _impl_._has_bits_[1] |= 0x00000008u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000020u;
+    _impl_._has_bits_[1] &= ~0x00000008u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* CallbackBody::release_onspotlightvideochangedparam() {
-  _impl_._has_bits_[1] &= ~0x00000020u;
+  _impl_._has_bits_[1] &= ~0x00000008u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* temp = _impl_.onspotlightvideochangedparam_;
   _impl_.onspotlightvideochangedparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35375,13 +34905,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChan
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* CallbackBody::unsafe_arena_release_onspotlightvideochangedparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParam)
-  _impl_._has_bits_[1] &= ~0x00000020u;
+  _impl_._has_bits_[1] &= ~0x00000008u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* temp = _impl_.onspotlightvideochangedparam_;
   _impl_.onspotlightvideochangedparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams* CallbackBody::_internal_mutable_onspotlightvideochangedparam() {
-  _impl_._has_bits_[1] |= 0x00000020u;
+  _impl_._has_bits_[1] |= 0x00000008u;
   if (_impl_.onspotlightvideochangedparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams>(GetArenaForAllocation());
     _impl_.onspotlightvideochangedparam_ = p;
@@ -35405,9 +34935,9 @@ inline void CallbackBody::set_allocated_onspotlightvideochangedparam(::com::elec
       onspotlightvideochangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onspotlightvideochangedparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000020u;
+    _impl_._has_bits_[1] |= 0x00000008u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000020u;
+    _impl_._has_bits_[1] &= ~0x00000008u;
   }
   _impl_.onspotlightvideochangedparam_ = onspotlightvideochangedparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParam)
@@ -35415,13 +34945,13 @@ inline void CallbackBody::set_allocated_onspotlightvideochangedparam(::com::elec
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParams onBindIncomingLiveStreamResponseParam = 41;
 inline bool CallbackBody::has_onbindincominglivestreamresponseparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onbindincominglivestreamresponseparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onbindincominglivestreamresponseparam() {
   if (_impl_.onbindincominglivestreamresponseparam_ != nullptr) _impl_.onbindincominglivestreamresponseparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000040u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams& CallbackBody::_internal_onbindincominglivestreamresponseparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* p = _impl_.onbindincominglivestreamresponseparam_;
@@ -35439,14 +34969,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onbindincominglivestreamres
   }
   _impl_.onbindincominglivestreamresponseparam_ = onbindincominglivestreamresponseparam;
   if (onbindincominglivestreamresponseparam) {
-    _impl_._has_bits_[1] |= 0x00000040u;
+    _impl_._has_bits_[1] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000040u;
+    _impl_._has_bits_[1] &= ~0x00000010u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* CallbackBody::release_onbindincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] &= ~0x00000040u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* temp = _impl_.onbindincominglivestreamresponseparam_;
   _impl_.onbindincominglivestreamresponseparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35462,13 +34992,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveSt
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* CallbackBody::unsafe_arena_release_onbindincominglivestreamresponseparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParam)
-  _impl_._has_bits_[1] &= ~0x00000040u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* temp = _impl_.onbindincominglivestreamresponseparam_;
   _impl_.onbindincominglivestreamresponseparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams* CallbackBody::_internal_mutable_onbindincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] |= 0x00000040u;
+  _impl_._has_bits_[1] |= 0x00000010u;
   if (_impl_.onbindincominglivestreamresponseparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams>(GetArenaForAllocation());
     _impl_.onbindincominglivestreamresponseparam_ = p;
@@ -35492,9 +35022,9 @@ inline void CallbackBody::set_allocated_onbindincominglivestreamresponseparam(::
       onbindincominglivestreamresponseparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onbindincominglivestreamresponseparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000040u;
+    _impl_._has_bits_[1] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000040u;
+    _impl_._has_bits_[1] &= ~0x00000010u;
   }
   _impl_.onbindincominglivestreamresponseparam_ = onbindincominglivestreamresponseparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParam)
@@ -35502,13 +35032,13 @@ inline void CallbackBody::set_allocated_onbindincominglivestreamresponseparam(::
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParams onUnbindIncomingLiveStreamResponseParam = 42;
 inline bool CallbackBody::has_onunbindincominglivestreamresponseparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000020u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onunbindincominglivestreamresponseparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onunbindincominglivestreamresponseparam() {
   if (_impl_.onunbindincominglivestreamresponseparam_ != nullptr) _impl_.onunbindincominglivestreamresponseparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000080u;
+  _impl_._has_bits_[1] &= ~0x00000020u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams& CallbackBody::_internal_onunbindincominglivestreamresponseparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* p = _impl_.onunbindincominglivestreamresponseparam_;
@@ -35526,14 +35056,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onunbindincominglivestreamr
   }
   _impl_.onunbindincominglivestreamresponseparam_ = onunbindincominglivestreamresponseparam;
   if (onunbindincominglivestreamresponseparam) {
-    _impl_._has_bits_[1] |= 0x00000080u;
+    _impl_._has_bits_[1] |= 0x00000020u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000080u;
+    _impl_._has_bits_[1] &= ~0x00000020u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* CallbackBody::release_onunbindincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] &= ~0x00000080u;
+  _impl_._has_bits_[1] &= ~0x00000020u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* temp = _impl_.onunbindincominglivestreamresponseparam_;
   _impl_.onunbindincominglivestreamresponseparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35549,13 +35079,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLive
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* CallbackBody::unsafe_arena_release_onunbindincominglivestreamresponseparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParam)
-  _impl_._has_bits_[1] &= ~0x00000080u;
+  _impl_._has_bits_[1] &= ~0x00000020u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* temp = _impl_.onunbindincominglivestreamresponseparam_;
   _impl_.onunbindincominglivestreamresponseparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams* CallbackBody::_internal_mutable_onunbindincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] |= 0x00000080u;
+  _impl_._has_bits_[1] |= 0x00000020u;
   if (_impl_.onunbindincominglivestreamresponseparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams>(GetArenaForAllocation());
     _impl_.onunbindincominglivestreamresponseparam_ = p;
@@ -35579,9 +35109,9 @@ inline void CallbackBody::set_allocated_onunbindincominglivestreamresponseparam(
       onunbindincominglivestreamresponseparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onunbindincominglivestreamresponseparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000080u;
+    _impl_._has_bits_[1] |= 0x00000020u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000080u;
+    _impl_._has_bits_[1] &= ~0x00000020u;
   }
   _impl_.onunbindincominglivestreamresponseparam_ = onunbindincominglivestreamresponseparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParam)
@@ -35589,13 +35119,13 @@ inline void CallbackBody::set_allocated_onunbindincominglivestreamresponseparam(
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParams onIncomingLiveStreamStatusResponseParam = 43;
 inline bool CallbackBody::has_onincominglivestreamstatusresponseparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000040u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onincominglivestreamstatusresponseparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onincominglivestreamstatusresponseparam() {
   if (_impl_.onincominglivestreamstatusresponseparam_ != nullptr) _impl_.onincominglivestreamstatusresponseparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000100u;
+  _impl_._has_bits_[1] &= ~0x00000040u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams& CallbackBody::_internal_onincominglivestreamstatusresponseparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* p = _impl_.onincominglivestreamstatusresponseparam_;
@@ -35613,14 +35143,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onincominglivestreamstatusr
   }
   _impl_.onincominglivestreamstatusresponseparam_ = onincominglivestreamstatusresponseparam;
   if (onincominglivestreamstatusresponseparam) {
-    _impl_._has_bits_[1] |= 0x00000100u;
+    _impl_._has_bits_[1] |= 0x00000040u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000100u;
+    _impl_._has_bits_[1] &= ~0x00000040u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* CallbackBody::release_onincominglivestreamstatusresponseparam() {
-  _impl_._has_bits_[1] &= ~0x00000100u;
+  _impl_._has_bits_[1] &= ~0x00000040u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* temp = _impl_.onincominglivestreamstatusresponseparam_;
   _impl_.onincominglivestreamstatusresponseparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35636,13 +35166,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStream
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* CallbackBody::unsafe_arena_release_onincominglivestreamstatusresponseparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParam)
-  _impl_._has_bits_[1] &= ~0x00000100u;
+  _impl_._has_bits_[1] &= ~0x00000040u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* temp = _impl_.onincominglivestreamstatusresponseparam_;
   _impl_.onincominglivestreamstatusresponseparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams* CallbackBody::_internal_mutable_onincominglivestreamstatusresponseparam() {
-  _impl_._has_bits_[1] |= 0x00000100u;
+  _impl_._has_bits_[1] |= 0x00000040u;
   if (_impl_.onincominglivestreamstatusresponseparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams>(GetArenaForAllocation());
     _impl_.onincominglivestreamstatusresponseparam_ = p;
@@ -35666,9 +35196,9 @@ inline void CallbackBody::set_allocated_onincominglivestreamstatusresponseparam(
       onincominglivestreamstatusresponseparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onincominglivestreamstatusresponseparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000100u;
+    _impl_._has_bits_[1] |= 0x00000040u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000100u;
+    _impl_._has_bits_[1] &= ~0x00000040u;
   }
   _impl_.onincominglivestreamstatusresponseparam_ = onincominglivestreamstatusresponseparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParam)
@@ -35676,13 +35206,13 @@ inline void CallbackBody::set_allocated_onincominglivestreamstatusresponseparam(
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParams onStartIncomingLiveStreamResponseParam = 44;
 inline bool CallbackBody::has_onstartincominglivestreamresponseparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000080u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onstartincominglivestreamresponseparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onstartincominglivestreamresponseparam() {
   if (_impl_.onstartincominglivestreamresponseparam_ != nullptr) _impl_.onstartincominglivestreamresponseparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000200u;
+  _impl_._has_bits_[1] &= ~0x00000080u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams& CallbackBody::_internal_onstartincominglivestreamresponseparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* p = _impl_.onstartincominglivestreamresponseparam_;
@@ -35700,14 +35230,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onstartincominglivestreamre
   }
   _impl_.onstartincominglivestreamresponseparam_ = onstartincominglivestreamresponseparam;
   if (onstartincominglivestreamresponseparam) {
-    _impl_._has_bits_[1] |= 0x00000200u;
+    _impl_._has_bits_[1] |= 0x00000080u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000200u;
+    _impl_._has_bits_[1] &= ~0x00000080u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* CallbackBody::release_onstartincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] &= ~0x00000200u;
+  _impl_._has_bits_[1] &= ~0x00000080u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* temp = _impl_.onstartincominglivestreamresponseparam_;
   _impl_.onstartincominglivestreamresponseparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35723,13 +35253,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveS
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* CallbackBody::unsafe_arena_release_onstartincominglivestreamresponseparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParam)
-  _impl_._has_bits_[1] &= ~0x00000200u;
+  _impl_._has_bits_[1] &= ~0x00000080u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* temp = _impl_.onstartincominglivestreamresponseparam_;
   _impl_.onstartincominglivestreamresponseparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* CallbackBody::_internal_mutable_onstartincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] |= 0x00000200u;
+  _impl_._has_bits_[1] |= 0x00000080u;
   if (_impl_.onstartincominglivestreamresponseparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams>(GetArenaForAllocation());
     _impl_.onstartincominglivestreamresponseparam_ = p;
@@ -35753,9 +35283,9 @@ inline void CallbackBody::set_allocated_onstartincominglivestreamresponseparam(:
       onstartincominglivestreamresponseparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onstartincominglivestreamresponseparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000200u;
+    _impl_._has_bits_[1] |= 0x00000080u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000200u;
+    _impl_._has_bits_[1] &= ~0x00000080u;
   }
   _impl_.onstartincominglivestreamresponseparam_ = onstartincominglivestreamresponseparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParam)
@@ -35763,13 +35293,13 @@ inline void CallbackBody::set_allocated_onstartincominglivestreamresponseparam(:
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParams onStopIncomingLiveStreamResponseParam = 45;
 inline bool CallbackBody::has_onstopincominglivestreamresponseparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000100u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onstopincominglivestreamresponseparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onstopincominglivestreamresponseparam() {
   if (_impl_.onstopincominglivestreamresponseparam_ != nullptr) _impl_.onstopincominglivestreamresponseparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000400u;
+  _impl_._has_bits_[1] &= ~0x00000100u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams& CallbackBody::_internal_onstopincominglivestreamresponseparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* p = _impl_.onstopincominglivestreamresponseparam_;
@@ -35787,14 +35317,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onstopincominglivestreamres
   }
   _impl_.onstopincominglivestreamresponseparam_ = onstopincominglivestreamresponseparam;
   if (onstopincominglivestreamresponseparam) {
-    _impl_._has_bits_[1] |= 0x00000400u;
+    _impl_._has_bits_[1] |= 0x00000100u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000400u;
+    _impl_._has_bits_[1] &= ~0x00000100u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* CallbackBody::release_onstopincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] &= ~0x00000400u;
+  _impl_._has_bits_[1] &= ~0x00000100u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* temp = _impl_.onstopincominglivestreamresponseparam_;
   _impl_.onstopincominglivestreamresponseparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35810,13 +35340,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveSt
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* CallbackBody::unsafe_arena_release_onstopincominglivestreamresponseparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParam)
-  _impl_._has_bits_[1] &= ~0x00000400u;
+  _impl_._has_bits_[1] &= ~0x00000100u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* temp = _impl_.onstopincominglivestreamresponseparam_;
   _impl_.onstopincominglivestreamresponseparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* CallbackBody::_internal_mutable_onstopincominglivestreamresponseparam() {
-  _impl_._has_bits_[1] |= 0x00000400u;
+  _impl_._has_bits_[1] |= 0x00000100u;
   if (_impl_.onstopincominglivestreamresponseparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams>(GetArenaForAllocation());
     _impl_.onstopincominglivestreamresponseparam_ = p;
@@ -35840,9 +35370,9 @@ inline void CallbackBody::set_allocated_onstopincominglivestreamresponseparam(::
       onstopincominglivestreamresponseparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onstopincominglivestreamresponseparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000400u;
+    _impl_._has_bits_[1] |= 0x00000100u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000400u;
+    _impl_._has_bits_[1] &= ~0x00000100u;
   }
   _impl_.onstopincominglivestreamresponseparam_ = onstopincominglivestreamresponseparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParam)
@@ -35850,13 +35380,13 @@ inline void CallbackBody::set_allocated_onstopincominglivestreamresponseparam(::
 
 // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParams onFailedToStartShareParam = 46;
 inline bool CallbackBody::has_onfailedtostartshareparam() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000200u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.onfailedtostartshareparam_ != nullptr);
   return value;
 }
 inline void CallbackBody::clear_onfailedtostartshareparam() {
   if (_impl_.onfailedtostartshareparam_ != nullptr) _impl_.onfailedtostartshareparam_->Clear();
-  _impl_._has_bits_[1] &= ~0x00000800u;
+  _impl_._has_bits_[1] &= ~0x00000200u;
 }
 inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams& CallbackBody::_internal_onfailedtostartshareparam() const {
   const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* p = _impl_.onfailedtostartshareparam_;
@@ -35874,14 +35404,14 @@ inline void CallbackBody::unsafe_arena_set_allocated_onfailedtostartshareparam(
   }
   _impl_.onfailedtostartshareparam_ = onfailedtostartshareparam;
   if (onfailedtostartshareparam) {
-    _impl_._has_bits_[1] |= 0x00000800u;
+    _impl_._has_bits_[1] |= 0x00000200u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000800u;
+    _impl_._has_bits_[1] &= ~0x00000200u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParam)
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* CallbackBody::release_onfailedtostartshareparam() {
-  _impl_._has_bits_[1] &= ~0x00000800u;
+  _impl_._has_bits_[1] &= ~0x00000200u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* temp = _impl_.onfailedtostartshareparam_;
   _impl_.onfailedtostartshareparam_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -35897,13 +35427,13 @@ inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShare
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* CallbackBody::unsafe_arena_release_onfailedtostartshareparam() {
   // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParam)
-  _impl_._has_bits_[1] &= ~0x00000800u;
+  _impl_._has_bits_[1] &= ~0x00000200u;
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* temp = _impl_.onfailedtostartshareparam_;
   _impl_.onfailedtostartshareparam_ = nullptr;
   return temp;
 }
 inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* CallbackBody::_internal_mutable_onfailedtostartshareparam() {
-  _impl_._has_bits_[1] |= 0x00000800u;
+  _impl_._has_bits_[1] |= 0x00000200u;
   if (_impl_.onfailedtostartshareparam_ == nullptr) {
     auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams>(GetArenaForAllocation());
     _impl_.onfailedtostartshareparam_ = p;
@@ -35927,9 +35457,9 @@ inline void CallbackBody::set_allocated_onfailedtostartshareparam(::com::electro
       onfailedtostartshareparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, onfailedtostartshareparam, submessage_arena);
     }
-    _impl_._has_bits_[1] |= 0x00000800u;
+    _impl_._has_bits_[1] |= 0x00000200u;
   } else {
-    _impl_._has_bits_[1] &= ~0x00000800u;
+    _impl_._has_bits_[1] &= ~0x00000200u;
   }
   _impl_.onfailedtostartshareparam_ = onfailedtostartshareparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParam)

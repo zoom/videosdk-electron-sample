@@ -777,19 +777,6 @@ struct CallbackBody_onRemoteControlServiceInstallResultParamsDefaultTypeInternal
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onRemoteControlServiceInstallResultParamsDefaultTypeInternal _CallbackBody_onRemoteControlServiceInstallResultParams_default_instance_;
-PROTOBUF_CONSTEXPR CallbackBody_onHostAskUnmuteParams::CallbackBody_onHostAskUnmuteParams(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._cached_size_)*/{}} {}
-struct CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal() {}
-  union {
-    CallbackBody_onHostAskUnmuteParams _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onHostAskUnmuteParamsDefaultTypeInternal _CallbackBody_onHostAskUnmuteParams_default_instance_;
 PROTOBUF_CONSTEXPR CallbackBody_onMultiCameraStreamStatusChangedParams::CallbackBody_onMultiCameraStreamStatusChangedParams(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -861,19 +848,6 @@ struct CallbackBody_onTestMicStatusChangedParamsDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onTestMicStatusChangedParamsDefaultTypeInternal _CallbackBody_onTestMicStatusChangedParams_default_instance_;
-PROTOBUF_CONSTEXPR CallbackBody_onSelectedAudioDeviceChangedParams::CallbackBody_onSelectedAudioDeviceChangedParams(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._cached_size_)*/{}} {}
-struct CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal() {}
-  union {
-    CallbackBody_onSelectedAudioDeviceChangedParams _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onSelectedAudioDeviceChangedParamsDefaultTypeInternal _CallbackBody_onSelectedAudioDeviceChangedParams_default_instance_;
 PROTOBUF_CONSTEXPR CallbackBody_onLiveTranscriptionStatusParams::CallbackBody_onLiveTranscriptionStatusParams(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -1126,13 +1100,11 @@ PROTOBUF_CONSTEXPR CallbackBody::CallbackBody(
   , /*decltype(_impl_.oncameracontrolrequestresultparam_)*/nullptr
   , /*decltype(_impl_.oncameracontrolrequestreceivedparam_)*/nullptr
   , /*decltype(_impl_.oncommandchannelconnectresultparam_)*/nullptr
-  , /*decltype(_impl_.onhostaskunmuteparam_)*/nullptr
   , /*decltype(_impl_.oninvitebyphonestatusparam_)*/nullptr
   , /*decltype(_impl_.onmulticamerastreamstatuschangedparam_)*/nullptr
   , /*decltype(_impl_.onmicspeakervolumechangedparam_)*/nullptr
   , /*decltype(_impl_.onaudiodevicestatuschangedparam_)*/nullptr
   , /*decltype(_impl_.ontestmicstatuschangedparam_)*/nullptr
-  , /*decltype(_impl_.onselectedaudiodevicechangedparam_)*/nullptr
   , /*decltype(_impl_.onlivetranscriptionstatusparam_)*/nullptr
   , /*decltype(_impl_.onlivetranscriptionmsgerrorparam_)*/nullptr
   , /*decltype(_impl_.onchatmsgdeletenotificationparam_)*/nullptr
@@ -13341,147 +13313,6 @@ std::string CallbackBody_onRemoteControlServiceInstallResultParams::GetTypeName(
 
 // ===================================================================
 
-class CallbackBody_onHostAskUnmuteParams::_Internal {
- public:
-};
-
-CallbackBody_onHostAskUnmuteParams::CallbackBody_onHostAskUnmuteParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-}
-CallbackBody_onHostAskUnmuteParams::CallbackBody_onHostAskUnmuteParams(const CallbackBody_onHostAskUnmuteParams& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<std::string>(
-      from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-}
-
-inline void CallbackBody_onHostAskUnmuteParams::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-CallbackBody_onHostAskUnmuteParams::~CallbackBody_onHostAskUnmuteParams() {
-  // @@protoc_insertion_point(destructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CallbackBody_onHostAskUnmuteParams::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void CallbackBody_onHostAskUnmuteParams::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CallbackBody_onHostAskUnmuteParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear<std::string>();
-}
-
-const char* CallbackBody_onHostAskUnmuteParams::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-::uint8_t* CallbackBody_onHostAskUnmuteParams::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  return target;
-}
-
-::size_t CallbackBody_onHostAskUnmuteParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
-  }
-  int cached_size = ::_pbi::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CallbackBody_onHostAskUnmuteParams::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::_pbi::DownCast<const CallbackBody_onHostAskUnmuteParams*>(
-      &from));
-}
-
-void CallbackBody_onHostAskUnmuteParams::MergeFrom(const CallbackBody_onHostAskUnmuteParams& from) {
-  CallbackBody_onHostAskUnmuteParams* const _this = this;
-  // @@protoc_insertion_point(class_specific_merge_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-}
-
-void CallbackBody_onHostAskUnmuteParams::CopyFrom(const CallbackBody_onHostAskUnmuteParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CallbackBody_onHostAskUnmuteParams::IsInitialized() const {
-  return true;
-}
-
-void CallbackBody_onHostAskUnmuteParams::InternalSwap(CallbackBody_onHostAskUnmuteParams* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-}
-
-std::string CallbackBody_onHostAskUnmuteParams::GetTypeName() const {
-  return "com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams";
-}
-
-// ===================================================================
-
 class CallbackBody_onMultiCameraStreamStatusChangedParams::_Internal {
  public:
   using HasBits = decltype(std::declval<CallbackBody_onMultiCameraStreamStatusChangedParams>()._impl_._has_bits_);
@@ -14432,147 +14263,6 @@ void CallbackBody_onTestMicStatusChangedParams::InternalSwap(CallbackBody_onTest
 
 std::string CallbackBody_onTestMicStatusChangedParams::GetTypeName() const {
   return "com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParams";
-}
-
-// ===================================================================
-
-class CallbackBody_onSelectedAudioDeviceChangedParams::_Internal {
- public:
-};
-
-CallbackBody_onSelectedAudioDeviceChangedParams::CallbackBody_onSelectedAudioDeviceChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-}
-CallbackBody_onSelectedAudioDeviceChangedParams::CallbackBody_onSelectedAudioDeviceChangedParams(const CallbackBody_onSelectedAudioDeviceChangedParams& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<std::string>(
-      from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-}
-
-inline void CallbackBody_onSelectedAudioDeviceChangedParams::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-CallbackBody_onSelectedAudioDeviceChangedParams::~CallbackBody_onSelectedAudioDeviceChangedParams() {
-  // @@protoc_insertion_point(destructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CallbackBody_onSelectedAudioDeviceChangedParams::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear<std::string>();
-}
-
-const char* CallbackBody_onSelectedAudioDeviceChangedParams::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-::uint8_t* CallbackBody_onSelectedAudioDeviceChangedParams::_InternalSerialize(
-    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  return target;
-}
-
-::size_t CallbackBody_onSelectedAudioDeviceChangedParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
-  }
-  int cached_size = ::_pbi::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::_pbi::DownCast<const CallbackBody_onSelectedAudioDeviceChangedParams*>(
-      &from));
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::MergeFrom(const CallbackBody_onSelectedAudioDeviceChangedParams& from) {
-  CallbackBody_onSelectedAudioDeviceChangedParams* const _this = this;
-  // @@protoc_insertion_point(class_specific_merge_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::CopyFrom(const CallbackBody_onSelectedAudioDeviceChangedParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CallbackBody_onSelectedAudioDeviceChangedParams::IsInitialized() const {
-  return true;
-}
-
-void CallbackBody_onSelectedAudioDeviceChangedParams::InternalSwap(CallbackBody_onSelectedAudioDeviceChangedParams* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-}
-
-std::string CallbackBody_onSelectedAudioDeviceChangedParams::GetTypeName() const {
-  return "com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams";
 }
 
 // ===================================================================
@@ -17621,7 +17311,7 @@ class CallbackBody::_Internal {
   static constexpr ::int32_t kHasBitsOffset =
     8 * PROTOBUF_FIELD_OFFSET(CallbackBody, _impl_._has_bits_);
   static void set_has_msgtype(HasBits* has_bits) {
-    (*has_bits)[1] |= 4096u;
+    (*has_bits)[1] |= 1024u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onErrorParams& onerrorparam(const CallbackBody* msg);
   static void set_has_onerrorparam(HasBits* has_bits) {
@@ -17703,101 +17393,93 @@ class CallbackBody::_Internal {
   static void set_has_oncommandchannelconnectresultparam(HasBits* has_bits) {
     (*has_bits)[0] |= 524288u;
   }
-  static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams& onhostaskunmuteparam(const CallbackBody* msg);
-  static void set_has_onhostaskunmuteparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
-  }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams& oninvitebyphonestatusparam(const CallbackBody* msg);
   static void set_has_oninvitebyphonestatusparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 1048576u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams& onmulticamerastreamstatuschangedparam(const CallbackBody* msg);
   static void set_has_onmulticamerastreamstatuschangedparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
+    (*has_bits)[0] |= 2097152u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams& onmicspeakervolumechangedparam(const CallbackBody* msg);
   static void set_has_onmicspeakervolumechangedparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
+    (*has_bits)[0] |= 4194304u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams& onaudiodevicestatuschangedparam(const CallbackBody* msg);
   static void set_has_onaudiodevicestatuschangedparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 16777216u;
+    (*has_bits)[0] |= 8388608u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams& ontestmicstatuschangedparam(const CallbackBody* msg);
   static void set_has_ontestmicstatuschangedparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 33554432u;
-  }
-  static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams& onselectedaudiodevicechangedparam(const CallbackBody* msg);
-  static void set_has_onselectedaudiodevicechangedparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 67108864u;
+    (*has_bits)[0] |= 16777216u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams& onlivetranscriptionstatusparam(const CallbackBody* msg);
   static void set_has_onlivetranscriptionstatusparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 134217728u;
+    (*has_bits)[0] |= 33554432u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams& onlivetranscriptionmsgerrorparam(const CallbackBody* msg);
   static void set_has_onlivetranscriptionmsgerrorparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 268435456u;
+    (*has_bits)[0] |= 67108864u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams& onchatmsgdeletenotificationparam(const CallbackBody* msg);
   static void set_has_onchatmsgdeletenotificationparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 536870912u;
+    (*has_bits)[0] |= 134217728u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams& livetranscriptionmsginfoparam(const CallbackBody* msg);
   static void set_has_livetranscriptionmsginfoparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 1073741824u;
+    (*has_bits)[0] |= 268435456u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams& oncalloutjoinsuccessparam(const CallbackBody* msg);
   static void set_has_oncalloutjoinsuccessparam(HasBits* has_bits) {
-    (*has_bits)[0] |= 2147483648u;
+    (*has_bits)[0] |= 536870912u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams& onsessionleaveparam(const CallbackBody* msg);
   static void set_has_onsessionleaveparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 1u;
+    (*has_bits)[0] |= 1073741824u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams& onsharecursordatareceivedparam(const CallbackBody* msg);
   static void set_has_onsharecursordatareceivedparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 2u;
+    (*has_bits)[0] |= 2147483648u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams& onremotecontrolstatusparam(const CallbackBody* msg);
   static void set_has_onremotecontrolstatusparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 4u;
+    (*has_bits)[1] |= 1u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams& onremotecontrolrequestreceivedparam(const CallbackBody* msg);
   static void set_has_onremotecontrolrequestreceivedparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 8u;
+    (*has_bits)[1] |= 2u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams& onremotecontrolserviceinstallresultparam(const CallbackBody* msg);
   static void set_has_onremotecontrolserviceinstallresultparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 16u;
+    (*has_bits)[1] |= 4u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams& onspotlightvideochangedparam(const CallbackBody* msg);
   static void set_has_onspotlightvideochangedparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 32u;
+    (*has_bits)[1] |= 8u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams& onbindincominglivestreamresponseparam(const CallbackBody* msg);
   static void set_has_onbindincominglivestreamresponseparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 64u;
+    (*has_bits)[1] |= 16u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams& onunbindincominglivestreamresponseparam(const CallbackBody* msg);
   static void set_has_onunbindincominglivestreamresponseparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 128u;
+    (*has_bits)[1] |= 32u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams& onincominglivestreamstatusresponseparam(const CallbackBody* msg);
   static void set_has_onincominglivestreamstatusresponseparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 256u;
+    (*has_bits)[1] |= 64u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams& onstartincominglivestreamresponseparam(const CallbackBody* msg);
   static void set_has_onstartincominglivestreamresponseparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 512u;
+    (*has_bits)[1] |= 128u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams& onstopincominglivestreamresponseparam(const CallbackBody* msg);
   static void set_has_onstopincominglivestreamresponseparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 1024u;
+    (*has_bits)[1] |= 256u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams& onfailedtostartshareparam(const CallbackBody* msg);
   static void set_has_onfailedtostartshareparam(HasBits* has_bits) {
-    (*has_bits)[1] |= 2048u;
+    (*has_bits)[1] |= 512u;
   }
 };
 
@@ -17881,10 +17563,6 @@ const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCommandChannelConne
 CallbackBody::_Internal::oncommandchannelconnectresultparam(const CallbackBody* msg) {
   return *msg->_impl_.oncommandchannelconnectresultparam_;
 }
-const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams&
-CallbackBody::_Internal::onhostaskunmuteparam(const CallbackBody* msg) {
-  return *msg->_impl_.onhostaskunmuteparam_;
-}
 const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams&
 CallbackBody::_Internal::oninvitebyphonestatusparam(const CallbackBody* msg) {
   return *msg->_impl_.oninvitebyphonestatusparam_;
@@ -17904,10 +17582,6 @@ CallbackBody::_Internal::onaudiodevicestatuschangedparam(const CallbackBody* msg
 const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams&
 CallbackBody::_Internal::ontestmicstatuschangedparam(const CallbackBody* msg) {
   return *msg->_impl_.ontestmicstatuschangedparam_;
-}
-const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams&
-CallbackBody::_Internal::onselectedaudiodevicechangedparam(const CallbackBody* msg) {
-  return *msg->_impl_.onselectedaudiodevicechangedparam_;
 }
 const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams&
 CallbackBody::_Internal::onlivetranscriptionstatusparam(const CallbackBody* msg) {
@@ -18008,13 +17682,11 @@ CallbackBody::CallbackBody(const CallbackBody& from)
     , decltype(_impl_.oncameracontrolrequestresultparam_){nullptr}
     , decltype(_impl_.oncameracontrolrequestreceivedparam_){nullptr}
     , decltype(_impl_.oncommandchannelconnectresultparam_){nullptr}
-    , decltype(_impl_.onhostaskunmuteparam_){nullptr}
     , decltype(_impl_.oninvitebyphonestatusparam_){nullptr}
     , decltype(_impl_.onmulticamerastreamstatuschangedparam_){nullptr}
     , decltype(_impl_.onmicspeakervolumechangedparam_){nullptr}
     , decltype(_impl_.onaudiodevicestatuschangedparam_){nullptr}
     , decltype(_impl_.ontestmicstatuschangedparam_){nullptr}
-    , decltype(_impl_.onselectedaudiodevicechangedparam_){nullptr}
     , decltype(_impl_.onlivetranscriptionstatusparam_){nullptr}
     , decltype(_impl_.onlivetranscriptionmsgerrorparam_){nullptr}
     , decltype(_impl_.onchatmsgdeletenotificationparam_){nullptr}
@@ -18097,75 +17769,69 @@ CallbackBody::CallbackBody(const CallbackBody& from)
     _this->_impl_.oncommandchannelconnectresultparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCommandChannelConnectResultParams(*from._impl_.oncommandchannelconnectresultparam_);
   }
   if ((from._impl_._has_bits_[0] & 0x00100000u) != 0) {
-    _this->_impl_.onhostaskunmuteparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams(*from._impl_.onhostaskunmuteparam_);
-  }
-  if ((from._impl_._has_bits_[0] & 0x00200000u) != 0) {
     _this->_impl_.oninvitebyphonestatusparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams(*from._impl_.oninvitebyphonestatusparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00400000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x00200000u) != 0) {
     _this->_impl_.onmulticamerastreamstatuschangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams(*from._impl_.onmulticamerastreamstatuschangedparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00800000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x00400000u) != 0) {
     _this->_impl_.onmicspeakervolumechangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams(*from._impl_.onmicspeakervolumechangedparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x01000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x00800000u) != 0) {
     _this->_impl_.onaudiodevicestatuschangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams(*from._impl_.onaudiodevicestatuschangedparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x02000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x01000000u) != 0) {
     _this->_impl_.ontestmicstatuschangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams(*from._impl_.ontestmicstatuschangedparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x04000000u) != 0) {
-    _this->_impl_.onselectedaudiodevicechangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams(*from._impl_.onselectedaudiodevicechangedparam_);
-  }
-  if ((from._impl_._has_bits_[0] & 0x08000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x02000000u) != 0) {
     _this->_impl_.onlivetranscriptionstatusparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams(*from._impl_.onlivetranscriptionstatusparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x10000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x04000000u) != 0) {
     _this->_impl_.onlivetranscriptionmsgerrorparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams(*from._impl_.onlivetranscriptionmsgerrorparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x20000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x08000000u) != 0) {
     _this->_impl_.onchatmsgdeletenotificationparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams(*from._impl_.onchatmsgdeletenotificationparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x40000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x10000000u) != 0) {
     _this->_impl_.livetranscriptionmsginfoparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams(*from._impl_.livetranscriptionmsginfoparam_);
   }
-  if ((from._impl_._has_bits_[0] & 0x80000000u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x20000000u) != 0) {
     _this->_impl_.oncalloutjoinsuccessparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams(*from._impl_.oncalloutjoinsuccessparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000001u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x40000000u) != 0) {
     _this->_impl_.onsessionleaveparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams(*from._impl_.onsessionleaveparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000002u) != 0) {
+  if ((from._impl_._has_bits_[0] & 0x80000000u) != 0) {
     _this->_impl_.onsharecursordatareceivedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams(*from._impl_.onsharecursordatareceivedparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000004u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000001u) != 0) {
     _this->_impl_.onremotecontrolstatusparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams(*from._impl_.onremotecontrolstatusparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000008u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000002u) != 0) {
     _this->_impl_.onremotecontrolrequestreceivedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams(*from._impl_.onremotecontrolrequestreceivedparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000010u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000004u) != 0) {
     _this->_impl_.onremotecontrolserviceinstallresultparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams(*from._impl_.onremotecontrolserviceinstallresultparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000020u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000008u) != 0) {
     _this->_impl_.onspotlightvideochangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams(*from._impl_.onspotlightvideochangedparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000040u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000010u) != 0) {
     _this->_impl_.onbindincominglivestreamresponseparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams(*from._impl_.onbindincominglivestreamresponseparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000080u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000020u) != 0) {
     _this->_impl_.onunbindincominglivestreamresponseparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams(*from._impl_.onunbindincominglivestreamresponseparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000100u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000040u) != 0) {
     _this->_impl_.onincominglivestreamstatusresponseparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams(*from._impl_.onincominglivestreamstatusresponseparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000200u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000080u) != 0) {
     _this->_impl_.onstartincominglivestreamresponseparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams(*from._impl_.onstartincominglivestreamresponseparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000400u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000100u) != 0) {
     _this->_impl_.onstopincominglivestreamresponseparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams(*from._impl_.onstopincominglivestreamresponseparam_);
   }
-  if ((from._impl_._has_bits_[1] & 0x00000800u) != 0) {
+  if ((from._impl_._has_bits_[1] & 0x00000200u) != 0) {
     _this->_impl_.onfailedtostartshareparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams(*from._impl_.onfailedtostartshareparam_);
   }
   _this->_impl_.msgtype_ = from._impl_.msgtype_;
@@ -18197,13 +17863,11 @@ inline void CallbackBody::SharedCtor(::_pb::Arena* arena) {
     , decltype(_impl_.oncameracontrolrequestresultparam_){nullptr}
     , decltype(_impl_.oncameracontrolrequestreceivedparam_){nullptr}
     , decltype(_impl_.oncommandchannelconnectresultparam_){nullptr}
-    , decltype(_impl_.onhostaskunmuteparam_){nullptr}
     , decltype(_impl_.oninvitebyphonestatusparam_){nullptr}
     , decltype(_impl_.onmulticamerastreamstatuschangedparam_){nullptr}
     , decltype(_impl_.onmicspeakervolumechangedparam_){nullptr}
     , decltype(_impl_.onaudiodevicestatuschangedparam_){nullptr}
     , decltype(_impl_.ontestmicstatuschangedparam_){nullptr}
-    , decltype(_impl_.onselectedaudiodevicechangedparam_){nullptr}
     , decltype(_impl_.onlivetranscriptionstatusparam_){nullptr}
     , decltype(_impl_.onlivetranscriptionmsgerrorparam_){nullptr}
     , decltype(_impl_.onchatmsgdeletenotificationparam_){nullptr}
@@ -18257,13 +17921,11 @@ inline void CallbackBody::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.oncameracontrolrequestresultparam_;
   if (this != internal_default_instance()) delete _impl_.oncameracontrolrequestreceivedparam_;
   if (this != internal_default_instance()) delete _impl_.oncommandchannelconnectresultparam_;
-  if (this != internal_default_instance()) delete _impl_.onhostaskunmuteparam_;
   if (this != internal_default_instance()) delete _impl_.oninvitebyphonestatusparam_;
   if (this != internal_default_instance()) delete _impl_.onmulticamerastreamstatuschangedparam_;
   if (this != internal_default_instance()) delete _impl_.onmicspeakervolumechangedparam_;
   if (this != internal_default_instance()) delete _impl_.onaudiodevicestatuschangedparam_;
   if (this != internal_default_instance()) delete _impl_.ontestmicstatuschangedparam_;
-  if (this != internal_default_instance()) delete _impl_.onselectedaudiodevicechangedparam_;
   if (this != internal_default_instance()) delete _impl_.onlivetranscriptionstatusparam_;
   if (this != internal_default_instance()) delete _impl_.onlivetranscriptionmsgerrorparam_;
   if (this != internal_default_instance()) delete _impl_.onchatmsgdeletenotificationparam_;
@@ -18380,105 +18042,97 @@ void CallbackBody::Clear() {
       _impl_.oncommandchannelconnectresultparam_->Clear();
     }
     if (cached_has_bits & 0x00100000u) {
-      ABSL_DCHECK(_impl_.onhostaskunmuteparam_ != nullptr);
-      _impl_.onhostaskunmuteparam_->Clear();
-    }
-    if (cached_has_bits & 0x00200000u) {
       ABSL_DCHECK(_impl_.oninvitebyphonestatusparam_ != nullptr);
       _impl_.oninvitebyphonestatusparam_->Clear();
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       ABSL_DCHECK(_impl_.onmulticamerastreamstatuschangedparam_ != nullptr);
       _impl_.onmulticamerastreamstatuschangedparam_->Clear();
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       ABSL_DCHECK(_impl_.onmicspeakervolumechangedparam_ != nullptr);
       _impl_.onmicspeakervolumechangedparam_->Clear();
+    }
+    if (cached_has_bits & 0x00800000u) {
+      ABSL_DCHECK(_impl_.onaudiodevicestatuschangedparam_ != nullptr);
+      _impl_.onaudiodevicestatuschangedparam_->Clear();
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      ABSL_DCHECK(_impl_.onaudiodevicestatuschangedparam_ != nullptr);
-      _impl_.onaudiodevicestatuschangedparam_->Clear();
-    }
-    if (cached_has_bits & 0x02000000u) {
       ABSL_DCHECK(_impl_.ontestmicstatuschangedparam_ != nullptr);
       _impl_.ontestmicstatuschangedparam_->Clear();
     }
-    if (cached_has_bits & 0x04000000u) {
-      ABSL_DCHECK(_impl_.onselectedaudiodevicechangedparam_ != nullptr);
-      _impl_.onselectedaudiodevicechangedparam_->Clear();
-    }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x02000000u) {
       ABSL_DCHECK(_impl_.onlivetranscriptionstatusparam_ != nullptr);
       _impl_.onlivetranscriptionstatusparam_->Clear();
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x04000000u) {
       ABSL_DCHECK(_impl_.onlivetranscriptionmsgerrorparam_ != nullptr);
       _impl_.onlivetranscriptionmsgerrorparam_->Clear();
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x08000000u) {
       ABSL_DCHECK(_impl_.onchatmsgdeletenotificationparam_ != nullptr);
       _impl_.onchatmsgdeletenotificationparam_->Clear();
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x10000000u) {
       ABSL_DCHECK(_impl_.livetranscriptionmsginfoparam_ != nullptr);
       _impl_.livetranscriptionmsginfoparam_->Clear();
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x20000000u) {
       ABSL_DCHECK(_impl_.oncalloutjoinsuccessparam_ != nullptr);
       _impl_.oncalloutjoinsuccessparam_->Clear();
+    }
+    if (cached_has_bits & 0x40000000u) {
+      ABSL_DCHECK(_impl_.onsessionleaveparam_ != nullptr);
+      _impl_.onsessionleaveparam_->Clear();
+    }
+    if (cached_has_bits & 0x80000000u) {
+      ABSL_DCHECK(_impl_.onsharecursordatareceivedparam_ != nullptr);
+      _impl_.onsharecursordatareceivedparam_->Clear();
     }
   }
   cached_has_bits = _impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.onsessionleaveparam_ != nullptr);
-      _impl_.onsessionleaveparam_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.onsharecursordatareceivedparam_ != nullptr);
-      _impl_.onsharecursordatareceivedparam_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
       ABSL_DCHECK(_impl_.onremotecontrolstatusparam_ != nullptr);
       _impl_.onremotecontrolstatusparam_->Clear();
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000002u) {
       ABSL_DCHECK(_impl_.onremotecontrolrequestreceivedparam_ != nullptr);
       _impl_.onremotecontrolrequestreceivedparam_->Clear();
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       ABSL_DCHECK(_impl_.onremotecontrolserviceinstallresultparam_ != nullptr);
       _impl_.onremotecontrolserviceinstallresultparam_->Clear();
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000008u) {
       ABSL_DCHECK(_impl_.onspotlightvideochangedparam_ != nullptr);
       _impl_.onspotlightvideochangedparam_->Clear();
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000010u) {
       ABSL_DCHECK(_impl_.onbindincominglivestreamresponseparam_ != nullptr);
       _impl_.onbindincominglivestreamresponseparam_->Clear();
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000020u) {
       ABSL_DCHECK(_impl_.onunbindincominglivestreamresponseparam_ != nullptr);
       _impl_.onunbindincominglivestreamresponseparam_->Clear();
     }
-  }
-  if (cached_has_bits & 0x00000f00u) {
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000040u) {
       ABSL_DCHECK(_impl_.onincominglivestreamstatusresponseparam_ != nullptr);
       _impl_.onincominglivestreamstatusresponseparam_->Clear();
     }
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000080u) {
       ABSL_DCHECK(_impl_.onstartincominglivestreamresponseparam_ != nullptr);
       _impl_.onstartincominglivestreamresponseparam_->Clear();
     }
-    if (cached_has_bits & 0x00000400u) {
+  }
+  if (cached_has_bits & 0x00000300u) {
+    if (cached_has_bits & 0x00000100u) {
       ABSL_DCHECK(_impl_.onstopincominglivestreamresponseparam_ != nullptr);
       _impl_.onstopincominglivestreamresponseparam_->Clear();
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000200u) {
       ABSL_DCHECK(_impl_.onfailedtostartshareparam_ != nullptr);
       _impl_.onfailedtostartshareparam_->Clear();
     }
@@ -18684,15 +18338,6 @@ const char* CallbackBody::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           goto handle_unusual;
         }
         continue;
-      // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams onHostAskUnmuteParam = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 178)) {
-          ptr = ctx->ParseMessage(_internal_mutable_onhostaskunmuteparam(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
       // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 186)) {
@@ -18733,15 +18378,6 @@ const char* CallbackBody::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 218)) {
           ptr = ctx->ParseMessage(_internal_mutable_ontestmicstatuschangedparam(), ptr);
-          CHK_(ptr);
-        } else {
-          goto handle_unusual;
-        }
-        continue;
-      // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 226)) {
-          ptr = ctx->ParseMessage(_internal_mutable_onselectedaudiodevicechangedparam(), ptr);
           CHK_(ptr);
         } else {
           goto handle_unusual;
@@ -18931,7 +18567,7 @@ failure:
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional int32 msgtype = 1;
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(
         1, this->_internal_msgtype(), target);
@@ -19078,170 +18714,156 @@ failure:
         _Internal::oncommandchannelconnectresultparam(this).GetCachedSize(), target, stream);
   }
 
-  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams onHostAskUnmuteParam = 22;
-  if (cached_has_bits & 0x00100000u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(22, _Internal::onhostaskunmuteparam(this),
-        _Internal::onhostaskunmuteparam(this).GetCachedSize(), target, stream);
-  }
-
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(23, _Internal::oninvitebyphonestatusparam(this),
         _Internal::oninvitebyphonestatusparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParams onMultiCameraStreamStatusChangedParam = 24;
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x00200000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(24, _Internal::onmulticamerastreamstatuschangedparam(this),
         _Internal::onmulticamerastreamstatuschangedparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParams onMicSpeakerVolumeChangedParam = 25;
-  if (cached_has_bits & 0x00800000u) {
+  if (cached_has_bits & 0x00400000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(25, _Internal::onmicspeakervolumechangedparam(this),
         _Internal::onmicspeakervolumechangedparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParams onAudioDeviceStatusChangedParam = 26;
-  if (cached_has_bits & 0x01000000u) {
+  if (cached_has_bits & 0x00800000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(26, _Internal::onaudiodevicestatuschangedparam(this),
         _Internal::onaudiodevicestatuschangedparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParams onTestMicStatusChangedParam = 27;
-  if (cached_has_bits & 0x02000000u) {
+  if (cached_has_bits & 0x01000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(27, _Internal::ontestmicstatuschangedparam(this),
         _Internal::ontestmicstatuschangedparam(this).GetCachedSize(), target, stream);
   }
 
-  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
-  if (cached_has_bits & 0x04000000u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(28, _Internal::onselectedaudiodevicechangedparam(this),
-        _Internal::onselectedaudiodevicechangedparam(this).GetCachedSize(), target, stream);
-  }
-
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParams onLiveTranscriptionStatusParam = 29;
-  if (cached_has_bits & 0x08000000u) {
+  if (cached_has_bits & 0x02000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(29, _Internal::onlivetranscriptionstatusparam(this),
         _Internal::onlivetranscriptionstatusparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParams onLiveTranscriptionMsgErrorParam = 31;
-  if (cached_has_bits & 0x10000000u) {
+  if (cached_has_bits & 0x04000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(31, _Internal::onlivetranscriptionmsgerrorparam(this),
         _Internal::onlivetranscriptionmsgerrorparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParams onChatMsgDeleteNotificationParam = 32;
-  if (cached_has_bits & 0x20000000u) {
+  if (cached_has_bits & 0x08000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(32, _Internal::onchatmsgdeletenotificationparam(this),
         _Internal::onchatmsgdeletenotificationparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParams liveTranscriptionMsgInfoParam = 33;
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x10000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(33, _Internal::livetranscriptionmsginfoparam(this),
         _Internal::livetranscriptionmsginfoparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParams onCalloutJoinSuccessParam = 34;
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x20000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(34, _Internal::oncalloutjoinsuccessparam(this),
         _Internal::oncalloutjoinsuccessparam(this).GetCachedSize(), target, stream);
   }
 
-  cached_has_bits = _impl_._has_bits_[1];
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParams onSessionLeaveParam = 35;
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x40000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(35, _Internal::onsessionleaveparam(this),
         _Internal::onsessionleaveparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParams onShareCursorDataReceivedParam = 36;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x80000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(36, _Internal::onsharecursordatareceivedparam(this),
         _Internal::onsharecursordatareceivedparam(this).GetCachedSize(), target, stream);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParams onRemoteControlStatusParam = 37;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(37, _Internal::onremotecontrolstatusparam(this),
         _Internal::onremotecontrolstatusparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParams onRemoteControlRequestReceivedParam = 38;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000002u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(38, _Internal::onremotecontrolrequestreceivedparam(this),
         _Internal::onremotecontrolrequestreceivedparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParams onRemoteControlServiceInstallResultParam = 39;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000004u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(39, _Internal::onremotecontrolserviceinstallresultparam(this),
         _Internal::onremotecontrolserviceinstallresultparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParams onSpotlightVideoChangedParam = 40;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000008u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(40, _Internal::onspotlightvideochangedparam(this),
         _Internal::onspotlightvideochangedparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParams onBindIncomingLiveStreamResponseParam = 41;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000010u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(41, _Internal::onbindincominglivestreamresponseparam(this),
         _Internal::onbindincominglivestreamresponseparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParams onUnbindIncomingLiveStreamResponseParam = 42;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000020u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(42, _Internal::onunbindincominglivestreamresponseparam(this),
         _Internal::onunbindincominglivestreamresponseparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParams onIncomingLiveStreamStatusResponseParam = 43;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000040u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(43, _Internal::onincominglivestreamstatusresponseparam(this),
         _Internal::onincominglivestreamstatusresponseparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParams onStartIncomingLiveStreamResponseParam = 44;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000080u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(44, _Internal::onstartincominglivestreamresponseparam(this),
         _Internal::onstartincominglivestreamresponseparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParams onStopIncomingLiveStreamResponseParam = 45;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000100u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(45, _Internal::onstopincominglivestreamresponseparam(this),
         _Internal::onstopincominglivestreamresponseparam(this).GetCachedSize(), target, stream);
   }
 
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParams onFailedToStartShareParam = 46;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00000200u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(46, _Internal::onfailedtostartshareparam(this),
         _Internal::onfailedtostartshareparam(this).GetCachedSize(), target, stream);
@@ -19409,183 +19031,169 @@ failure:
           *_impl_.oncommandchannelconnectresultparam_);
     }
 
-    // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onHostAskUnmuteParams onHostAskUnmuteParam = 22;
-    if (cached_has_bits & 0x00100000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.onhostaskunmuteparam_);
-    }
-
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.oninvitebyphonestatusparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMultiCameraStreamStatusChangedParams onMultiCameraStreamStatusChangedParam = 24;
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onmulticamerastreamstatuschangedparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onMicSpeakerVolumeChangedParams onMicSpeakerVolumeChangedParam = 25;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onmicspeakervolumechangedparam_);
     }
 
-  }
-  if (cached_has_bits & 0xff000000u) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onAudioDeviceStatusChangedParams onAudioDeviceStatusChangedParam = 26;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onaudiodevicestatuschangedparam_);
     }
 
+  }
+  if (cached_has_bits & 0xff000000u) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onTestMicStatusChangedParams onTestMicStatusChangedParam = 27;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.ontestmicstatuschangedparam_);
     }
 
-    // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
-    if (cached_has_bits & 0x04000000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.onselectedaudiodevicechangedparam_);
-    }
-
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionStatusParams onLiveTranscriptionStatusParam = 29;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onlivetranscriptionstatusparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onLiveTranscriptionMsgErrorParams onLiveTranscriptionMsgErrorParam = 31;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onlivetranscriptionmsgerrorparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onChatMsgDeleteNotificationParams onChatMsgDeleteNotificationParam = 32;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onchatmsgdeletenotificationparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.liveTranscriptionMsgInfoParams liveTranscriptionMsgInfoParam = 33;
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.livetranscriptionmsginfoparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onCalloutJoinSuccessParams onCalloutJoinSuccessParam = 34;
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.oncalloutjoinsuccessparam_);
     }
 
-  }
-  cached_has_bits = _impl_._has_bits_[1];
-  if (cached_has_bits & 0x000000ffu) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSessionLeaveParams onSessionLeaveParam = 35;
-    if (cached_has_bits & 0x00000001u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onsessionleaveparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareCursorDataReceivedParams onShareCursorDataReceivedParam = 36;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onsharecursordatareceivedparam_);
     }
 
+  }
+  cached_has_bits = _impl_._has_bits_[1];
+  if (cached_has_bits & 0x000000ffu) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlStatusParams onRemoteControlStatusParam = 37;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onremotecontrolstatusparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlRequestReceivedParams onRemoteControlRequestReceivedParam = 38;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onremotecontrolrequestreceivedparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onRemoteControlServiceInstallResultParams onRemoteControlServiceInstallResultParam = 39;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onremotecontrolserviceinstallresultparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onSpotlightVideoChangedParams onSpotlightVideoChangedParam = 40;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onspotlightvideochangedparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onBindIncomingLiveStreamResponseParams onBindIncomingLiveStreamResponseParam = 41;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onbindincominglivestreamresponseparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onUnbindIncomingLiveStreamResponseParams onUnbindIncomingLiveStreamResponseParam = 42;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onunbindincominglivestreamresponseparam_);
     }
 
-  }
-  if (cached_has_bits & 0x00001f00u) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onIncomingLiveStreamStatusResponseParams onIncomingLiveStreamStatusResponseParam = 43;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onincominglivestreamstatusresponseparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStartIncomingLiveStreamResponseParams onStartIncomingLiveStreamResponseParam = 44;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onstartincominglivestreamresponseparam_);
     }
 
+  }
+  if (cached_has_bits & 0x00000700u) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParams onStopIncomingLiveStreamResponseParam = 45;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onstopincominglivestreamresponseparam_);
     }
 
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParams onFailedToStartShareParam = 46;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.onfailedtostartshareparam_);
     }
 
     // optional int32 msgtype = 1;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this->_internal_msgtype());
     }
@@ -19699,109 +19307,101 @@ void CallbackBody::MergeFrom(const CallbackBody& from) {
           from._internal_oncommandchannelconnectresultparam());
     }
     if (cached_has_bits & 0x00100000u) {
-      _this->_internal_mutable_onhostaskunmuteparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams::MergeFrom(
-          from._internal_onhostaskunmuteparam());
-    }
-    if (cached_has_bits & 0x00200000u) {
       _this->_internal_mutable_oninvitebyphonestatusparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onInviteByPhoneStatusParams::MergeFrom(
           from._internal_oninvitebyphonestatusparam());
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       _this->_internal_mutable_onmulticamerastreamstatuschangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams::MergeFrom(
           from._internal_onmulticamerastreamstatuschangedparam());
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       _this->_internal_mutable_onmicspeakervolumechangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onMicSpeakerVolumeChangedParams::MergeFrom(
           from._internal_onmicspeakervolumechangedparam());
+    }
+    if (cached_has_bits & 0x00800000u) {
+      _this->_internal_mutable_onaudiodevicestatuschangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams::MergeFrom(
+          from._internal_onaudiodevicestatuschangedparam());
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      _this->_internal_mutable_onaudiodevicestatuschangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioDeviceStatusChangedParams::MergeFrom(
-          from._internal_onaudiodevicestatuschangedparam());
-    }
-    if (cached_has_bits & 0x02000000u) {
       _this->_internal_mutable_ontestmicstatuschangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams::MergeFrom(
           from._internal_ontestmicstatuschangedparam());
     }
-    if (cached_has_bits & 0x04000000u) {
-      _this->_internal_mutable_onselectedaudiodevicechangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams::MergeFrom(
-          from._internal_onselectedaudiodevicechangedparam());
-    }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x02000000u) {
       _this->_internal_mutable_onlivetranscriptionstatusparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams::MergeFrom(
           from._internal_onlivetranscriptionstatusparam());
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x04000000u) {
       _this->_internal_mutable_onlivetranscriptionmsgerrorparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionMsgErrorParams::MergeFrom(
           from._internal_onlivetranscriptionmsgerrorparam());
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x08000000u) {
       _this->_internal_mutable_onchatmsgdeletenotificationparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onChatMsgDeleteNotificationParams::MergeFrom(
           from._internal_onchatmsgdeletenotificationparam());
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x10000000u) {
       _this->_internal_mutable_livetranscriptionmsginfoparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_liveTranscriptionMsgInfoParams::MergeFrom(
           from._internal_livetranscriptionmsginfoparam());
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x20000000u) {
       _this->_internal_mutable_oncalloutjoinsuccessparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onCalloutJoinSuccessParams::MergeFrom(
           from._internal_oncalloutjoinsuccessparam());
+    }
+    if (cached_has_bits & 0x40000000u) {
+      _this->_internal_mutable_onsessionleaveparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams::MergeFrom(
+          from._internal_onsessionleaveparam());
+    }
+    if (cached_has_bits & 0x80000000u) {
+      _this->_internal_mutable_onsharecursordatareceivedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams::MergeFrom(
+          from._internal_onsharecursordatareceivedparam());
     }
   }
   cached_has_bits = from._impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_onsessionleaveparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams::MergeFrom(
-          from._internal_onsessionleaveparam());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_onsharecursordatareceivedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams::MergeFrom(
-          from._internal_onsharecursordatareceivedparam());
-    }
-    if (cached_has_bits & 0x00000004u) {
       _this->_internal_mutable_onremotecontrolstatusparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams::MergeFrom(
           from._internal_onremotecontrolstatusparam());
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000002u) {
       _this->_internal_mutable_onremotecontrolrequestreceivedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlRequestReceivedParams::MergeFrom(
           from._internal_onremotecontrolrequestreceivedparam());
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_internal_mutable_onremotecontrolserviceinstallresultparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams::MergeFrom(
           from._internal_onremotecontrolserviceinstallresultparam());
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_internal_mutable_onspotlightvideochangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onSpotlightVideoChangedParams::MergeFrom(
           from._internal_onspotlightvideochangedparam());
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_internal_mutable_onbindincominglivestreamresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onBindIncomingLiveStreamResponseParams::MergeFrom(
           from._internal_onbindincominglivestreamresponseparam());
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000020u) {
       _this->_internal_mutable_onunbindincominglivestreamresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onUnbindIncomingLiveStreamResponseParams::MergeFrom(
           from._internal_onunbindincominglivestreamresponseparam());
     }
-  }
-  if (cached_has_bits & 0x00001f00u) {
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000040u) {
       _this->_internal_mutable_onincominglivestreamstatusresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onIncomingLiveStreamStatusResponseParams::MergeFrom(
           from._internal_onincominglivestreamstatusresponseparam());
     }
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000080u) {
       _this->_internal_mutable_onstartincominglivestreamresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams::MergeFrom(
           from._internal_onstartincominglivestreamresponseparam());
     }
-    if (cached_has_bits & 0x00000400u) {
+  }
+  if (cached_has_bits & 0x00000700u) {
+    if (cached_has_bits & 0x00000100u) {
       _this->_internal_mutable_onstopincominglivestreamresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams::MergeFrom(
           from._internal_onstopincominglivestreamresponseparam());
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000200u) {
       _this->_internal_mutable_onfailedtostartshareparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams::MergeFrom(
           from._internal_onfailedtostartshareparam());
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000400u) {
       _this->_impl_.msgtype_ = from._impl_.msgtype_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
@@ -42185,10 +41785,6 @@ template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBod
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams >(Arena* arena) {
   return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlServiceInstallResultParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams*
-Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams >(arena);
-}
 template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams*
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams >(Arena* arena) {
   return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onMultiCameraStreamStatusChangedParams >(arena);
@@ -42204,10 +41800,6 @@ Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_
 template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams*
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams >(Arena* arena) {
   return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onTestMicStatusChangedParams >(arena);
-}
-template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams*
-Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams >(arena);
 }
 template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams*
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onLiveTranscriptionStatusParams >(Arena* arena) {

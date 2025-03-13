@@ -631,6 +631,15 @@ void ZNativeVideoSDKWrap::onFailedToStartShare(IZoomVideoSDKUser* pUser)
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
 }
+void ZNativeVideoSDKWrap::onCameraListChanged()
+{
+	if (m_pSink)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		callBackBody.set_msgtype(CallMessageType_onCameraListChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
 void ZNativeVideoSDKWrap::onLiveStreamStatusChanged(ZNZoomVideoSDKLiveStreamStatus status)
 {
 	if (m_pSink)
@@ -794,9 +803,6 @@ void ZNativeVideoSDKWrap::onHostAskUnmute()
 	if (m_pSink)
 	{
 		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
-		com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onHostAskUnmuteParams;
-
-		callBackBody.set_allocated_onhostaskunmuteparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onHostAskUnmute);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
@@ -969,9 +975,6 @@ void ZNativeVideoSDKWrap::onSelectedAudioDeviceChanged()
 	if (m_pSink)
 	{
 		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
-		com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onSelectedAudioDeviceChangedParams;
-
-		callBackBody.set_allocated_onselectedaudiodevicechangedparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onSelectedAudioDeviceChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}

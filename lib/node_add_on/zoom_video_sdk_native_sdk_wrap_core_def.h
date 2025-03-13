@@ -542,6 +542,7 @@ typedef enum {
 	CallMessageType_onStartIncomingLiveStreamResponse, // Callback event that starts the binded stream.
 	CallMessageType_onStopIncomingLiveStreamResponse, // Callback event that stops the binded stream.
 	CallMessageType_onFailedToStartShare, // Invoked when a user failed to start sharing.
+	CallMessageType_onCameraListChanged, // Notify that the camera list has changed.
 }ZNCallMessageType;
 
 /*! \enum PhoneStatus

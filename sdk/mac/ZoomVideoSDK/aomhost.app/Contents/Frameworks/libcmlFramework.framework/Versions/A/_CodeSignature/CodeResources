@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		Nrc7bkzZlHIAsBoIYdDv/RVQ57I=
+		eS18Tdlif6UbZhPa7DbDUsECx+I=
 		</data>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -142,27 +142,27 @@
 		</data>
 		<key>Resources/flm.mlmodelc/analytics/coremldata.bin</key>
 		<data>
-		nx3DYbZ57UO8XK7p6LlzFNZ0ioM=
+		I3BmYAF2cmDpTeUZSSwMCZd9css=
 		</data>
 		<key>Resources/flm.mlmodelc/coremldata.bin</key>
 		<data>
-		fxp4hbm3tnA21x5ishqn3ErqzOQ=
+		Au/biZLs7gWS8KcIoUELyyFqiyc=
 		</data>
 		<key>Resources/flm.mlmodelc/metadata.json</key>
 		<data>
-		ZquhNbR2SArsXAUZShNLFjgrS5g=
+		eNBwAIAP1D4MNXHpGRI4aS+oxoM=
 		</data>
 		<key>Resources/flm.mlmodelc/model.espresso.weights</key>
 		<data>
-		b5I9z9WPPW88aqneccr9SF8v0RI=
+		WVs6A6z3Zf7N1aeHLO6FD5grhEc=
 		</data>
 		<key>Resources/flm.mlmodelc/model/coremldata.bin</key>
 		<data>
-		sAilHvVxCPam2pSz/l8ae9uYGG4=
+		/ipnj+6sTUIP60uko8yhcl+XyTU=
 		</data>
 		<key>Resources/flm.mlmodelc/neural_network_optionals/coremldata.bin</key>
 		<data>
-		uA3l0Th1hUHF8FJlrRRKufqG0ds=
+		tkgF5pxT7RlO+9uypQti9obolyA=
 		</data>
 		<key>Resources/hand_detection_weights.bin</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>Resources/landmark_weights.bin</key>
 		<data>
-		iiK6xZsCTCB8O9n7uylxGUrQe5c=
+		7yfbTVwImayNs50e4s4rEOEBk8I=
 		</data>
 		<key>Resources/lip_sync.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Resources/sr_270p.mlmodelc/coremldata.bin</key>
 		<data>
-		sDHTLwaTaa6FAUDutRVimWtwzaM=
+		XGIhpu74Mo3Wz5J1UR6Lan+puw8=
 		</data>
 		<key>Resources/sr_270p.mlmodelc/metadata.json</key>
 		<data>
@@ -365,7 +365,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l7GwcTqvRkImyVuWDFmOeXOjpbiCtSUIMjas1RaB1xo=
+			r7IEVZsopl2zrJxtirmtMXN2qU/5Tq1KINcfSUra8gc=
 			</data>
 		</dict>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
@@ -582,42 +582,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lsUJvh1v4BPVO4kNP7Dyv2Xyn4qzW9OeRUreYoSVIb4=
+			tVlKN7CtssQFl4OrTuyHYo07ybEq3suBOKi7SlrCWoY=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e3kUczjX+NXhLYeNRTGDQFyS9I+HR/p4rK/T61f4yik=
+			1XBGQ/Cjj2ZuD/7bMdWDGksPMxkJCq86+v8vxpvMkMs=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z5aW++Wv4G134PLethws/D7LB4EUxt8XuA/hDj/3OLE=
+			BAvFjQxatRNoxymMObjradtXZTlOkgdP3eV+zQIYV/c=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/model.espresso.weights</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Rciyt2L4izKV0kCTR5JilA2AB3aM/60+JiGSl/BClgE=
+			dPVCvBLPban7DtA6iqWraqpETBFHg+/a+6xHFbwFNmo=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/model/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UVkIvdgrGVUYi/wprJkauBSI5CsljIVSHFvZVZacuTs=
+			ON/mPuCjg0afFrYxbfZq2jeFcA+PSZ5kqfDgpQlT07Q=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/neural_network_optionals/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
+			WTG9U2xFUClKISxvyNPBvuddqBeYC6C2cchgPa+zYjg=
 			</data>
 		</dict>
 		<key>Resources/hand_detection_weights.bin</key>
@@ -722,7 +722,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sho+HWSLRFTDySOCF2i/UX9O8RMANviF7Sx9FZBoAPc=
+			p7jtEnypxNHAUllg44LDhtBQdFEzz/F1HoSusWVZkJY=
 			</data>
 		</dict>
 		<key>Resources/lip_sync.mlmodelc/analytics/coremldata.bin</key>
@@ -834,7 +834,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A+19eZ+UC0G3E601WtyXWXl+CEV2yyDSzJNGhJ/7iVg=
+			2mAh60+4VFSaxfZOlhmE+EPV3yHRb+Q9C+pZJacEL2s=
 			</data>
 		</dict>
 		<key>Resources/sr_270p.mlmodelc/metadata.json</key>

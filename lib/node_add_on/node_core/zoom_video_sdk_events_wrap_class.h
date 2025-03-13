@@ -606,7 +606,10 @@ public:
 	}
 	virtual void onCameraListChanged()
 	{
-
+		if (owner_)
+		{
+			owner_->onCameraListChanged();
+		}
 	}
 	virtual void onCalloutJoinSuccess(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, const zchar_t* phoneNumber)
 	{

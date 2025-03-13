@@ -231,9 +231,6 @@ message CallbackBody{
 		optional bool bSuccess = 1;
 	}
 	
-	message onHostAskUnmuteParams{
-	}
-	
 	message onMultiCameraStreamStatusChangedParams{
 		optional int32 status = 1;
 		optional VideoSDKUser user = 2;
@@ -253,9 +250,7 @@ message CallbackBody{
 	message onTestMicStatusChangedParams{
 		optional int32 status = 1;
 	}
-	
-	message onSelectedAudioDeviceChangedParams{
-	}
+
 	message onLiveTranscriptionStatusParams{
 		optional int32 status = 1;
 	}
@@ -326,7 +321,7 @@ message CallbackBody{
 								// 40:onCalloutJoinSuccess 41:onShareCursorDataReceived
 								// 42:onRemoteControlStatus 43:onRemoteControlRequestReceived 44:onRemoteControlServiceInstallResult 45:onSpotlightVideoChanged
 								// 46:onBindIncomingLiveStreamResponse 47:onUnbindIncomingLiveStreamResponse 48:onIncomingLiveStreamStatusResponse 49:onStartIncomingLiveStreamResponse 50:onStopIncomingLiveStreamResponse
-								// 51:onFailedToStartShareParams
+								// 51:onFailedToStartShare 52:onCameraListChanged
 	optional onErrorParams onErrorParam = 2;
 	optional onUserJoinParams onUserJoinParam = 3;
 	optional onUserLeaveParams onUserLeaveParam = 4;
@@ -347,13 +342,11 @@ message CallbackBody{
 	optional onCameraControlRequestResultParams onCameraControlRequestResultParam = 19;
 	optional onCameraControlRequestReceivedParams onCameraControlRequestReceivedParam = 20;
 	optional onCommandChannelConnectResultParams onCommandChannelConnectResultParam = 21;
-	optional onHostAskUnmuteParams onHostAskUnmuteParam = 22;
 	optional onInviteByPhoneStatusParams onInviteByPhoneStatusParam = 23;
 	optional onMultiCameraStreamStatusChangedParams onMultiCameraStreamStatusChangedParam = 24;
 	optional onMicSpeakerVolumeChangedParams onMicSpeakerVolumeChangedParam = 25;
 	optional onAudioDeviceStatusChangedParams onAudioDeviceStatusChangedParam = 26;
 	optional onTestMicStatusChangedParams onTestMicStatusChangedParam = 27;
-	optional onSelectedAudioDeviceChangedParams onSelectedAudioDeviceChangedParam = 28;
 	optional onLiveTranscriptionStatusParams onLiveTranscriptionStatusParam = 29;
 	optional onLiveTranscriptionMsgErrorParams onLiveTranscriptionMsgErrorParam = 31;
 	optional onChatMsgDeleteNotificationParams onChatMsgDeleteNotificationParam = 32;

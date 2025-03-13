@@ -110,6 +110,7 @@ public:
 	void onStartIncomingLiveStreamResponse(bool bSuccess, ZoomSTRING strStreamKeyID);
 	void onStopIncomingLiveStreamResponse(bool bSuccess, ZoomSTRING strStreamKeyID);
 	void onFailedToStartShare(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser);
+	void onCameraListChanged();
 #if (!defined __linux)
 	void onRemoteControlStatus(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZNZoomVideoSDKRemoteControlStatus status);
 	void onRemoteControlRequestReceived(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction);
