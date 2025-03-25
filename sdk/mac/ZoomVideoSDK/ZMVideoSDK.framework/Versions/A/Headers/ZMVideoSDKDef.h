@@ -86,6 +86,8 @@ typedef enum
     ZMVideoSDKErrors_Fail_Assign_User_Privilege,
     ZMVideoSDKErrors_No_Recording_In_Process,
     ZMVideoSDKErrors_Set_Virtual_Background_Fail,
+    ZMVideoSDKErrors_Session_Share_Camera_Video_Not_Start,
+    ZMVideoSDKErrors_Session_Share_Camera_Conflict_With_Video_Effects,
     ZMVideoSDKErrors_Filetransfer_UnknowError = 7500,
     ZMVideoSDKErrors_Filetransfer_FileTypeBlocked,
     ZMVideoSDKErrors_Filetransfer_FileSizelimited,
@@ -329,6 +331,8 @@ typedef enum
     ZMVideoSDKShareType_Normal,
     //Pure computer audio share.
     ZMVideoSDKShareType_PureAudio,
+    //Camera share.
+    ZMVideoSDKShareType_Camera
 }ZMVideoSDKShareType;
 
 typedef enum

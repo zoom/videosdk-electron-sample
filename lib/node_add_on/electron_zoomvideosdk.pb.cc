@@ -425,6 +425,38 @@ struct CallbackBody_onUserShareStatusChangedParamsDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onUserShareStatusChangedParamsDefaultTypeInternal _CallbackBody_onUserShareStatusChangedParams_default_instance_;
+PROTOBUF_CONSTEXPR CallbackBody_onShareContentChangedParams::CallbackBody_onShareContentChangedParams(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.user_)*/nullptr
+  , /*decltype(_impl_.shareaction_)*/nullptr} {}
+struct CallbackBody_onShareContentChangedParamsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CallbackBody_onShareContentChangedParamsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CallbackBody_onShareContentChangedParamsDefaultTypeInternal() {}
+  union {
+    CallbackBody_onShareContentChangedParams _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onShareContentChangedParamsDefaultTypeInternal _CallbackBody_onShareContentChangedParams_default_instance_;
+PROTOBUF_CONSTEXPR CallbackBody_onShareContentSizeChangedParams::CallbackBody_onShareContentSizeChangedParams(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.user_)*/nullptr
+  , /*decltype(_impl_.shareaction_)*/nullptr} {}
+struct CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal() {}
+  union {
+    CallbackBody_onShareContentSizeChangedParams _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal _CallbackBody_onShareContentSizeChangedParams_default_instance_;
 PROTOBUF_CONSTEXPR CallbackBody_onFailedToStartShareParams::CallbackBody_onFailedToStartShareParams(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -1122,6 +1154,8 @@ PROTOBUF_CONSTEXPR CallbackBody::CallbackBody(
   , /*decltype(_impl_.onstartincominglivestreamresponseparam_)*/nullptr
   , /*decltype(_impl_.onstopincominglivestreamresponseparam_)*/nullptr
   , /*decltype(_impl_.onfailedtostartshareparam_)*/nullptr
+  , /*decltype(_impl_.onsharecontentchangedparam_)*/nullptr
+  , /*decltype(_impl_.onsharecontentsizechangedparam_)*/nullptr
   , /*decltype(_impl_.msgtype_)*/ 0
 } {}
 struct CallbackBodyDefaultTypeInternal {
@@ -8496,6 +8530,534 @@ void CallbackBody_onUserShareStatusChangedParams::InternalSwap(CallbackBody_onUs
 
 std::string CallbackBody_onUserShareStatusChangedParams::GetTypeName() const {
   return "com.electron.zoomvideo.sdk.proto.CallbackBody.onUserShareStatusChangedParams";
+}
+
+// ===================================================================
+
+class CallbackBody_onShareContentChangedParams::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CallbackBody_onShareContentChangedParams>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentChangedParams, _impl_._has_bits_);
+  static const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& user(const CallbackBody_onShareContentChangedParams* msg);
+  static void set_has_user(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::com::electron::zoomvideo::sdk::proto::ShareAction& shareaction(const CallbackBody_onShareContentChangedParams* msg);
+  static void set_has_shareaction(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser&
+CallbackBody_onShareContentChangedParams::_Internal::user(const CallbackBody_onShareContentChangedParams* msg) {
+  return *msg->_impl_.user_;
+}
+const ::com::electron::zoomvideo::sdk::proto::ShareAction&
+CallbackBody_onShareContentChangedParams::_Internal::shareaction(const CallbackBody_onShareContentChangedParams* msg) {
+  return *msg->_impl_.shareaction_;
+}
+CallbackBody_onShareContentChangedParams::CallbackBody_onShareContentChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+}
+CallbackBody_onShareContentChangedParams::CallbackBody_onShareContentChangedParams(const CallbackBody_onShareContentChangedParams& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  CallbackBody_onShareContentChangedParams* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.user_){nullptr}
+    , decltype(_impl_.shareaction_){nullptr}};
+
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.user_ = new ::com::electron::zoomvideo::sdk::proto::VideoSDKUser(*from._impl_.user_);
+  }
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.shareaction_ = new ::com::electron::zoomvideo::sdk::proto::ShareAction(*from._impl_.shareaction_);
+  }
+  // @@protoc_insertion_point(copy_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+}
+
+inline void CallbackBody_onShareContentChangedParams::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.user_){nullptr}
+    , decltype(_impl_.shareaction_){nullptr}
+  };
+}
+
+CallbackBody_onShareContentChangedParams::~CallbackBody_onShareContentChangedParams() {
+  // @@protoc_insertion_point(destructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CallbackBody_onShareContentChangedParams::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.user_;
+  if (this != internal_default_instance()) delete _impl_.shareaction_;
+}
+
+void CallbackBody_onShareContentChangedParams::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CallbackBody_onShareContentChangedParams::Clear() {
+// @@protoc_insertion_point(message_clear_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.user_ != nullptr);
+      _impl_.user_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.shareaction_ != nullptr);
+      _impl_.shareaction_->Clear();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* CallbackBody_onShareContentChangedParams::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_shareaction(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* CallbackBody_onShareContentChangedParams::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::user(this),
+        _Internal::user(this).GetCachedSize(), target, stream);
+  }
+
+  // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::shareaction(this),
+        _Internal::shareaction(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  return target;
+}
+
+::size_t CallbackBody_onShareContentChangedParams::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.user_);
+    }
+
+    // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.shareaction_);
+    }
+
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::_pbi::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CallbackBody_onShareContentChangedParams::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::_pbi::DownCast<const CallbackBody_onShareContentChangedParams*>(
+      &from));
+}
+
+void CallbackBody_onShareContentChangedParams::MergeFrom(const CallbackBody_onShareContentChangedParams& from) {
+  CallbackBody_onShareContentChangedParams* const _this = this;
+  // @@protoc_insertion_point(class_specific_merge_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_user()->::com::electron::zoomvideo::sdk::proto::VideoSDKUser::MergeFrom(
+          from._internal_user());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_shareaction()->::com::electron::zoomvideo::sdk::proto::ShareAction::MergeFrom(
+          from._internal_shareaction());
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void CallbackBody_onShareContentChangedParams::CopyFrom(const CallbackBody_onShareContentChangedParams& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CallbackBody_onShareContentChangedParams::IsInitialized() const {
+  return true;
+}
+
+void CallbackBody_onShareContentChangedParams::InternalSwap(CallbackBody_onShareContentChangedParams* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentChangedParams, _impl_.shareaction_)
+      + sizeof(CallbackBody_onShareContentChangedParams::_impl_.shareaction_)
+      - PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentChangedParams, _impl_.user_)>(
+          reinterpret_cast<char*>(&_impl_.user_),
+          reinterpret_cast<char*>(&other->_impl_.user_));
+}
+
+std::string CallbackBody_onShareContentChangedParams::GetTypeName() const {
+  return "com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams";
+}
+
+// ===================================================================
+
+class CallbackBody_onShareContentSizeChangedParams::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CallbackBody_onShareContentSizeChangedParams>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentSizeChangedParams, _impl_._has_bits_);
+  static const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& user(const CallbackBody_onShareContentSizeChangedParams* msg);
+  static void set_has_user(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::com::electron::zoomvideo::sdk::proto::ShareAction& shareaction(const CallbackBody_onShareContentSizeChangedParams* msg);
+  static void set_has_shareaction(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser&
+CallbackBody_onShareContentSizeChangedParams::_Internal::user(const CallbackBody_onShareContentSizeChangedParams* msg) {
+  return *msg->_impl_.user_;
+}
+const ::com::electron::zoomvideo::sdk::proto::ShareAction&
+CallbackBody_onShareContentSizeChangedParams::_Internal::shareaction(const CallbackBody_onShareContentSizeChangedParams* msg) {
+  return *msg->_impl_.shareaction_;
+}
+CallbackBody_onShareContentSizeChangedParams::CallbackBody_onShareContentSizeChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+}
+CallbackBody_onShareContentSizeChangedParams::CallbackBody_onShareContentSizeChangedParams(const CallbackBody_onShareContentSizeChangedParams& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  CallbackBody_onShareContentSizeChangedParams* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.user_){nullptr}
+    , decltype(_impl_.shareaction_){nullptr}};
+
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.user_ = new ::com::electron::zoomvideo::sdk::proto::VideoSDKUser(*from._impl_.user_);
+  }
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.shareaction_ = new ::com::electron::zoomvideo::sdk::proto::ShareAction(*from._impl_.shareaction_);
+  }
+  // @@protoc_insertion_point(copy_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+}
+
+inline void CallbackBody_onShareContentSizeChangedParams::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.user_){nullptr}
+    , decltype(_impl_.shareaction_){nullptr}
+  };
+}
+
+CallbackBody_onShareContentSizeChangedParams::~CallbackBody_onShareContentSizeChangedParams() {
+  // @@protoc_insertion_point(destructor:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CallbackBody_onShareContentSizeChangedParams::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.user_;
+  if (this != internal_default_instance()) delete _impl_.shareaction_;
+}
+
+void CallbackBody_onShareContentSizeChangedParams::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CallbackBody_onShareContentSizeChangedParams::Clear() {
+// @@protoc_insertion_point(message_clear_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      ABSL_DCHECK(_impl_.user_ != nullptr);
+      _impl_.user_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      ABSL_DCHECK(_impl_.shareaction_ != nullptr);
+      _impl_.shareaction_->Clear();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* CallbackBody_onShareContentSizeChangedParams::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_user(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_shareaction(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* CallbackBody_onShareContentSizeChangedParams::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::user(this),
+        _Internal::user(this).GetCachedSize(), target, stream);
+  }
+
+  // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::shareaction(this),
+        _Internal::shareaction(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  return target;
+}
+
+::size_t CallbackBody_onShareContentSizeChangedParams::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.user_);
+    }
+
+    // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.shareaction_);
+    }
+
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::_pbi::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CallbackBody_onShareContentSizeChangedParams::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::_pbi::DownCast<const CallbackBody_onShareContentSizeChangedParams*>(
+      &from));
+}
+
+void CallbackBody_onShareContentSizeChangedParams::MergeFrom(const CallbackBody_onShareContentSizeChangedParams& from) {
+  CallbackBody_onShareContentSizeChangedParams* const _this = this;
+  // @@protoc_insertion_point(class_specific_merge_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_user()->::com::electron::zoomvideo::sdk::proto::VideoSDKUser::MergeFrom(
+          from._internal_user());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_shareaction()->::com::electron::zoomvideo::sdk::proto::ShareAction::MergeFrom(
+          from._internal_shareaction());
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void CallbackBody_onShareContentSizeChangedParams::CopyFrom(const CallbackBody_onShareContentSizeChangedParams& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CallbackBody_onShareContentSizeChangedParams::IsInitialized() const {
+  return true;
+}
+
+void CallbackBody_onShareContentSizeChangedParams::InternalSwap(CallbackBody_onShareContentSizeChangedParams* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentSizeChangedParams, _impl_.shareaction_)
+      + sizeof(CallbackBody_onShareContentSizeChangedParams::_impl_.shareaction_)
+      - PROTOBUF_FIELD_OFFSET(CallbackBody_onShareContentSizeChangedParams, _impl_.user_)>(
+          reinterpret_cast<char*>(&_impl_.user_),
+          reinterpret_cast<char*>(&other->_impl_.user_));
+}
+
+std::string CallbackBody_onShareContentSizeChangedParams::GetTypeName() const {
+  return "com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams";
 }
 
 // ===================================================================
@@ -17311,7 +17873,7 @@ class CallbackBody::_Internal {
   static constexpr ::int32_t kHasBitsOffset =
     8 * PROTOBUF_FIELD_OFFSET(CallbackBody, _impl_._has_bits_);
   static void set_has_msgtype(HasBits* has_bits) {
-    (*has_bits)[1] |= 1024u;
+    (*has_bits)[1] |= 4096u;
   }
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onErrorParams& onerrorparam(const CallbackBody* msg);
   static void set_has_onerrorparam(HasBits* has_bits) {
@@ -17480,6 +18042,14 @@ class CallbackBody::_Internal {
   static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams& onfailedtostartshareparam(const CallbackBody* msg);
   static void set_has_onfailedtostartshareparam(HasBits* has_bits) {
     (*has_bits)[1] |= 512u;
+  }
+  static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams& onsharecontentchangedparam(const CallbackBody* msg);
+  static void set_has_onsharecontentchangedparam(HasBits* has_bits) {
+    (*has_bits)[1] |= 1024u;
+  }
+  static const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams& onsharecontentsizechangedparam(const CallbackBody* msg);
+  static void set_has_onsharecontentsizechangedparam(HasBits* has_bits) {
+    (*has_bits)[1] |= 2048u;
   }
 };
 
@@ -17651,6 +18221,14 @@ const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareP
 CallbackBody::_Internal::onfailedtostartshareparam(const CallbackBody* msg) {
   return *msg->_impl_.onfailedtostartshareparam_;
 }
+const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams&
+CallbackBody::_Internal::onsharecontentchangedparam(const CallbackBody* msg) {
+  return *msg->_impl_.onsharecontentchangedparam_;
+}
+const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams&
+CallbackBody::_Internal::onsharecontentsizechangedparam(const CallbackBody* msg) {
+  return *msg->_impl_.onsharecontentsizechangedparam_;
+}
 CallbackBody::CallbackBody(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena) {
   SharedCtor(arena);
@@ -17704,6 +18282,8 @@ CallbackBody::CallbackBody(const CallbackBody& from)
     , decltype(_impl_.onstartincominglivestreamresponseparam_){nullptr}
     , decltype(_impl_.onstopincominglivestreamresponseparam_){nullptr}
     , decltype(_impl_.onfailedtostartshareparam_){nullptr}
+    , decltype(_impl_.onsharecontentchangedparam_){nullptr}
+    , decltype(_impl_.onsharecontentsizechangedparam_){nullptr}
     , decltype(_impl_.msgtype_) {}
   };
 
@@ -17834,6 +18414,12 @@ CallbackBody::CallbackBody(const CallbackBody& from)
   if ((from._impl_._has_bits_[1] & 0x00000200u) != 0) {
     _this->_impl_.onfailedtostartshareparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams(*from._impl_.onfailedtostartshareparam_);
   }
+  if ((from._impl_._has_bits_[1] & 0x00000400u) != 0) {
+    _this->_impl_.onsharecontentchangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams(*from._impl_.onsharecontentchangedparam_);
+  }
+  if ((from._impl_._has_bits_[1] & 0x00000800u) != 0) {
+    _this->_impl_.onsharecontentsizechangedparam_ = new ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams(*from._impl_.onsharecontentsizechangedparam_);
+  }
   _this->_impl_.msgtype_ = from._impl_.msgtype_;
   // @@protoc_insertion_point(copy_constructor:com.electron.zoomvideo.sdk.proto.CallbackBody)
 }
@@ -17885,6 +18471,8 @@ inline void CallbackBody::SharedCtor(::_pb::Arena* arena) {
     , decltype(_impl_.onstartincominglivestreamresponseparam_){nullptr}
     , decltype(_impl_.onstopincominglivestreamresponseparam_){nullptr}
     , decltype(_impl_.onfailedtostartshareparam_){nullptr}
+    , decltype(_impl_.onsharecontentchangedparam_){nullptr}
+    , decltype(_impl_.onsharecontentsizechangedparam_){nullptr}
     , decltype(_impl_.msgtype_) { 0 }
 
   };
@@ -17943,6 +18531,8 @@ inline void CallbackBody::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.onstartincominglivestreamresponseparam_;
   if (this != internal_default_instance()) delete _impl_.onstopincominglivestreamresponseparam_;
   if (this != internal_default_instance()) delete _impl_.onfailedtostartshareparam_;
+  if (this != internal_default_instance()) delete _impl_.onsharecontentchangedparam_;
+  if (this != internal_default_instance()) delete _impl_.onsharecontentsizechangedparam_;
 }
 
 void CallbackBody::SetCachedSize(int size) const {
@@ -18127,7 +18717,7 @@ void CallbackBody::Clear() {
       _impl_.onstartincominglivestreamresponseparam_->Clear();
     }
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (cached_has_bits & 0x00000f00u) {
     if (cached_has_bits & 0x00000100u) {
       ABSL_DCHECK(_impl_.onstopincominglivestreamresponseparam_ != nullptr);
       _impl_.onstopincominglivestreamresponseparam_->Clear();
@@ -18135,6 +18725,14 @@ void CallbackBody::Clear() {
     if (cached_has_bits & 0x00000200u) {
       ABSL_DCHECK(_impl_.onfailedtostartshareparam_ != nullptr);
       _impl_.onfailedtostartshareparam_->Clear();
+    }
+    if (cached_has_bits & 0x00000400u) {
+      ABSL_DCHECK(_impl_.onsharecontentchangedparam_ != nullptr);
+      _impl_.onsharecontentchangedparam_->Clear();
+    }
+    if (cached_has_bits & 0x00000800u) {
+      ABSL_DCHECK(_impl_.onsharecontentsizechangedparam_ != nullptr);
+      _impl_.onsharecontentsizechangedparam_->Clear();
     }
   }
   _impl_.msgtype_ = 0;
@@ -18536,6 +19134,24 @@ const char* CallbackBody::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           goto handle_unusual;
         }
         continue;
+      // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams onShareContentChangedParam = 47;
+      case 47:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 122)) {
+          ptr = ctx->ParseMessage(_internal_mutable_onsharecontentchangedparam(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+      case 48:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_onsharecontentsizechangedparam(), ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -18567,7 +19183,7 @@ failure:
 
   cached_has_bits = _impl_._has_bits_[1];
   // optional int32 msgtype = 1;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(
         1, this->_internal_msgtype(), target);
@@ -18867,6 +19483,20 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(46, _Internal::onfailedtostartshareparam(this),
         _Internal::onfailedtostartshareparam(this).GetCachedSize(), target, stream);
+  }
+
+  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams onShareContentChangedParam = 47;
+  if (cached_has_bits & 0x00000400u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(47, _Internal::onsharecontentchangedparam(this),
+        _Internal::onsharecontentchangedparam(this).GetCachedSize(), target, stream);
+  }
+
+  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+  if (cached_has_bits & 0x00000800u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(48, _Internal::onsharecontentsizechangedparam(this),
+        _Internal::onsharecontentsizechangedparam(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19177,7 +19807,7 @@ failure:
     }
 
   }
-  if (cached_has_bits & 0x00000700u) {
+  if (cached_has_bits & 0x00001f00u) {
     // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onStopIncomingLiveStreamResponseParams onStopIncomingLiveStreamResponseParam = 45;
     if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
@@ -19192,8 +19822,22 @@ failure:
           *_impl_.onfailedtostartshareparam_);
     }
 
-    // optional int32 msgtype = 1;
+    // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams onShareContentChangedParam = 47;
     if (cached_has_bits & 0x00000400u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.onsharecontentchangedparam_);
+    }
+
+    // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+    if (cached_has_bits & 0x00000800u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.onsharecontentsizechangedparam_);
+    }
+
+    // optional int32 msgtype = 1;
+    if (cached_has_bits & 0x00001000u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this->_internal_msgtype());
     }
@@ -19392,7 +20036,7 @@ void CallbackBody::MergeFrom(const CallbackBody& from) {
           from._internal_onstartincominglivestreamresponseparam());
     }
   }
-  if (cached_has_bits & 0x00000700u) {
+  if (cached_has_bits & 0x00001f00u) {
     if (cached_has_bits & 0x00000100u) {
       _this->_internal_mutable_onstopincominglivestreamresponseparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams::MergeFrom(
           from._internal_onstopincominglivestreamresponseparam());
@@ -19402,6 +20046,14 @@ void CallbackBody::MergeFrom(const CallbackBody& from) {
           from._internal_onfailedtostartshareparam());
     }
     if (cached_has_bits & 0x00000400u) {
+      _this->_internal_mutable_onsharecontentchangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams::MergeFrom(
+          from._internal_onsharecontentchangedparam());
+    }
+    if (cached_has_bits & 0x00000800u) {
+      _this->_internal_mutable_onsharecontentsizechangedparam()->::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams::MergeFrom(
+          from._internal_onsharecontentsizechangedparam());
+    }
+    if (cached_has_bits & 0x00001000u) {
       _this->_impl_.msgtype_ = from._impl_.msgtype_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
@@ -41704,6 +42356,14 @@ Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_
 template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUserShareStatusChangedParams*
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUserShareStatusChangedParams >(Arena* arena) {
   return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onUserShareStatusChangedParams >(arena);
+}
+template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams*
+Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams >(arena);
+}
+template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams*
+Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams >(arena);
 }
 template<> PROTOBUF_NOINLINE ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams*
 Arena::CreateMaybeMessage< ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams >(Arena* arena) {

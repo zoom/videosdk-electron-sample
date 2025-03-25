@@ -141,6 +141,8 @@ typedef enum
 	ZNZoomVideoSDKErrors_Fail_Assign_User_Privilege,
 	ZNZoomVideoSDKErrors_No_Recording_In_Process,
 	ZNZoomVideoSDKErrors_Set_Virtual_Background_Fail,
+	ZNZoomVideoSDKErrors_Session_Share_Camera_Video_Not_Start,
+	ZNZoomVideoSDKErrors_Session_Share_Camera_Conflict_With_Video_Effects,
 	ZNZoomVideoSDKErrors_Filetransfer_UnknowError = 7500,
 	ZNZoomVideoSDKErrors_Filetransfer_FileTypeBlocked,
 	ZNZoomVideoSDKErrors_Filetransfer_FileSizelimited,
@@ -182,8 +184,9 @@ typedef enum
 typedef enum
 {
 	ZNZoomVideoSDKShareType_None,
-	ZNZoomVideoSDKShareType_Normal,
-	ZNZoomVideoSDKShareType_PureAudio,
+	ZNZoomVideoSDKShareType_Normal, ///<application or desktop share
+	ZNZoomVideoSDKShareType_PureAudio, ///<pure computer audio share
+	ZNZoomVideoSDKShareType_Camera, ///<camera share
 }ZNZoomVideoSDKShareType;
 
 typedef enum
@@ -245,7 +248,7 @@ typedef struct tagZNZoomVideoSDKShareOption
 
 typedef struct tagZNZoomVideoSDKVideoOption
 {
-	bool localVideoOn; //video option to set local video open or close when join session.
+	bool localVideoOn; ///<video option to set local video open or close when join session.
 	tagZNZoomVideoSDKVideoOption()
 	{
 		localVideoOn = true;
@@ -254,8 +257,8 @@ typedef struct tagZNZoomVideoSDKVideoOption
 
 typedef struct tagZNZoomVideoSDKAudioOption
 {
-	bool connect; //Audio option  is connect audio when enter session
-	bool mute;    //Audio option  is mute audio when enter session
+	bool connect; ///<Audio option  is connect audio when enter session
+	bool mute;    ///<Audio option  is mute audio when enter session
 
 	tagZNZoomVideoSDKAudioOption()
 	{
@@ -267,8 +270,8 @@ typedef struct tagZNZoomVideoSDKAudioOption
 typedef struct tagZNZoomVideoSDKSessionContext
 {
 	ZoomSTRING sessionName;
-	ZoomSTRING sessionPassword; //Session password, optional
-	ZoomSTRING userName;        //Display name in session, required
+	ZoomSTRING sessionPassword; ///<Session password, optional
+	ZoomSTRING userName;        ///<Display name in session, required
 	ZoomSTRING token;
 	ZNZoomVideoSDKVideoOption videoOption;
 	ZNZoomVideoSDKAudioOption audioOption;
@@ -536,13 +539,15 @@ typedef enum {
 	CallMessageType_onRemoteControlRequestReceived,
 	CallMessageType_onRemoteControlServiceInstallResult,
 	CallMessageType_onSpotlightVideoChanged,
-	CallMessageType_onBindIncomingLiveStreamResponse, // Callback event that binds the incoming live stream.
-	CallMessageType_onUnbindIncomingLiveStreamResponse, // Callback event that unbinds the incoming live stream.
-	CallMessageType_onIncomingLiveStreamStatusResponse, // Callback event that gets the streams status.
-	CallMessageType_onStartIncomingLiveStreamResponse, // Callback event that starts the binded stream.
-	CallMessageType_onStopIncomingLiveStreamResponse, // Callback event that stops the binded stream.
-	CallMessageType_onFailedToStartShare, // Invoked when a user failed to start sharing.
-	CallMessageType_onCameraListChanged, // Notify that the camera list has changed.
+	CallMessageType_onBindIncomingLiveStreamResponse, ///<Callback event that binds the incoming live stream.
+	CallMessageType_onUnbindIncomingLiveStreamResponse, ///<Callback event that unbinds the incoming live stream.
+	CallMessageType_onIncomingLiveStreamStatusResponse, ///<Callback event that gets the streams status.
+	CallMessageType_onStartIncomingLiveStreamResponse, ///<Callback event that starts the binded stream.
+	CallMessageType_onStopIncomingLiveStreamResponse, ///<Callback event that stops the binded stream.
+	CallMessageType_onFailedToStartShare, ///<Invoked when a user failed to start sharing.
+	CallMessageType_onCameraListChanged, ///<Notify that the camera list has changed.
+	CallMessageType_onShareContentChanged, ///<Invoked when a user makes changes to their share content type, such as camera share switch to normal share. The share type can be found in \link ZNZoomVideoSDKShareType \endlink.
+	CallMessageType_onShareContentSizeChange, ///<Invoked when the share content size changed.
 }ZNCallMessageType;
 
 /*! \enum PhoneStatus
@@ -580,10 +585,10 @@ typedef enum {
 }ZNPhoneFailedReason;
 
 typedef enum{
-	ZNRecording_Start,///Start recording on local computer or on cloud.
-	ZNRecording_Stop,///Stop recording on local computer or on cloud.
-	ZNRecording_DiskFull,///There is no space to store for cloud recording.
-	ZNRecording_Pause,///Pause recording on local or on cloud.
+	ZNRecording_Start,///<Start recording on local computer or on cloud.
+	ZNRecording_Stop,///<Stop recording on local computer or on cloud.
+	ZNRecording_DiskFull,///<There is no space to store for cloud recording.
+	ZNRecording_Pause,///<Pause recording on local or on cloud.
 }ZNRecordingStatus;
 
 typedef enum
@@ -614,10 +619,10 @@ enum ZNZoomVideoSDKRemoteControlStatus
 */
 typedef enum
 {
-	ZNZoomVideoSDKVideoPreferenceMode_Balance, // Balance mode
-	ZNZoomVideoSDKVideoPreferenceMode_Sharpness, // Sharpness mode
-	ZNZoomVideoSDKVideoPreferenceMode_Smoothness, // Smoothness mode	
-	ZNZoomVideoSDKVideoPreferenceMode_Custom	// Custom mode.
+	ZNZoomVideoSDKVideoPreferenceMode_Balance, ///<Balance mode
+	ZNZoomVideoSDKVideoPreferenceMode_Sharpness, ///<Sharpness mode
+	ZNZoomVideoSDKVideoPreferenceMode_Smoothness, ///<Smoothness mode	
+	ZNZoomVideoSDKVideoPreferenceMode_Custom	///<Custom mode.
 }ZNZoomVideoSDKVideoPreferenceMode;
 
 typedef struct tagZNVideoPreferenceSetting
@@ -731,10 +736,10 @@ typedef struct tagZNLiveTranscriptionLanguage
 }ZNLiveTranscriptionLanguage;
 
 typedef enum {
-	ZNZoomVideoSDKChatDelete_None = 0,  /// none
-	ZNZoomVideoSDKChatDelete_BySelf,      /// delete by self
-	ZNZoomVideoSDKChatDelete_ByHost,      /// delete by host
-	ZNZoomVideoSDKChatDelete_ByDlp,       /// delete by dlp when the message goes against the host organization's compliance policies.
+	ZNZoomVideoSDKChatDelete_None = 0,  ///<none
+	ZNZoomVideoSDKChatDelete_BySelf,      ///<delete by self
+	ZNZoomVideoSDKChatDelete_ByHost,      ///<delete by host
+	ZNZoomVideoSDKChatDelete_ByDlp,       ///<delete by dlp when the message goes against the host organization's compliance policies.
 }ZNZoomVideoSDKChatMessageDeleteType;
 
 typedef struct tagZNLiveTranscriptionMessageInfo
@@ -768,17 +773,17 @@ typedef struct tagZNInvitePhoneUserInfo
 }ZNInvitePhoneUserInfo;
 
 typedef enum {
-    //Screen capture mode is automatically.
+    ///<Screen capture mode is automatically.
     ZNZoomVideoSDKScreenCaptureMode_Auto = 0,
-    //Screen capture mode is legacy operating systems.
+    ///<Screen capture mode is legacy operating systems.
     ZNZoomVideoSDKScreenCaptureMode_Legacy,
-    //Screen capture mode is capture with window filtering.
+    ///<Screen capture mode is capture with window filtering.
     ZNZoomVideoSDKScreenCaptureMode_Filtering,
-    //Screen capture mode is advanced share with window filtering.
+    ///<Screen capture mode is advanced share with window filtering.
     ZNZoomVideoSDKScreenCaptureMode_ADA_Filtering,
-    //Screen capture mode is advanced share without window filtering.
+    ///<Screen capture mode is advanced share without window filtering.
     ZNZoomVideoSDKScreenCaptureMode_ADA_Without_Filtering,
-    //Screen capture mode is secure share with window filtering.
+    ///<Screen capture mode is secure share with window filtering.
     ZNZoomVideoSDKScreenCaptureMode_Secure_Filtering,
 }ZNZoomVideoSDKScreenCaptureMode;
 

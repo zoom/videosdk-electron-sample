@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) BOOL                          isAnnotationPrivilegeEnabled;
 
 /**
+ @brief Get the size of the share content.
+ @return The size of share content.
+ */
+- (NSSize)getShareSourceContentSize;
+
+/**
  @brief Get the share raw data pipe.
  @return The share pipe. For more information, see {@link ZMVideoSDKRawDataPipe}.
  */

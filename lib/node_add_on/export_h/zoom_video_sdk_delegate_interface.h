@@ -73,6 +73,12 @@ public:
 	/// \param IZoomVideoSDKShareAction The pointer to share object.	
 	virtual void onUserShareStatusChanged(IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction) = 0;
 
+	/// \brief Invoked when a user makes changes to their share content type, such as camera share switch to normal share. The share type can be found in \link ZoomVideoSDKShareType \endlink.
+	/// \param pShareHelper The pointer to share helper object, see \link IZoomVideoSDKShareHelper \endlink.
+	/// \param pUser The pointer to user object.
+	/// \param IZoomVideoSDKShareAction The pointer to share object.
+	virtual void onShareContentChanged(IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction) = 0;
+
     /// \brief Invoked when a user failed to start sharing.
     /// \param pShareHelper The pointer to share helper object, see \link IZoomVideoSDKShareHelper \endlink.
     /// \param pUser The pointer to user object.
@@ -346,6 +352,12 @@ public:
 	/// \param bSuccess true: success, otherwise false.
 	/// \param strStreamKeyID Corresponding stream key ID.
 	virtual void onStopIncomingLiveStreamResponse(bool bSuccess, const zchar_t* strStreamKeyID) = 0;
+    
+    /// \brief Invoked when the share content size has changed.
+    /// \param pShareHelper The pointer to the share helper object, see \link IZoomVideoSDKShareHelper \endlink.
+    /// \param pUser The pointer to a user object, see \link IZoomVideoSDKUser \endlink..
+    /// \param pShareAction The pointer to the share object.
+    virtual void onShareContentSizeChanged(IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction) = 0;
 };
 END_ZOOM_VIDEO_SDK_NAMESPACE
 #endif

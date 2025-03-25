@@ -187,6 +187,30 @@ public:
 };
 #endif
 
+struct ZoomVideoSDKViewSize
+{
+    unsigned int width; /// resolution width
+    unsigned int height; /// resolution height
+    
+    ZoomVideoSDKViewSize()
+    {
+        width = 0;
+        height = 0;
+    }
+    
+    ZoomVideoSDKViewSize(const ZoomVideoSDKViewSize& resolution)
+    {
+        width = resolution.width;
+        height = resolution.height;
+    }
+
+    ZoomVideoSDKViewSize(unsigned int new_width, unsigned int new_height)
+    {
+        width = new_width;
+        height = new_height;
+    }
+};
+
 class IZoomVideoSDKShareAction
 {
 public:
@@ -221,6 +245,10 @@ public:
 	/// \brief Get share type.
 	/// \return Share type of the share object.
 	virtual ZoomVideoSDKShareType getShareType() = 0;
+    
+    /// \brief Get the size of the share content.
+    /// \return The size of share content.
+    virtual ZoomVideoSDKViewSize getShareSourceContentSize() = 0;
 
 #if defined(WIN32) || defined(__MACOS__)
     /// \brief Get the helper class instance to access remote control. Only available for controller side. 

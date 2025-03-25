@@ -387,6 +387,18 @@ export const Meeting_HandleCallbackEvents = {
         this.$set(this.remoteControl, 'isMeetingRemoteControlLayerShown', false)
       }
     },
+    onShareContentChanged(data) {
+      let userInfo = getUserInfo(data.getUser())
+      let shareStatus = data.getShareaction().getSharestatus()
+      let type = data.getShareaction().getSharetype()
+      console.log('onShareContentChanged', userInfo, shareStatus, type) 
+    },
+    onShareContentSizeChanged(data) {
+      let userInfo = getUserInfo(data.getUser())
+      let shareStatus = data.getShareaction().getSharestatus()
+      let type = data.getShareaction().getSharetype()
+      console.log('onShareContentSizeChanged', userInfo, shareStatus, type) 
+    },
     onNodeAddonCallbacks(result) {
       let message = messages.CallbackBody.deserializeBinary(result)
       let callback = findKey(ZoomVideoSDKCallback, message.getMsgtype())
@@ -445,6 +457,12 @@ export const Meeting_HandleCallbackEvents = {
           break;
         case 'onCameraControlRequestResult':
           this.onCameraControlRequestResult(message.getOncameracontrolrequestresultparam())
+          break;
+        case 'onShareContentChanged':
+          this.onShareContentChanged(message.getOnsharecontentchangedparam())
+          break;
+        case 'onShareContentSizeChanged':
+          this.onShareContentSizeChanged(message.getOnsharecontentsizechangedparam())
           break;
       }
     }

@@ -184,24 +184,27 @@ module.exports = {
       loader: 'native-ext-loader',
       options: {
         basePath: ['../app/'],
-        rewritePath: isProduction && !needRewritePath ? (platform=='win32'?'./':null) : resolve(sdkPath),
+        rewritePath: isProduction && !needRewritePath ? (platform == 'win32' ? './' : null) : resolve(sdkPath),
         emit: false
       }
     })
     if (isProduction) {
-      config.plugins.push(
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: enableProductionSourceMap,
-          terserOptions: {
-            compress: {
-              drop_console: true,
-              drop_debugger: true
+      config.optimization = {
+        minimize: true,
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              compress: {
+                // drop_console: true,
+                drop_debugger: true
+              },
+              format: {
+                comments: false
+              }
             }
-          }
-        })
-      )
+          })
+        ]
+      }
     }
   }
 }

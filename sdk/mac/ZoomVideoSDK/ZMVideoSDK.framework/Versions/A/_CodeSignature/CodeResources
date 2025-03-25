@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		xTI5amNQB09VBeVh8q+HheGK0t4=
+		74msXyH/o/5rZZA/uLh/ypYP5d4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -22,7 +22,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M2UQrUyaGg9ZsY2sV6ssxzCS1q17+wOgNjx2TfCqQqg=
+			M7+C/FKJAKSh3r/CHaB5WaKrb5yosmcTI/sLfvrdlhQ=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioHelper.h</key>
@@ -78,14 +78,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QarWUMVmapR+Qt63L+x3JIDhhAAVDmU5jfdmqw4c4/c=
+			rKLjzauI2SeomZTw+hIkL47pLvBX4fa5oasbfku1YdU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKDelegate.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UAUIshvAP7PrpO87PLJ/GbYUH1W70zqaeWhLRrBSn8s=
+			6gp+vx3gG307R0lzG8n1TmjEwAi4hCwPq+IKbvNueJE=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKLiveStreamHelper.h</key>
@@ -155,7 +155,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x/AnF7zgVQJkFEXG75Wf3hdJqGNtTTEl7ST6EBwDE5I=
+			z4VFmHg3OnVbaigoYgqlHDu1kPCPzNnqFGLChImAFVI=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKShareSettingHelper.h</key>
@@ -211,7 +211,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n0mV8f5ti00naA+3ldl0EJzU+RrPUguX7RVXlrErZQc=
+			ZqZOfUKrE7yAYhVrJ35yrD7XLG8HoSW+sfPAMeeci3k=
 			</data>
 		</dict>
 	</dict>

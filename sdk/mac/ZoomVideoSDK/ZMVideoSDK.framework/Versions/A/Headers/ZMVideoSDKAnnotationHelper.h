@@ -11,10 +11,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZMVideoSDKAnnotationHelper : NSObject
 
 /**
+ * @brief Whether the current user can do annotation on the share.
+ * @return YES means the user can do annotation, otherwise NO.
+ */
+- (BOOL)canDoAnnotation;
+
+/**
  * @brief Whether annotation was disabled or not by the share owner.
  * @return YES indicates the annotations is disabled, otherwise NO.
  */
-- (BOOL)isSenderDisableAnnotation;
+- (BOOL)isSenderDisableAnnotation DEPRECATED_MSG_ATTRIBUTE("Use -canDoAnnotation instead");
 
 /**
  * @brief Starts annotation.

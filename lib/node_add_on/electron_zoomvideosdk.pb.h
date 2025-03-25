@@ -135,6 +135,12 @@ extern CallbackBody_onRemoteControlStatusParamsDefaultTypeInternal _CallbackBody
 class CallbackBody_onSessionLeaveParams;
 struct CallbackBody_onSessionLeaveParamsDefaultTypeInternal;
 extern CallbackBody_onSessionLeaveParamsDefaultTypeInternal _CallbackBody_onSessionLeaveParams_default_instance_;
+class CallbackBody_onShareContentChangedParams;
+struct CallbackBody_onShareContentChangedParamsDefaultTypeInternal;
+extern CallbackBody_onShareContentChangedParamsDefaultTypeInternal _CallbackBody_onShareContentChangedParams_default_instance_;
+class CallbackBody_onShareContentSizeChangedParams;
+struct CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal;
+extern CallbackBody_onShareContentSizeChangedParamsDefaultTypeInternal _CallbackBody_onShareContentSizeChangedParams_default_instance_;
 class CallbackBody_onShareCursorDataReceivedParams;
 struct CallbackBody_onShareCursorDataReceivedParamsDefaultTypeInternal;
 extern CallbackBody_onShareCursorDataReceivedParamsDefaultTypeInternal _CallbackBody_onShareCursorDataReceivedParams_default_instance_;
@@ -572,6 +578,10 @@ template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onRemoteControlStatusParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareCursorDataReceivedParams>(Arena*);
 template <>
@@ -4310,6 +4320,320 @@ class CallbackBody_onUserShareStatusChangedParams final :
   friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
 };// -------------------------------------------------------------------
 
+class CallbackBody_onShareContentChangedParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams) */ {
+ public:
+  inline CallbackBody_onShareContentChangedParams() : CallbackBody_onShareContentChangedParams(nullptr) {}
+  ~CallbackBody_onShareContentChangedParams() override;
+  explicit PROTOBUF_CONSTEXPR CallbackBody_onShareContentChangedParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CallbackBody_onShareContentChangedParams(const CallbackBody_onShareContentChangedParams& from);
+  CallbackBody_onShareContentChangedParams(CallbackBody_onShareContentChangedParams&& from) noexcept
+    : CallbackBody_onShareContentChangedParams() {
+    *this = ::std::move(from);
+  }
+
+  inline CallbackBody_onShareContentChangedParams& operator=(const CallbackBody_onShareContentChangedParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CallbackBody_onShareContentChangedParams& operator=(CallbackBody_onShareContentChangedParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const CallbackBody_onShareContentChangedParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CallbackBody_onShareContentChangedParams* internal_default_instance() {
+    return reinterpret_cast<const CallbackBody_onShareContentChangedParams*>(
+               &_CallbackBody_onShareContentChangedParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(CallbackBody_onShareContentChangedParams& a, CallbackBody_onShareContentChangedParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CallbackBody_onShareContentChangedParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CallbackBody_onShareContentChangedParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CallbackBody_onShareContentChangedParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CallbackBody_onShareContentChangedParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const CallbackBody_onShareContentChangedParams& from);
+  void MergeFrom(const CallbackBody_onShareContentChangedParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(CallbackBody_onShareContentChangedParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams";
+  }
+  protected:
+  explicit CallbackBody_onShareContentChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserFieldNumber = 1,
+    kShareActionFieldNumber = 2,
+  };
+  // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+  bool has_user() const;
+  void clear_user() ;
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& user() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* release_user();
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* mutable_user();
+  void set_allocated_user(::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& _internal_user() const;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* _internal_mutable_user();
+  public:
+  void unsafe_arena_set_allocated_user(
+      ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user);
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* unsafe_arena_release_user();
+  // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+  bool has_shareaction() const;
+  void clear_shareaction() ;
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction& shareaction() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::ShareAction* release_shareaction();
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* mutable_shareaction();
+  void set_allocated_shareaction(::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction& _internal_shareaction() const;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* _internal_mutable_shareaction();
+  public:
+  void unsafe_arena_set_allocated_shareaction(
+      ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction);
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* unsafe_arena_release_shareaction();
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user_;
+    ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class CallbackBody_onShareContentSizeChangedParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams) */ {
+ public:
+  inline CallbackBody_onShareContentSizeChangedParams() : CallbackBody_onShareContentSizeChangedParams(nullptr) {}
+  ~CallbackBody_onShareContentSizeChangedParams() override;
+  explicit PROTOBUF_CONSTEXPR CallbackBody_onShareContentSizeChangedParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CallbackBody_onShareContentSizeChangedParams(const CallbackBody_onShareContentSizeChangedParams& from);
+  CallbackBody_onShareContentSizeChangedParams(CallbackBody_onShareContentSizeChangedParams&& from) noexcept
+    : CallbackBody_onShareContentSizeChangedParams() {
+    *this = ::std::move(from);
+  }
+
+  inline CallbackBody_onShareContentSizeChangedParams& operator=(const CallbackBody_onShareContentSizeChangedParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CallbackBody_onShareContentSizeChangedParams& operator=(CallbackBody_onShareContentSizeChangedParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const CallbackBody_onShareContentSizeChangedParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CallbackBody_onShareContentSizeChangedParams* internal_default_instance() {
+    return reinterpret_cast<const CallbackBody_onShareContentSizeChangedParams*>(
+               &_CallbackBody_onShareContentSizeChangedParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(CallbackBody_onShareContentSizeChangedParams& a, CallbackBody_onShareContentSizeChangedParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CallbackBody_onShareContentSizeChangedParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CallbackBody_onShareContentSizeChangedParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CallbackBody_onShareContentSizeChangedParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CallbackBody_onShareContentSizeChangedParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const CallbackBody_onShareContentSizeChangedParams& from);
+  void MergeFrom(const CallbackBody_onShareContentSizeChangedParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(CallbackBody_onShareContentSizeChangedParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams";
+  }
+  protected:
+  explicit CallbackBody_onShareContentSizeChangedParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserFieldNumber = 1,
+    kShareActionFieldNumber = 2,
+  };
+  // optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+  bool has_user() const;
+  void clear_user() ;
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& user() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* release_user();
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* mutable_user();
+  void set_allocated_user(::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& _internal_user() const;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* _internal_mutable_user();
+  public:
+  void unsafe_arena_set_allocated_user(
+      ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user);
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* unsafe_arena_release_user();
+  // optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+  bool has_shareaction() const;
+  void clear_shareaction() ;
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction& shareaction() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::ShareAction* release_shareaction();
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* mutable_shareaction();
+  void set_allocated_shareaction(::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction& _internal_shareaction() const;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* _internal_mutable_shareaction();
+  public:
+  void unsafe_arena_set_allocated_shareaction(
+      ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction);
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* unsafe_arena_release_shareaction();
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user_;
+    ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
 class CallbackBody_onFailedToStartShareParams final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParams) */ {
  public:
@@ -4356,7 +4680,7 @@ class CallbackBody_onFailedToStartShareParams final :
                &_CallbackBody_onFailedToStartShareParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(CallbackBody_onFailedToStartShareParams& a, CallbackBody_onFailedToStartShareParams& b) {
     a.Swap(&b);
@@ -4497,7 +4821,7 @@ class CallbackBody_onLiveStreamStatusChangedParams final :
                &_CallbackBody_onLiveStreamStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(CallbackBody_onLiveStreamStatusChangedParams& a, CallbackBody_onLiveStreamStatusChangedParams& b) {
     a.Swap(&b);
@@ -4635,7 +4959,7 @@ class CallbackBody_onUserHostChangedParams final :
                &_CallbackBody_onUserHostChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(CallbackBody_onUserHostChangedParams& a, CallbackBody_onUserHostChangedParams& b) {
     a.Swap(&b);
@@ -4776,7 +5100,7 @@ class CallbackBody_onUserNameChangedParams final :
                &_CallbackBody_onUserNameChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(CallbackBody_onUserNameChangedParams& a, CallbackBody_onUserNameChangedParams& b) {
     a.Swap(&b);
@@ -4917,7 +5241,7 @@ class CallbackBody_onUserManagerChangedParams final :
                &_CallbackBody_onUserManagerChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(CallbackBody_onUserManagerChangedParams& a, CallbackBody_onUserManagerChangedParams& b) {
     a.Swap(&b);
@@ -5058,7 +5382,7 @@ class CallbackBody_onUserActiveAudioChangedParams final :
                &_CallbackBody_onUserActiveAudioChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(CallbackBody_onUserActiveAudioChangedParams& a, CallbackBody_onUserActiveAudioChangedParams& b) {
     a.Swap(&b);
@@ -5199,7 +5523,7 @@ class CallbackBody_onChatNewMessageNotifyParams final :
                &_CallbackBody_onChatNewMessageNotifyParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(CallbackBody_onChatNewMessageNotifyParams& a, CallbackBody_onChatNewMessageNotifyParams& b) {
     a.Swap(&b);
@@ -5481,7 +5805,7 @@ class CallbackBody_onChatMsgDeleteNotificationParams final :
                &_CallbackBody_onChatMsgDeleteNotificationParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(CallbackBody_onChatMsgDeleteNotificationParams& a, CallbackBody_onChatMsgDeleteNotificationParams& b) {
     a.Swap(&b);
@@ -5642,7 +5966,7 @@ class CallbackBody_onVideoSourceInitializeParams final :
                &_CallbackBody_onVideoSourceInitializeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(CallbackBody_onVideoSourceInitializeParams& a, CallbackBody_onVideoSourceInitializeParams& b) {
     a.Swap(&b);
@@ -5783,7 +6107,7 @@ class CallbackBody_onPropertyChangeParams final :
                &_CallbackBody_onPropertyChangeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(CallbackBody_onPropertyChangeParams& a, CallbackBody_onPropertyChangeParams& b) {
     a.Swap(&b);
@@ -5924,7 +6248,7 @@ class CallbackBody_onRawDataStatusChangedParams final :
                &_CallbackBody_onRawDataStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(CallbackBody_onRawDataStatusChangedParams& a, CallbackBody_onRawDataStatusChangedParams& b) {
     a.Swap(&b);
@@ -6075,7 +6399,7 @@ class CallbackBody_onCommandReceivedParams final :
                &_CallbackBody_onCommandReceivedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(CallbackBody_onCommandReceivedParams& a, CallbackBody_onCommandReceivedParams& b) {
     a.Swap(&b);
@@ -6239,7 +6563,7 @@ class CallbackBody_onCommandChannelConnectResultParams final :
                &_CallbackBody_onCommandChannelConnectResultParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(CallbackBody_onCommandChannelConnectResultParams& a, CallbackBody_onCommandChannelConnectResultParams& b) {
     a.Swap(&b);
@@ -6377,7 +6701,7 @@ class CallbackBody_onInviteByPhoneStatusParams final :
                &_CallbackBody_onInviteByPhoneStatusParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(CallbackBody_onInviteByPhoneStatusParams& a, CallbackBody_onInviteByPhoneStatusParams& b) {
     a.Swap(&b);
@@ -6528,7 +6852,7 @@ class CallbackBody_onCloudRecordingStatusParams final :
                &_CallbackBody_onCloudRecordingStatusParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(CallbackBody_onCloudRecordingStatusParams& a, CallbackBody_onCloudRecordingStatusParams& b) {
     a.Swap(&b);
@@ -6666,7 +6990,7 @@ class CallbackBody_onCameraControlRequestResultParams final :
                &_CallbackBody_onCameraControlRequestResultParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(CallbackBody_onCameraControlRequestResultParams& a, CallbackBody_onCameraControlRequestResultParams& b) {
     a.Swap(&b);
@@ -6820,7 +7144,7 @@ class CallbackBody_onCameraControlRequestReceivedParams final :
                &_CallbackBody_onCameraControlRequestReceivedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(CallbackBody_onCameraControlRequestReceivedParams& a, CallbackBody_onCameraControlRequestReceivedParams& b) {
     a.Swap(&b);
@@ -6974,7 +7298,7 @@ class CallbackBody_onRemoteControlStatusParams final :
                &_CallbackBody_onRemoteControlStatusParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(CallbackBody_onRemoteControlStatusParams& a, CallbackBody_onRemoteControlStatusParams& b) {
     a.Swap(&b);
@@ -7144,7 +7468,7 @@ class CallbackBody_onRemoteControlRequestReceivedParams final :
                &_CallbackBody_onRemoteControlRequestReceivedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(CallbackBody_onRemoteControlRequestReceivedParams& a, CallbackBody_onRemoteControlRequestReceivedParams& b) {
     a.Swap(&b);
@@ -7301,7 +7625,7 @@ class CallbackBody_onRemoteControlServiceInstallResultParams final :
                &_CallbackBody_onRemoteControlServiceInstallResultParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(CallbackBody_onRemoteControlServiceInstallResultParams& a, CallbackBody_onRemoteControlServiceInstallResultParams& b) {
     a.Swap(&b);
@@ -7439,7 +7763,7 @@ class CallbackBody_onMultiCameraStreamStatusChangedParams final :
                &_CallbackBody_onMultiCameraStreamStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(CallbackBody_onMultiCameraStreamStatusChangedParams& a, CallbackBody_onMultiCameraStreamStatusChangedParams& b) {
     a.Swap(&b);
@@ -7606,7 +7930,7 @@ class CallbackBody_onMicSpeakerVolumeChangedParams final :
                &_CallbackBody_onMicSpeakerVolumeChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(CallbackBody_onMicSpeakerVolumeChangedParams& a, CallbackBody_onMicSpeakerVolumeChangedParams& b) {
     a.Swap(&b);
@@ -7757,7 +8081,7 @@ class CallbackBody_onAudioDeviceStatusChangedParams final :
                &_CallbackBody_onAudioDeviceStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(CallbackBody_onAudioDeviceStatusChangedParams& a, CallbackBody_onAudioDeviceStatusChangedParams& b) {
     a.Swap(&b);
@@ -7908,7 +8232,7 @@ class CallbackBody_onTestMicStatusChangedParams final :
                &_CallbackBody_onTestMicStatusChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(CallbackBody_onTestMicStatusChangedParams& a, CallbackBody_onTestMicStatusChangedParams& b) {
     a.Swap(&b);
@@ -8046,7 +8370,7 @@ class CallbackBody_onLiveTranscriptionStatusParams final :
                &_CallbackBody_onLiveTranscriptionStatusParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(CallbackBody_onLiveTranscriptionStatusParams& a, CallbackBody_onLiveTranscriptionStatusParams& b) {
     a.Swap(&b);
@@ -8184,7 +8508,7 @@ class CallbackBody_onLiveTranscriptionMsgErrorParams final :
                &_CallbackBody_onLiveTranscriptionMsgErrorParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(CallbackBody_onLiveTranscriptionMsgErrorParams& a, CallbackBody_onLiveTranscriptionMsgErrorParams& b) {
     a.Swap(&b);
@@ -8341,7 +8665,7 @@ class CallbackBody_liveTranscriptionMsgInfoParams final :
                &_CallbackBody_liveTranscriptionMsgInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(CallbackBody_liveTranscriptionMsgInfoParams& a, CallbackBody_liveTranscriptionMsgInfoParams& b) {
     a.Swap(&b);
@@ -8584,7 +8908,7 @@ class CallbackBody_onCalloutJoinSuccessParams final :
                &_CallbackBody_onCalloutJoinSuccessParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(CallbackBody_onCalloutJoinSuccessParams& a, CallbackBody_onCalloutJoinSuccessParams& b) {
     a.Swap(&b);
@@ -8748,7 +9072,7 @@ class CallbackBody_onSessionLeaveParams final :
                &_CallbackBody_onSessionLeaveParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(CallbackBody_onSessionLeaveParams& a, CallbackBody_onSessionLeaveParams& b) {
     a.Swap(&b);
@@ -8886,7 +9210,7 @@ class CallbackBody_onShareCursorDataReceivedParams final :
                &_CallbackBody_onShareCursorDataReceivedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(CallbackBody_onShareCursorDataReceivedParams& a, CallbackBody_onShareCursorDataReceivedParams& b) {
     a.Swap(&b);
@@ -9027,7 +9351,7 @@ class CallbackBody_onSpotlightVideoChangedParams final :
                &_CallbackBody_onSpotlightVideoChangedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(CallbackBody_onSpotlightVideoChangedParams& a, CallbackBody_onSpotlightVideoChangedParams& b) {
     a.Swap(&b);
@@ -9168,7 +9492,7 @@ class CallbackBody_onBindIncomingLiveStreamResponseParams final :
                &_CallbackBody_onBindIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(CallbackBody_onBindIncomingLiveStreamResponseParams& a, CallbackBody_onBindIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9329,7 +9653,7 @@ class CallbackBody_onUnbindIncomingLiveStreamResponseParams final :
                &_CallbackBody_onUnbindIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(CallbackBody_onUnbindIncomingLiveStreamResponseParams& a, CallbackBody_onUnbindIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9490,7 +9814,7 @@ class CallbackBody_onIncomingLiveStreamStatusResponseParams final :
                &_CallbackBody_onIncomingLiveStreamStatusResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(CallbackBody_onIncomingLiveStreamStatusResponseParams& a, CallbackBody_onIncomingLiveStreamStatusResponseParams& b) {
     a.Swap(&b);
@@ -9644,7 +9968,7 @@ class CallbackBody_onStartIncomingLiveStreamResponseParams final :
                &_CallbackBody_onStartIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(CallbackBody_onStartIncomingLiveStreamResponseParams& a, CallbackBody_onStartIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9805,7 +10129,7 @@ class CallbackBody_onStopIncomingLiveStreamResponseParams final :
                &_CallbackBody_onStopIncomingLiveStreamResponseParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(CallbackBody_onStopIncomingLiveStreamResponseParams& a, CallbackBody_onStopIncomingLiveStreamResponseParams& b) {
     a.Swap(&b);
@@ -9966,7 +10290,7 @@ class CallbackBody final :
                &_CallbackBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(CallbackBody& a, CallbackBody& b) {
     a.Swap(&b);
@@ -10032,6 +10356,8 @@ class CallbackBody final :
   typedef CallbackBody_onUserVideoStatusChangedParams onUserVideoStatusChangedParams;
   typedef CallbackBody_onUserAudioStatusChangedParams onUserAudioStatusChangedParams;
   typedef CallbackBody_onUserShareStatusChangedParams onUserShareStatusChangedParams;
+  typedef CallbackBody_onShareContentChangedParams onShareContentChangedParams;
+  typedef CallbackBody_onShareContentSizeChangedParams onShareContentSizeChangedParams;
   typedef CallbackBody_onFailedToStartShareParams onFailedToStartShareParams;
   typedef CallbackBody_onLiveStreamStatusChangedParams onLiveStreamStatusChangedParams;
   typedef CallbackBody_onUserHostChangedParams onUserHostChangedParams;
@@ -10114,6 +10440,8 @@ class CallbackBody final :
     kOnStartIncomingLiveStreamResponseParamFieldNumber = 44,
     kOnStopIncomingLiveStreamResponseParamFieldNumber = 45,
     kOnFailedToStartShareParamFieldNumber = 46,
+    kOnShareContentChangedParamFieldNumber = 47,
+    kOnShareContentSizeChangedParamFieldNumber = 48,
     kMsgtypeFieldNumber = 1,
   };
   // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onErrorParams onErrorParam = 2;
@@ -10704,6 +11032,34 @@ class CallbackBody final :
   void unsafe_arena_set_allocated_onfailedtostartshareparam(
       ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* onfailedtostartshareparam);
   ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* unsafe_arena_release_onfailedtostartshareparam();
+  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams onShareContentChangedParam = 47;
+  bool has_onsharecontentchangedparam() const;
+  void clear_onsharecontentchangedparam() ;
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams& onsharecontentchangedparam() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* release_onsharecontentchangedparam();
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* mutable_onsharecontentchangedparam();
+  void set_allocated_onsharecontentchangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* onsharecontentchangedparam);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams& _internal_onsharecontentchangedparam() const;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* _internal_mutable_onsharecontentchangedparam();
+  public:
+  void unsafe_arena_set_allocated_onsharecontentchangedparam(
+      ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* onsharecontentchangedparam);
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* unsafe_arena_release_onsharecontentchangedparam();
+  // optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+  bool has_onsharecontentsizechangedparam() const;
+  void clear_onsharecontentsizechangedparam() ;
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams& onsharecontentsizechangedparam() const;
+  PROTOBUF_NODISCARD ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* release_onsharecontentsizechangedparam();
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* mutable_onsharecontentsizechangedparam();
+  void set_allocated_onsharecontentsizechangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* onsharecontentsizechangedparam);
+  private:
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams& _internal_onsharecontentsizechangedparam() const;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* _internal_mutable_onsharecontentsizechangedparam();
+  public:
+  void unsafe_arena_set_allocated_onsharecontentsizechangedparam(
+      ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* onsharecontentsizechangedparam);
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* unsafe_arena_release_onsharecontentsizechangedparam();
   // optional int32 msgtype = 1;
   bool has_msgtype() const;
   void clear_msgtype() ;
@@ -10767,6 +11123,8 @@ class CallbackBody final :
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStartIncomingLiveStreamResponseParams* onstartincominglivestreamresponseparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onStopIncomingLiveStreamResponseParams* onstopincominglivestreamresponseparam_;
     ::com::electron::zoomvideo::sdk::proto::CallbackBody_onFailedToStartShareParams* onfailedtostartshareparam_;
+    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* onsharecontentchangedparam_;
+    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* onsharecontentsizechangedparam_;
     ::int32_t msgtype_;
   };
   union { Impl_ _impl_; };
@@ -10819,7 +11177,7 @@ class CreateVideoSDKObjParam final :
                &_CreateVideoSDKObjParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(CreateVideoSDKObjParam& a, CreateVideoSDKObjParam& b) {
     a.Swap(&b);
@@ -10967,7 +11325,7 @@ class VideoSDKInitParams final :
                &_VideoSDKInitParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(VideoSDKInitParams& a, VideoSDKInitParams& b) {
     a.Swap(&b);
@@ -11213,7 +11571,7 @@ class VideoSDKSessionContext final :
                &_VideoSDKSessionContext_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(VideoSDKSessionContext& a, VideoSDKSessionContext& b) {
     a.Swap(&b);
@@ -11508,7 +11866,7 @@ class LeaveSessionParams final :
                &_LeaveSessionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(LeaveSessionParams& a, LeaveSessionParams& b) {
     a.Swap(&b);
@@ -11646,7 +12004,7 @@ class SessionPasswordParams final :
                &_SessionPasswordParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(SessionPasswordParams& a, SessionPasswordParams& b) {
     a.Swap(&b);
@@ -11794,7 +12152,7 @@ class MuteAudioParams final :
                &_MuteAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(MuteAudioParams& a, MuteAudioParams& b) {
     a.Swap(&b);
@@ -11935,7 +12293,7 @@ class UnMuteAudioParams final :
                &_UnMuteAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(UnMuteAudioParams& a, UnMuteAudioParams& b) {
     a.Swap(&b);
@@ -12076,7 +12434,7 @@ class SetSpeakerParams final :
                &_SetSpeakerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(SetSpeakerParams& a, SetSpeakerParams& b) {
     a.Swap(&b);
@@ -12214,7 +12572,7 @@ class SelectSpeakerParams final :
                &_SelectSpeakerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(SelectSpeakerParams& a, SelectSpeakerParams& b) {
     a.Swap(&b);
@@ -12385,7 +12743,7 @@ class SelectMicParams final :
                &_SelectMicParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(SelectMicParams& a, SelectMicParams& b) {
     a.Swap(&b);
@@ -12556,7 +12914,7 @@ class SendChatToUserParams final :
                &_SendChatToUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(SendChatToUserParams& a, SendChatToUserParams& b) {
     a.Swap(&b);
@@ -12720,7 +13078,7 @@ class SendChatToAllParams final :
                &_SendChatToAllParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(SendChatToAllParams& a, SendChatToAllParams& b) {
     a.Swap(&b);
@@ -12868,7 +13226,7 @@ class StartLiveStreamParams final :
                &_StartLiveStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(StartLiveStreamParams& a, StartLiveStreamParams& b) {
     a.Swap(&b);
@@ -13062,7 +13420,7 @@ class IncomingLiveStreamParams final :
                &_IncomingLiveStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(IncomingLiveStreamParams& a, IncomingLiveStreamParams& b) {
     a.Swap(&b);
@@ -13210,7 +13568,7 @@ class StartShareViewParams final :
                &_StartShareViewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(StartShareViewParams& a, StartShareViewParams& b) {
     a.Swap(&b);
@@ -13384,7 +13742,7 @@ class StartShareScreenParams final :
                &_StartShareScreenParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(StartShareScreenParams& a, StartShareScreenParams& b) {
     a.Swap(&b);
@@ -13558,7 +13916,7 @@ class LockShareParams final :
                &_LockShareParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(LockShareParams& a, LockShareParams& b) {
     a.Swap(&b);
@@ -13696,7 +14054,7 @@ class EnableShareDeviceAudioParams final :
                &_EnableShareDeviceAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(EnableShareDeviceAudioParams& a, EnableShareDeviceAudioParams& b) {
     a.Swap(&b);
@@ -13834,7 +14192,7 @@ class EnableOptimizeForSharedVideoParams final :
                &_EnableOptimizeForSharedVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(EnableOptimizeForSharedVideoParams& a, EnableOptimizeForSharedVideoParams& b) {
     a.Swap(&b);
@@ -13972,7 +14330,7 @@ class StartShare2ndCameraParams final :
                &_StartShare2ndCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(StartShare2ndCameraParams& a, StartShare2ndCameraParams& b) {
     a.Swap(&b);
@@ -14120,7 +14478,7 @@ class GetRemoteUsersParams final :
                &_GetRemoteUsersParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(GetRemoteUsersParams& a, GetRemoteUsersParams& b) {
     a.Swap(&b);
@@ -14258,7 +14616,7 @@ class GetMyInfoParams final :
                &_GetMyInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(GetMyInfoParams& a, GetMyInfoParams& b) {
     a.Swap(&b);
@@ -14396,7 +14754,7 @@ class ChangeNameParams final :
                &_ChangeNameParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(ChangeNameParams& a, ChangeNameParams& b) {
     a.Swap(&b);
@@ -14560,7 +14918,7 @@ class MakeHostParams final :
                &_MakeHostParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(MakeHostParams& a, MakeHostParams& b) {
     a.Swap(&b);
@@ -14724,7 +15082,7 @@ class MakeManagerParams final :
                &_MakeManagerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(MakeManagerParams& a, MakeManagerParams& b) {
     a.Swap(&b);
@@ -14865,7 +15223,7 @@ class RevokeManagerParams final :
                &_RevokeManagerParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(RevokeManagerParams& a, RevokeManagerParams& b) {
     a.Swap(&b);
@@ -15006,7 +15364,7 @@ class RemoveUserParams final :
                &_RemoveUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(RemoveUserParams& a, RemoveUserParams& b) {
     a.Swap(&b);
@@ -15147,7 +15505,7 @@ class RotateMyVideoParams final :
                &_RotateMyVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(RotateMyVideoParams& a, RotateMyVideoParams& b) {
     a.Swap(&b);
@@ -15285,7 +15643,7 @@ class SelectCameraParams final :
                &_SelectCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(SelectCameraParams& a, SelectCameraParams& b) {
     a.Swap(&b);
@@ -15433,7 +15791,7 @@ class CreateRenderParams final :
                &_CreateRenderParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(CreateRenderParams& a, CreateRenderParams& b) {
     a.Swap(&b);
@@ -15571,7 +15929,7 @@ class DestroyRendererParams final :
                &_DestroyRendererParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(DestroyRendererParams& a, DestroyRendererParams& b) {
     a.Swap(&b);
@@ -15709,7 +16067,7 @@ class SubscribeParams final :
                &_SubscribeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(SubscribeParams& a, SubscribeParams& b) {
     a.Swap(&b);
@@ -15889,7 +16247,7 @@ class UnSubscribeParams final :
                &_UnSubscribeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(UnSubscribeParams& a, UnSubscribeParams& b) {
     a.Swap(&b);
@@ -16056,7 +16414,7 @@ class SubscribeMultiCameraStreamParams final :
                &_SubscribeMultiCameraStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(SubscribeMultiCameraStreamParams& a, SubscribeMultiCameraStreamParams& b) {
     a.Swap(&b);
@@ -16236,7 +16594,7 @@ class UnSubscribeMultiCameraStreamParams final :
                &_UnSubscribeMultiCameraStreamParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   friend void swap(UnSubscribeMultiCameraStreamParams& a, UnSubscribeMultiCameraStreamParams& b) {
     a.Swap(&b);
@@ -16403,7 +16761,7 @@ class SetRawDataResolutionParams final :
                &_SetRawDataResolutionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   friend void swap(SetRawDataResolutionParams& a, SetRawDataResolutionParams& b) {
     a.Swap(&b);
@@ -16554,7 +16912,7 @@ class GetResolutionParams final :
                &_GetResolutionParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   friend void swap(GetResolutionParams& a, GetResolutionParams& b) {
     a.Swap(&b);
@@ -16692,7 +17050,7 @@ class GetRawDataTypeParams final :
                &_GetRawDataTypeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   friend void swap(GetRawDataTypeParams& a, GetRawDataTypeParams& b) {
     a.Swap(&b);
@@ -16830,7 +17188,7 @@ class CameraInfos final :
                &_CameraInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   friend void swap(CameraInfos& a, CameraInfos& b) {
     a.Swap(&b);
@@ -17040,7 +17398,7 @@ class GetCameraList final :
                &_GetCameraList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   friend void swap(GetCameraList& a, GetCameraList& b) {
     a.Swap(&b);
@@ -17184,7 +17542,7 @@ class MultiCameraStreamInfos final :
                &_MultiCameraStreamInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   friend void swap(MultiCameraStreamInfos& a, MultiCameraStreamInfos& b) {
     a.Swap(&b);
@@ -17322,7 +17680,7 @@ class MultiCameraStreamList final :
                &_MultiCameraStreamList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   friend void swap(MultiCameraStreamList& a, MultiCameraStreamList& b) {
     a.Swap(&b);
@@ -17466,7 +17824,7 @@ class GetMultiCameraStreamList final :
                &_GetMultiCameraStreamList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    101;
 
   friend void swap(GetMultiCameraStreamList& a, GetMultiCameraStreamList& b) {
     a.Swap(&b);
@@ -17607,7 +17965,7 @@ class MicInfos final :
                &_MicInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   friend void swap(MicInfos& a, MicInfos& b) {
     a.Swap(&b);
@@ -17791,7 +18149,7 @@ class GetMicList final :
                &_GetMicList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    103;
 
   friend void swap(GetMicList& a, GetMicList& b) {
     a.Swap(&b);
@@ -17935,7 +18293,7 @@ class SpeakerInfos final :
                &_SpeakerInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    104;
 
   friend void swap(SpeakerInfos& a, SpeakerInfos& b) {
     a.Swap(&b);
@@ -18119,7 +18477,7 @@ class GetSpeakerList final :
                &_GetSpeakerList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    105;
 
   friend void swap(GetSpeakerList& a, GetSpeakerList& b) {
     a.Swap(&b);
@@ -18263,7 +18621,7 @@ class SendCommandParams final :
                &_SendCommandParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    106;
 
   friend void swap(SendCommandParams& a, SendCommandParams& b) {
     a.Swap(&b);
@@ -18427,7 +18785,7 @@ class PhoneSupportCountryInfos final :
                &_PhoneSupportCountryInfos_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    107;
 
   friend void swap(PhoneSupportCountryInfos& a, PhoneSupportCountryInfos& b) {
     a.Swap(&b);
@@ -18621,7 +18979,7 @@ class GetPhoneSupportCountryList final :
                &_GetPhoneSupportCountryList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    108;
 
   friend void swap(GetPhoneSupportCountryList& a, GetPhoneSupportCountryList& b) {
     a.Swap(&b);
@@ -18765,7 +19123,7 @@ class InviteByPhoneParams final :
                &_InviteByPhoneParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    109;
 
   friend void swap(InviteByPhoneParams& a, InviteByPhoneParams& b) {
     a.Swap(&b);
@@ -18959,7 +19317,7 @@ class InvitePhoneUserParams final :
                &_InvitePhoneUserParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    110;
 
   friend void swap(InvitePhoneUserParams& a, InvitePhoneUserParams& b) {
     a.Swap(&b);
@@ -19179,7 +19537,7 @@ class LocalCameraCtrlTurnLeftParams final :
                &_LocalCameraCtrlTurnLeftParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    111;
 
   friend void swap(LocalCameraCtrlTurnLeftParams& a, LocalCameraCtrlTurnLeftParams& b) {
     a.Swap(&b);
@@ -19317,7 +19675,7 @@ class LocalCameraCtrlTurnRightParams final :
                &_LocalCameraCtrlTurnRightParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    112;
 
   friend void swap(LocalCameraCtrlTurnRightParams& a, LocalCameraCtrlTurnRightParams& b) {
     a.Swap(&b);
@@ -19455,7 +19813,7 @@ class LocalCameraCtrlTurnUpParams final :
                &_LocalCameraCtrlTurnUpParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    113;
 
   friend void swap(LocalCameraCtrlTurnUpParams& a, LocalCameraCtrlTurnUpParams& b) {
     a.Swap(&b);
@@ -19593,7 +19951,7 @@ class LocalCameraCtrlTurnDownParams final :
                &_LocalCameraCtrlTurnDownParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    114;
 
   friend void swap(LocalCameraCtrlTurnDownParams& a, LocalCameraCtrlTurnDownParams& b) {
     a.Swap(&b);
@@ -19731,7 +20089,7 @@ class LocalCameraCtrlZoomInParams final :
                &_LocalCameraCtrlZoomInParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    115;
 
   friend void swap(LocalCameraCtrlZoomInParams& a, LocalCameraCtrlZoomInParams& b) {
     a.Swap(&b);
@@ -19869,7 +20227,7 @@ class LocalCameraCtrlZoomOutParams final :
                &_LocalCameraCtrlZoomOutParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    116;
 
   friend void swap(LocalCameraCtrlZoomOutParams& a, LocalCameraCtrlZoomOutParams& b) {
     a.Swap(&b);
@@ -20007,7 +20365,7 @@ class RequestControlRemoteCameraParams final :
                &_RequestControlRemoteCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    117;
 
   friend void swap(RequestControlRemoteCameraParams& a, RequestControlRemoteCameraParams& b) {
     a.Swap(&b);
@@ -20148,7 +20506,7 @@ class GiveUpControlRemoteCameraParams final :
                &_GiveUpControlRemoteCameraParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    118;
 
   friend void swap(GiveUpControlRemoteCameraParams& a, GiveUpControlRemoteCameraParams& b) {
     a.Swap(&b);
@@ -20289,7 +20647,7 @@ class RemoteCameraCtrlTurnLeftParams final :
                &_RemoteCameraCtrlTurnLeftParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    119;
 
   friend void swap(RemoteCameraCtrlTurnLeftParams& a, RemoteCameraCtrlTurnLeftParams& b) {
     a.Swap(&b);
@@ -20443,7 +20801,7 @@ class RemoteCameraCtrlTurnRightParams final :
                &_RemoteCameraCtrlTurnRightParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    120;
 
   friend void swap(RemoteCameraCtrlTurnRightParams& a, RemoteCameraCtrlTurnRightParams& b) {
     a.Swap(&b);
@@ -20597,7 +20955,7 @@ class RemoteCameraCtrlTurnUpParams final :
                &_RemoteCameraCtrlTurnUpParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    121;
 
   friend void swap(RemoteCameraCtrlTurnUpParams& a, RemoteCameraCtrlTurnUpParams& b) {
     a.Swap(&b);
@@ -20751,7 +21109,7 @@ class RemoteCameraCtrlTurnDownParams final :
                &_RemoteCameraCtrlTurnDownParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    122;
 
   friend void swap(RemoteCameraCtrlTurnDownParams& a, RemoteCameraCtrlTurnDownParams& b) {
     a.Swap(&b);
@@ -20905,7 +21263,7 @@ class RemoteCameraCtrlZoomInParams final :
                &_RemoteCameraCtrlZoomInParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    123;
 
   friend void swap(RemoteCameraCtrlZoomInParams& a, RemoteCameraCtrlZoomInParams& b) {
     a.Swap(&b);
@@ -21059,7 +21417,7 @@ class RemoteCameraCtrlZoomOutParams final :
                &_RemoteCameraCtrlZoomOutParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    124;
 
   friend void swap(RemoteCameraCtrlZoomOutParams& a, RemoteCameraCtrlZoomOutParams& b) {
     a.Swap(&b);
@@ -21213,7 +21571,7 @@ class SetVideoQualityPreferenceParams final :
                &_SetVideoQualityPreferenceParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    125;
 
   friend void swap(SetVideoQualityPreferenceParams& a, SetVideoQualityPreferenceParams& b) {
     a.Swap(&b);
@@ -21377,7 +21735,7 @@ class SetSuppressBackgroundNoiseLevelParams final :
                &_SetSuppressBackgroundNoiseLevelParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    126;
 
   friend void swap(SetSuppressBackgroundNoiseLevelParams& a, SetSuppressBackgroundNoiseLevelParams& b) {
     a.Swap(&b);
@@ -21515,7 +21873,7 @@ class SetEchoCancellationLevelParams final :
                &_SetEchoCancellationLevelParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    125;
+    127;
 
   friend void swap(SetEchoCancellationLevelParams& a, SetEchoCancellationLevelParams& b) {
     a.Swap(&b);
@@ -21653,7 +22011,7 @@ class EnableMicOriginalInputParams final :
                &_EnableMicOriginalInputParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    128;
 
   friend void swap(EnableMicOriginalInputParams& a, EnableMicOriginalInputParams& b) {
     a.Swap(&b);
@@ -21791,7 +22149,7 @@ class EnableHighFidelityMusicModeParams final :
                &_EnableHighFidelityMusicModeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    127;
+    129;
 
   friend void swap(EnableHighFidelityMusicModeParams& a, EnableHighFidelityMusicModeParams& b) {
     a.Swap(&b);
@@ -21929,7 +22287,7 @@ class EnableEchoCancellationParams final :
                &_EnableEchoCancellationParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    128;
+    130;
 
   friend void swap(EnableEchoCancellationParams& a, EnableEchoCancellationParams& b) {
     a.Swap(&b);
@@ -22067,7 +22425,7 @@ class EnableStereoAudioParams final :
                &_EnableStereoAudioParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    129;
+    131;
 
   friend void swap(EnableStereoAudioParams& a, EnableStereoAudioParams& b) {
     a.Swap(&b);
@@ -22205,7 +22563,7 @@ class StartMicTestRecordingParams final :
                &_StartMicTestRecordingParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    130;
+    132;
 
   friend void swap(StartMicTestRecordingParams& a, StartMicTestRecordingParams& b) {
     a.Swap(&b);
@@ -22353,7 +22711,7 @@ class StartSpeakerTestParams final :
                &_StartSpeakerTestParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    131;
+    133;
 
   friend void swap(StartSpeakerTestParams& a, StartSpeakerTestParams& b) {
     a.Swap(&b);
@@ -22501,7 +22859,7 @@ class SetTimerIntervalParams final :
                &_SetTimerIntervalParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    132;
+    134;
 
   friend void swap(SetTimerIntervalParams& a, SetTimerIntervalParams& b) {
     a.Swap(&b);
@@ -22639,7 +22997,7 @@ class EnableMultiStreamVideoParams final :
                &_EnableMultiStreamVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    135;
 
   friend void swap(EnableMultiStreamVideoParams& a, EnableMultiStreamVideoParams& b) {
     a.Swap(&b);
@@ -22787,7 +23145,7 @@ class DisableMultiStreamVideoParams final :
                &_DisableMultiStreamVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    136;
 
   friend void swap(DisableMultiStreamVideoParams& a, DisableMultiStreamVideoParams& b) {
     a.Swap(&b);
@@ -22935,7 +23293,7 @@ class StartVideoPreviewParams final :
                &_StartVideoPreviewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    135;
+    137;
 
   friend void swap(StartVideoPreviewParams& a, StartVideoPreviewParams& b) {
     a.Swap(&b);
@@ -23096,7 +23454,7 @@ class StopVideoPreviewParams final :
                &_StopVideoPreviewParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    136;
+    138;
 
   friend void swap(StopVideoPreviewParams& a, StopVideoPreviewParams& b) {
     a.Swap(&b);
@@ -23234,7 +23592,7 @@ class SpotLightVideoParams final :
                &_SpotLightVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    137;
+    139;
 
   friend void swap(SpotLightVideoParams& a, SpotLightVideoParams& b) {
     a.Swap(&b);
@@ -23375,7 +23733,7 @@ class UnSpotLightVideoParams final :
                &_UnSpotLightVideoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    138;
+    140;
 
   friend void swap(UnSpotLightVideoParams& a, UnSpotLightVideoParams& b) {
     a.Swap(&b);
@@ -23516,7 +23874,7 @@ class SetSpokenLanguageParams final :
                &_SetSpokenLanguageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    139;
+    141;
 
   friend void swap(SetSpokenLanguageParams& a, SetSpokenLanguageParams& b) {
     a.Swap(&b);
@@ -23654,7 +24012,7 @@ class LTTLanguagesList final :
                &_LTTLanguagesList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    140;
+    142;
 
   friend void swap(LTTLanguagesList& a, LTTLanguagesList& b) {
     a.Swap(&b);
@@ -23798,7 +24156,7 @@ class SetTranslationLanguageParams final :
                &_SetTranslationLanguageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    141;
+    143;
 
   friend void swap(SetTranslationLanguageParams& a, SetTranslationLanguageParams& b) {
     a.Swap(&b);
@@ -23936,7 +24294,7 @@ class CanChatMessageBeDeletedParams final :
                &_CanChatMessageBeDeletedParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    142;
+    144;
 
   friend void swap(CanChatMessageBeDeletedParams& a, CanChatMessageBeDeletedParams& b) {
     a.Swap(&b);
@@ -24084,7 +24442,7 @@ class DeleteChatMessageParams final :
                &_DeleteChatMessageParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    143;
+    145;
 
   friend void swap(DeleteChatMessageParams& a, DeleteChatMessageParams& b) {
     a.Swap(&b);
@@ -24232,7 +24590,7 @@ class VBItemInfo final :
                &_VBItemInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    144;
+    146;
 
   friend void swap(VBItemInfo& a, VBItemInfo& b) {
     a.Swap(&b);
@@ -24429,7 +24787,7 @@ class VBItemHandleList final :
                &_VBItemHandleList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    145;
+    147;
 
   friend void swap(VBItemHandleList& a, VBItemHandleList& b) {
     a.Swap(&b);
@@ -24575,7 +24933,7 @@ class AddVirtualBackgroundItemParams final :
                &_AddVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    146;
+    148;
 
   friend void swap(AddVirtualBackgroundItemParams& a, AddVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -24723,7 +25081,7 @@ class RemoveVirtualBackgroundItemParams final :
                &_RemoveVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    147;
+    149;
 
   friend void swap(RemoveVirtualBackgroundItemParams& a, RemoveVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -24861,7 +25219,7 @@ class SetVirtualBackgroundItemParams final :
                &_SetVirtualBackgroundItemParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    148;
+    150;
 
   friend void swap(SetVirtualBackgroundItemParams& a, SetVirtualBackgroundItemParams& b) {
     a.Swap(&b);
@@ -24999,7 +25357,7 @@ class GetVirtualBackgroundItemInfoParams final :
                &_GetVirtualBackgroundItemInfoParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    149;
+    151;
 
   friend void swap(GetVirtualBackgroundItemInfoParams& a, GetVirtualBackgroundItemInfoParams& b) {
     a.Swap(&b);
@@ -25137,7 +25495,7 @@ class SetScreenCaptureModeParams final :
                &_SetScreenCaptureModeParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    150;
+    152;
 
   friend void swap(SetScreenCaptureModeParams& a, SetScreenCaptureModeParams& b) {
     a.Swap(&b);
@@ -25275,7 +25633,7 @@ class EnableGreenBorderParams final :
                &_EnableGreenBorderParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    151;
+    153;
 
   friend void swap(EnableGreenBorderParams& a, EnableGreenBorderParams& b) {
     a.Swap(&b);
@@ -25413,7 +25771,7 @@ class EnableAdminRemoteControlParams final :
                &_EnableAdminRemoteControlParams_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    152;
+    154;
 
   friend void swap(EnableAdminRemoteControlParams& a, EnableAdminRemoteControlParams& b) {
     a.Swap(&b);
@@ -28009,6 +28367,362 @@ inline void CallbackBody_onUserShareStatusChangedParams::set_allocated_shareacti
   }
   _impl_.shareaction_ = shareaction;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onUserShareStatusChangedParams.shareAction)
+}
+
+// -------------------------------------------------------------------
+
+// CallbackBody_onShareContentChangedParams
+
+// optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+inline bool CallbackBody_onShareContentChangedParams::has_user() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.user_ != nullptr);
+  return value;
+}
+inline void CallbackBody_onShareContentChangedParams::clear_user() {
+  if (_impl_.user_ != nullptr) _impl_.user_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& CallbackBody_onShareContentChangedParams::_internal_user() const {
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* p = _impl_.user_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser&>(
+      ::com::electron::zoomvideo::sdk::proto::_VideoSDKUser_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& CallbackBody_onShareContentChangedParams::user() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.user)
+  return _internal_user();
+}
+inline void CallbackBody_onShareContentChangedParams::unsafe_arena_set_allocated_user(
+    ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.user_);
+  }
+  _impl_.user_ = user;
+  if (user) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.user)
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentChangedParams::release_user() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* temp = _impl_.user_;
+  _impl_.user_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentChangedParams::unsafe_arena_release_user() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.user)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* temp = _impl_.user_;
+  _impl_.user_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentChangedParams::_internal_mutable_user() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.user_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::VideoSDKUser>(GetArenaForAllocation());
+    _impl_.user_ = p;
+  }
+  return _impl_.user_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentChangedParams::mutable_user() {
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* _msg = _internal_mutable_user();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.user)
+  return _msg;
+}
+inline void CallbackBody_onShareContentChangedParams::set_allocated_user(::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.user_;
+  }
+  if (user) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(user);
+    if (message_arena != submessage_arena) {
+      user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, user, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.user_ = user;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.user)
+}
+
+// optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+inline bool CallbackBody_onShareContentChangedParams::has_shareaction() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.shareaction_ != nullptr);
+  return value;
+}
+inline void CallbackBody_onShareContentChangedParams::clear_shareaction() {
+  if (_impl_.shareaction_ != nullptr) _impl_.shareaction_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::ShareAction& CallbackBody_onShareContentChangedParams::_internal_shareaction() const {
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction* p = _impl_.shareaction_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::ShareAction&>(
+      ::com::electron::zoomvideo::sdk::proto::_ShareAction_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::ShareAction& CallbackBody_onShareContentChangedParams::shareaction() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.shareAction)
+  return _internal_shareaction();
+}
+inline void CallbackBody_onShareContentChangedParams::unsafe_arena_set_allocated_shareaction(
+    ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.shareaction_);
+  }
+  _impl_.shareaction_ = shareaction;
+  if (shareaction) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.shareAction)
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentChangedParams::release_shareaction() {
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* temp = _impl_.shareaction_;
+  _impl_.shareaction_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentChangedParams::unsafe_arena_release_shareaction() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.shareAction)
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* temp = _impl_.shareaction_;
+  _impl_.shareaction_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentChangedParams::_internal_mutable_shareaction() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  if (_impl_.shareaction_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::ShareAction>(GetArenaForAllocation());
+    _impl_.shareaction_ = p;
+  }
+  return _impl_.shareaction_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentChangedParams::mutable_shareaction() {
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* _msg = _internal_mutable_shareaction();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.shareAction)
+  return _msg;
+}
+inline void CallbackBody_onShareContentChangedParams::set_allocated_shareaction(::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.shareaction_;
+  }
+  if (shareaction) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(shareaction);
+    if (message_arena != submessage_arena) {
+      shareaction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, shareaction, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.shareaction_ = shareaction;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams.shareAction)
+}
+
+// -------------------------------------------------------------------
+
+// CallbackBody_onShareContentSizeChangedParams
+
+// optional .com.electron.zoomvideo.sdk.proto.VideoSDKUser user = 1;
+inline bool CallbackBody_onShareContentSizeChangedParams::has_user() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.user_ != nullptr);
+  return value;
+}
+inline void CallbackBody_onShareContentSizeChangedParams::clear_user() {
+  if (_impl_.user_ != nullptr) _impl_.user_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& CallbackBody_onShareContentSizeChangedParams::_internal_user() const {
+  const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* p = _impl_.user_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser&>(
+      ::com::electron::zoomvideo::sdk::proto::_VideoSDKUser_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::VideoSDKUser& CallbackBody_onShareContentSizeChangedParams::user() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.user)
+  return _internal_user();
+}
+inline void CallbackBody_onShareContentSizeChangedParams::unsafe_arena_set_allocated_user(
+    ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.user_);
+  }
+  _impl_.user_ = user;
+  if (user) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.user)
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentSizeChangedParams::release_user() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* temp = _impl_.user_;
+  _impl_.user_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentSizeChangedParams::unsafe_arena_release_user() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.user)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* temp = _impl_.user_;
+  _impl_.user_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentSizeChangedParams::_internal_mutable_user() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.user_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::VideoSDKUser>(GetArenaForAllocation());
+    _impl_.user_ = p;
+  }
+  return _impl_.user_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* CallbackBody_onShareContentSizeChangedParams::mutable_user() {
+  ::com::electron::zoomvideo::sdk::proto::VideoSDKUser* _msg = _internal_mutable_user();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.user)
+  return _msg;
+}
+inline void CallbackBody_onShareContentSizeChangedParams::set_allocated_user(::com::electron::zoomvideo::sdk::proto::VideoSDKUser* user) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.user_;
+  }
+  if (user) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(user);
+    if (message_arena != submessage_arena) {
+      user = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, user, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.user_ = user;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.user)
+}
+
+// optional .com.electron.zoomvideo.sdk.proto.ShareAction shareAction = 2;
+inline bool CallbackBody_onShareContentSizeChangedParams::has_shareaction() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.shareaction_ != nullptr);
+  return value;
+}
+inline void CallbackBody_onShareContentSizeChangedParams::clear_shareaction() {
+  if (_impl_.shareaction_ != nullptr) _impl_.shareaction_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::ShareAction& CallbackBody_onShareContentSizeChangedParams::_internal_shareaction() const {
+  const ::com::electron::zoomvideo::sdk::proto::ShareAction* p = _impl_.shareaction_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::ShareAction&>(
+      ::com::electron::zoomvideo::sdk::proto::_ShareAction_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::ShareAction& CallbackBody_onShareContentSizeChangedParams::shareaction() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.shareAction)
+  return _internal_shareaction();
+}
+inline void CallbackBody_onShareContentSizeChangedParams::unsafe_arena_set_allocated_shareaction(
+    ::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.shareaction_);
+  }
+  _impl_.shareaction_ = shareaction;
+  if (shareaction) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.shareAction)
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentSizeChangedParams::release_shareaction() {
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* temp = _impl_.shareaction_;
+  _impl_.shareaction_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentSizeChangedParams::unsafe_arena_release_shareaction() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.shareAction)
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* temp = _impl_.shareaction_;
+  _impl_.shareaction_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentSizeChangedParams::_internal_mutable_shareaction() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  if (_impl_.shareaction_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::ShareAction>(GetArenaForAllocation());
+    _impl_.shareaction_ = p;
+  }
+  return _impl_.shareaction_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::ShareAction* CallbackBody_onShareContentSizeChangedParams::mutable_shareaction() {
+  ::com::electron::zoomvideo::sdk::proto::ShareAction* _msg = _internal_mutable_shareaction();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.shareAction)
+  return _msg;
+}
+inline void CallbackBody_onShareContentSizeChangedParams::set_allocated_shareaction(::com::electron::zoomvideo::sdk::proto::ShareAction* shareaction) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.shareaction_;
+  }
+  if (shareaction) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(shareaction);
+    if (message_arena != submessage_arena) {
+      shareaction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, shareaction, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.shareaction_ = shareaction;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams.shareAction)
 }
 
 // -------------------------------------------------------------------
@@ -31788,12 +32502,12 @@ inline void CallbackBody_onStopIncomingLiveStreamResponseParams::set_allocated_s
 
 // optional int32 msgtype = 1;
 inline bool CallbackBody::has_msgtype() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00001000u) != 0;
   return value;
 }
 inline void CallbackBody::clear_msgtype() {
   _impl_.msgtype_ = 0;
-  _impl_._has_bits_[1] &= ~0x00000400u;
+  _impl_._has_bits_[1] &= ~0x00001000u;
 }
 inline ::int32_t CallbackBody::msgtype() const {
   // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.msgtype)
@@ -31807,7 +32521,7 @@ inline ::int32_t CallbackBody::_internal_msgtype() const {
   return _impl_.msgtype_;
 }
 inline void CallbackBody::_internal_set_msgtype(::int32_t value) {
-  _impl_._has_bits_[1] |= 0x00000400u;
+  _impl_._has_bits_[1] |= 0x00001000u;
   _impl_.msgtype_ = value;
 }
 
@@ -35463,6 +36177,180 @@ inline void CallbackBody::set_allocated_onfailedtostartshareparam(::com::electro
   }
   _impl_.onfailedtostartshareparam_ = onfailedtostartshareparam;
   // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onFailedToStartShareParam)
+}
+
+// optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParams onShareContentChangedParam = 47;
+inline bool CallbackBody::has_onsharecontentchangedparam() const {
+  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.onsharecontentchangedparam_ != nullptr);
+  return value;
+}
+inline void CallbackBody::clear_onsharecontentchangedparam() {
+  if (_impl_.onsharecontentchangedparam_ != nullptr) _impl_.onsharecontentchangedparam_->Clear();
+  _impl_._has_bits_[1] &= ~0x00000400u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams& CallbackBody::_internal_onsharecontentchangedparam() const {
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* p = _impl_.onsharecontentchangedparam_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams&>(
+      ::com::electron::zoomvideo::sdk::proto::_CallbackBody_onShareContentChangedParams_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams& CallbackBody::onsharecontentchangedparam() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParam)
+  return _internal_onsharecontentchangedparam();
+}
+inline void CallbackBody::unsafe_arena_set_allocated_onsharecontentchangedparam(
+    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* onsharecontentchangedparam) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.onsharecontentchangedparam_);
+  }
+  _impl_.onsharecontentchangedparam_ = onsharecontentchangedparam;
+  if (onsharecontentchangedparam) {
+    _impl_._has_bits_[1] |= 0x00000400u;
+  } else {
+    _impl_._has_bits_[1] &= ~0x00000400u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParam)
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* CallbackBody::release_onsharecontentchangedparam() {
+  _impl_._has_bits_[1] &= ~0x00000400u;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* temp = _impl_.onsharecontentchangedparam_;
+  _impl_.onsharecontentchangedparam_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* CallbackBody::unsafe_arena_release_onsharecontentchangedparam() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParam)
+  _impl_._has_bits_[1] &= ~0x00000400u;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* temp = _impl_.onsharecontentchangedparam_;
+  _impl_.onsharecontentchangedparam_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* CallbackBody::_internal_mutable_onsharecontentchangedparam() {
+  _impl_._has_bits_[1] |= 0x00000400u;
+  if (_impl_.onsharecontentchangedparam_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams>(GetArenaForAllocation());
+    _impl_.onsharecontentchangedparam_ = p;
+  }
+  return _impl_.onsharecontentchangedparam_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* CallbackBody::mutable_onsharecontentchangedparam() {
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* _msg = _internal_mutable_onsharecontentchangedparam();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParam)
+  return _msg;
+}
+inline void CallbackBody::set_allocated_onsharecontentchangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentChangedParams* onsharecontentchangedparam) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.onsharecontentchangedparam_;
+  }
+  if (onsharecontentchangedparam) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(onsharecontentchangedparam);
+    if (message_arena != submessage_arena) {
+      onsharecontentchangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, onsharecontentchangedparam, submessage_arena);
+    }
+    _impl_._has_bits_[1] |= 0x00000400u;
+  } else {
+    _impl_._has_bits_[1] &= ~0x00000400u;
+  }
+  _impl_.onsharecontentchangedparam_ = onsharecontentchangedparam;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentChangedParam)
+}
+
+// optional .com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+inline bool CallbackBody::has_onsharecontentsizechangedparam() const {
+  bool value = (_impl_._has_bits_[1] & 0x00000800u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.onsharecontentsizechangedparam_ != nullptr);
+  return value;
+}
+inline void CallbackBody::clear_onsharecontentsizechangedparam() {
+  if (_impl_.onsharecontentsizechangedparam_ != nullptr) _impl_.onsharecontentsizechangedparam_->Clear();
+  _impl_._has_bits_[1] &= ~0x00000800u;
+}
+inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams& CallbackBody::_internal_onsharecontentsizechangedparam() const {
+  const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* p = _impl_.onsharecontentsizechangedparam_;
+  return p != nullptr ? *p : reinterpret_cast<const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams&>(
+      ::com::electron::zoomvideo::sdk::proto::_CallbackBody_onShareContentSizeChangedParams_default_instance_);
+}
+inline const ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams& CallbackBody::onsharecontentsizechangedparam() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParam)
+  return _internal_onsharecontentsizechangedparam();
+}
+inline void CallbackBody::unsafe_arena_set_allocated_onsharecontentsizechangedparam(
+    ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* onsharecontentsizechangedparam) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.onsharecontentsizechangedparam_);
+  }
+  _impl_.onsharecontentsizechangedparam_ = onsharecontentsizechangedparam;
+  if (onsharecontentsizechangedparam) {
+    _impl_._has_bits_[1] |= 0x00000800u;
+  } else {
+    _impl_._has_bits_[1] &= ~0x00000800u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParam)
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* CallbackBody::release_onsharecontentsizechangedparam() {
+  _impl_._has_bits_[1] &= ~0x00000800u;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* temp = _impl_.onsharecontentsizechangedparam_;
+  _impl_.onsharecontentsizechangedparam_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* CallbackBody::unsafe_arena_release_onsharecontentsizechangedparam() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParam)
+  _impl_._has_bits_[1] &= ~0x00000800u;
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* temp = _impl_.onsharecontentsizechangedparam_;
+  _impl_.onsharecontentsizechangedparam_ = nullptr;
+  return temp;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* CallbackBody::_internal_mutable_onsharecontentsizechangedparam() {
+  _impl_._has_bits_[1] |= 0x00000800u;
+  if (_impl_.onsharecontentsizechangedparam_ == nullptr) {
+    auto* p = CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams>(GetArenaForAllocation());
+    _impl_.onsharecontentsizechangedparam_ = p;
+  }
+  return _impl_.onsharecontentsizechangedparam_;
+}
+inline ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* CallbackBody::mutable_onsharecontentsizechangedparam() {
+  ::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* _msg = _internal_mutable_onsharecontentsizechangedparam();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParam)
+  return _msg;
+}
+inline void CallbackBody::set_allocated_onsharecontentsizechangedparam(::com::electron::zoomvideo::sdk::proto::CallbackBody_onShareContentSizeChangedParams* onsharecontentsizechangedparam) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.onsharecontentsizechangedparam_;
+  }
+  if (onsharecontentsizechangedparam) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(onsharecontentsizechangedparam);
+    if (message_arena != submessage_arena) {
+      onsharecontentsizechangedparam = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, onsharecontentsizechangedparam, submessage_arena);
+    }
+    _impl_._has_bits_[1] |= 0x00000800u;
+  } else {
+    _impl_._has_bits_[1] &= ~0x00000800u;
+  }
+  _impl_.onsharecontentsizechangedparam_ = onsharecontentsizechangedparam;
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.CallbackBody.onShareContentSizeChangedParam)
 }
 
 // -------------------------------------------------------------------

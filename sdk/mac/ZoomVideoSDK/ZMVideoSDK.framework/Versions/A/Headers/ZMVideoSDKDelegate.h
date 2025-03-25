@@ -97,6 +97,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onUserShareStatusChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser* _Nullable)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
 /**
+ * @brief Invoked when the share content size has changed.
+ * @param shareHelper The pointer to a share helper object, see {@link ZMVideoSDKShareHelper}.
+ * @param user The pointer to a user object.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to {@link ZMVideoSDKShareAction}.
+ */
+- (void)onShareContentSizeChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser* _Nullable)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
+
+/**
+ * @brief Callback: Invoked when a user makes changes to their share content type, such as switching camera share to normal share.
+ * Find the share type in {@link ZMVideoSDKShareType}.
+ * @param shareHelper The pointer to share helper object.
+ * @param user current start or stop share userInfo. For more details, refer to {@link ZMVideoSDKUser}.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to {@link ZMVideoSDKShareAction}.
+ */
+- (void)onShareContentChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser *)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
+
+/**
  @brief Invoked when a user failed to start sharing.
  @param shareHelper The pointer to a share helper object, see {@link ZMVideoSDKShareHelper}.
  @param user The pointer to a user object.

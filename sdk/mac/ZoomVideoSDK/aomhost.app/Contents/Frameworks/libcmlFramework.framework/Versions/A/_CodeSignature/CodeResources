@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		eS18Tdlif6UbZhPa7DbDUsECx+I=
+		aOpjkfBYIYq0Z6NUVhYL1WagqFI=
 		</data>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Resources/afn_mac.mlmodelc/metadata.json</key>
 		<data>
-		FNMDHM6CX2Zpor0gIGvOx6UoCKs=
+		54i86/EkxqlNfy1weB81Apu6T/o=
 		</data>
 		<key>Resources/afn_mac.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/metadata.json</key>
 		<data>
-		1pxpHdh8tltx8+4m9Tu6omLfdlc=
+		LlypMSbc+5xlehVzSoqr3xgA8Pw=
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Resources/bgr_mac.mlmodelc/metadata.json</key>
 		<data>
-		4/9ih9c5Mos5M3lQqM9qTPRTVAg=
+		RryLVFalGjZsGWKNitD2EZUPZ1E=
 		</data>
 		<key>Resources/bgr_mac.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Resources/bgr_mac_basic.mlmodelc/metadata.json</key>
 		<data>
-		7S1NuHFgZW1NJ14RjaVMva4YwE4=
+		3mRHCuPlOWjYZndwSm4R/D5LQVc=
 		</data>
 		<key>Resources/bgr_mac_basic.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/metadata.json</key>
 		<data>
-		W7rcaQf53VVGqXNwu8lri2xdSOw=
+		xibylJxNdyay4ZkB/WA87MO9Zbg=
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Resources/flm.mlmodelc/metadata.json</key>
 		<data>
-		eNBwAIAP1D4MNXHpGRI4aS+oxoM=
+		UAAxKKJDgWsFsOfITvAAsDfRkcI=
 		</data>
 		<key>Resources/flm.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Resources/hd.mlmodelc/metadata.json</key>
 		<data>
-		Sj94CEDCFHv6ecujI3Nni+0C7Hk=
+		02Xa+RH2vT1fpihQP78HbI07l9Q=
 		</data>
 		<key>Resources/hd.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Resources/hlm.mlmodelc/metadata.json</key>
 		<data>
-		1PbMYWusZProN9Hw7ciegGY2/K0=
+		JxgJDi45/VwdDceDp+6lmP3PYDA=
 		</data>
 		<key>Resources/hlm.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Resources/lip_sync.mlmodelc/metadata.json</key>
 		<data>
-		YSmu8Trq1WOXMYuAWOOQTqnuaSQ=
+		g3tPxJ0Vd5MDlkhtI3cHkOEODDY=
 		</data>
 		<key>Resources/lip_sync.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -252,10 +252,6 @@
 		<data>
 		0pbd/S7BBTS+Kkh/N7Vs0HE5XQc=
 		</data>
-		<key>Resources/models.xml</key>
-		<data>
-		uBntsvhEQ/O6DC2hpoeZI3sh+HA=
-		</data>
 		<key>Resources/sr_180p.mlmodelc/analytics/coremldata.bin</key>
 		<data>
 		NL9Eg8CAk7AWiD/onShwGdt0y4M=
@@ -266,7 +262,7 @@
 		</data>
 		<key>Resources/sr_180p.mlmodelc/metadata.json</key>
 		<data>
-		7+esJ1bnykEVplZxgRisA8PAChY=
+		aywmSG/8JpUw55LXy6Tthc3d7hQ=
 		</data>
 		<key>Resources/sr_180p.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -286,11 +282,11 @@
 		</data>
 		<key>Resources/sr_270p.mlmodelc/coremldata.bin</key>
 		<data>
-		XGIhpu74Mo3Wz5J1UR6Lan+puw8=
+		sDHTLwaTaa6FAUDutRVimWtwzaM=
 		</data>
 		<key>Resources/sr_270p.mlmodelc/metadata.json</key>
 		<data>
-		7v2gD9OqII6p5aAEXrLGN5ABs6c=
+		W+xDHouP7svgWhzNadDIfZ+DE1Q=
 		</data>
 		<key>Resources/sr_270p.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -314,7 +310,7 @@
 		</data>
 		<key>Resources/sr_360p.mlmodelc/metadata.json</key>
 		<data>
-		qfYWaisgr8V6m4K4nvAp5O8Jdq4=
+		i4CSsi0Zt9FnaB/BbcV/AsB5Ax8=
 		</data>
 		<key>Resources/sr_360p.mlmodelc/model.espresso.weights</key>
 		<data>
@@ -365,7 +361,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r7IEVZsopl2zrJxtirmtMXN2qU/5Tq1KINcfSUra8gc=
+			Ha2Ea8bR9jfAqNALYGtKkivgN/WFCW5LB0WH62p8JXw=
 			</data>
 		</dict>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
@@ -386,7 +382,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tzxs9u8bHYOVzmjOi+SMdJVfm2sHMDIr3NSWYCSbw5c=
+			LE7bCxATEZ4W15o4BN4qFgVfIq9IT2UHnD0pJZxPwuY=
 			</data>
 		</dict>
 		<key>Resources/afn_mac.mlmodelc/model.espresso.weights</key>
@@ -428,7 +424,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IdyyDEf1NC5quFT5/lHTltMrtGh+EJiups4T9OA7pAA=
+			gQ4DZnHHkpH+/jBg4TCjJYIPzQGhqxR8PeS2M0D+3As=
 			</data>
 		</dict>
 		<key>Resources/afn_mac_premium.mlmodelc/model.espresso.weights</key>
@@ -470,7 +466,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x8+6s2dKLrcboAzYLnaz+S91DvwxwGgjN7j/zMbC0YU=
+			/xU3JIJKmbVUr1ULLmBzrUazv+l+SZb80GEosfolDMo=
 			</data>
 		</dict>
 		<key>Resources/bgr_mac.mlmodelc/model.espresso.weights</key>
@@ -512,7 +508,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1c+FP0yHVwQiMSkULwrKVWErnZxBPwYpWZnw+4VMGbc=
+			VvCJsIf1OzODoxrgpRJBZt9HrcLj29br7HgQ9Ai0te8=
 			</data>
 		</dict>
 		<key>Resources/bgr_mac_basic.mlmodelc/model.espresso.weights</key>
@@ -554,7 +550,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XEbduK+fAVlOAWgtMNGt4Hfe5D1W07jrQdEPSxqnJcc=
+			3L9E3sPyrW+1YS9BmiAx0+IZE/dNqWp4CTUsV9sCeig=
 			</data>
 		</dict>
 		<key>Resources/bgr_mac_premium.mlmodelc/model.espresso.weights</key>
@@ -596,7 +592,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BAvFjQxatRNoxymMObjradtXZTlOkgdP3eV+zQIYV/c=
+			9y8Wc0ho+A/i81xXeRH4+hCVH5lgY6b7D6pNeri1cck=
 			</data>
 		</dict>
 		<key>Resources/flm.mlmodelc/model.espresso.weights</key>
@@ -652,7 +648,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yG96wSuu8uP0O/8rwgZyQccYXQgkyNeiSUA5r+g+QQc=
+			7tZlvCmEl6PvElOKYAuJAsUK1t5mwSdbSGtoo+1/Q7s=
 			</data>
 		</dict>
 		<key>Resources/hd.mlmodelc/model.espresso.weights</key>
@@ -694,7 +690,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UZJ9cxps+m93PyYqXw5gaGR673NxSju/uB4m41RfFS4=
+			oGH6m5q7CE2dycAwdUhdzOrUU8P9mA0dvWns504QD78=
 			</data>
 		</dict>
 		<key>Resources/hlm.mlmodelc/model.espresso.weights</key>
@@ -743,7 +739,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/Ujfo+me6d34qd3DeoTKdcn7mTk21xAQ9KQFP9u2v5k=
+			4qozD8tVMe0337bXU+I/ZFQ8CkY8y8ssoCZzEEhNVgQ=
 			</data>
 		</dict>
 		<key>Resources/lip_sync.mlmodelc/model.espresso.weights</key>
@@ -774,13 +770,6 @@
 			PhJcyeQEQjya/Vrs7P+FB5a4hZCs3fjxfY/h7P6MLyQ=
 			</data>
 		</dict>
-		<key>Resources/models.xml</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VKS8Ile7NlXWIvtqv1fy0cZbr4WRN5MFgNehU7qfR1A=
-			</data>
-		</dict>
 		<key>Resources/sr_180p.mlmodelc/analytics/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
@@ -799,7 +788,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vkH9Y9MaFTZuMHadHesY9gywxrprfRki/UMGkRZFUY0=
+			ILqTw0D/rwV9Y0ggAd1HFukdT7YqA4GJkd0R//jAhEI=
 			</data>
 		</dict>
 		<key>Resources/sr_180p.mlmodelc/model.espresso.weights</key>
@@ -834,14 +823,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2mAh60+4VFSaxfZOlhmE+EPV3yHRb+Q9C+pZJacEL2s=
+			A+19eZ+UC0G3E601WtyXWXl+CEV2yyDSzJNGhJ/7iVg=
 			</data>
 		</dict>
 		<key>Resources/sr_270p.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			muKtBQjKrIbzfdpwaz+6kVwy4MkeWbn0EP1g85M8rx8=
+			UANAqklP1GBmEcaLu8ymEocE+v6g6MKnenCcCtq/Dac=
 			</data>
 		</dict>
 		<key>Resources/sr_270p.mlmodelc/model.espresso.weights</key>
@@ -883,7 +872,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZOl3O/pRMdJxTKOJavyv6zvkdaoaCOlkWMfkMZy8jGo=
+			LVmlVct+chbH38XdMl6Pj2VCdxbfkTwq08r9Vy+L0Mg=
 			</data>
 		</dict>
 		<key>Resources/sr_360p.mlmodelc/model.espresso.weights</key>

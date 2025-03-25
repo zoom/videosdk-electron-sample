@@ -102,6 +102,8 @@ typedef enum
 	ZoomVideoSDKErrors_Fail_Assign_User_Privilege,
 	ZoomVideoSDKErrors_No_Recording_In_Process,
 	ZoomVideoSDKErrors_Set_Virtual_Background_Fail,
+	ZoomVideoSDKErrors_Session_Share_Camera_Video_Not_Start,
+	ZoomVideoSDKErrors_Session_Share_Camera_Conflict_With_Video_Effects,
 	ZoomVideoSDKErrors_Filetransfer_UnknowError = 7500,
 	ZoomVideoSDKErrors_Filetransfer_FileTypeBlocked,
 	ZoomVideoSDKErrors_Filetransfer_FileSizelimited,
@@ -136,6 +138,7 @@ typedef enum
 	ZoomVideoSDKShareType_None,
 	ZoomVideoSDKShareType_Normal,///<application or desktop share
 	ZoomVideoSDKShareType_PureAudio, ///<pure computer audio share
+	ZoomVideoSDKShareType_Camera, ///<camera share
 }ZoomVideoSDKShareType;
 
 typedef enum

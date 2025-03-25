@@ -20,6 +20,9 @@
     "specificationVersion" : 2,
     "computePrecision" : "Float16",
     "isUpdatable" : "0",
+    "stateSchema" : [
+
+    ],
     "availability" : {
       "macOS" : "10.13.2",
       "tvOS" : "11.2",
@@ -28,24 +31,12 @@
       "iOS" : "11.2",
       "macCatalyst" : "11.2"
     },
-    "neuralNetworkLayerTypeHistogram" : {
-      "Concat" : 5,
-      "UpsampleNearestNeighbor" : 3,
-      "Multiply" : 3,
-      "ActivationReLU" : 25,
-      "Add" : 4,
-      "PoolingAverage" : 6,
-      "Convolution" : 29,
-      "ActivationSigmoid" : 4,
-      "PaddingConstant" : 6
-    },
     "modelType" : {
       "name" : "MLModelType_neuralNetwork"
     },
     "userDefinedMetadata" : {
 
     },
-    "generatedClassName" : "afn_mac_premium",
     "inputSchema" : [
       {
         "height" : "144",
@@ -70,6 +61,18 @@
         "type" : "MultiArray"
       }
     ],
+    "generatedClassName" : "afn_mac_premium",
+    "neuralNetworkLayerTypeHistogram" : {
+      "Concat" : 5,
+      "Multiply" : 3,
+      "ActivationReLU" : 25,
+      "PoolingAverage" : 6,
+      "UpsampleINVALID" : 3,
+      "Add" : 4,
+      "Convolution" : 29,
+      "PaddingConstant" : 6,
+      "ActivationSigmoid" : 4
+    },
     "method" : "predict"
   }
 ]

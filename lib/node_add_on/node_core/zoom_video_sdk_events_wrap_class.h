@@ -668,6 +668,20 @@ public:
 			owner_->onStopIncomingLiveStreamResponse(bSuccess, zn_strStreamKeyID);
 		}
 	}
+	virtual void onShareContentChanged(IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction)
+	{
+		if (owner_ && pShareHelper && pUser && pShareAction)
+		{
+			owner_->onShareContentChanged(pUser, pShareAction);
+		}
+	}
+	virtual void onShareContentSizeChanged(IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction)
+	{
+		if (owner_ && pShareHelper && pUser && pShareAction)
+		{
+			owner_->onShareContentSizeChanged(pUser, pShareAction);
+		}
+	}
 #if (!defined __linux)
 	virtual void onRemoteControlStatus(IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZoomVideoSDKRemoteControlStatus status)
 	{

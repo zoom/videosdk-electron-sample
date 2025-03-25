@@ -52,8 +52,13 @@ class IZoomVideoSDKAnnotationHelper
 public:
 	virtual ~IZoomVideoSDKAnnotationHelper() {};
 
+	/// \brief Determine Whether the current user can do annotation on the share.
+	/// \return true means the user can do annotation, otherwise false.
+	virtual bool canDoAnnotation() = 0;
+
 	/// \brief Determine whether annotation was disabled or not by the share owner.
 	/// \return true disable, false not disable.
+	/// \deprecated This interface is marked as deprecated, and is replaced by canDoAnnotation.
 	virtual bool isSenderDisableAnnotation() = 0;
 
 	/// \brief Starts annotation.

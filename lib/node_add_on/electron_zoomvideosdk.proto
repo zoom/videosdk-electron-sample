@@ -134,6 +134,16 @@ message CallbackBody{
 		optional ShareAction shareAction = 2;
 	}
 
+	message onShareContentChangedParams{
+		optional VideoSDKUser user = 1;
+		optional ShareAction shareAction = 2;
+	}
+
+	message onShareContentSizeChangedParams{
+		optional VideoSDKUser user = 1;
+		optional ShareAction shareAction = 2;
+	}
+
 	message onFailedToStartShareParams{
 		optional VideoSDKUser user = 1;
 	}
@@ -321,7 +331,7 @@ message CallbackBody{
 								// 40:onCalloutJoinSuccess 41:onShareCursorDataReceived
 								// 42:onRemoteControlStatus 43:onRemoteControlRequestReceived 44:onRemoteControlServiceInstallResult 45:onSpotlightVideoChanged
 								// 46:onBindIncomingLiveStreamResponse 47:onUnbindIncomingLiveStreamResponse 48:onIncomingLiveStreamStatusResponse 49:onStartIncomingLiveStreamResponse 50:onStopIncomingLiveStreamResponse
-								// 51:onFailedToStartShare 52:onCameraListChanged
+								// 51:onFailedToStartShare 52:onCameraListChanged 53:onShareContentChanged 54:onShareContentSizeChanged
 	optional onErrorParams onErrorParam = 2;
 	optional onUserJoinParams onUserJoinParam = 3;
 	optional onUserLeaveParams onUserLeaveParam = 4;
@@ -364,6 +374,8 @@ message CallbackBody{
 	optional onStartIncomingLiveStreamResponseParams onStartIncomingLiveStreamResponseParam = 44;
 	optional onStopIncomingLiveStreamResponseParams onStopIncomingLiveStreamResponseParam = 45;
 	optional onFailedToStartShareParams onFailedToStartShareParam = 46;
+	optional onShareContentChangedParams onShareContentChangedParam = 47;
+	optional onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
 }
 
 message CreateVideoSDKObjParam {

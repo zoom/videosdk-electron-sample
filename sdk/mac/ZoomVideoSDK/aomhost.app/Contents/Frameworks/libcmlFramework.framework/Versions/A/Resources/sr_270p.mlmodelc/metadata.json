@@ -25,6 +25,9 @@
     "storagePrecision" : "Float32",
     "license" : "Unpublished Work © 2021 ZOOM Inc. All rights reserved.",
     "computePrecision" : "Float16",
+    "stateSchema" : [
+
+    ],
     "isUpdatable" : "0",
     "availability" : {
       "macOS" : "11.0",
