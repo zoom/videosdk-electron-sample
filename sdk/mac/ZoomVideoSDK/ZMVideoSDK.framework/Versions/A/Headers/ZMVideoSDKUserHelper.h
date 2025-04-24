@@ -176,7 +176,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign, readonly) unsigned int resourceID;
 
-
+/**
+ @brief Millisecond timestamp.
+ */
+@property (nonatomic, assign, readonly) long long timeStamp;
 /**
  @brief Determine if the reference count for accessing the raw data buffer can be increased.
  @return If you addRef(), the SDK will try to hold the raw data buffer until the reference becomes 0. When you finish using the raw data buffer, you must call releaseRef;

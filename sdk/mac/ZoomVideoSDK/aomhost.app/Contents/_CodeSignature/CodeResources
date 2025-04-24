@@ -182,7 +182,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WQcthD6ajsEjbYGV20Tv2+fLIXI=
+			CWKBxr79Il1ZoCYjGrM0mv5PGVo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "us.zoom.dvf" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -191,7 +191,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zh7v2XrmBkhg2c6imIJE53XFC60=
+			Onz6ORdTIW2fiyjKi/+NEBgdnzU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.zoom.us.cmlFramework" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -200,7 +200,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			UnWodGJPUM3QqMUXJ9/XzJKeJU8=
+			ewKFAToFRoeqBsQFngcF5GRCue8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "us.zoom.zmp" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>

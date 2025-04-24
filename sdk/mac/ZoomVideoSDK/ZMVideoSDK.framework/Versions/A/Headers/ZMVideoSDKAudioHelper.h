@@ -29,7 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
  @brief Channel number of this data.
  */
 @property (nonatomic, assign, readonly) unsigned int channelNum;
-
+/**
+ @brief Millisecond timestamp.
+ */
+@property (nonatomic, assign, readonly) long long timeStamp;
 /**
  @brief Determine if the reference count for the interface pointer can be increased.
  @note If you call addRef, the SDK will try to hold the raw data buffer until the reference becomes 0. When you finish using the raw data buffer, you must call releaseRef to release it.
