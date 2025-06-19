@@ -76,7 +76,7 @@ public:
 	virtual const zchar_t* getDeviceId() = 0;
 	virtual const zchar_t* getDeviceName() = 0;
 	virtual bool isSelectedDevice() = 0;
-#if !defined (__linux) && !defined ANDROID && !defined (__IOS__)
+#if !defined (__linux) || defined CMM_ANDROID
 	/// \brief Determine whether the camera is selected as multiple stream video.
 	/// \return True if selected. Otherwise returns false.
 	virtual bool isSelectedAsMultiCamera() = 0;
@@ -165,8 +165,8 @@ public:
 	/// \return Returns true if the switch was successful, false otherwise.
 	virtual bool selectCamera(const zchar_t* cameraDeviceID) = 0;
 
-#if !defined (__linux) && !defined ANDROID && !defined (__IOS__)
-	/// \brief Enable multiple stream video if you have multiple cameras 
+#if !defined (__linux) || defined CMM_ANDROID
+	/// \brief Enable multiple stream video if you have multiple cameras
 	///        and other participants can see multiple videos of you.
 	/// \param cameraDeviceID The camera ID  for the camera to enable. 
 	/// \param customDeviceName The custom device name of the camera. If this parameter is not passed, a default name will be generated.

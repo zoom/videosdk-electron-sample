@@ -58,6 +58,7 @@ void ZoomVideoNodeLibuvWrap::GetAudioLibuvClientObj(const v8::FunctionCallbackIn
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 v8::Persistent<v8::Function> g_cb_onPainterVideoRawDataReceived;
+v8::Persistent<v8::Function> g_cb_onCapturedRawDataReceived;
 
 v8::Persistent<v8::Function> g_cb_onMixedAudioRawDataReceived;
 v8::Persistent<v8::Function> g_cb_onOneWayAudioRawDataReceived;
@@ -131,6 +132,54 @@ void RunVideoFormatDataCB(char* msg_buf, int type, UVIPCMessage* msg)
 			break;
 		}
 	}
+	
+	SendPingPongMsg(type, header.source_id);
+}
+std::string CPtrToStr(char* ptr)
+{
+    std::ostringstream oss;
+    oss << "0x"
+        << std::hex << std::nouppercase
+        << std::setw(sizeof(void*) * 2)
+        << std::setfill('0')
+        << reinterpret_cast<uintptr_t>(ptr);
+    return oss.str();
+}
+void RunSharePreprocessorDataCB(char* msg_buf, int type, UVIPCMessage* msg)
+{
+	if (TYPE_SHARE_PREPROCESSOR != type || NULL == msg_buf || NULL == msg)
+	{
+		return;
+	}
+	if (TYPE_SHARE_PREPROCESSOR == type && g_cb_onCapturedRawDataReceived.IsEmpty())
+	{
+		return;
+	}
+	fnCallbackVideoFormatDataToJS pCallbackVideoFormatDataToJS = NULL;
+	pCallbackVideoFormatDataToJS = ZoomNodeAPIUtilHelper::GetInst().m_fnCallbackVideoFormatDataToJS;
+	if (!pCallbackVideoFormatDataToJS)
+	{
+		return;
+	}
+
+	auto isolate = v8::Isolate::GetCurrent();
+	v8::HandleScope scope(isolate);
+	auto context = isolate->GetCurrentContext();
+	auto global = context->Global();
+
+	VideoRawDataHeader& header = *(VideoRawDataHeader*)msg_buf;
+	char format_[200] = { 0 };
+	//type islimit width height rotation yoffset uoffset voffset
+	sprintf(format_, "%s;%d;%d;%d;%d;%llu;%llu;%llu;%s", "yuvi420", header.isLimitedI420,     //checked safe
+		header.width, header.height, header.rotation, header.y_offset, header.u_offset, header.v_offset, CPtrToStr(header.pBuffer).c_str());
+
+	int recv_list_len = header.recv_handle_len;
+	unsigned long long* recv_list_ptr = (unsigned long long*)(msg_buf + sizeof(VideoRawDataHeader));
+	char* data_buf_ptr = msg_buf + sizeof(VideoRawDataHeader) + sizeof(unsigned long long) * recv_list_len;
+
+	msg->AddRef();
+	auto fn = v8::Local<v8::Function>::New(isolate, g_cb_onCapturedRawDataReceived);
+	pCallbackVideoFormatDataToJS((uint64_t)recv_list_ptr, std::string(format_), data_buf_ptr, header.dataBufferLen, fn, HandleFreeDataBufferNotification, msg);
 	
 	SendPingPongMsg(type, header.source_id);
 }
@@ -219,6 +268,9 @@ public:
 		case TYPE_AUDIO:
 			RunAudioFormatDataCB(msg_buf, msg);
 			break;
+		case TYPE_SHARE_PREPROCESSOR:
+			RunSharePreprocessorDataCB(msg_buf, common_header.type, msg);
+			break;
 		default:
 			break;
 		}
@@ -247,6 +299,7 @@ public:
 UVIPCClientSink g_ipcSinkClientVideo;
 UVIPCClientSink g_ipcSinkClientShare;
 UVIPCClientSink g_ipcSinkClientAudio;
+UVIPCClientSink g_ipcSinkClientSharePreprocessor;
 //
 void SendPingPongMsg(int type, unsigned int source_id)
 {
@@ -262,6 +315,12 @@ void SendPingPongMsg(int type, unsigned int source_id)
 	{
 		UVIPCMessage* msg = new UVIPCMessage((const char*)&source_id, sizeof(unsigned int));
 		g_ipcSinkClientShare._uv_ipc_client.SendMessage(msg);
+	}
+	break;
+	case TYPE_SHARE_PREPROCESSOR:
+	{
+		UVIPCMessage* msg = new UVIPCMessage((const char*)&source_id, sizeof(unsigned int));
+		g_ipcSinkClientSharePreprocessor._uv_ipc_client.SendMessage(msg);
 	}
 	break;
 	default:
@@ -285,7 +344,6 @@ void ZoomVideoNodeVideoRawDataLibuvClientWrap::SetPainterVideoRawDataCB(const v8
 		if (args[0]->IsNull())
 		{
 			g_cb_onPainterVideoRawDataReceived.Clear();
-			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
 			break;
 		}
 		if (!args[0]->IsFunction())
@@ -302,11 +360,42 @@ void ZoomVideoNodeVideoRawDataLibuvClientWrap::SetPainterVideoRawDataCB(const v8
 	args.GetReturnValue().Set(bret);
 }
 
+void ZoomVideoNodeVideoRawDataLibuvClientWrap::SetCapturedRawDataCB(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
+	do
+	{
+		if (args.Length() < 1) 
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+		if (args[0]->IsNull())
+		{
+			g_cb_onCapturedRawDataReceived.Clear();
+			break;
+		}
+		if (!args[0]->IsFunction())
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		v8::Local<v8::Function> cbfunc = v8::Local<v8::Function>::Cast(args[0]);
+		g_cb_onCapturedRawDataReceived.Reset(isolate, cbfunc);
+	} while (false);
+	
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+
 void ZoomVideoNodeVideoRawDataLibuvClientWrap::Start(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
 	v8::Isolate* isolate = args.GetIsolate();
 	bool err_video_pipe = false;
 	bool err_share_pipe = false;
+	bool err_share_preprocessor_pipe = false;
 	bool bSuccess = false;
 
 	g_ipcSinkClientVideo._uv_loop = uv_default_loop();
@@ -325,7 +414,15 @@ void ZoomVideoNodeVideoRawDataLibuvClientWrap::Start(const v8::FunctionCallbackI
 #endif
 	uv_run(g_ipcSinkClientShare._uv_loop, UV_RUN_NOWAIT);
 
-	if (err_video_pipe && err_share_pipe)
+	g_ipcSinkClientSharePreprocessor._uv_loop = uv_default_loop();
+#if (defined USING_IPC_IN_SUB_THREAD)
+	err_share_preprocessor_pipe = g_ipcSinkClientSharePreprocessor._uv_ipc_client.StartInSubThread(SHARE_PREPROCESSOR_PIPE_NAME, false, &g_ipcSinkClientSharePreprocessor, g_ipcSinkClientSharePreprocessor._uv_loop);
+#else
+	err_share_preprocessor_pipe = g_ipcSinkClientSharePreprocessor._uv_ipc_client.Start(SHARE_PREPROCESSOR_PIPE_NAME, false, g_ipcSinkClientSharePreprocessor._uv_loop, &g_ipcSinkClientSharePreprocessor);
+#endif
+	uv_run(g_ipcSinkClientSharePreprocessor._uv_loop, UV_RUN_NOWAIT);
+
+	if (err_video_pipe && err_share_pipe && err_share_preprocessor_pipe)
 	{
 		bSuccess = true;
 	}
@@ -338,11 +435,13 @@ void ZoomVideoNodeVideoRawDataLibuvClientWrap::Stop(const v8::FunctionCallbackIn
 	v8::Isolate* isolate = args.GetIsolate();
 	bool err_video_pipe = false;
 	bool err_share_pipe = false;
+	bool err_share_preprocessor_pipe = false;
 	bool bSuccess = false;
 	err_video_pipe = g_ipcSinkClientVideo._uv_ipc_client.Stop();
 	err_share_pipe = g_ipcSinkClientShare._uv_ipc_client.Stop();
+	err_share_preprocessor_pipe = g_ipcSinkClientSharePreprocessor._uv_ipc_client.Stop();
 
-	if (err_video_pipe && err_share_pipe)
+	if (err_video_pipe && err_share_pipe && err_share_preprocessor_pipe)
 	{
 		bSuccess = true;
 	}

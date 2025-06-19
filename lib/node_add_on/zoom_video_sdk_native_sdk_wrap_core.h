@@ -6,6 +6,7 @@
 #include "zoom_video_sdk_native_audio_helper_wrap_core.h"
 #include "zoom_video_sdk_native_video_helper_wrap_core.h"
 #include "zoom_video_sdk_native_share_helper_wrap_core.h"
+#include "zoom_video_sdk_native_share_preprocessor_helper_wrap_core.h"
 #include "zoom_video_sdk_native_user_helper_wrap_core.h"
 #include "zoom_video_sdk_native_chat_helper_wrap_core.h"
 #include "zoom_video_sdk_native_livestream_helper_wrap_core.h"
@@ -17,6 +18,7 @@
 #include "zoom_video_sdk_native_audio_setting_wrap_core.h"
 #include "zoom_video_sdk_native_live_transcription_helper_wrap_core.h"
 #include "zoom_video_sdk_native_share_setting_wrap_core.h"
+#include "zoom_video_sdk_native_annotation_helper_wrap_core.h"
 
 
 USING_ZOOM_VIDEO_SDK_NAMESPACE;
@@ -53,6 +55,7 @@ public:
 	ZTestAudioDeviceWrap& GetTestAudioDeviceWrap();
 	ZVideoHelperWrap& GetVideoHelperWrap();
 	ZShareHelperWrap& GetShareHelperWrap();
+	ZSharePreprocessorHelperWrap& GetSharePreprocessorHelperWrap();
 	ZShareInfoHelperWrap& GetShareInfoHelperWrap();
 	ZUserHelperWrap& GetUserHelperWrap();
 	ZChatHelperWrap& GetChatHelperWrap();
@@ -60,6 +63,7 @@ public:
 	ZIncomingLiveStreamHelperWrap& GetIncomingLiveStreamHelperWrap();
 	ZLiveTranscriptionHelperWrap& GetLiveTranscriptionHelperWrap();
 	ZShareSettingWrap& GetShareSettingWrap();
+	ZAnnotationHelperWrap& GetAnnotationHelperWrap();
 	//ZNativeVideoSDKVideoSource& GetVideoSourceWrap();
 
 	void onSessionJoin();
@@ -113,6 +117,8 @@ public:
 	void onCameraListChanged();
 	void onShareContentChanged(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareAction* pShareAction);
 	void onShareContentSizeChanged(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareAction* pShareAction);
+	void onCapturedRawDataReceived();
+	void onCapturedShareStopped(); 
 #if (!defined __linux)
 	void onRemoteControlStatus(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZNZoomVideoSDKRemoteControlStatus status);
 	void onRemoteControlRequestReceived(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction);
@@ -132,6 +138,7 @@ private:
 	ZAudioHelperWrap m_AudioHelper;
 	ZVideoHelperWrap m_VideoHelper;
 	ZShareHelperWrap m_ShareHelper;
+	ZSharePreprocessorHelperWrap m_SharePreprocessorHelper;
 	ZShareInfoHelperWrap m_ShareInfoHelper;
 	ZUserHelperWrap m_UserHelper;
 	ZChatHelperWrap m_ChatHelper;
@@ -145,6 +152,7 @@ private:
 	ZTestAudioDeviceWrap m_TestAudioDevice;
 	ZLiveTranscriptionHelperWrap m_LTTHelper;
 	ZShareSettingWrap m_ShareSetting;
+	ZAnnotationHelperWrap m_AnnotationHelper;
 	ZNativeZoomVideoSDKSinksWrap* m_pSink;
 
 };

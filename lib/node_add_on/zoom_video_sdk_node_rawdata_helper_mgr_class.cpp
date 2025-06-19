@@ -93,4 +93,4 @@ void ZoomVideoNodeUtilityHelper::ConvertSDKShareActionToProtoShareAction(ZOOM_VI
 ZoomVideoNodePipeServerMgr _g_video_pipe_server;
 ZoomVideoNodePipeServerMgr _g_audio_pipe_server;
 ZoomVideoNodePipeServerMgr _g_share_pipe_server;
-
+ZoomVideoNodePipeServerMgr _g_share_preprocessor_pipe_server;

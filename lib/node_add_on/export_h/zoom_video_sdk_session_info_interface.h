@@ -147,6 +147,10 @@ public:
 	///  \brief Get the maximum size for file transfer
 	///  \return The maximum number of bytes for file transfer
 	virtual uint64_t getMaxTransferFileSize() = 0;
+
+	///  \brief Get the session type of this session.
+	///  \return The session type.
+	virtual ZoomVideoSDKSessionType getSessionType() = 0;
 };
 END_ZOOM_VIDEO_SDK_NAMESPACE
 #endif

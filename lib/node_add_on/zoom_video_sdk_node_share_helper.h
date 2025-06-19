@@ -32,7 +32,11 @@ public:
 	static void EnableOptimizeForSharedVideo(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void IsOptimizeForSharedVideoEnabled(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void StartShare2ndCamera(const v8::FunctionCallbackInfo<v8::Value>& args);
-	
+	static void StartShareWithPreprocessing(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void SendPreprocessedData(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void CreateAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void DestroyAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
+
 	static v8::Persistent<v8::Function> constructor;
 };
 template<> inline 
@@ -58,6 +62,10 @@ void InitClassAttribute<ZoomVideoNodeShareHelperWrap >(const v8::Local<v8::Funct
 	NODE_SET_PROTOTYPE_METHOD(tpl, "EnableOptimizeForSharedVideo", ZoomVideoNodeShareHelperWrap::EnableOptimizeForSharedVideo);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "IsOptimizeForSharedVideoEnabled", ZoomVideoNodeShareHelperWrap::IsOptimizeForSharedVideoEnabled);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "StartShare2ndCamera", ZoomVideoNodeShareHelperWrap::StartShare2ndCamera);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "StartShareWithPreprocessing", ZoomVideoNodeShareHelperWrap::StartShareWithPreprocessing);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "SendPreprocessedData", ZoomVideoNodeShareHelperWrap::SendPreprocessedData);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "CreateAnnotationHelper", ZoomVideoNodeShareHelperWrap::CreateAnnotationHelper);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "DestroyAnnotationHelper", ZoomVideoNodeShareHelperWrap::DestroyAnnotationHelper);
 }
 template<> inline 
 v8::Persistent<v8::Function>* GetConstructor<ZoomVideoNodeShareHelperWrap >() {

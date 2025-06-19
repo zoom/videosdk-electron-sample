@@ -390,6 +390,10 @@ ZShareHelperWrap& ZNativeVideoSDKWrap::GetShareHelperWrap()
 {
 	return m_ShareHelper;
 }
+ZSharePreprocessorHelperWrap& ZNativeVideoSDKWrap::GetSharePreprocessorHelperWrap()
+{
+	return m_SharePreprocessorHelper;
+}
 ZShareInfoHelperWrap& ZNativeVideoSDKWrap::GetShareInfoHelperWrap()
 {
 	return m_ShareInfoHelper;
@@ -417,6 +421,10 @@ ZLiveTranscriptionHelperWrap& ZNativeVideoSDKWrap::GetLiveTranscriptionHelperWra
 ZShareSettingWrap& ZNativeVideoSDKWrap::GetShareSettingWrap()
 {
 	return m_ShareSetting;
+}
+ZAnnotationHelperWrap& ZNativeVideoSDKWrap::GetAnnotationHelperWrap()
+{
+	return m_AnnotationHelper;
 }
 //ZNativeVideoSDKVideoSource& ZNativeVideoSDKWrap::GetVideoSourceWrap()
 //{

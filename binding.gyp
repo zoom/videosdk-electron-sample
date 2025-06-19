@@ -87,6 +87,7 @@
 			  "./lib/node_add_on/zoom_video_sdk_node_audio_setting.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_live_transcription_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_share_setting.cpp",
+			  "./lib/node_add_on/zoom_video_sdk_node_annotation_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_v8_to_c.cpp",
 			  
 			  "./lib/node_add_on/zoom_video_sdk_node_video_raw_data.cpp",
@@ -102,6 +103,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_setting_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_helper_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_preprocessor_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_raw_data_helper.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_user_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_chat_helper_wrap_core.cpp",
@@ -112,6 +114,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_recording_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_live_transcription_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_setting_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_annotation_helper_wrap_core.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_napi_util_exporter.cpp",
 			  
 			  
@@ -167,6 +170,7 @@
 			  "./lib/node_add_on/zoom_video_sdk_node_audio_setting.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_live_transcription_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_share_setting.cpp",
+			  "./lib/node_add_on/zoom_video_sdk_node_annotation_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_v8_to_c.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_video_raw_data.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_rawdata_server_mgr.cpp",
@@ -179,6 +183,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_setting_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_helper_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_preprocessor_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_raw_data_helper.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_user_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_chat_helper_wrap_core.cpp",
@@ -189,6 +194,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_recording_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_live_transcription_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_setting_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_annotation_helper_wrap_core.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_napi_util_exporter.cpp",
 			  ],
 			  'link_settings':{
@@ -278,6 +284,7 @@
 			  "./lib/node_add_on/zoom_video_sdk_node_audio_setting.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_live_transcription_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_share_setting.cpp",
+			  "./lib/node_add_on/zoom_video_sdk_node_annotation_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_v8_to_c.cpp",
 			  
 			  "./lib/node_add_on/zoom_video_sdk_node_video_raw_data.cpp",
@@ -293,6 +300,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_helper_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_preprocessor_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_video_raw_data_helper.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_user_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_chat_helper_wrap_core.cpp",
@@ -305,6 +313,7 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_setting_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_live_transcription_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_setting_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_annotation_helper_wrap_core.cpp",
 		  ],
 			  'defines':['BUILD_WIN'],
 			  

@@ -6,7 +6,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- @brief Annotate helper interface.
+ * @brief Annotate helper interface.
  */
 @interface ZMVideoSDKAnnotationHelper : NSObject
 
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief Whether annotation was disabled or not by the share owner.
  * @return YES indicates the annotations is disabled, otherwise NO.
+ * @deprecated Use \link ZMVideoSDKAnnotationHelper::canDoAnnotation \endlink instead.
  */
 - (BOOL)isSenderDisableAnnotation DEPRECATED_MSG_ATTRIBUTE("Use -canDoAnnotation instead");
 
@@ -50,15 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Sets the annotation tool type.
- * @param toolType The specified annotation tool type. For more information, see {@link ZMVideoSDKAnnotationToolType}.
- * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
+ * @param toolType The specified annotation tool type. For more information, see \link ZMVideoSDKAnnotationToolType \endlink.
+ * @return If the function succeeds, it will return @c ZMVideoSDKErrors_Success.
  * @warning The tool type ZMVideoSDKAnnotationToolType_Picker and ZMVideoSDKAnnotationToolType_SpotLight are not support for viewer.
  */
 - (ZMVideoSDKErrors)setToolType:(ZMVideoSDKAnnotationToolType)toolType;
 
 /**
  * @brief Gets the annotation tool type.
- * @param toolType The current tool type. For more information, see {@link ZMVideoSDKAnnotationToolType}.
+ * @param toolType The current tool type. For more information, see \link ZMVideoSDKAnnotationToolType\endlink.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
  */
 - (ZMVideoSDKErrors)getToolType:(ZMVideoSDKAnnotationToolType*)toolType;

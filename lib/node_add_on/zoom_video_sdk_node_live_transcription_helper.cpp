@@ -77,7 +77,7 @@ void ZoomVideoNodeLiveTranscriptionHelperWrap::GetAvailableSpokenLanguages(const
 		_g_native_wrap.GetLiveTranscriptionHelperWrap().GetAvailableSpokenLanguages(_spokenLanguagesLst);
 	}
 	
-	size_t _size = _spokenLanguagesLst.ByteSize();
+	size_t _size = _spokenLanguagesLst.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -104,7 +104,7 @@ void ZoomVideoNodeLiveTranscriptionHelperWrap::GetAvailableTranslationLanguages(
 		_g_native_wrap.GetLiveTranscriptionHelperWrap().GetAvailableTranslationLanguages(_translationLanguagesLst);
 	}
 	
-	size_t _size = _translationLanguagesLst.ByteSize();
+	size_t _size = _translationLanguagesLst.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

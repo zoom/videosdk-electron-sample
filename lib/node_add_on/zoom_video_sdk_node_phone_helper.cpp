@@ -23,7 +23,7 @@ void ZoomVideoNodePhoneHelperWrap::GetSupportCountryInfo(const v8::FunctionCallb
 
 	com::electron::zoomvideo::sdk::proto::GetPhoneSupportCountryList _CountryList;
 	_g_native_wrap.GetPhoneHelperWrap().GetSupportCountryInfo(_CountryList);
-	size_t _size = _CountryList.ByteSize();
+	size_t _size = _CountryList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

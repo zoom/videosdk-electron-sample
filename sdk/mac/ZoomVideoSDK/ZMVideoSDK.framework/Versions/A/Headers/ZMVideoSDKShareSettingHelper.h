@@ -6,7 +6,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- @brief Share setting helper interface.
+ * @brief Share setting helper interface.
  */
 @interface ZMVideoSDKShareSettingHelper : NSObject
 

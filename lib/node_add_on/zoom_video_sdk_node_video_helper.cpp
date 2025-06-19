@@ -95,7 +95,7 @@ void ZoomVideoNodeVideoHelperWrap::GetSpotlightedVideoUserList(const v8::Functio
 
 	com::electron::zoomvideo::sdk::proto::UserList _spotlightedUsers;
 	_g_native_wrap.GetVideoHelperWrap().GetSpotlightedVideoUserList(_spotlightedUsers);
-	size_t _size = _spotlightedUsers.ByteSize();
+	size_t _size = _spotlightedUsers.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -234,7 +234,7 @@ void ZoomVideoNodeVideoHelperWrap::GetCameraList(const v8::FunctionCallbackInfo<
 	v8::Isolate* isolate = args.GetIsolate();
 	com::electron::zoomvideo::sdk::proto::GetCameraList _CameraLst;
 	_g_native_wrap.GetVideoHelperWrap().GetCameraList(_CameraLst);
-	size_t _size = _CameraLst.ByteSize();
+	size_t _size = _CameraLst.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -566,7 +566,7 @@ void ZoomVideoNodeVideoHelperWrap::GetVirtualBackgroundItemList(const v8::Functi
 	v8::Isolate* isolate = args.GetIsolate();
 	com::electron::zoomvideo::sdk::proto::VBItemHandleList _VBItemLst;
 	_g_native_wrap.GetVideoHelperWrap().GetVirtualBackgroundItemList(_VBItemLst);
-	size_t _size = _VBItemLst.ByteSize();
+	size_t _size = _VBItemLst.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -643,7 +643,7 @@ void ZoomVideoNodeVideoHelperWrap::GetVirtualBackgroundItemInfo(const v8::Functi
 		{
 			break;
 		}
-		size_t _size = zn_vbItemInfo.ByteSize();
+		size_t _size = zn_vbItemInfo.ByteSizeLong();
 		auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 		char* char_temp_param = nullptr;
 		size_t sz_temp_param = 0;

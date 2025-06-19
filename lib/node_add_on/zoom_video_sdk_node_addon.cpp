@@ -5,6 +5,7 @@
 #include "zoom_video_sdk_node_audio_helper.h"
 #include "zoom_video_sdk_node_video_helper.h"
 #include "zoom_video_sdk_node_share_helper.h"
+#include "zoom_video_sdk_node_annotation_helper.h"
 #include "zoom_video_sdk_node_chat_helper.h"
 #include "zoom_video_sdk_node_livestream_helper.h"
 #include "zoom_video_sdk_node_user_helper.h"
@@ -27,6 +28,7 @@ ZNativeVideoSDKWrap _g_native_wrap;
 extern ZoomVideoNodePipeServerMgr _g_video_pipe_server;
 extern ZoomVideoNodePipeServerMgr _g_share_pipe_server;
 extern ZoomVideoNodePipeServerMgr _g_audio_pipe_server;
+extern ZoomVideoNodePipeServerMgr _g_share_preprocessor_pipe_server;
 
 static void CreateVideoSDKNodeObject(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	VideoNodeAddonData* data =
@@ -58,6 +60,7 @@ NODE_MODULE_INIT(/* exports, module, context */) {
 	ZoomVideoNodeTestAudioDeviceWrap::Init(exports->GetIsolate());
 	ZoomVideoNodeLiveTranscriptionHelperWrap::Init(exports->GetIsolate());
 	ZoomVideoNodeShareSettingWrap::Init(exports->GetIsolate());
+	ZoomVideoNodeAnnotationHelperWrap::Init(exports->GetIsolate());
 #if (!defined __linux)
 	ZoomVideoNodeRemoteControlHelperWrap::Init(exports->GetIsolate());
 	ZoomVideoNodeRemoteControlRequestHandlerWrap::Init(exports->GetIsolate());
@@ -95,6 +98,7 @@ v8::Persistent<v8::Function> ZoomVideoNodeAudioSettingWrap::constructor;
 v8::Persistent<v8::Function> ZoomVideoNodeTestAudioDeviceWrap::constructor;
 v8::Persistent<v8::Function> ZoomVideoNodeLiveTranscriptionHelperWrap::constructor;
 v8::Persistent<v8::Function> ZoomVideoNodeShareSettingWrap::constructor;
+v8::Persistent<v8::Function> ZoomVideoNodeAnnotationHelperWrap::constructor;
 #if (!defined __linux)
 v8::Persistent<v8::Function> ZoomVideoNodeRemoteControlHelperWrap::constructor;
 v8::Persistent<v8::Function> ZoomVideoNodeRemoteControlRequestHandlerWrap::constructor;
@@ -151,6 +155,7 @@ void ZoomVideoNodeWrap::DestroyZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8
 	_g_video_pipe_server._uv_ipc_server.StopPipeServer();
 	_g_share_pipe_server._uv_ipc_server.StopPipeServer();
 	_g_audio_pipe_server._uv_ipc_server.StopPipeServer();
+	_g_share_preprocessor_pipe_server._uv_ipc_server.StopPipeServer();
 	v8::Isolate* isolate = args.GetIsolate();
 
 	ZNZoomVideoSDKErrors err = _g_native_wrap.DestroyZoomVideoSDKObj();
@@ -211,8 +216,12 @@ void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& ar
 
 		bool bsucc_share_pipe = false;
 		bsucc_share_pipe = _g_share_pipe_server._uv_ipc_server.StartPipeServer(SHARE_PIPE_NAME, &_g_share_pipe_server);
+
+		bool bsucc_share_preprocessor_pipe = false;
+		bsucc_share_preprocessor_pipe = _g_share_preprocessor_pipe_server._uv_ipc_server.StartPipeServer(SHARE_PREPROCESSOR_PIPE_NAME, &_g_share_preprocessor_pipe_server);
 		if (!bsucc_video_pipe ||
-			!bsucc_share_pipe
+			!bsucc_share_pipe ||
+			!bsucc_share_preprocessor_pipe
 			)
 		{
 			err = ZNZoomVideoSDKErrors_Internal_Error;
@@ -234,8 +243,11 @@ void ZoomVideoNodeWrap::CleanUp(const v8::FunctionCallbackInfo<v8::Value>& args)
 	bsucc_video_pipe = _g_video_pipe_server._uv_ipc_server.StopPipeServer();
 	bool bsucc_share_pipe = false;
 	bsucc_share_pipe = _g_share_pipe_server._uv_ipc_server.StopPipeServer();
+	bool bsucc_share_preprocessor_pipe = false;
+	bsucc_share_preprocessor_pipe = _g_share_preprocessor_pipe_server._uv_ipc_server.StopPipeServer();
 	if (!bsucc_video_pipe ||
-		!bsucc_share_pipe
+		!bsucc_share_pipe ||
+		!bsucc_share_preprocessor_pipe
 		)
 	{
 		err = ZNZoomVideoSDKErrors_Internal_Error;
@@ -456,6 +468,10 @@ void ZoomVideoNodeWrap::GetLiveTranscriptionHelper(const v8::FunctionCallbackInf
 void ZoomVideoNodeWrap::GetShareSetting(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
 	ZoomVideoNodeShareSettingWrap::NewInstance(args);
+}
+void ZoomVideoNodeWrap::GetAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	ZoomVideoNodeAnnotationHelperWrap::NewInstance(args);
 }
 #if (!defined __linux)
 void ZoomVideoNodeWrap::GetRemoteCtrlHelper(const v8::FunctionCallbackInfo<v8::Value>& args)

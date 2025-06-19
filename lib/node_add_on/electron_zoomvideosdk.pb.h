@@ -198,6 +198,9 @@ extern CanChatMessageBeDeletedParamsDefaultTypeInternal _CanChatMessageBeDeleted
 class ChangeNameParams;
 struct ChangeNameParamsDefaultTypeInternal;
 extern ChangeNameParamsDefaultTypeInternal _ChangeNameParams_default_instance_;
+class ClearAnnotationParams;
+struct ClearAnnotationParamsDefaultTypeInternal;
+extern ClearAnnotationParamsDefaultTypeInternal _ClearAnnotationParams_default_instance_;
 class CreateRenderParams;
 struct CreateRenderParamsDefaultTypeInternal;
 extern CreateRenderParamsDefaultTypeInternal _CreateRenderParams_default_instance_;
@@ -396,6 +399,9 @@ extern SendChatToUserParamsDefaultTypeInternal _SendChatToUserParams_default_ins
 class SendCommandParams;
 struct SendCommandParamsDefaultTypeInternal;
 extern SendCommandParamsDefaultTypeInternal _SendCommandParams_default_instance_;
+class SendPreprocessedDataParams;
+struct SendPreprocessedDataParamsDefaultTypeInternal;
+extern SendPreprocessedDataParamsDefaultTypeInternal _SendPreprocessedDataParams_default_instance_;
 class SessionPasswordParams;
 struct SessionPasswordParamsDefaultTypeInternal;
 extern SessionPasswordParamsDefaultTypeInternal _SessionPasswordParams_default_instance_;
@@ -420,6 +426,15 @@ extern SetSuppressBackgroundNoiseLevelParamsDefaultTypeInternal _SetSuppressBack
 class SetTimerIntervalParams;
 struct SetTimerIntervalParamsDefaultTypeInternal;
 extern SetTimerIntervalParamsDefaultTypeInternal _SetTimerIntervalParams_default_instance_;
+class SetToolColorParams;
+struct SetToolColorParamsDefaultTypeInternal;
+extern SetToolColorParamsDefaultTypeInternal _SetToolColorParams_default_instance_;
+class SetToolTypeParams;
+struct SetToolTypeParamsDefaultTypeInternal;
+extern SetToolTypeParamsDefaultTypeInternal _SetToolTypeParams_default_instance_;
+class SetToolWidthParams;
+struct SetToolWidthParamsDefaultTypeInternal;
+extern SetToolWidthParamsDefaultTypeInternal _SetToolWidthParams_default_instance_;
 class SetTranslationLanguageParams;
 struct SetTranslationLanguageParamsDefaultTypeInternal;
 extern SetTranslationLanguageParamsDefaultTypeInternal _SetTranslationLanguageParams_default_instance_;
@@ -456,6 +471,9 @@ extern StartShareScreenParamsDefaultTypeInternal _StartShareScreenParams_default
 class StartShareViewParams;
 struct StartShareViewParamsDefaultTypeInternal;
 extern StartShareViewParamsDefaultTypeInternal _StartShareViewParams_default_instance_;
+class StartShareWithPreprocessingParams;
+struct StartShareWithPreprocessingParamsDefaultTypeInternal;
+extern StartShareWithPreprocessingParamsDefaultTypeInternal _StartShareWithPreprocessingParams_default_instance_;
 class StartSpeakerTestParams;
 struct StartSpeakerTestParamsDefaultTypeInternal;
 extern StartSpeakerTestParamsDefaultTypeInternal _StartSpeakerTestParams_default_instance_;
@@ -621,6 +639,8 @@ template <>
 template <>
 ::com::electron::zoomvideo::sdk::proto::ChangeNameParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::ChangeNameParams>(Arena*);
 template <>
+::com::electron::zoomvideo::sdk::proto::ClearAnnotationParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::ClearAnnotationParams>(Arena*);
+template <>
 ::com::electron::zoomvideo::sdk::proto::CreateRenderParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CreateRenderParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::CreateVideoSDKObjParam* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::CreateVideoSDKObjParam>(Arena*);
@@ -753,6 +773,8 @@ template <>
 template <>
 ::com::electron::zoomvideo::sdk::proto::SendCommandParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SendCommandParams>(Arena*);
 template <>
+::com::electron::zoomvideo::sdk::proto::SendPreprocessedDataParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SendPreprocessedDataParams>(Arena*);
+template <>
 ::com::electron::zoomvideo::sdk::proto::SessionPasswordParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SessionPasswordParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::SetEchoCancellationLevelParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetEchoCancellationLevelParams>(Arena*);
@@ -768,6 +790,12 @@ template <>
 ::com::electron::zoomvideo::sdk::proto::SetSuppressBackgroundNoiseLevelParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetSuppressBackgroundNoiseLevelParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::SetTimerIntervalParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetTimerIntervalParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::SetToolColorParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetToolColorParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::SetToolTypeParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetToolTypeParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::SetToolWidthParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetToolWidthParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::SetTranslationLanguageParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::SetTranslationLanguageParams>(Arena*);
 template <>
@@ -792,6 +820,8 @@ template <>
 ::com::electron::zoomvideo::sdk::proto::StartShareScreenParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::StartShareScreenParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::StartShareViewParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::StartShareViewParams>(Arena*);
+template <>
+::com::electron::zoomvideo::sdk::proto::StartShareWithPreprocessingParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::StartShareWithPreprocessingParams>(Arena*);
 template <>
 ::com::electron::zoomvideo::sdk::proto::StartSpeakerTestParams* Arena::CreateMaybeMessage<::com::electron::zoomvideo::sdk::proto::StartSpeakerTestParams>(Arena*);
 template <>
@@ -25861,6 +25891,913 @@ class EnableAdminRemoteControlParams final :
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class StartShareWithPreprocessingParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams) */ {
+ public:
+  inline StartShareWithPreprocessingParams() : StartShareWithPreprocessingParams(nullptr) {}
+  ~StartShareWithPreprocessingParams() override;
+  explicit PROTOBUF_CONSTEXPR StartShareWithPreprocessingParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StartShareWithPreprocessingParams(const StartShareWithPreprocessingParams& from);
+  StartShareWithPreprocessingParams(StartShareWithPreprocessingParams&& from) noexcept
+    : StartShareWithPreprocessingParams() {
+    *this = ::std::move(from);
+  }
+
+  inline StartShareWithPreprocessingParams& operator=(const StartShareWithPreprocessingParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StartShareWithPreprocessingParams& operator=(StartShareWithPreprocessingParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const StartShareWithPreprocessingParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StartShareWithPreprocessingParams* internal_default_instance() {
+    return reinterpret_cast<const StartShareWithPreprocessingParams*>(
+               &_StartShareWithPreprocessingParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    155;
+
+  friend void swap(StartShareWithPreprocessingParams& a, StartShareWithPreprocessingParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StartShareWithPreprocessingParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StartShareWithPreprocessingParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StartShareWithPreprocessingParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StartShareWithPreprocessingParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const StartShareWithPreprocessingParams& from);
+  void MergeFrom(const StartShareWithPreprocessingParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(StartShareWithPreprocessingParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams";
+  }
+  protected:
+  explicit StartShareWithPreprocessingParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHandleFieldNumber = 2,
+    kMonitorIDFieldNumber = 3,
+    kTypeFieldNumber = 1,
+  };
+  // optional string handle = 2;
+  bool has_handle() const;
+  void clear_handle() ;
+  const std::string& handle() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_handle(Arg_&& arg, Args_... args);
+  std::string* mutable_handle();
+  PROTOBUF_NODISCARD std::string* release_handle();
+  void set_allocated_handle(std::string* ptr);
+
+  private:
+  const std::string& _internal_handle() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_handle(
+      const std::string& value);
+  std::string* _internal_mutable_handle();
+
+  public:
+  // optional string monitorID = 3;
+  bool has_monitorid() const;
+  void clear_monitorid() ;
+  const std::string& monitorid() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_monitorid(Arg_&& arg, Args_... args);
+  std::string* mutable_monitorid();
+  PROTOBUF_NODISCARD std::string* release_monitorid();
+  void set_allocated_monitorid(std::string* ptr);
+
+  private:
+  const std::string& _internal_monitorid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_monitorid(
+      const std::string& value);
+  std::string* _internal_mutable_monitorid();
+
+  public:
+  // optional int32 type = 1;
+  bool has_type() const;
+  void clear_type() ;
+  ::int32_t type() const;
+  void set_type(::int32_t value);
+
+  private:
+  ::int32_t _internal_type() const;
+  void _internal_set_type(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr handle_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr monitorid_;
+    ::int32_t type_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class SendPreprocessedDataParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams) */ {
+ public:
+  inline SendPreprocessedDataParams() : SendPreprocessedDataParams(nullptr) {}
+  ~SendPreprocessedDataParams() override;
+  explicit PROTOBUF_CONSTEXPR SendPreprocessedDataParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SendPreprocessedDataParams(const SendPreprocessedDataParams& from);
+  SendPreprocessedDataParams(SendPreprocessedDataParams&& from) noexcept
+    : SendPreprocessedDataParams() {
+    *this = ::std::move(from);
+  }
+
+  inline SendPreprocessedDataParams& operator=(const SendPreprocessedDataParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SendPreprocessedDataParams& operator=(SendPreprocessedDataParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const SendPreprocessedDataParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SendPreprocessedDataParams* internal_default_instance() {
+    return reinterpret_cast<const SendPreprocessedDataParams*>(
+               &_SendPreprocessedDataParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    156;
+
+  friend void swap(SendPreprocessedDataParams& a, SendPreprocessedDataParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SendPreprocessedDataParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SendPreprocessedDataParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SendPreprocessedDataParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SendPreprocessedDataParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SendPreprocessedDataParams& from);
+  void MergeFrom(const SendPreprocessedDataParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SendPreprocessedDataParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams";
+  }
+  protected:
+  explicit SendPreprocessedDataParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBufferFieldNumber = 1,
+    kDataHandleFieldNumber = 2,
+  };
+  // optional bytes buffer = 1;
+  bool has_buffer() const;
+  void clear_buffer() ;
+  const std::string& buffer() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_buffer(Arg_&& arg, Args_... args);
+  std::string* mutable_buffer();
+  PROTOBUF_NODISCARD std::string* release_buffer();
+  void set_allocated_buffer(std::string* ptr);
+
+  private:
+  const std::string& _internal_buffer() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_buffer(
+      const std::string& value);
+  std::string* _internal_mutable_buffer();
+
+  public:
+  // optional string dataHandle = 2;
+  bool has_datahandle() const;
+  void clear_datahandle() ;
+  const std::string& datahandle() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_datahandle(Arg_&& arg, Args_... args);
+  std::string* mutable_datahandle();
+  PROTOBUF_NODISCARD std::string* release_datahandle();
+  void set_allocated_datahandle(std::string* ptr);
+
+  private:
+  const std::string& _internal_datahandle() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_datahandle(
+      const std::string& value);
+  std::string* _internal_mutable_datahandle();
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr buffer_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr datahandle_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class SetToolTypeParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.SetToolTypeParams) */ {
+ public:
+  inline SetToolTypeParams() : SetToolTypeParams(nullptr) {}
+  ~SetToolTypeParams() override;
+  explicit PROTOBUF_CONSTEXPR SetToolTypeParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetToolTypeParams(const SetToolTypeParams& from);
+  SetToolTypeParams(SetToolTypeParams&& from) noexcept
+    : SetToolTypeParams() {
+    *this = ::std::move(from);
+  }
+
+  inline SetToolTypeParams& operator=(const SetToolTypeParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetToolTypeParams& operator=(SetToolTypeParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const SetToolTypeParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetToolTypeParams* internal_default_instance() {
+    return reinterpret_cast<const SetToolTypeParams*>(
+               &_SetToolTypeParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    157;
+
+  friend void swap(SetToolTypeParams& a, SetToolTypeParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetToolTypeParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetToolTypeParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetToolTypeParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetToolTypeParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SetToolTypeParams& from);
+  void MergeFrom(const SetToolTypeParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SetToolTypeParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.SetToolTypeParams";
+  }
+  protected:
+  explicit SetToolTypeParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kToolTypeFieldNumber = 1,
+  };
+  // optional int32 toolType = 1;
+  bool has_tooltype() const;
+  void clear_tooltype() ;
+  ::int32_t tooltype() const;
+  void set_tooltype(::int32_t value);
+
+  private:
+  ::int32_t _internal_tooltype() const;
+  void _internal_set_tooltype(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.SetToolTypeParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::int32_t tooltype_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class SetToolColorParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.SetToolColorParams) */ {
+ public:
+  inline SetToolColorParams() : SetToolColorParams(nullptr) {}
+  ~SetToolColorParams() override;
+  explicit PROTOBUF_CONSTEXPR SetToolColorParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetToolColorParams(const SetToolColorParams& from);
+  SetToolColorParams(SetToolColorParams&& from) noexcept
+    : SetToolColorParams() {
+    *this = ::std::move(from);
+  }
+
+  inline SetToolColorParams& operator=(const SetToolColorParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetToolColorParams& operator=(SetToolColorParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const SetToolColorParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetToolColorParams* internal_default_instance() {
+    return reinterpret_cast<const SetToolColorParams*>(
+               &_SetToolColorParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    158;
+
+  friend void swap(SetToolColorParams& a, SetToolColorParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetToolColorParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetToolColorParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetToolColorParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetToolColorParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SetToolColorParams& from);
+  void MergeFrom(const SetToolColorParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SetToolColorParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.SetToolColorParams";
+  }
+  protected:
+  explicit SetToolColorParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kToolColorFieldNumber = 1,
+  };
+  // optional int64 toolColor = 1;
+  bool has_toolcolor() const;
+  void clear_toolcolor() ;
+  ::int64_t toolcolor() const;
+  void set_toolcolor(::int64_t value);
+
+  private:
+  ::int64_t _internal_toolcolor() const;
+  void _internal_set_toolcolor(::int64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.SetToolColorParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::int64_t toolcolor_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class SetToolWidthParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.SetToolWidthParams) */ {
+ public:
+  inline SetToolWidthParams() : SetToolWidthParams(nullptr) {}
+  ~SetToolWidthParams() override;
+  explicit PROTOBUF_CONSTEXPR SetToolWidthParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetToolWidthParams(const SetToolWidthParams& from);
+  SetToolWidthParams(SetToolWidthParams&& from) noexcept
+    : SetToolWidthParams() {
+    *this = ::std::move(from);
+  }
+
+  inline SetToolWidthParams& operator=(const SetToolWidthParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetToolWidthParams& operator=(SetToolWidthParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const SetToolWidthParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetToolWidthParams* internal_default_instance() {
+    return reinterpret_cast<const SetToolWidthParams*>(
+               &_SetToolWidthParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    159;
+
+  friend void swap(SetToolWidthParams& a, SetToolWidthParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetToolWidthParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetToolWidthParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetToolWidthParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetToolWidthParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SetToolWidthParams& from);
+  void MergeFrom(const SetToolWidthParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SetToolWidthParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.SetToolWidthParams";
+  }
+  protected:
+  explicit SetToolWidthParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kToolWidthFieldNumber = 1,
+  };
+  // optional int64 toolWidth = 1;
+  bool has_toolwidth() const;
+  void clear_toolwidth() ;
+  ::int64_t toolwidth() const;
+  void set_toolwidth(::int64_t value);
+
+  private:
+  ::int64_t _internal_toolwidth() const;
+  void _internal_set_toolwidth(::int64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.SetToolWidthParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::int64_t toolwidth_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
+};// -------------------------------------------------------------------
+
+class ClearAnnotationParams final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:com.electron.zoomvideo.sdk.proto.ClearAnnotationParams) */ {
+ public:
+  inline ClearAnnotationParams() : ClearAnnotationParams(nullptr) {}
+  ~ClearAnnotationParams() override;
+  explicit PROTOBUF_CONSTEXPR ClearAnnotationParams(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ClearAnnotationParams(const ClearAnnotationParams& from);
+  ClearAnnotationParams(ClearAnnotationParams&& from) noexcept
+    : ClearAnnotationParams() {
+    *this = ::std::move(from);
+  }
+
+  inline ClearAnnotationParams& operator=(const ClearAnnotationParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ClearAnnotationParams& operator=(ClearAnnotationParams&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const ClearAnnotationParams& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ClearAnnotationParams* internal_default_instance() {
+    return reinterpret_cast<const ClearAnnotationParams*>(
+               &_ClearAnnotationParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    160;
+
+  friend void swap(ClearAnnotationParams& a, ClearAnnotationParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ClearAnnotationParams* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ClearAnnotationParams* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ClearAnnotationParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ClearAnnotationParams>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const ClearAnnotationParams& from);
+  void MergeFrom(const ClearAnnotationParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ClearAnnotationParams* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "com.electron.zoomvideo.sdk.proto.ClearAnnotationParams";
+  }
+  protected:
+  explicit ClearAnnotationParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kClearTypeFieldNumber = 1,
+  };
+  // optional int32 clearType = 1;
+  bool has_cleartype() const;
+  void clear_cleartype() ;
+  ::int32_t cleartype() const;
+  void set_cleartype(::int32_t value);
+
+  private:
+  ::int32_t _internal_cleartype() const;
+  void _internal_set_cleartype(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:com.electron.zoomvideo.sdk.proto.ClearAnnotationParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::int32_t cleartype_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_electron_5fzoomvideosdk_2eproto;
 };
 
 // ===================================================================
@@ -44420,6 +45357,415 @@ inline bool EnableAdminRemoteControlParams::_internal_benable() const {
 inline void EnableAdminRemoteControlParams::_internal_set_benable(bool value) {
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.benable_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// StartShareWithPreprocessingParams
+
+// optional int32 type = 1;
+inline bool StartShareWithPreprocessingParams::has_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline void StartShareWithPreprocessingParams::clear_type() {
+  _impl_.type_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline ::int32_t StartShareWithPreprocessingParams::type() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.type)
+  return _internal_type();
+}
+inline void StartShareWithPreprocessingParams::set_type(::int32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.type)
+}
+inline ::int32_t StartShareWithPreprocessingParams::_internal_type() const {
+  return _impl_.type_;
+}
+inline void StartShareWithPreprocessingParams::_internal_set_type(::int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.type_ = value;
+}
+
+// optional string handle = 2;
+inline bool StartShareWithPreprocessingParams::has_handle() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void StartShareWithPreprocessingParams::clear_handle() {
+  _impl_.handle_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& StartShareWithPreprocessingParams::handle() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.handle)
+  return _internal_handle();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void StartShareWithPreprocessingParams::set_handle(Arg_&& arg,
+                                                     Args_... args) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.handle_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.handle)
+}
+inline std::string* StartShareWithPreprocessingParams::mutable_handle() {
+  std::string* _s = _internal_mutable_handle();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.handle)
+  return _s;
+}
+inline const std::string& StartShareWithPreprocessingParams::_internal_handle() const {
+  return _impl_.handle_.Get();
+}
+inline void StartShareWithPreprocessingParams::_internal_set_handle(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+
+
+  _impl_.handle_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StartShareWithPreprocessingParams::_internal_mutable_handle() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.handle_.Mutable( GetArenaForAllocation());
+}
+inline std::string* StartShareWithPreprocessingParams::release_handle() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.handle)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.handle_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.handle_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void StartShareWithPreprocessingParams::set_allocated_handle(std::string* value) {
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.handle_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.handle_.IsDefault()) {
+          _impl_.handle_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.handle)
+}
+
+// optional string monitorID = 3;
+inline bool StartShareWithPreprocessingParams::has_monitorid() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void StartShareWithPreprocessingParams::clear_monitorid() {
+  _impl_.monitorid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& StartShareWithPreprocessingParams::monitorid() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.monitorID)
+  return _internal_monitorid();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void StartShareWithPreprocessingParams::set_monitorid(Arg_&& arg,
+                                                     Args_... args) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.monitorid_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.monitorID)
+}
+inline std::string* StartShareWithPreprocessingParams::mutable_monitorid() {
+  std::string* _s = _internal_mutable_monitorid();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.monitorID)
+  return _s;
+}
+inline const std::string& StartShareWithPreprocessingParams::_internal_monitorid() const {
+  return _impl_.monitorid_.Get();
+}
+inline void StartShareWithPreprocessingParams::_internal_set_monitorid(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+
+
+  _impl_.monitorid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StartShareWithPreprocessingParams::_internal_mutable_monitorid() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.monitorid_.Mutable( GetArenaForAllocation());
+}
+inline std::string* StartShareWithPreprocessingParams::release_monitorid() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.monitorID)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.monitorid_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.monitorid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void StartShareWithPreprocessingParams::set_allocated_monitorid(std::string* value) {
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.monitorid_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.monitorid_.IsDefault()) {
+          _impl_.monitorid_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.StartShareWithPreprocessingParams.monitorID)
+}
+
+// -------------------------------------------------------------------
+
+// SendPreprocessedDataParams
+
+// optional bytes buffer = 1;
+inline bool SendPreprocessedDataParams::has_buffer() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void SendPreprocessedDataParams::clear_buffer() {
+  _impl_.buffer_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& SendPreprocessedDataParams::buffer() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.buffer)
+  return _internal_buffer();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void SendPreprocessedDataParams::set_buffer(Arg_&& arg,
+                                                     Args_... args) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.buffer_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.buffer)
+}
+inline std::string* SendPreprocessedDataParams::mutable_buffer() {
+  std::string* _s = _internal_mutable_buffer();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.buffer)
+  return _s;
+}
+inline const std::string& SendPreprocessedDataParams::_internal_buffer() const {
+  return _impl_.buffer_.Get();
+}
+inline void SendPreprocessedDataParams::_internal_set_buffer(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+
+
+  _impl_.buffer_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SendPreprocessedDataParams::_internal_mutable_buffer() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.buffer_.Mutable( GetArenaForAllocation());
+}
+inline std::string* SendPreprocessedDataParams::release_buffer() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.buffer)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.buffer_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.buffer_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void SendPreprocessedDataParams::set_allocated_buffer(std::string* value) {
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.buffer_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.buffer_.IsDefault()) {
+          _impl_.buffer_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.buffer)
+}
+
+// optional string dataHandle = 2;
+inline bool SendPreprocessedDataParams::has_datahandle() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline void SendPreprocessedDataParams::clear_datahandle() {
+  _impl_.datahandle_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& SendPreprocessedDataParams::datahandle() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.dataHandle)
+  return _internal_datahandle();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void SendPreprocessedDataParams::set_datahandle(Arg_&& arg,
+                                                     Args_... args) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.datahandle_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.dataHandle)
+}
+inline std::string* SendPreprocessedDataParams::mutable_datahandle() {
+  std::string* _s = _internal_mutable_datahandle();
+  // @@protoc_insertion_point(field_mutable:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.dataHandle)
+  return _s;
+}
+inline const std::string& SendPreprocessedDataParams::_internal_datahandle() const {
+  return _impl_.datahandle_.Get();
+}
+inline void SendPreprocessedDataParams::_internal_set_datahandle(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+
+
+  _impl_.datahandle_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SendPreprocessedDataParams::_internal_mutable_datahandle() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.datahandle_.Mutable( GetArenaForAllocation());
+}
+inline std::string* SendPreprocessedDataParams::release_datahandle() {
+  // @@protoc_insertion_point(field_release:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.dataHandle)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.datahandle_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.datahandle_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
+}
+inline void SendPreprocessedDataParams::set_allocated_datahandle(std::string* value) {
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.datahandle_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.datahandle_.IsDefault()) {
+          _impl_.datahandle_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:com.electron.zoomvideo.sdk.proto.SendPreprocessedDataParams.dataHandle)
+}
+
+// -------------------------------------------------------------------
+
+// SetToolTypeParams
+
+// optional int32 toolType = 1;
+inline bool SetToolTypeParams::has_tooltype() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void SetToolTypeParams::clear_tooltype() {
+  _impl_.tooltype_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::int32_t SetToolTypeParams::tooltype() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.SetToolTypeParams.toolType)
+  return _internal_tooltype();
+}
+inline void SetToolTypeParams::set_tooltype(::int32_t value) {
+  _internal_set_tooltype(value);
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.SetToolTypeParams.toolType)
+}
+inline ::int32_t SetToolTypeParams::_internal_tooltype() const {
+  return _impl_.tooltype_;
+}
+inline void SetToolTypeParams::_internal_set_tooltype(::int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.tooltype_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// SetToolColorParams
+
+// optional int64 toolColor = 1;
+inline bool SetToolColorParams::has_toolcolor() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void SetToolColorParams::clear_toolcolor() {
+  _impl_.toolcolor_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::int64_t SetToolColorParams::toolcolor() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.SetToolColorParams.toolColor)
+  return _internal_toolcolor();
+}
+inline void SetToolColorParams::set_toolcolor(::int64_t value) {
+  _internal_set_toolcolor(value);
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.SetToolColorParams.toolColor)
+}
+inline ::int64_t SetToolColorParams::_internal_toolcolor() const {
+  return _impl_.toolcolor_;
+}
+inline void SetToolColorParams::_internal_set_toolcolor(::int64_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.toolcolor_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// SetToolWidthParams
+
+// optional int64 toolWidth = 1;
+inline bool SetToolWidthParams::has_toolwidth() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void SetToolWidthParams::clear_toolwidth() {
+  _impl_.toolwidth_ = ::int64_t{0};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::int64_t SetToolWidthParams::toolwidth() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.SetToolWidthParams.toolWidth)
+  return _internal_toolwidth();
+}
+inline void SetToolWidthParams::set_toolwidth(::int64_t value) {
+  _internal_set_toolwidth(value);
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.SetToolWidthParams.toolWidth)
+}
+inline ::int64_t SetToolWidthParams::_internal_toolwidth() const {
+  return _impl_.toolwidth_;
+}
+inline void SetToolWidthParams::_internal_set_toolwidth(::int64_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.toolwidth_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ClearAnnotationParams
+
+// optional int32 clearType = 1;
+inline bool ClearAnnotationParams::has_cleartype() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline void ClearAnnotationParams::clear_cleartype() {
+  _impl_.cleartype_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::int32_t ClearAnnotationParams::cleartype() const {
+  // @@protoc_insertion_point(field_get:com.electron.zoomvideo.sdk.proto.ClearAnnotationParams.clearType)
+  return _internal_cleartype();
+}
+inline void ClearAnnotationParams::set_cleartype(::int32_t value) {
+  _internal_set_cleartype(value);
+  // @@protoc_insertion_point(field_set:com.electron.zoomvideo.sdk.proto.ClearAnnotationParams.clearType)
+}
+inline ::int32_t ClearAnnotationParams::_internal_cleartype() const {
+  return _impl_.cleartype_;
+}
+inline void ClearAnnotationParams::_internal_set_cleartype(::int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.cleartype_ = value;
 }
 
 #ifdef __GNUC__

@@ -15,7 +15,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			reW8QA4mUo/3lxZhVQatYEDMi30=
+			hH2g1F/AmXGad+w8CBlKOPo2Yog=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libavcodec.59" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -24,7 +24,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			sTdjMra5rZabbNR5o4GOtDck6+8=
+			XUcgA5nZJbpyzyFMc/zVJ/P4qsI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libavformat.59" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -33,7 +33,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			7BI1kCzEI/xHoWYP1M9jban1vyc=
+			I8dcVU6uMdTuzHvSDj6nifD7yw4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libavutil.57" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -42,7 +42,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			mQDWs8rsGRp7hMjqVOswxPTNrwI=
+			KTXNzEheCKT70ldkEDFJIr/3J9Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libswresample.4" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Bxw0kfBJpKvfWk2sEtYQN2vAAik=
+			pUpr/pa4avSf5f+w7Ayneu7/0CE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libswscale.6" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BJ4HAAB9B3</string>

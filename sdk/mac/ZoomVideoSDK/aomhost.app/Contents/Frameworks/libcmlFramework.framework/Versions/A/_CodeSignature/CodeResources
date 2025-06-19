@@ -18,7 +18,7 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		7/gtxg7FPoQB45n3PIa+siwAqLI=
+		4HiSqPQyugS4yixFX6CaMeQxlZA=
 		</data>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/analytics/coremldata.bin</key>
 		<data>
-		2AQSZzbrSBrHFMXCiwup52NeHJg=
+		KpLsR1pN/wNxYDj+q4412M/5Y38=
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/coremldata.bin</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/model.espresso.weights</key>
 		<data>
-		Fzf3gQhebtwMZAw2hm0TBdi19zY=
+		jUr7bHjVn8rYXL6BmIFE97w8DFo=
 		</data>
 		<key>Resources/afn_mac_premium.mlmodelc/model/coremldata.bin</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/analytics/coremldata.bin</key>
 		<data>
-		vNsSw33sDL4iIlKMbqYeAgNdtVM=
+		qSNJVzNJO/KmBV6cfaKmzZg4aNM=
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/coremldata.bin</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/model.espresso.weights</key>
 		<data>
-		cFBk1bGiJeJ56xEf/OpinvpS2Eg=
+		/gs/ygrMgmGRGs2f43hq55nlESI=
 		</data>
 		<key>Resources/bgr_mac_premium.mlmodelc/model/coremldata.bin</key>
 		<data>
@@ -361,7 +361,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ipO7Ez0tWrSciFZz28/lf4Yqodqxp4rh0xBjxi4uIvM=
+			40IDwGITaog04j7pBIHTfYsWjNCmlxDB1yceacWRMVE=
 			</data>
 		</dict>
 		<key>Resources/afn_mac.mlmodelc/analytics/coremldata.bin</key>
@@ -410,7 +410,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zrnsxJgOJJ1C52p+wrhQ7TIROpObWoMhheOp2YNeKGY=
+			d6HMmej+Vyttn2V4hXSEEZIgOvBWyO1md0BptGLgQpo=
 			</data>
 		</dict>
 		<key>Resources/afn_mac_premium.mlmodelc/coremldata.bin</key>
@@ -431,7 +431,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BzZvmlG6cZha/kV7OXCBVQoRfkvXTT0JYZIcl2n/UhE=
+			3MdJpIXWub1Tw4OmtgA79hyrMYi8Tf4VPIKj+OtVqP0=
 			</data>
 		</dict>
 		<key>Resources/afn_mac_premium.mlmodelc/model/coremldata.bin</key>
@@ -536,7 +536,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1U39/tEIQRpSkI7JY+yB6DIASeD1BNc5jEpUV7gUv0I=
+			/Zy9zu3j2C64a/3SDqY90UXoG5TpO4FY4Lu3jCJDS20=
 			</data>
 		</dict>
 		<key>Resources/bgr_mac_premium.mlmodelc/coremldata.bin</key>
@@ -557,7 +557,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UZOHcF6JudJk6igZO+Ur9AWn9TLn3NdSe+sn9TVcfbk=
+			V9h3T7HlyXZgJu1og/c+I/aMAdPWD113swqpsUIXQgs=
 			</data>
 		</dict>
 		<key>Resources/bgr_mac_premium.mlmodelc/model/coremldata.bin</key>

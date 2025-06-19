@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		XQSMHw8v9/BmOXeXkG7peRPJBgU=
+		BzmBtmQSYqNnpCH7LXrvRgDvTtE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -15,189 +15,196 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			56qeGeSW7quvy+fgaBvt5wbYj16ds4Gbs3wPqaTYhVM=
+			r0ny9zeXxlHKUAC67lh4fbQ0NQv6tdB11gvUXca4MIw=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAnnotationHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M7+C/FKJAKSh3r/CHaB5WaKrb5yosmcTI/sLfvrdlhQ=
+			WWpCNywiPPoFeOt9T8XIRHjzCzP2LfbXPynhRYWioX0=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RHURHiBNnzNMc96jZgH5fwrXQxtjaL+uo6hp0ZLgKPI=
+			pRVSCaRBIk4ahSV7lV5lggu9k/w1rGpadAx/cH4a80U=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioSendRawdata.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+tEvfRuGF57EKWaDudR9Vi/XKjRWMVhLthwiXdt9yOQ=
+			dUvI024SFGVl7G82dcO336Tzy7m2YxYVoLErIpc0muU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PGAwNd+JTcvZ1CSxzkODuZYr8YfD79TXfoFO0/qYUZw=
+			/kV69Y+/Qtm9Nxzip6mGEZXpw6khkZz2LfMbXFhhnSY=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKCRCHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FW90rmYTwLCS8CzDMHm/vpfseOMEK/uLoSl3wdfPmro=
+			7u46/e6dEl8vCF3pT9E3pAGOCJ+7Feuhi1ak28WyjuA=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKChatHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Unr9MzKgaLEG2tuNn9fdptvRSeWfGHHllhpJA9H/K8Y=
+			dlGCdB2Vseh5bMClPhLjrge7V6pFVVIKy0EbdaD+7ZU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKChatMessage.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdBn9mavHUs+V5kp1S41JmVMg50qrqqebf8JFYhFCL4=
+			vwENPIzugWDwQ0xtZmw7q1E/6Ggud0+Saazyw/oj4S0=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKCmdChannel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zJJiMuQtu473BrU5EvWjM25xB/YbKwAz63/aTo3riBU=
+			3THX02B9d7+tVbmNf3eOIICQCz+/abXc8QeUL3TcUMo=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKDef.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rKLjzauI2SeomZTw+hIkL47pLvBX4fa5oasbfku1YdU=
+			yPwJILTIPHvwPxTqQnMOcnaRMzTjiF4V3nJCc6rvQmA=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKDelegate.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6gp+vx3gG307R0lzG8n1TmjEwAi4hCwPq+IKbvNueJE=
+			k/+K+Ufs9OmniVtD0oUapvdqILEUFphw8n8o6zoubTs=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKLiveStreamHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wyw+YvgcafNY+B1oMc5QGMO3uVF/HRGwISxLTHzRcXU=
+			dnPDbxVcmJnlaKUOCJdl95OJGEcR2Fmte4BLZ+U8no8=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKLiveTranscriptionHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KxjDod7BTmBgJBVimI/uLzU1iOwPsdcr46EPxHTADA0=
+			F6KNoXLRGXvJuvIU0kNxc/KtiPoePtUp7w0q5VjWTus=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKNetworkConnectionHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5wnE1U/EbRkwrD84z84ny0RBIax3vDsYV+GAw5UYwe0=
+			QPiRnEDNx0LU3GhJkWVs0djyvcX9rR61RbdCmauLyfM=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKPasswordHandler.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PIxPXyghfiT96NCbc08GURaS7LUQvjKI5COI6wCwM78=
+			IqUNWsMoFlg9T+G6tKF2gA3ngYgUzwDgYayYQqhBe5w=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKPhoneHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3zg4UkSC4MfeYU+fqeBfuH4VZnk2WCitZeXszAf/BsA=
+			Jwz0zgv82jlH9VtpRYg2FIQt5Rk9AV3VxKPlFPWeIxw=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRecordingConsentHandler.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Rl/OaN45iNSyh+JxiVJqrZ17jxjAeuor3whG2TxuZRo=
+			fVUqLcWtTyLTuXrBFpgfnawX7kFDAhoo7HEsCIOIVPE=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRecordingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HmdEri1s9ExT3V3vK9y4XRfnFzBht2KmCE+4Xw3VDc4=
+			2jpafhglCv8qmv8cpknHPyNCzvVbBvvBOIQ/TV+u00w=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRemoteControlHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1bIW/7TGK0cg5rbHpxVwoAWV03crsNXifBLXN97aKWc=
+			UtlnRvabV4CoPm5fkJ2DAISIDcsR+w4YHXWHIlyrYFU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKSession.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HhDhX7js3t767bm5apCB1we3vY5wTYshCTDpZuWD374=
+			NPiztzHSQB8N0Hba/gJrIIc4txFW5sa0206EmWx5r0Y=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKShareHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z4VFmHg3OnVbaigoYgqlHDu1kPCPzNnqFGLChImAFVI=
+			awxMAckTaDpscIVPCKN5AogMhXKIGBhniaOaUTCOi80=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKShareSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rJUiT8pux3SqdaTh18hWXDVInZc4ldPk71aVWI40mSE=
+			EBlFPW/BAjIw8iUfn2gWAgJFUdTDCB7gNUNryxJWY9Y=
+			</data>
+		</dict>
+		<key>Headers/ZMVideoSDKSubsessionHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7FSmEQQ5xgz4JNLBXSGxib+4Ig5bqk+ffBvAVF0h6Kg=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKUserHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y8kwt0bSlaY9dYNqUDRgkyPFTz8f1hmLUWsV94lkR8k=
+			UrgHBn72Zlnx4jgmGHVamE0NiBD1Rpktd9aLWdtvmRs=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoCanvas.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			avYDN5A2iONcIwUqrbvQkQBKKin5sQJqMqDOai2gEPY=
+			IEPvIctHIwOBc9l4GNpsAgTJkHOSINVhNOeGW8K+3mU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hzfz9oG6sNWInC9CAdkyZHdZev3gJkmlAbIbSbzB0Jg=
+			3HtDjmBziA+4E5B1dfG36Lm4XzM9307MSV0YybmMaec=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X4+j62tUuE8UAvQj06bruyZ7vW6EPji5PD3khUMwOV8=
+			FqI33mvMxIfaDvv7U+/GmU4UmBn2+ek6Qus13q5U2SY=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoSourceHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WVAUICoTWLxZHJF9/4L/biBrfBk3OFHOfU0BSVqPNPk=
+			N6FbBp1qzXGbonwZkVr4Yx23kNgUFSA+szcFC5dC3Fc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -211,7 +218,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6gXzbgeY4F/rpJYc63HKf38Ki0Oh7J8pYO06DluSlc8=
+			D9XNtHVTlyDY2qtxPvKm0scLmvZj72INrcV+YCI6yPo=
 			</data>
 		</dict>
 	</dict>

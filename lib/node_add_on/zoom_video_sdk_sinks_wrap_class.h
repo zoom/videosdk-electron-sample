@@ -19,7 +19,7 @@ public:
 		auto context = isolate->GetCurrentContext();
 		auto global = context->Global();
 
-		size_t _size = _callbackbody.ByteSize();
+		size_t _size = _callbackbody.ByteSizeLong();
 		auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 		char* char_temp_param = nullptr;
 		size_t sz_temp_param = 0;

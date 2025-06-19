@@ -272,3 +272,75 @@ void ZoomVideoNodeShareHelperWrap::StartShare2ndCamera(const v8::FunctionCallbac
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
+void ZoomVideoNodeShareHelperWrap::StartShareWithPreprocessing(const v8::FunctionCallbackInfo<v8::Value>& args) 
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
+	do
+	{
+		com::electron::zoomvideo::sdk::proto::StartShareWithPreprocessingParams proto_param;
+		if (!SetProtoParam<com::electron::zoomvideo::sdk::proto::StartShareWithPreprocessingParams >(args, proto_param))
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		if (!proto_param.has_type() || !(proto_param.has_handle() || proto_param.has_monitorid()))
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		ZNZoomVideoSDKSharePreprocessType zn_type = (ZNZoomVideoSDKSharePreprocessType)proto_param.type();
+		ZoomSTRING zn_handle = s2zs(proto_param.handle());
+		ZoomSTRING zn_monitorid = s2zs(proto_param.monitorid());
+		
+		ZSharePreprocessorHelperWrap& shareSendHelper = _g_native_wrap.GetSharePreprocessorHelperWrap();
+		err = shareSendHelper.StartShareWithPreprocessing(zn_type, zn_handle, zn_monitorid, dynamic_cast<ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor*>(&shareSendHelper));
+	} while (false);
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::SendPreprocessedData(const v8::FunctionCallbackInfo<v8::Value>& args) 
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
+	do
+	{
+		com::electron::zoomvideo::sdk::proto::SendPreprocessedDataParams proto_param;
+		if (!SetProtoParam<com::electron::zoomvideo::sdk::proto::SendPreprocessedDataParams >(args, proto_param))
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		if (!proto_param.has_buffer() || !proto_param.has_datahandle())
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		char* buffer = const_cast<char*>(proto_param.buffer().data());
+		std::string datahandle_str = proto_param.datahandle();
+		
+		err = _g_native_wrap.GetSharePreprocessorHelperWrap().SendPreprocessedData(buffer, datahandle_str);
+	} while (false);
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::CreateAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+
+	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().CreateAnnotationHelper();
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::DestroyAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+
+	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().DestroyAnnotationHelper();
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}

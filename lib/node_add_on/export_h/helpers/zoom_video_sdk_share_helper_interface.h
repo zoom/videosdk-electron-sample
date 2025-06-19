@@ -271,6 +271,54 @@ public:
 #endif
 };
 
+enum ZoomVideoSDKSharePreprocessType
+{
+    ZoomVideoSDKSharePreprocessType_none,    ///<For initialization.
+    ZoomVideoSDKSharePreprocessType_screen,  ///<For share screen(monitor).
+    ZoomVideoSDKSharePreprocessType_view     ///<For share view(application window).
+};
+
+struct ZoomVideoSDKSharePreprocessParam
+{
+    ZoomVideoSDKSharePreprocessType type; ///<The share pre-process type
+	void* handle;                         ///<The window handle that to share and pre-process.  
+	const zchar_t* monitorID;             ///<The screen name that to share and pre-process.
+
+    ZoomVideoSDKSharePreprocessParam()
+	{
+        type = ZoomVideoSDKSharePreprocessType_none;
+		handle = nullptr;
+		monitorID = nullptr;
+	}
+};
+
+class IZoomVideoSDKSharePreprocessSender
+{
+public:
+	virtual ~IZoomVideoSDKSharePreprocessSender() {}
+
+	/// \brief Send preprocessed data.
+    /// \param pRawData The processed data object.
+    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
+    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	virtual ZoomVideoSDKErrors sendPreprocessedData(YUVRawDataI420* pRawData) = 0;
+};
+
+class IZoomVideoSDKSharePreprocessor
+{
+public:
+	virtual ~IZoomVideoSDKSharePreprocessor() {}
+
+	/// \brief You will receive this callback when calling 'startShareWithPreprocessing' successfully.
+	/// \param pRawData You can get the YUV data address through this object and then pre-process the data, see \link YUVRawDataI420 \endlink.
+    /// \param pSender Use this object to send the processed data out, see \link IZoomVideoSDKShareSender \endlink.
+	virtual void onCapturedRawDataReceived(YUVRawDataI420* pRawData, IZoomVideoSDKSharePreprocessSender* pSender) = 0;
+
+    /// \brief You will receive this callback when call 'stopShare' successfully.
+    ///  In this event notification, you can perform some stop and destroy actions if necessary.
+	virtual void onShareStopped() = 0;
+};
+
 /// \brief Share helper interface.
 ///
 class IZoomVideoSDKRawDataPipeDelegate;
@@ -433,7 +481,7 @@ public:
 	/// \brief Creates annotation helper based on shared view.
 	/// \param handle the shared view handle. Pass the null will return the helper for self sharing.
 	/// \return If the function succeeds, the return value is the IZoomVideoSDKAnnotationHelper helper object. Otherwise returns nullptr. For more details, see \link IZoomVideoSDKAnnotationHelper \endlink.
-	/// \warning The view passed in this function should be subscribed share view. And if the share view aspect mode is full fill, the annotate not supported.
+	/// \warning The view passed in this function should be subscribed share view. If the share view aspect mode is set to ZoomVideoSDKVideoAspect_Full_Filled, annotation is not supported.
 	/// \When the share owner not support the feature of annotate, the others should not do annotate in that case.
 	virtual IZoomVideoSDKAnnotationHelper* createAnnotationHelper(void* handle) = 0;
 
@@ -444,6 +492,13 @@ public:
     /// \brief Enable or disable local playback of shared audio raw data.
     /// \param isPlaying true to play shared audio raw data, false not.
     virtual ZoomVideoSDKErrors enablePlaySharingAudioRawdata(bool isPlaying) = 0;
+
+    /// \brief Start share preprocessing.
+    /// \param param The share preprocessing parameters, \link ZoomVideoSDKSharePreprocessParam \endlink.
+    /// \param preprocessor Object that handles preprocessing events.
+    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
+    ///Otherwise this function fails. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+    virtual ZoomVideoSDKErrors startShareWithPreprocessing(const ZoomVideoSDKSharePreprocessParam& param, IZoomVideoSDKSharePreprocessor* preprocessor) = 0;
 };
 END_ZOOM_VIDEO_SDK_NAMESPACE
 #endif

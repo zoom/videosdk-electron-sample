@@ -682,6 +682,34 @@ public:
 			owner_->onShareContentSizeChanged(pUser, pShareAction);
 		}
 	}
+	virtual void onSubSessionStatusChanged(ZoomVideoSDKSubSessionStatus status, IVideoSDKVector<ISubSessionKit*>* pSubSessionKitList)
+	{
+
+	}
+	virtual void onSubSessionManagerHandle(IZoomVideoSDKSubSessionManager* pManager)
+	{
+
+	}
+	virtual void onSubSessionParticipantHandle(IZoomVideoSDKSubSessionParticipant* pParticipant)
+	{
+
+	}
+	virtual void onSubSessionUsersUpdate(ISubSessionKit* pSubSessionKit)
+	{
+
+	}
+	virtual void onBroadcastMessageFromMainSession(const zchar_t* sMessage, const zchar_t* sUserName)
+	{
+
+	}
+	virtual void onSubSessionUserHelpRequest(ISubSessionUserHelpRequestHandler* pHandler)
+	{
+
+	}
+	virtual void onSubSessionUserHelpRequestResult(ZoomVideoSDKUserHelpRequestResult eResult)
+	{
+		
+	}
 #if (!defined __linux)
 	virtual void onRemoteControlStatus(IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZoomVideoSDKRemoteControlStatus status)
 	{

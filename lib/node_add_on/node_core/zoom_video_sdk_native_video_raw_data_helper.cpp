@@ -140,7 +140,7 @@ void ZNativeVideoSDKVideoRawDataHelper::onRawDataStatusChanged(RawDataStatus sta
 	auto context = isolate->GetCurrentContext();
 	auto global = context->Global();
 
-	size_t _size = callBackBody.ByteSize();
+	size_t _size = callBackBody.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

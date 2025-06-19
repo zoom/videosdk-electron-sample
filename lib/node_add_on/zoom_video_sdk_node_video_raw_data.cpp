@@ -292,7 +292,7 @@ void ZoomVideoNodeSDKVideoRenderWrap::GetMultiCameraStreamList(const v8::Functio
 	{
 		_g_native_wrap.GetVideoHelperWrap().GetMultiCameraStreamList(_MultiCameraStreamLst, zn_pUser);
 	}
-	size_t _size = _MultiCameraStreamLst.ByteSize();
+	size_t _size = _MultiCameraStreamLst.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

@@ -57,6 +57,7 @@ public:
 	static void GetTestAudioDevice(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetLiveTranscriptionHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetShareSetting(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void GetAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
 #if (!defined __linux)
 	static void GetRemoteControlRequestHandler(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetRemoteCtrlHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
@@ -106,6 +107,7 @@ void InitClassAttribute<ZoomVideoNodeWrap >(const v8::Local<v8::FunctionTemplate
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetTestAudioDevice", ZoomVideoNodeWrap::GetTestAudioDevice);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetLiveTranscriptionHelper", ZoomVideoNodeWrap::GetLiveTranscriptionHelper);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetShareSetting", ZoomVideoNodeWrap::GetShareSetting);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "GetAnnotationHelper", ZoomVideoNodeWrap::GetAnnotationHelper);
 #if (!defined __linux)
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetRemoteControlRequestHandler", ZoomVideoNodeWrap::GetRemoteControlRequestHandler);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetRemoteCtrlHelper", ZoomVideoNodeWrap::GetRemoteCtrlHelper);

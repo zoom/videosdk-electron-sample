@@ -1,6 +1,7 @@
 #ifndef _raw_data_format_h_
 #define _raw_data_format_h_
 #include "export_h/zoom_video_sdk_def.h"
+#include "zoom_video_sdk_native_share_preprocessor_helper_wrap_core.h"
 
 #include "uv_ipc_common.h"
 #include <set>
@@ -8,14 +9,17 @@
 #define TYPE_VIDEO 1
 #define TYPE_SHARE 2
 #define TYPE_AUDIO 3
+#define TYPE_SHARE_PREPROCESSOR 4
 #if (defined _WIN32)
 #define VIDEO_PIPE_NAME "\\\\.\\pipe\\videoPipe"
 #define SHARE_PIPE_NAME "\\\\.\\pipe\\sharePipe"
 #define AUDIO_PIPE_NAME "\\\\.\\pipe\\audioPipe"
+#define SHARE_PREPROCESSOR_PIPE_NAME "\\\\.\\pipe\\sharePreprocessorPipe"
 #else
 #define VIDEO_PIPE_NAME "/tmp/videoPipe"
 #define SHARE_PIPE_NAME "/tmp/sharePipe"
 #define AUDIO_PIPE_NAME "/tmp/audioPipe"
+#define SHARE_PREPROCESSOR_PIPE_NAME "/tmp/sharePreprocessorPipe"
 #endif
 struct RawDataCommonHeader
 {
@@ -44,6 +48,7 @@ struct VideoRawDataHeader
 	unsigned long long v_offset;
 	unsigned int source_id;
 	unsigned int recv_handle_len;
+	char* pBuffer;
 	VideoRawDataHeader()
 	{
 		common_header.type = TYPE_NONE;
@@ -57,6 +62,7 @@ struct VideoRawDataHeader
 		v_offset = 0;
 		source_id = 0;
 		recv_handle_len = 0;
+		pBuffer = nullptr;
 	}
 }
 #ifdef _WIN32
@@ -99,6 +105,7 @@ __attribute__((aligned(1)));
 #endif 
 
 UVIPCMessage* MakeUVIPCMsg(YUVRawDataI420* data_, unsigned long long* recv_handl_list, int num, unsigned int type);
+UVIPCMessage* MakeUVIPCMsg(YUVRawDataI420* data_, unsigned int type);
 UVIPCMessage* MakeUVIPCMsg(AudioRawData* data_, AudioRawDataType audio_rawdata_type, std::string userid, unsigned int type);
 UVIPCMessage* MakeUVIPCMsg(YUVProcessDataI420* data_, std::set<unsigned long long>& recv_handle, unsigned int type);
 #endif // !_raw_data_format_h_

@@ -24,7 +24,10 @@ public:
 	bool IsOptimizeForSharedVideoEnabled();
 	ZNZoomVideoSDKErrors StartShare2ndCamera(ZoomSTRING cameraID);
 	unsigned long long GetRecvHandle();
+	ZNZoomVideoSDKErrors CreateAnnotationHelper();
+	ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* GetAnnotationHelper();
+	ZNZoomVideoSDKErrors DestroyAnnotationHelper();
 private:
 	unsigned long long m_recv_handle;
-
+	ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* m_AnnotationHelper;
 };

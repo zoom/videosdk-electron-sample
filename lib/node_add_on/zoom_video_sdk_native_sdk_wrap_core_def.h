@@ -7,6 +7,7 @@
 #include "export_h/helpers/zoom_video_sdk_user_helper_interface.h"
 #include "export_h/zoom_video_sdk_delegate_interface.h"
 #include "export_h/zoom_video_sdk_session_info_interface.h"
+#include "export_h/helpers/zoom_video_sdk_annotation_helper_interface.h"
 #include "export_h/helpers/zoom_video_sdk_audio_helper_interface.h"
 #include "export_h/helpers/zoom_video_sdk_video_helper_interface.h"
 #include "export_h/helpers/zoom_video_sdk_share_helper_interface.h"
@@ -548,6 +549,8 @@ typedef enum {
 	CallMessageType_onCameraListChanged, ///<Notify that the camera list has changed.
 	CallMessageType_onShareContentChanged, ///<Invoked when a user makes changes to their share content type, such as camera share switch to normal share. The share type can be found in \link ZNZoomVideoSDKShareType \endlink.
 	CallMessageType_onShareContentSizeChange, ///<Invoked when the share content size changed.
+	CallMessageType_onCapturedRawDataReceived, ///<You will receive this callback when calling 'startShareWithPreprocessing' successfully.
+	CallMessageType_onCapturedShareStopped, ///<In this event notification, you can perform some stop and destroy actions if necessary.
 }ZNCallMessageType;
 
 /*! \enum PhoneStatus
@@ -773,19 +776,71 @@ typedef struct tagZNInvitePhoneUserInfo
 }ZNInvitePhoneUserInfo;
 
 typedef enum {
-    ///<Screen capture mode is automatically.
-    ZNZoomVideoSDKScreenCaptureMode_Auto = 0,
-    ///<Screen capture mode is legacy operating systems.
-    ZNZoomVideoSDKScreenCaptureMode_Legacy,
-    ///<Screen capture mode is capture with window filtering.
-    ZNZoomVideoSDKScreenCaptureMode_Filtering,
-    ///<Screen capture mode is advanced share with window filtering.
-    ZNZoomVideoSDKScreenCaptureMode_ADA_Filtering,
-    ///<Screen capture mode is advanced share without window filtering.
-    ZNZoomVideoSDKScreenCaptureMode_ADA_Without_Filtering,
-    ///<Screen capture mode is secure share with window filtering.
-    ZNZoomVideoSDKScreenCaptureMode_Secure_Filtering,
+	///<Screen capture mode is automatically.
+	ZNZoomVideoSDKScreenCaptureMode_Auto = 0,
+	///<Screen capture mode is legacy operating systems.
+	ZNZoomVideoSDKScreenCaptureMode_Legacy,
+	///<Screen capture mode is capture with window filtering.
+	ZNZoomVideoSDKScreenCaptureMode_Filtering,
+	///<Screen capture mode is advanced share with window filtering.
+	ZNZoomVideoSDKScreenCaptureMode_ADA_Filtering,
+	///<Screen capture mode is advanced share without window filtering.
+	ZNZoomVideoSDKScreenCaptureMode_ADA_Without_Filtering,
+	///<Screen capture mode is secure share with window filtering.
+	ZNZoomVideoSDKScreenCaptureMode_Secure_Filtering,
 }ZNZoomVideoSDKScreenCaptureMode;
+
+enum ZNZoomVideoSDKSharePreprocessType
+{
+	ZNZoomVideoSDKSharePreprocessType_none,    ///<For initialization.
+	ZNZoomVideoSDKSharePreprocessType_screen,  ///<For share screen(monitor).
+	ZNZoomVideoSDKSharePreprocessType_view     ///<For share view(application window).
+};
+
+struct ZNZoomVideoSDKSharePreprocessParam
+{
+	ZNZoomVideoSDKSharePreprocessType type; ///<The share pre-process type
+	ZoomSTRING handle;                      ///<The window handle that to share and pre-process.
+	ZoomSTRING monitorID;                   ///<The screen name that to share and pre-process.
+
+	ZNZoomVideoSDKSharePreprocessParam()
+	{
+		type = ZNZoomVideoSDKSharePreprocessType_none;
+	}
+};
+
+typedef enum {
+	ZNZoomVideoSDKAnnotationToolType_None,
+	ZNZoomVideoSDKAnnotationToolType_Pen,
+	ZNZoomVideoSDKAnnotationToolType_HighLighter,
+	ZNZoomVideoSDKAnnotationToolType_AutoLine,
+	ZNZoomVideoSDKAnnotationToolType_AutoRectangle,
+	ZNZoomVideoSDKAnnotationToolType_AutoEllipse,
+	ZNZoomVideoSDKAnnotationToolType_AutoArrow,
+	ZNZoomVideoSDKAnnotationToolType_AutoRectangleFill,
+	ZNZoomVideoSDKAnnotationToolType_AutoEllipseFill,
+	ZNZoomVideoSDKAnnotationToolType_SpotLight,
+	ZNZoomVideoSDKAnnotationToolType_Arrow,
+	ZNZoomVideoSDKAnnotationToolType_ERASER,
+	ZNZoomVideoSDKAnnotationToolType_Textbox,
+	ZNZoomVideoSDKAnnotationToolType_Picker,
+	ZNZoomVideoSDKAnnotationToolType_AutoRectangleSemiFill,
+	ZNZoomVideoSDKAnnotationToolType_AutoEllipseSemiFill,
+	ZNZoomVideoSDKAnnotationToolType_AutoDoubleArrow,
+	ZNZoomVideoSDKAnnotationToolType_AutoDiamond,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampArrow,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampCheck,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampX,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampStar,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampHeart,
+	ZNZoomVideoSDKAnnotationToolType_AutoStampQm,
+}ZNZoomVideoSDKAnnotationToolType;
+
+typedef enum {
+	ZNZoomVideoSDKAnnotationClearType_All,///<Clear all annotations.
+	ZNZoomVideoSDKAnnotationClearType_Others,///<Clear only the others' annotations.
+	ZNZoomVideoSDKAnnotationClearType_My,///<Clear only your own annotations.
+}ZNZoomVideoSDKAnnotationClearType;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

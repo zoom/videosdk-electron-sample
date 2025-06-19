@@ -46,7 +46,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetSessionHost(const v8::FunctionCallback
 
 	com::electron::zoomvideo::sdk::proto::VideoSDKUser _SessionHost;
 	_g_native_wrap.GetSessionInfoWrap().GetSessionHost(_SessionHost);
-	size_t _size = _SessionHost.ByteSize();
+	size_t _size = _SessionHost.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -69,7 +69,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetRemoteUsers(const v8::FunctionCallback
 
 	com::electron::zoomvideo::sdk::proto::UserList _RemoteUsers;
 	_g_native_wrap.GetSessionInfoWrap().GetRemoteUsers(_RemoteUsers);
-	size_t _size = _RemoteUsers.ByteSize();
+	size_t _size = _RemoteUsers.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -92,7 +92,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetMyself(const v8::FunctionCallbackInfo<
 	
 	com::electron::zoomvideo::sdk::proto::VideoSDKUser _Myself;
 	_g_native_wrap.GetSessionInfoWrap().GetMyself(_Myself);
-	size_t _size = _Myself.ByteSize();
+	size_t _size = _Myself.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -116,7 +116,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetSessionAudioStatisticInfo(const v8::Fu
 
 	com::electron::zoomvideo::sdk::proto::VideoSDKSessionAudioStatisticInfoList _infoList;
 	_g_native_wrap.GetSessionInfoWrap().GetSessionAudioStatisticInfo(_infoList);
-	size_t _size = _infoList.ByteSize();
+	size_t _size = _infoList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -139,7 +139,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetSessionVideoStatisticInfo(const v8::Fu
 
 	com::electron::zoomvideo::sdk::proto::VideoSDKSessionASVStatisticInfoList _infoList;
 	_g_native_wrap.GetSessionInfoWrap().GetSessionVideoStatisticInfo(_infoList);
-	size_t _size = _infoList.ByteSize();
+	size_t _size = _infoList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -162,7 +162,7 @@ void ZoomVideoNodeSessionInfoCtrlWrap::GetSessionShareStatisticInfo(const v8::Fu
 
 	com::electron::zoomvideo::sdk::proto::VideoSDKSessionASVStatisticInfoList _infoList;
 	_g_native_wrap.GetSessionInfoWrap().GetSessionShareStatisticInfo(_infoList);
-	size_t _size = _infoList.ByteSize();
+	size_t _size = _infoList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

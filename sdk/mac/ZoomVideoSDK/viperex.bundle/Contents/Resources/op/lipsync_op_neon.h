@@ -20,8 +20,9 @@
 #include <vector>
 
 #if defined(WEBRTC_TARGET_WIN_ARM64) || defined(WEBRTC_TARGET_MAC_ARM64) || defined(WEBRTC_TARGET_ANDROID_ARM32) ||    \
-    defined(WEBRTC_TARGET_ANDROID_ARM64) || defined(WEBRTC_TARGET_IOS_ARM64)
+    defined(WEBRTC_TARGET_ANDROID_ARM64) || defined(WEBRTC_TARGET_IOS_ARM64) || defined(WEBRTC_TARGET_LINUX_ARM32) || defined(WEBRTC_TARGET_LINUX_ARM64)
 #include <arm_neon.h>
+#include <string.h>
 #endif
 
 namespace viper

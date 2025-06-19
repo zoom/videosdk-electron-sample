@@ -273,6 +273,7 @@ typedef enum
 	ZoomVideoSDKSubscribeFailReason_HasSubscribeExceededLimit,
 	ZoomVideoSDKSubscribeFailReason_HasSubscribeTwoShare,
 	ZoomVideoSDKSubscribeFailReason_HasSubscribeVideo1080POr720PAndOneShare,
+	ZoomVideoSDKSubscribeFailReason_TooFrequentCall,
 #if defined ANDROID || defined __IOS__
 	ZoomVideoSDKSubscribeFailReason_HasSubscribeOneShare,
 #endif
@@ -428,6 +429,10 @@ public:
 	/// \brief Determine whether the user is incoming live stream user.
 	/// \return True indicates that the user is an incoming live stream user, otherwise false.
 	virtual bool isIncomingLiveStreamUser() = 0;
+
+	/// \brief Determine whether the user is in a subsession.
+	/// \return If the user is currently in a subsession, it will return true, otherwise not.
+	virtual bool isInSubSession() = 0;
 };
 
 /// \brief User helper interface.

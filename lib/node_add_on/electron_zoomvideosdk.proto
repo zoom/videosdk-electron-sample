@@ -331,7 +331,7 @@ message CallbackBody{
 								// 40:onCalloutJoinSuccess 41:onShareCursorDataReceived
 								// 42:onRemoteControlStatus 43:onRemoteControlRequestReceived 44:onRemoteControlServiceInstallResult 45:onSpotlightVideoChanged
 								// 46:onBindIncomingLiveStreamResponse 47:onUnbindIncomingLiveStreamResponse 48:onIncomingLiveStreamStatusResponse 49:onStartIncomingLiveStreamResponse 50:onStopIncomingLiveStreamResponse
-								// 51:onFailedToStartShare 52:onCameraListChanged 53:onShareContentChanged 54:onShareContentSizeChanged
+								// 51:onFailedToStartShare 52:onCameraListChanged 53:onShareContentChanged 54:onShareContentSizeChanged 55:onCapturedRawDataReceived 56:onCapturedShareStopped
 	optional onErrorParams onErrorParam = 2;
 	optional onUserJoinParams onUserJoinParam = 3;
 	optional onUserLeaveParams onUserLeaveParam = 4;
@@ -801,4 +801,31 @@ message EnableGreenBorderParams {
 
 message EnableAdminRemoteControlParams {
 	optional bool bEnable = 1; 
+}
+
+message StartShareWithPreprocessingParams {
+	optional int32 type = 1;
+	optional string handle = 2;
+	optional string monitorID = 3;
+}
+
+message SendPreprocessedDataParams {
+	optional bytes buffer = 1;
+	optional string dataHandle = 2;
+}
+
+message SetToolTypeParams {
+	optional int32 toolType = 1;
+}
+
+message SetToolColorParams {
+	optional int64 toolColor = 1;
+}
+
+message SetToolWidthParams {
+	optional int64 toolWidth = 1;
+}
+
+message ClearAnnotationParams {
+	optional int32 clearType = 1;
 }

@@ -96,7 +96,7 @@ void ZoomVideoNodeAudioHelperWrap::GetSpeakerList(const v8::FunctionCallbackInfo
 	
 	com::electron::zoomvideo::sdk::proto::GetSpeakerList _SpeakerList;
 	_g_native_wrap.GetAudioHelperWrap().GetSpeakerList(_SpeakerList);
-	size_t _size = _SpeakerList.ByteSize();
+	size_t _size = _SpeakerList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;
@@ -118,7 +118,7 @@ void ZoomVideoNodeAudioHelperWrap::GetMicList(const v8::FunctionCallbackInfo<v8:
 
 	com::electron::zoomvideo::sdk::proto::GetMicList _MicList;
 	_g_native_wrap.GetAudioHelperWrap().GetMicList(_MicList);
-	size_t _size = _MicList.ByteSize();
+	size_t _size = _MicList.ByteSizeLong();
 	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
 	char* char_temp_param = nullptr;
 	size_t sz_temp_param = 0;

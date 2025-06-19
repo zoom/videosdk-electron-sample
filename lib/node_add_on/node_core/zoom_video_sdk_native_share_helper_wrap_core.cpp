@@ -237,6 +237,66 @@ unsigned long long ZShareHelperWrap::GetRecvHandle()
 {
 	return m_recv_handle;
 }
+ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* ZShareHelperWrap::GetAnnotationHelper()
+{
+	return m_AnnotationHelper;
+}
+ZNZoomVideoSDKErrors ZShareHelperWrap::CreateAnnotationHelper()
+{
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
+	do
+	{
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDK* pVideoSDK = _g_native_wrap.GetVideoSDKObj();
+		if (!pVideoSDK)
+		{
+			break;
+		}
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareHelper* pShareHelper = pVideoSDK->getShareHelper();
+		if (!pShareHelper)
+		{
+			break;
+		}
+		if (pShareHelper->isOtherSharing())
+		{
+			err = ZNZoomVideoSDKErrors_Wrong_Usage;
+			break;
+		}
+#ifdef __linux
+		err = ZNZoomVideoSDKErrors_Dont_Support_Feature;
+#else
+		m_AnnotationHelper = pShareHelper->createAnnotationHelper(NULL);
+#endif
+	} while (false);
+
+	if (m_AnnotationHelper)
+	{
+		return ZNZoomVideoSDKErrors_Success;
+	}
+	return err;
+}
+ZNZoomVideoSDKErrors ZShareHelperWrap::DestroyAnnotationHelper()
+{
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
+	do
+	{
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDK* pVideoSDK = _g_native_wrap.GetVideoSDKObj();
+		if (!pVideoSDK)
+		{
+			break;
+		}
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareHelper* pShareHelper = pVideoSDK->getShareHelper();
+		if (!pShareHelper)
+		{
+			break;
+		}
+		if (m_AnnotationHelper)
+		{
+			err = (ZNZoomVideoSDKErrors)pShareHelper->destroyAnnotationHelper(m_AnnotationHelper);
+		}
+
+	} while (false);
+	return err;
+}
 ///////////////////////////////////////////////////////////////////////////////////////////
 #ifdef WIN32
 ZShareInfoHelperWrap::ZShareInfoHelperWrap()

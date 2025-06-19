@@ -47,6 +47,7 @@ private:
 	~ZoomVideoNodeVideoRawDataLibuvClientWrap() {};
 public:
 	static void SetPainterVideoRawDataCB(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void SetCapturedRawDataCB(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void Start(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void Stop(const v8::FunctionCallbackInfo<v8::Value>& args);
 
@@ -62,6 +63,7 @@ void InitClassAttribute<ZoomVideoNodeVideoRawDataLibuvClientWrap >(const v8::Loc
 
 	// Prototype
 	NODE_SET_PROTOTYPE_METHOD(tpl, "SetPainterVideoRawDataCB", ZoomVideoNodeVideoRawDataLibuvClientWrap::SetPainterVideoRawDataCB);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "SetCapturedRawDataCB", ZoomVideoNodeVideoRawDataLibuvClientWrap::SetCapturedRawDataCB);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "Start", ZoomVideoNodeVideoRawDataLibuvClientWrap::Start);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "Stop", ZoomVideoNodeVideoRawDataLibuvClientWrap::Stop);
 }

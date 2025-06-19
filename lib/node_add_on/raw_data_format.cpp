@@ -1,6 +1,9 @@
 #include "raw_data_format.h"
 #include <set>
 #include <string.h>
+#include "zoom_video_sdk_node_rawdata_helper_mgr_class.h"
+
+extern ZoomVideoNodePipeServerMgr _g_share_preprocessor_pipe_server;
 
 UVIPCMessage* MakeUVIPCMsg(YUVRawDataI420* data_, unsigned long long* recv_handl_list, int num, unsigned int type)
 {
@@ -42,6 +45,48 @@ UVIPCMessage* MakeUVIPCMsg(YUVRawDataI420* data_, unsigned long long* recv_handl
 		head_ptr->source_id = filled_data->GetSourceID();
 	
 		filled_data->Release();
+	}
+	return rawdata_msg;
+}
+UVIPCMessage* MakeUVIPCMsg(YUVRawDataI420* data_, unsigned int type)
+{
+	if (NULL == data_)
+		return NULL;
+	
+	IYUVRawDataI420Converter* yuv_data_converter = dynamic_cast<IYUVRawDataI420Converter*>(data_);
+	if (NULL == yuv_data_converter)
+		return NULL;
+	unsigned int dataBufferLen = (data_->GetStreamWidth()*data_->GetStreamHeight()*3)/2;
+	
+	int ipc_msg_buffer_len = sizeof(VideoRawDataHeader) + dataBufferLen;//head+recv_list+buffer
+	UVIPCMessage* rawdata_msg = new UVIPCMessage(NULL, ipc_msg_buffer_len);
+	if (NULL == rawdata_msg)
+		return NULL;
+	char* buf_ptr = rawdata_msg->GetBuf();
+	if (NULL == buf_ptr)
+	{
+		rawdata_msg->Release();
+		return NULL;
+	}
+	unsigned long long* recv_list = (unsigned long long*)(buf_ptr + sizeof(VideoRawDataHeader));
+	YUVRawDataI420* filled_data = yuv_data_converter->ConvertToYUVViaExternalBuffer(buf_ptr + sizeof(VideoRawDataHeader), dataBufferLen);
+	if (filled_data)
+	{
+		//fill header
+		VideoRawDataHeader* head_ptr = (VideoRawDataHeader*)buf_ptr;
+		head_ptr->common_header.type = type;
+		head_ptr->dataBufferLen = filled_data->GetBufferLen();
+		head_ptr->isLimitedI420 = filled_data->IsLimitedI420() ? 1 : 0;
+		head_ptr->width = filled_data->GetStreamWidth();
+		head_ptr->height = filled_data->GetStreamHeight();
+		head_ptr->rotation = filled_data->GetRotation();
+		head_ptr->y_offset = (unsigned long long)filled_data->GetYBuffer() - (unsigned long long)filled_data->GetBuffer();
+		head_ptr->u_offset = (unsigned long long)filled_data->GetUBuffer() - (unsigned long long)filled_data->GetBuffer();
+		head_ptr->v_offset = (unsigned long long)filled_data->GetVBuffer() - (unsigned long long)filled_data->GetBuffer();
+		head_ptr->source_id = filled_data->GetSourceID();
+		head_ptr->pBuffer = buf_ptr;
+	
+		_g_share_preprocessor_pipe_server._uv_ipc_server.SetMessageRawData(buf_ptr, rawdata_msg, filled_data);
 	}
 	return rawdata_msg;
 }
