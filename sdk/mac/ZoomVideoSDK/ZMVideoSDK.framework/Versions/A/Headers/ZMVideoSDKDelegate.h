@@ -1,7 +1,10 @@
-//
-//  ZMVideoSDKDelegate.h
-//  ZMVideoSDK
-//
+/**
+ * @file ZMVideoSDKDelegate.h
+ * @brief This file defines the \link ZMVideoSDKDelegate \endlink protocol,
+ * which contains callback methods related to session lifecycle, user join/leave,
+ * audio/video status changes, error notifications, and other session events.
+ */
+
 #import <AppKit/AppKit.h>
 #import <ZMVideoSDK/ZMVideoSDKDef.h>
 
@@ -34,8 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class ZMVideoSDKSubSessionManager;
 @class ZMVideoSDKSubSessionParticipant;
 @class ZMVideoSDKSubSessionUserHelpRequestHandler;
+@class ZMVideoSDKWhiteboardHelper;
 /**
- * @brief A listener class that groups together the callbacks related to a session.
+ * @protocol ZMVideoSDKDelegate
+ * @brief Delegate protocol to receive session related callbacks.
  */
 @protocol ZMVideoSDKDelegate <NSObject>
 @optional
@@ -53,13 +58,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Invoked when the current user leaves the session with reason.
- * @param reason For more details, see \link ZMVideoSDKSessionLeaveReason \endlink
+ * @param reason The leave reason.
  */
 - (void)onSessionLeave:(ZMVideoSDKSessionLeaveReason)reason;
 
 /**
  * @brief Callback: Invoked when errors occur.
- * @param ErrorType Provides error code associated with the error. See \link ZMVideoSDKErrors \endlink for more information.
+ * @param ErrorType Provides error code associated with the error.
  * @param details Detailed errorCode.
  */
 - (void)onError:(ZMVideoSDKErrors)ErrorType detail:(int)details;
@@ -94,17 +99,20 @@ NS_ASSUME_NONNULL_BEGIN
     
 /**
  * @brief Invoked when a user makes changes to their sharing status, such as starting screen sharing, starting view sharing, or stopping sharing.
- * @param shareHelper The pointer to a share helper object, see \link ZMVideoSDKShareHelper \endlink.
+ * @param shareHelper The pointer to a share helper object.
  * @param user The pointer to a user object.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
  */
 - (void)onUserShareStatusChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser* _Nullable)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
 /**
  * @brief Invoked when the share content size has changed.
- * @param shareHelper The pointer to a share helper object, see \link ZMVideoSDKShareHelper \endlink.
+ * @param shareHelper The pointer to a share helper object.
  * @param user The pointer to a user object.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
+ * @note A share content size change may occur in two cases: 
+ *       when the first frame of shared content is received (from no content to having a size), 
+ *       or when the content size actually changes during sharing.
  */
 - (void)onShareContentSizeChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser* _Nullable)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
@@ -112,17 +120,32 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief Callback: Invoked when a user makes changes to their share content type, such as switching camera share to normal share.
  * Find the share type in \link ZMVideoSDKShareType \endlink.
  * @param shareHelper The pointer to share helper object.
- * @param user current start or stop share userInfo. For more details, refer to \link ZMVideoSDKUser \endlink.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param user current start or stop share userInfo.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
  */
 - (void)onShareContentChanged:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser *)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
 /**
+ * @brief Invoked when the list of unsharing windows changes.
+ * @param windowsList An array of window IDs (`CGWindowID`) representing the windows that are not being shared. Each window ID is wrapped in an `NSNumber`.
+ * @param shareHelper The pointer to the share helper object.
+ * @param user The user who is sharing.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
+ */
+- (void)onUnsharingWindowsChanged:(NSArray<NSNumber*>*)windowsList shareHelper:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser *)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
+
+/**
  * @brief Invoked when a user failed to start sharing.
- * @param shareHelper The pointer to a share helper object, see \link ZMVideoSDKShareHelper \endlink.
+ * @param shareHelper The pointer to a share helper object.
  * @param user The pointer to a user object.
  */
 - (void)onFailedToStartShare:(ZMVideoSDKShareHelper* _Nonnull)shareHelper user:(ZMVideoSDKUser* _Nullable)user;
+
+/**
+ * @brief Notification of the share setting has changed.
+ * @param setting The share setting, see \link ZMVideoSDKShareSetting \endlink
+ */
+- (void)onShareSettingChanged:(ZMVideoSDKShareSetting)setting;
 
 /**
  * @brief Callback: Invoked when a user makes changes to their live stream status.
@@ -172,14 +195,14 @@ NS_ASSUME_NONNULL_BEGIN
     
 /**
  * @brief Callback: Invoked when individual user's audio raw data received.
- * @param data Raw audio data. \link ZMVideoSDKAudioRawData \endlink.
+ * @param data Raw audio data.
  * @param user The user object associated with the raw audio data.
  */
 - (void)onOneWayAudioRawDataReceived:(ZMVideoSDKAudioRawData* _Nonnull)data user:(ZMVideoSDKUser* _Nullable)user;
     
 /**
- @brief Callback: Invoked when the manager of the session changes.
- @param user The pointer of user object.
+ * @brief Callback: Invoked when the manager of the session changes.
+ * @param user The pointer of user object.
  */
 - (void)onUserManagerChanged:(ZMVideoSDKUser* _Nullable)user;
     
@@ -191,13 +214,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback: Invoked when receiving shared raw audio data.
- * @param data Raw audio data. \link ZMVideoSDKAudioRawData \endlink.
+ * @param data Raw audio data.
  */
 - (void)onSharedAudioRawDataReceived:(ZMVideoSDKAudioRawData* _Nullable)data;
 
 /**
  * @brief Callback: Invoked when cloud recording status has paused, stopped, resumed, or otherwise changed.
- * @param status Cloud recording status defined in \link ZMRecordingStatus \endlink.
+ * @param status Cloud recording status.
  * @param handler When the cloud recording starts, this object is used to let the user choose whether to accept or not.
  */
 - (void)onCloudRecordingStatus:(ZMRecordingStatus)status recordingConsentHandler:(ZMVideoSDKRecordingConsentHandler * _Nullable)handler;
@@ -226,7 +249,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief Callback interface for when the current user has received a camera control request.
  * @param user The pointer to the user who sent the request.
  * @param requestType The request type.
- * @param cameraControlRequestHandler The pointer to the helper instance of the camera controller. See \link ZMVideoSDKCameraControlRequestHandler \endlink.
+ * @param cameraControlRequestHandler The pointer to the helper instance of the camera controller.
  * @note This will be triggered when another user requests control of the current users camera.
  */
 - (void)onCameraControlRequestReceived:(ZMVideoSDKUser* _Nullable)user cameraControlRequestType:(ZMVideoSDKCameraControlRequestType)requestType requestHandler:(ZMVideoSDKCameraControlRequestHandler* _Nullable)cameraControlRequestHandler;
@@ -244,25 +267,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback: Invoked when the invite by phone status changes to any other valid status such as Calling, Ringing, Success, or Failed.
- * @param status Invite by phone status. See \link ZMPhoneStatus \endlink.
- * @param reason Invite by phone failed reason. See \link ZMPhoneFailedReason \endlink.
+ * @param status Invite by phone status.
+ * @param reason Invite by phone failed reason.
  */
 - (void)onInviteByPhoneStatus:(ZMPhoneStatus)status reason:(ZMPhoneFailedReason)reason;
 
 /**
  * @brief Callback: Invoked when the invite by phone user joined session success.
- * @param user success joined user, See \link ZMVideoSDKUser \endlink.
+ * @param user success joined user.
  * @param phoneNumber Phone number of callout.
  */
 - (void)onCalloutJoinSuccess:(ZMVideoSDKUser * _Nullable)user phoneNumber:(NSString * _Nullable)phoneNumber;
 
 /**
  * @brief Callback: Invoked when someone in a given session enables or disables multi-camera. All participants in the session receive this callback.
- * @param status The status of camera, refer to \link ZMVideoSDKMultiCameraStreamStatus \endlink.
- * @param user The user who enabled multi-camera. See \link ZMVideoSDKUser \endlink.
- * @param videoPipe The data pipe for the multi-camera. See \link ZMVideoSDKMultiCameraStreamStatus \endlink.
+ * @param status The status of camera.
+ * @param user The user who enabled multi-camera.
+ * @param videoPipe The data pipe for the multi-camera.
  */
 - (void)onMultiCameraStreamStatusChanged:(ZMVideoSDKMultiCameraStreamStatus)status user:(ZMVideoSDKUser * _Nullable)user rawDataPipe:(ZMVideoSDKRawDataPipe * _Nullable)videoPipe;
+
+/**
+ * @brief Notification of the audio level changes for a participant (excluding self).
+ * @param level The current audio level of the user, in the range [0, 9].
+ * @param bAudioSharing YES if the audio level is from shared audio, such as computer audio; otherwise it's from the microphone.
+ * @param pUser The user whose audio level has changed.
+ */
+- (void)onAudioLevelChanged:(unsigned int)level audioSharing:(BOOL)bAudioSharing user:(ZMVideoSDKUser * _Nullable)user;
 
 /**
  * @brief Notify the current mic or speaker volume when testing.
@@ -296,19 +327,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback: Invoked when live transcription status changes.
- * @param status The live transcription status. See \link ZMVideoSDKLiveTranscriptionStatus \endlink.
+ * @param status The live transcription status.
  */
 - (void)onLiveTranscriptionStatus:(ZMVideoSDKLiveTranscriptionStatus)status;
 
 /**
  * @brief Callback: Invoked when a live transcription message is received.
- * @param messageInfo The live transcription message, refer to \link ZMVideoSDKLiveTranscriptionMessageInfo \endlink.
+ * @param messageInfo The live transcription message.
  */
 - (void)onLiveTranscriptionMsgInfoReceived:(ZMVideoSDKLiveTranscriptionMessageInfo* _Nullable)messageInfo;
 
 /**
  * @brief Original language message received callback.
- * @param messageInfo The spoken language message, see \link ZMVideoSDKLiveTranscriptionMessageInfo \endlink.
+ * @param messageInfo The spoken language message.
  */
 - (void)onOriginalLanguageMsgReceived:(ZMVideoSDKLiveTranscriptionMessageInfo* _Nullable)messageInfo;
 
@@ -320,10 +351,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onLiveTranscriptionMsgError:(ZMVideoSDKLiveTranscriptionLanguage* _Nullable)spokenLanguage transcriptLanguage:(ZMVideoSDKLiveTranscriptionLanguage* _Nullable)transcriptLanguage;
 
 /**
+ * @brief Notification of the spoken language has changed.
+ * @param spokenLanguage The spoken message language.
+ */
+- (void)onSpokenLanguageChanged:(ZMVideoSDKLiveTranscriptionLanguage* _Nullable)spokenLanguage;
+
+/**
  * @brief Callback: Invoked when a user deletes a chat message.
  * @param chatHelper The pointer to chat helper object.
  * @param msgID The deleted message's ID.
- * @param type Indicates by whom the message was deleted, which is defined in \link ZMVideoSDKChatMessageDeleteType \endlink.
+ * @param type Indicates by whom the message was deleted.
  */
 - (void)onChatMsgDeleteNotification:(ZMVideoSDKChatHelper* _Nonnull)chatHelper messageID:(NSString * _Nullable)msgID deleteBy:(ZMVideoSDKChatMessageDeleteType)type;
 
@@ -340,43 +377,67 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)onProxyDetectComplete;
 
 /**
- * @brief The callback will be triggered if the proxy requests to input the username and password. Use the handler to configure the related information. For more details, see \link ZMVideoSDKProxySettingHandler \endlink.
- * @param handler The handler will be destroyed once the function calls end.
+ * @brief The callback will be triggered if the proxy requests to input the username and password. Use the handler to configure the related information.
+ * @param handler A handler used to configure proxy credentials. The handler will be destroyed once the function calls end.
  */
 - (void)onProxySettingNotification:(ZMVideoSDKProxySettingHandler * _Nonnull)handler;
 
 /**
- * @brief The callback will be triggered when the SSL is verified. Use the handler to check the related information. For more details, see \link ZMVideoSDKSSLCertificateInfo \endlink.
- * @param handler The handler will be destroyed once the function calls end.
+ * @brief The callback will be triggered when the SSL is verified. Use the handler to check the related information.
+ * @param info A certificate information object for verification failure. The object will be destroyed once the function calls end.
  */
 - (void)onSSLCertVerifiedFailNotification:(ZMVideoSDKSSLCertificateInfo * _Nonnull)info;
 
 /**
  * @brief Callback event of the user's video network quality changes.
- * @param status Video network quality. For more details, see \link ZMVideoSDKNetworkStatus \endlink.
- * @param user The pointer to a user object. For more details, refer to \link ZMVideoSDKUser \endlink.
+ * @param status Video network quality.
+ * @param user The pointer to a user object.
+ * @deprecated Use \link ZMVideoSDKDelegate::onUserNetworkStatusChanged:level:user: \endlink instead.
  */
-- (void)onUserVideoNetworkStatusChanged:(ZMVideoSDKNetworkStatus)status user:(ZMVideoSDKUser * _Nullable)user;
+- (void)onUserVideoNetworkStatusChanged:(ZMVideoSDKNetworkStatus)status user:(ZMVideoSDKUser * _Nullable)user DEPRECATED_MSG_ATTRIBUTE("Use -onUserNetworkStatusChanged:level:user: instead");
+
+/**
+ * @brief Callback event of the current user's share network quality changes.
+ * @param status share network quality.
+ * @param isSendingShare Indicates the direction of the share. If YES, it refers to the sending share; if NO, it refers to the receiving share.
+ * @deprecated Use \link ZMVideoSDKDelegate::onUserNetworkStatusChanged:level:user: \endlink instead.
+ */
+- (void)onShareNetworkStatusChanged:(ZMVideoSDKNetworkStatus)status isSendingShare:(BOOL)isSendingShare DEPRECATED_MSG_ATTRIBUTE("Use -onUserNetworkStatusChanged:level:user: instead");
+
+/**
+ * @brief Called when a user's network status changes for a specific data type.
+ * @param type The data type whose network status changed.
+ * @param level The new network quality level for the specified data type.
+ * @param user The user whose network status has changed.
+ */
+- (void)onUserNetworkStatusChanged:(ZMVideoSDKDataType)type level:(ZMVideoSDKNetworkStatus)level user:(ZMVideoSDKUser *)user;
+
+/**
+ * @brief Called when a user's overall network status changes.
+ * @param level The new overall network quality level.
+ * @param user The user whose overall network status has changed.
+ */
+- (void)onUserOverallNetworkStatusChanged:(ZMVideoSDKNetworkStatus)level user:(ZMVideoSDKUser *)user;
 
 /**
  * @brief Callback event of the call CRC device's status.
- * @param status The call status. For more details, see \link ZMVideoSDKCRCCallStatus \endlink.
+ * @param status The call status.
  */
 - (void)onCallCRCDeviceStatusChanged:(ZMVideoSDKCRCCallStatus)status;
 
 /**
  * @brief Callback event for the vidoe canvas that failed to subscribe.
- * @param failReason The fail reason. For more details, see \link ZMVideoSDKSubscribeFailReason \endlink.
- * @param user The pointer to the user object whose view we would like to subscribe to. For more details, refer to \link ZMVideoSDKUser \endlink.
+ * @param failReason The fail reason.
+ * @param user The pointer to the user object whose view we would like to subscribe to.
  * @param view The view that failed to subscribe.
  */
 - (void)onVideoCanvasSubscribeFail:(ZMVideoSDKSubscribeFailReason)failReason user:(ZMVideoSDKUser* _Nullable)user view:(NSView* _Nullable)view;
 
 /**
  * @brief Callback event for the subscribed user's share view failure reason.
- * @param user The pointer to a user object whose view we would like to subscribe to. For more details, refer to \link ZMVideoSDKUser \endlink.
+ * @param user The pointer to a user object whose view we would like to subscribe to.
  * @param view The view that failed to subscribe.
- * @param shareAction The pointer to the ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param shareAction The pointer to the ZMVideoSDKShareAction object.
  */
 - (void)onShareCanvasSubscribeFail:(ZMVideoSDKUser* _Nullable)user view:(NSView* _Nullable)view  shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
@@ -388,8 +449,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback for the annotation privilege change.
- * @param user The pointer to a user object who changed viewer's annotation privilege. For more details, refer to \link ZMVideoSDKUser \endlink.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param user The pointer to a user object who changed viewer's annotation privilege.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
  */
 - (void)onAnnotationPrivilegeChange:(ZMVideoSDKUser* _Nullable)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
@@ -401,15 +462,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Invoked when send file status make change.
- * @param sendFile The pointer to send file object. For more details, refer to \link ZMVideoSDKSendFile \endlink.
- * @param status The status of file transfer. For more details, refer to \link ZMVideoSDKFileTransferStatus \endlink.
+ * @param sendFile The pointer to send file object.
+ * @param status The status of file transfer.
  */
 - (void)onSendFile:(ZMVideoSDKSendFile * _Nullable)sendFile status:(ZMVideoSDKFileTransferStatus)status;
 
 /**
  * @brief Invoked when receive file status make change.
- * @param receiveFile The pointer to receive file object. For more details, refer to \link ZMVideoSDKReceiveFile \endlink.
- * @param status The status of file transfer. For more details, refer to \link ZMVideoSDKFileTransferStatus \endlink.
+ * @param receiveFile The pointer to receive file object.
+ * @param status The status of file transfer.
  */
 - (void)onReceiveFile:(ZMVideoSDKReceiveFile * _Nullable)receiveFile status:(ZMVideoSDKFileTransferStatus)status;
 
@@ -421,17 +482,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback for when the remote control status changes.
- * @param status The value of the remote control status. For more details, refer to \link ZMVideoSDKRemoteControlStatus \endlink.
- * @param user The remote control user. For more details, refer to \link ZMVideoSDKUser \endlink.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
+ * @param status The value of the remote control status.
+ * @param user The remote control user.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
  */
 - (void)onRemoteControlStatus:(ZMVideoSDKRemoteControlStatus)status user:(ZMVideoSDKUser *)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction;
 
 /**
  * @brief Callback for when the current user has received a remote control request. This will be triggered when another user requests control of the current user's screen.
- * @param user The pointer to a user who sent the request. For more details, refer to \link ZMVideoSDKUser \endlink.
- * @param shareAction The pointer to a ZMVideoSDKShareAction object. For more details, refer to \link ZMVideoSDKShareAction \endlink.
- * @param handler The pointer to a helper instance of the remote controller. For more details, refer to \link ZMVideoSDKRemoteControlRequestHandler \endlink.
+ * @param user The pointer to a user who sent the request.
+ * @param shareAction The pointer to a ZMVideoSDKShareAction object.
+ * @param handler The pointer to a helper instance of the remote controller.
  */
 - (void)onRemoteControlRequestReceived:(ZMVideoSDKUser *)user shareAction:(ZMVideoSDKShareAction* _Nullable)shareAction handler:(ZMVideoSDKRemoteControlRequestHandler *)handler;
 
@@ -480,25 +541,25 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief Callback event for when the subsession status changes.
  * @param status The subsession status.
- * @param subSessionKitList The subsession which status has changed. It has value only when status is Committed/Withdrawn/WithdrawFailed, see \link ZMVideoSDKSubSessionKit \endlink.
+ * @param subSessionKitList The subsession which status has changed. It has value only when status is Committed/Withdrawn/WithdrawFailed.
  */
 - (void)onSubSessionStatusChanged:(ZMVideoSDKSubSessionStatus)status subSessionKit:(NSArray<ZMVideoSDKSubSessionKit*>* _Nullable)subSessionKitList;
 
 /**
  * @brief Callback event when a user gains or loses subsession manager privileges.
- * @param manager The subsession manager object, when the user loses manager privileges, manager is nil, see \link ZMVideoSDKSubSessionManager \endlink.
+ * @param manager The subsession manager object, when the user loses manager privileges, manager is nil.
  */
 - (void)onSubSessionManagerHandle:(ZMVideoSDKSubSessionManager* _Nullable)manager;
 
 /**
  * @brief Callback event when a user gains or loses subsession participant privileges.
- * @param participant The subsession participant object, when the user loses participant privileges, participant is nil, see \link ZMVideoSDKSubSessionParticipant \endlink.
+ * @param participant The subsession participant object, when the user loses participant privileges, participant is nil.
  */
 - (void)onSubSessionParticipantHandle:(ZMVideoSDKSubSessionParticipant* _Nullable)participant;
 
 /**
  * @brief Callback event when the subsession users are updated.
- * @param subSessionKit The subSession kit object, see \link ZMVideoSDKSubSessionKit \endlink.
+ * @param subSessionKit The subSession kit object.
  */
 - (void)onSubSessionUsersUpdate:(ZMVideoSDKSubSessionKit* _Nullable)subSessionKit;
 
@@ -511,15 +572,70 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Callback event when the user receives a help request from a subsession.
- * @param handler The request handler object, see \link ZMVideoSDKSubSessionUserHelpRequestHandler \endlink.
+ * @param handler The request handler object.
  */
 - (void)onSubSessionUserHelpRequest:(ZMVideoSDKSubSessionUserHelpRequestHandler*)handler;
 
 /**
  * @brief Callback event when the result of the help request.
- * @param result The result of help request, see \link ZMVideoSDKUserHelpRequestResult \endlink.
+ * @param result The result of help request.
  */
 - (void)onSubSessionUserHelpRequestResult:(ZMVideoSDKUserHelpRequestResult)result;
+
+/**
+ * @brief Callback invoked when a whiteboard file export completes.
+ * @param format The export format. See \link ZMVideoSDKExportFormat \endlink.
+ * @param data The export whiteboard data as a byte array.
+ * @param length The length of the export whiteboard data.
+ */
+- (void)onWhiteboardExported:(ZMVideoSDKExportFormat)format data:(unsigned char *)data dataLength:(long)length;
+
+
+
+/**
+ * @brief Callback invoked when a user changes their whiteboard sharing status, such as starting or stopping whiteboard sharing.
+ * @param user The user who's whiteboard sharing status changed. Check the current status via \link ZMVideoSDKWhiteboardStatus \endlink.
+ * @param whiteboardHelper The whiteboard helper object.
+ */
+- (void)onUserWhiteboardShareStatusChanged:(ZMVideoSDKUser *)user whiteboardHelper:(ZMVideoSDKWhiteboardHelper *)whiteboardHelper;
+
+/**
+ * @brief Notificates the response of starting broadcast streaming.
+ * @param isSuccess YES if broadcast streaming started successfully; otherwise NO.
+ * @param channelID The broadcast streaming channel ID returned by the backend.
+ */
+- (void)onStartBroadcastResponse:(BOOL)isSuccess channelID:(NSString*)channelID;
+
+/**
+ * @brief Notificates the response of stopping broadcast streaming.
+ * @param isSuccess YES if broadcast stopped successfully; otherwise NO.
+ */
+- (void)onStopBroadcastResponse:(BOOL)isSuccess;
+
+/**
+ * @brief Notificates the response of getting broadcast status.
+ * @param isSuccess YES if the request succeeded, otherwise NO.
+ * @param status The current broadcast status.
+ */
+- (void)onGetBroadcastControlStatus:(BOOL)isSuccess broadcastControlStatus:(ZMVideoSDKBroadcastControlStatus)status;
+
+/**
+ * @brief Notificates when the viewer's join status changes.
+ * @param status The current join status.
+ */
+- (void)onStreamingJoinStatusChanged:(ZMVideoSDKStreamingJoinStatus)status;
+
+/**
+ * @brief Callback: Invoked when the real-time media streams status changes.
+ * @param status The current real-time media streams status.
+ */
+- (void)onRealTimeMediaStreamsStatusChanged:(ZMVideoSDKRealTimeMediaStreamsStatus)status;
+
+/**
+ * @brief Callback: Invoked when real-time media streams fails.
+ * @param failReason The reason for the failure.
+ */
+- (void)onRealTimeMediaStreamsFail:(ZMVideoSDKRealTimeMediaStreamsFailReason)failReason;
 @end
 NS_ASSUME_NONNULL_END
 

@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "Для того, чтобы поговорить с участниками, необходим доступ к микрофону.";
+NSCameraUsageDescription = "Для того, чтобы участники могли вас видеть, необходим доступ к камере.";
+NSCalendarsFullAccessUsageDescription= "Если вы хотите, чтобы ваши мероприятия были видны в Zoom Workplace, предоставьте приложению доступ к календарю.";
+NSLocalNetworkUsageDescription= "Это необходимо для включения AirPlay и конференций в одноранговых сетях в клиенте Zoom.";
+NSBluetoothAlwaysUsageDescription= "Это позволит Zoom Workplace обнаруживать залы Zoom Rooms поблизости.";

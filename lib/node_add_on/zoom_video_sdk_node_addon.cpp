@@ -21,6 +21,7 @@
 #include "zoom_video_sdk_napi_util_exporter.h"
 #if (!defined __linux)
 #include "zoom_video_sdk_node_remote_control_helper.h"
+#include "zoom_video_sdk_node_rtms_helper.h"
 #endif
 
 
@@ -64,6 +65,7 @@ NODE_MODULE_INIT(/* exports, module, context */) {
 #if (!defined __linux)
 	ZoomVideoNodeRemoteControlHelperWrap::Init(exports->GetIsolate());
 	ZoomVideoNodeRemoteControlRequestHandlerWrap::Init(exports->GetIsolate());
+	ZoomVideoNodeRTMSHelperWrap::Init(exports->GetIsolate());
 #endif
 
 	VideoNodeAddonData* data = new VideoNodeAddonData(isolate);
@@ -102,6 +104,7 @@ v8::Persistent<v8::Function> ZoomVideoNodeAnnotationHelperWrap::constructor;
 #if (!defined __linux)
 v8::Persistent<v8::Function> ZoomVideoNodeRemoteControlHelperWrap::constructor;
 v8::Persistent<v8::Function> ZoomVideoNodeRemoteControlRequestHandlerWrap::constructor;
+v8::Persistent<v8::Function> ZoomVideoNodeRTMSHelperWrap::constructor;
 #endif
 
 ///////////////////////////////////////////////////////////////////////////
@@ -116,8 +119,8 @@ ZoomVideoNodeWrap::~ZoomVideoNodeWrap()
 	_g_native_wrap.SetSink(NULL);
 }
 
-void ZoomVideoNodeWrap::CreateZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	
+void ZoomVideoNodeWrap::CreateZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	v8::Isolate* isolate = args.GetIsolate();
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
@@ -146,12 +149,12 @@ void ZoomVideoNodeWrap::CreateZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8:
 
 		err = _g_native_wrap.CreateZoomVideoSDKObj(path);
 	} while (false);
-	
+
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
-void ZoomVideoNodeWrap::DestroyZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8::Value>& args) {
-
+void ZoomVideoNodeWrap::DestroyZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	_g_video_pipe_server._uv_ipc_server.StopPipeServer();
 	_g_share_pipe_server._uv_ipc_server.StopPipeServer();
 	_g_audio_pipe_server._uv_ipc_server.StopPipeServer();
@@ -163,8 +166,8 @@ void ZoomVideoNodeWrap::DestroyZoomVideoSDKObj(const v8::FunctionCallbackInfo<v8
 	args.GetReturnValue().Set(bret);
 }
 
-void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& args){
-	
+void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	v8::Isolate* isolate = args.GetIsolate();
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
@@ -190,6 +193,12 @@ void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& ar
 		{
 			convertBool(proto_param.enablelog(), param.enableLog);
 		}
+#if defined(WIN32)
+		if (proto_param.has_permonitorawarenessmode())
+		{
+			convertBool(proto_param.permonitorawarenessmode(), param.permonitorAwarenessMode);
+		}
+#endif
 		if (proto_param.has_audiorawdatamemorymode())
 		{
 			int zn_audioRawDataMemoryMode = (int)proto_param.audiorawdatamemorymode();
@@ -209,6 +218,12 @@ void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& ar
 		{
 			param.extendParam.speakerTestFilePath = s2zs(proto_param.speakertestfilepath());
 		}
+#if defined __MACOS__
+		if (proto_param.has_disablekeychainaccess())
+		{
+			convertBool(proto_param.disablekeychainaccess(), param.extendParam.disableKeychainAccess);
+		}
+#endif
 
 		err = _g_native_wrap.Initialize(param);
 		bool bsucc_video_pipe = false;
@@ -227,14 +242,14 @@ void ZoomVideoNodeWrap::Initialize(const v8::FunctionCallbackInfo<v8::Value>& ar
 			err = ZNZoomVideoSDKErrors_Internal_Error;
 		}
 	} while (false);
-	
+
 
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
 
-void ZoomVideoNodeWrap::CleanUp(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	
+void ZoomVideoNodeWrap::CleanUp(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	v8::Isolate* isolate = args.GetIsolate();
 	ZoomNodeVideoSinkHelper::GetInst().Reset();
 	ZoomVideoNodeSDKDelayGC::GetInst().StopTimer();
@@ -310,12 +325,12 @@ void ZoomVideoNodeWrap::JoinSession(const v8::FunctionCallbackInfo<v8::Value>& a
 
 		err = _g_native_wrap.JoinSession(zn_sessionContext);
 	} while (false);
-	
+
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
-void ZoomVideoNodeWrap::LeaveSession(const v8::FunctionCallbackInfo<v8::Value>& args) {
-
+void ZoomVideoNodeWrap::LeaveSession(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	v8::Isolate* isolate = args.GetIsolate();
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
@@ -338,7 +353,7 @@ void ZoomVideoNodeWrap::LeaveSession(const v8::FunctionCallbackInfo<v8::Value>& 
 
 		err = _g_native_wrap.LeaveSession(zn_bEnd);
 	} while (false);
-	
+
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
@@ -356,8 +371,8 @@ void ZoomVideoNodeWrap::GetSDKVersion(const v8::FunctionCallbackInfo<v8::Value>&
 	v8::Local<v8::String> bret = v8::String::NewFromUtf8(isolate, zs2s(sdkVersion).c_str(), v8::NewStringType::kInternalized).ToLocalChecked();
 	args.GetReturnValue().Set(bret);
 }
-void ZoomVideoNodeWrap::InputSessionPassword(const v8::FunctionCallbackInfo<v8::Value>& args) {
-
+void ZoomVideoNodeWrap::InputSessionPassword(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
 	v8::Isolate* isolate = args.GetIsolate();
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
@@ -380,7 +395,7 @@ void ZoomVideoNodeWrap::InputSessionPassword(const v8::FunctionCallbackInfo<v8::
 
 		err = _g_native_wrap.InputSessionPassword(zn_password);
 	} while (false);
-	
+
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
@@ -482,6 +497,10 @@ void ZoomVideoNodeWrap::GetRemoteControlRequestHandler(const v8::FunctionCallbac
 {
 	ZoomVideoNodeRemoteControlRequestHandlerWrap::NewInstance(args);
 }
+void ZoomVideoNodeWrap::GetRTMSHelper(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	ZoomVideoNodeRTMSHelperWrap::NewInstance(args);
+}
 #endif
 
 void ZoomVideoNodeWrap::SetNodeAddonCallbacks(const v8::FunctionCallbackInfo<v8::Value>& args)
@@ -490,7 +509,7 @@ void ZoomVideoNodeWrap::SetNodeAddonCallbacks(const v8::FunctionCallbackInfo<v8:
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
 	{
-		if (args.Length() < 1) 
+		if (args.Length() < 1)
 		{
 			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
 			break;
@@ -510,7 +529,7 @@ void ZoomVideoNodeWrap::SetNodeAddonCallbacks(const v8::FunctionCallbackInfo<v8:
 		v8::Local<v8::Function> cbfunc = v8::Local<v8::Function>::Cast(args[0]);
 		ZoomNodeVideoSinkHelper::GetInst().onNodeAddonCallbacks.Reset(isolate, cbfunc);
 	} while (false);
-	
+
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }

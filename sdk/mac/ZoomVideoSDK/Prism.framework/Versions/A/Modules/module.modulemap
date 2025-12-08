@@ -1,0 +1,11 @@
+framework module Prism {
+  umbrella header "Prism.h"
+  export *
+
+  module * { export * }
+}
+
+module Prism.Swift {
+  header "Prism-Swift.h"
+  requires objc
+}

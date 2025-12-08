@@ -18,6 +18,8 @@ public:
 	bool IsOtherSharing();
 	ZNZoomVideoSDKErrors LockShare(bool lock);
 	bool IsShareLocked();
+	ZNZoomVideoSDKErrors PauseShare();
+	ZNZoomVideoSDKErrors ResumeShare();
 	ZNZoomVideoSDKErrors EnableShareDeviceAudio(bool bEnable);
 	bool IsShareDeviceAudioEnabled();
 	ZNZoomVideoSDKErrors EnableOptimizeForSharedVideo(bool bEnable);
@@ -27,6 +29,9 @@ public:
 	ZNZoomVideoSDKErrors CreateAnnotationHelper();
 	ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* GetAnnotationHelper();
 	ZNZoomVideoSDKErrors DestroyAnnotationHelper();
+	ZNZoomVideoSDKErrors SetAnnotationVanishingToolTime(unsigned int displayTime, unsigned int vanishingTime);
+	ZNZoomVideoSDKErrors GetAnnotationVanishingToolTime(unsigned int& displayTime, unsigned int& vanishingTime);
+	ZNZoomVideoSDKErrors StartShareApplication(uint32_t processID, ZNZoomVideoSDKShareOption option);
 private:
 	unsigned long long m_recv_handle;
 	ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* m_AnnotationHelper;

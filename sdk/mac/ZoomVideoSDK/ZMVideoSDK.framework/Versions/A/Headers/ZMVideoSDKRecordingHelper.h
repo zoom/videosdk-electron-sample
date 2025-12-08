@@ -1,34 +1,42 @@
-//
+/**
+ * @file ZMVideoSDKRecordingHelper.h
+ * @brief Defines the interface for controlling cloud recording in a Zoom Video SDK session.
+ */
+
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /**
+ * @class ZMVideoSDKRecordingHelper
  * @brief Helper class for using cloud recording in the session.
+ * @note Cloud recording requires:
+ * - A valid cloud recording add-on plan
+ * - The cloud recording feature enabled on the Zoom Web portal
  */
 @interface ZMVideoSDKRecordingHelper : NSObject
 
 /**
  * @brief Checks if the current user meets the requirements to start cloud recording.
+ *
  * The following are the prerequisites to use the helper class:
- * <ul>
- *     <li>A cloud recording add-on plan</li>
- *     <li>Cloud recording feature enabled on the Web portal</li>
- * </ul>
- * @return @c ZMVideoSDKErrors_Success if the current user meets the requirements to start cloud recording. Otherwise, the current user does not meeting the requirements to start recording. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * - A cloud recording add-on plan
+ * - Cloud recording feature enabled on the Web portal
+ *
+ * @return @c ZMVideoSDKErrors_Success if the current user meets the requirements to start cloud recording. Otherwise, the current user does not meeting the requirements to start recording.
  */
 - (ZMVideoSDKErrors)canStartRecording;
 
 /**
  * @brief Start cloud recording.
- * @return @c ZMVideoSDKErrors_Success if the start cloud recording request was successful. Otherwise, the start cloud recording request failed. See error codes defined in \link @c ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success if the start cloud recording request was successful. Otherwise, the start cloud recording request failed.
  * @note Since cloud recording involves asynchronous operations, a return value of @c ZMVideoSDKErrors_Success does not guarantee that the recording will start. See \link ZMVideoSDKDelegate onCloudRecordingStatus:recordingConsentHandler: \endlink for information on how to confirm that recording has commenced.
  */
 - (ZMVideoSDKErrors)startCloudRecording;
 
 /**
  * @brief Stop cloud recording.
- * @return @c ZMVideoSDKErrors_Success if the stop cloud recording request was successful. Otherwise, the stop cloud recording request failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success if the stop cloud recording request was successful. Otherwise, the stop cloud recording request failed.
  * @note Since cloud recording involves asynchronous operations, a return value of @c ZMVideoSDKErrors_Success does not guarantee that the recording will stop. See \link ZMVideoSDKDelegate onCloudRecordingStatus:recordingConsentHandler: \endlink for information on how to confirm that recording has ended.
  */
 - (ZMVideoSDKErrors)stopCloudRecording;

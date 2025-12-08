@@ -1,3 +1,7 @@
+/**
+ * @file ZMVideoSDKAudioHelper.h
+ * @brief Provides audio management interfaces for the Zoom Video SDK.
+ */
 
 
 #import <Foundation/Foundation.h>
@@ -6,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Audio raw data interface.
+ * @class ZMVideoSDKAudioRawData
+ * @brief Represents raw audio data received from the SDK.
  */
 @interface ZMVideoSDKAudioRawData : NSObject
 
@@ -56,6 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ * @class ZMVideoSDKSpeakerDevice
  * @brief Speaker device interface.
  */
 @interface ZMVideoSDKSpeakerDevice : NSObject
@@ -78,7 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- * @brief Mic device interface.
+ * @class ZMVideoSDKMicDevice
+ * @brief Represents a microphone device available to the SDK.
  */
 @interface ZMVideoSDKMicDevice : NSObject
     
@@ -99,7 +106,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Audio helper interface.
+ * @class ZMVideoSDKAudioHelper
+ * @brief Provides methods for managing audio in Zoom Video SDK sessions.
  */
 @interface ZMVideoSDKAudioHelper : NSObject
     

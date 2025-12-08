@@ -20,6 +20,7 @@ public:
 	static void InvitePhoneUser(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void CancelInviteByPhone(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetInviteByPhoneStatus(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void GetSessionDialInNumbers(const v8::FunctionCallbackInfo<v8::Value>& args);
 	
 	static v8::Persistent<v8::Function> constructor;
 };
@@ -37,6 +38,7 @@ void InitClassAttribute<ZoomVideoNodePhoneHelperWrap >(const v8::Local<v8::Funct
 	NODE_SET_PROTOTYPE_METHOD(tpl, "InvitePhoneUser", ZoomVideoNodePhoneHelperWrap::InvitePhoneUser);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "CancelInviteByPhone", ZoomVideoNodePhoneHelperWrap::CancelInviteByPhone);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetInviteByPhoneStatus", ZoomVideoNodePhoneHelperWrap::GetInviteByPhoneStatus);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "GetSessionDialInNumbers", ZoomVideoNodePhoneHelperWrap::GetSessionDialInNumbers);
 }
 template<> inline 
 v8::Persistent<v8::Function>* GetConstructor<ZoomVideoNodePhoneHelperWrap >() {

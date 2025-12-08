@@ -1,0 +1,11 @@
+framework module ZoomUnit {
+  umbrella header "ZoomUnit.h"
+  export *
+
+  module * { export * }
+}
+
+module ZoomUnit.Swift {
+  header "ZoomUnit-Swift.h"
+  requires objc
+}

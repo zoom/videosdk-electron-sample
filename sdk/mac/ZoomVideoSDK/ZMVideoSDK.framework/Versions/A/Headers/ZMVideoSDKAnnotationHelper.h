@@ -1,4 +1,7 @@
-
+/**
+ * @file ZMVideoSDKAnnotationHelper.h
+ * @brief Provides interfaces for managing annotation tools and actions in a Zoom Video SDK session.
+ */
 
 #import <Foundation/Foundation.h>
 #import <ZMVideoSDK/ZMVideoSDKUserHelper.h>
@@ -6,7 +9,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Annotate helper interface.
+ * @class ZMVideoSDKAnnotationHelper
+ * @brief Annotation helper interface for Zoom Video SDK.
  */
 @interface ZMVideoSDKAnnotationHelper : NSObject
 
@@ -51,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Sets the annotation tool type.
- * @param toolType The specified annotation tool type. For more information, see \link ZMVideoSDKAnnotationToolType \endlink.
+ * @param toolType The specified annotation tool type.
  * @return If the function succeeds, it will return @c ZMVideoSDKErrors_Success.
  * @warning The tool type ZMVideoSDKAnnotationToolType_Picker and ZMVideoSDKAnnotationToolType_SpotLight are not support for viewer.
  */
@@ -59,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Gets the annotation tool type.
- * @param toolType The current tool type. For more information, see \link ZMVideoSDKAnnotationToolType\endlink.
+ * @param toolType The current tool type.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
  */
 - (ZMVideoSDKErrors)getToolType:(ZMVideoSDKAnnotationToolType*)toolType;

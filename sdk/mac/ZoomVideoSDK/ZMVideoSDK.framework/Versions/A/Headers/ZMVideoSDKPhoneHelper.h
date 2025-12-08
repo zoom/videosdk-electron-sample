@@ -1,8 +1,16 @@
+/**
+ * @file ZMVideoSDKPhoneHelper.h
+ * @brief This file defines interfaces for phone-related functionalities in the Zoom Video SDK,
+ */
+
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ * @class ZMVideoSDKDialInNumberInfo
+ * @brief Represents dial-in number information for a specific country.
+ */
 @interface ZMVideoSDKDialInNumberInfo : NSObject
 /**
  * @brief The country ID of the current information.
@@ -28,8 +36,17 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief The type of dial in number.
  */
 @property (nonatomic, assign, readonly) ZMVideoSDKDialInNumType type;
+/**
+ * @brief Is the dial number an account dedicated number.
+ */
+@property (nonatomic, assign, readonly) BOOL isDedicateID;
 @end
 
+
+/**
+ * @class ZMVideoSDKPhoneSupportCountryInfo
+ * @brief Contains information about a country where phone features are supported.
+ */
 @interface ZMVideoSDKPhoneSupportCountryInfo : NSObject
 /**
  * @brief The country ID of the current information.
@@ -45,6 +62,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString* countryCode;
 @end
 
+
+/**
+ * @class ZMVideoSDKInvitePhoneUserInfo
+ * @brief Represents the information used when inviting a user to join the session via phone.
+ */
 @interface ZMVideoSDKInvitePhoneUserInfo : NSObject
 /**
  * @brief The country code of the specified user must be in the support list.
@@ -68,6 +90,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL bGreeting;
 @end
 
+
+/**
+ * @class ZMVideoSDKPhoneHelper
+ * @brief Provides methods for managing phone-related session features such as dial-in and phone invites.
+ */
 @interface ZMVideoSDKPhoneHelper : NSObject
 /**
  * @brief Determine if the session supports join by phone or not.
@@ -105,13 +132,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the status of the invitation by phone.
- * @return If the function succeeds, the method returns the ZMPhoneStatus of the invitation by phone. To get extended error information, see \link ZMPhoneStatus \endlink.
+ * @return If the function succeeds, the method returns the ZMPhoneStatus of the invitation by phone.
  */
 - (ZMPhoneStatus)getInviteByPhoneStatus;
 
 /**
  * @brief Get the list of dial in numbers supported by session.
- * @return If the function succeeds, the return value is the list of the call-in numbers. Otherwise failed. For more details, see \link ZMVideoSDKDialInNumberInfo \endlink.
+ * @return If the function succeeds, the return value is the list of the call-in numbers. Otherwise failed.
  */
 - (NSArray<ZMVideoSDKDialInNumberInfo *>* _Nullable)getSessionDialInNumbers;
 @end

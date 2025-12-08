@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "為能與參與者通話，Zoom 需要存取您的麥克風。";
+NSCameraUsageDescription = "為能讓參與者看見您，Zoom 需要存取您的攝影機。";
+NSCalendarsFullAccessUsageDescription= "為能顯示您的活動，Zoom Workplace需要存取您的日曆。";
+NSLocalNetworkUsageDescription= "需要執行此程序以在Zoom用戶端中啟用AirPlay和點對點會議。";
+NSBluetoothAlwaysUsageDescription= "這將允許Zoom Workplace尋找附近的Zoom Rooms。";

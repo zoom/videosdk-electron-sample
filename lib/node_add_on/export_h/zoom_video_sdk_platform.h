@@ -1,15 +1,15 @@
 #ifndef _ZOOM_VIDEO_SDK_PLATFORM_H_
 #define _ZOOM_VIDEO_SDK_PLATFORM_H_
 
-#if defined(WIN32) //windows
+#if defined(WIN32) /** windows */
 #if defined(ZOOM_VIDEO_SDK_IMPLEMENTATION)
 #define ZOOM_VIDEO_SDK_EXPORT __declspec(dllexport)
 #else
 #define ZOOM_VIDEO_SDK_EXPORT __declspec(dllimport)
 #endif
-#else //other platform
+#else /** other platform */
 #define ZOOM_VIDEO_SDK_EXPORT __attribute__((visibility("default")))
-#endif //defined(WIN32)
+#endif /** defined(WIN32) */
 
 #if defined(WIN32)
 typedef signed char int8_t;
@@ -24,6 +24,6 @@ typedef wchar_t zchar_t;
 #else
 #include <stdint.h>
 typedef char zchar_t;
-#endif// defined(WIN32)
+#endif/** defined(WIN32) */
 
-#endif//#define _ZOOM_VIDEO_SDK_PLATFORM_H_
+#endif/** #define _ZOOM_VIDEO_SDK_PLATFORM_H_ */

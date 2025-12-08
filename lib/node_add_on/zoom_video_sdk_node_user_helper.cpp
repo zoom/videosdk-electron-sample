@@ -108,17 +108,19 @@ void ZoomVideoNodeUserHelperWrap::MakeManager(const v8::FunctionCallbackInfo<v8:
 void ZoomVideoNodeUserHelperWrap::RevokeManager(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
 	v8::Isolate* isolate = args.GetIsolate();
-	bool zn_bret = false;
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
 	do
 	{
 		com::electron::zoomvideo::sdk::proto::RevokeManagerParams proto_param;
 		if (!SetProtoParam<com::electron::zoomvideo::sdk::proto::RevokeManagerParams >(args, proto_param))
 		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
 			break;
 		}
 
 		if (!proto_param.has_user())
 		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
 			break;
 		}
 
@@ -129,11 +131,11 @@ void ZoomVideoNodeUserHelperWrap::RevokeManager(const v8::FunctionCallbackInfo<v
 
 		if (zn_pUser)
 		{
-			zn_bret = _g_native_wrap.GetUserHelperWrap().RevokeManager(zn_pUser);
+			err = _g_native_wrap.GetUserHelperWrap().RevokeManager(zn_pUser);
 		}
 	} while (false);
 	
-	v8::Local<v8::Boolean> bret = v8::Boolean::New(isolate, zn_bret);
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }
 void ZoomVideoNodeUserHelperWrap::RemoveUser(const v8::FunctionCallbackInfo<v8::Value>& args)

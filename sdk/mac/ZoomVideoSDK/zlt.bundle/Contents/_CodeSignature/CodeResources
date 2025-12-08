@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Resources/gct.metallib</key>
+		<data>
+		RP8LY7FajZBceT64xCspqEWSQTA=
+		</data>
 		<key>Resources/mtlMacLibrary.metallib</key>
 		<data>
 		DVQd99TJJEAzK5ryXi8UvHx0ATg=
@@ -11,6 +15,13 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Resources/gct.metallib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oJKx14gj2MBVya9MDBm72MSAJafhDoJGOpPH3Zxoxgc=
+			</data>
+		</dict>
 		<key>Resources/mtlMacLibrary.metallib</key>
 		<dict>
 			<key>hash2</key>

@@ -1,25 +1,32 @@
-//
+/**
+ * @file ZMVideoSDKRemoteControlHelper.h
+ * @brief Defines the interfaces for managing remote control features within a Zoom Video SDK session.
+ */
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ * @class ZMVideoSDKRemoteControlRequestHandler
+ * @brief Handler for responding to incoming remote control requests.
+ */
 @interface ZMVideoSDKRemoteControlRequestHandler : NSObject
 /**
  * @brief Approve the remote control request.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)approve;
 
 /**
  * @brief Decline the remote control request.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)deny;
 @end
 
 /**
- * @brief Helper class for using remote control in the session.
+ * @class ZMVideoSDKRemoteControlHelper
+ * @brief Helper class to manage sending, approving, or canceling remote control requests in a session.
  */
 @interface ZMVideoSDKRemoteControlHelper : NSObject
 /**
@@ -30,13 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Send the remote control request to the specified user.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)requestRemoteControl;
 
 /**
  * @brief End remote control of the specified user.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)endRemoteControl;
 
@@ -48,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Remote control the specified user.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)enterRemoteControl;
 
@@ -60,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief The user has temporarily paused remote control, to continue, there is no need to request remote control again.
- * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed. See error codes defined in \link ZMVideoSDKErrors \endlink.
+ * @return @c ZMVideoSDKErrors_Success If the function succeeds. Otherwise failed.
  */
 - (ZMVideoSDKErrors)leaveRemoteControl;
 @end

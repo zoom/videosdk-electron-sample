@@ -14,7 +14,7 @@ public:
 	void onCapturedRawDataReceived(YUVRawDataI420* pRawData, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessSender* pSender);
 	void onShareStopped();
 
-	ZNZoomVideoSDKErrors StartShareWithPreprocessing(ZNZoomVideoSDKSharePreprocessType zn_type, ZoomSTRING zn_handle, ZoomSTRING zn_monitorid, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor* preprocessor);
+	ZNZoomVideoSDKErrors StartShareWithPreprocessing(ZNZoomVideoSDKSharePreprocessType zn_type, ZoomSTRING zn_handle, ZoomSTRING zn_monitorid, uint32_t processID, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor* preprocessor);
 	ZNZoomVideoSDKErrors SendPreprocessedData(char* buffer, std::string dataHandle);
 
 private:

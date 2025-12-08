@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "Katılımcılarla konuşma için Zoom'un mikrofonunuza erişebilmesi gerekir.";
+NSCameraUsageDescription = "Katılımcıların sizi görebilmesi için Zoom'un kameranıza erişebilmesi gerekir.";
+NSCalendarsFullAccessUsageDescription= "Etkinliklerinizi gösterebilmek için Zoom Workplace'in takviminize erişmesi gerekir.";
+NSLocalNetworkUsageDescription= "Bu işlem, Zoom istemcisinde AirPlay'i ve eşler arası toplantıları etkinleştirmek için gereklidir.";
+NSBluetoothAlwaysUsageDescription= "Bu, Zoom Workplace'in yakındaki Zoom Rooms ögelerini bulmasını sağlar.";

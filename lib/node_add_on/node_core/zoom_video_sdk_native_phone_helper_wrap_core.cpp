@@ -124,3 +124,47 @@ ZNPhoneStatus ZPhoneHelperWrap::GetInviteByPhoneStatus()
 	}
 	return zn_status;
 }
+
+void ZPhoneHelperWrap::GetSessionDialInNumbers(com::electron::zoomvideo::sdk::proto::GetSessionDialInNumbersList& sessionDialInNumbersList)
+{
+	do
+	{
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDK* pVideoSDK = _g_native_wrap.GetVideoSDKObj();
+		if (!pVideoSDK)
+		{
+			return;
+		}
+		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKPhoneHelper* pPhoneHelper = pVideoSDK->getPhoneHelper();
+		if (!pPhoneHelper)
+		{
+			return;
+		}
+		ZOOM_VIDEO_SDK_NAMESPACE::IVideoSDKVector<ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSessionDialInNumberInfo*>* lst_dialin = pPhoneHelper->getSessionDialInNumbers();
+		if (!lst_dialin)
+		{
+			return;
+		}
+		for (int i = 0; i < lst_dialin->GetCount(); ++i)
+		{
+			ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSessionDialInNumberInfo* pDialInTemp = lst_dialin->GetItem(i);
+			com::electron::zoomvideo::sdk::proto::SessionDialInNumbersInfos* protoSessionDialInNumbersInfos = sessionDialInNumbersList.add_sessiondialinnumbersinfo();
+			if (!pDialInTemp || !protoSessionDialInNumbersInfos)
+			{
+				continue;
+			}
+			ZoomSTRING temp_countryId = pDialInTemp->getCountryId();
+			protoSessionDialInNumbersInfos->set_countryid(ws2s(temp_countryId).c_str());
+			ZoomSTRING temp_countryName = pDialInTemp->getCountryName();
+			protoSessionDialInNumbersInfos->set_countryname(ws2s(temp_countryName).c_str());
+			ZoomSTRING temp_countryCode = pDialInTemp->getCountryCode();
+			protoSessionDialInNumbersInfos->set_countrycode(ws2s(temp_countryCode).c_str());
+			ZoomSTRING temp_number = pDialInTemp->getNumber();
+			protoSessionDialInNumbersInfos->set_number(ws2s(temp_number).c_str());
+			ZoomSTRING temp_displayNumber = pDialInTemp->getDisplayNumber();
+			protoSessionDialInNumbersInfos->set_displaynumber(ws2s(temp_displayNumber).c_str());
+			protoSessionDialInNumbersInfos->set_type((int32_t)pDialInTemp->getType());
+			protoSessionDialInNumbersInfos->set_isdedicateid(pDialInTemp->isDedicateID());
+		}
+
+	} while (false);
+}

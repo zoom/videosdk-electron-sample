@@ -1,4 +1,7 @@
-
+/**
+ * @file ZMVideoSDKUserHelper.h
+ * @brief Defines user-related interfaces and functionalities in Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 #import <ZMVideoSDK/ZMVideoSDKDef.h>
@@ -8,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /**
+ * @class ZMVideoSDKVideoStatus
  * @brief ZMVideoSDKVideoStatus provides information on the user's video device (the detected compatible video camera device), and status (whether video is turned on or off).
  */
 @interface ZMVideoSDKVideoStatus : NSObject
@@ -24,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @class ZMVideoSDKAudioStatus
  * @brief Audio status interface.
  */
 @interface ZMVideoSDKAudioStatus : NSObject
@@ -45,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @class ZMVideoSDKVideoStatisticInfo
  * @brief Video statistic information interface.
  */
 @interface ZMVideoSDKVideoStatisticInfo : NSObject
@@ -76,6 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @class ZMVideoSDKShareStatisticInfo
  * @brief Share statistic infomation interface.
  */
 @interface ZMVideoSDKShareStatisticInfo : NSObject
@@ -99,9 +106,15 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief Get share Bpf.
  */
 @property (nonatomic, assign, readonly) int bpf;
+
+/**
+ * @brief Get share network status.
+ */
+@property (nonatomic, assign, readonly) ZMVideoSDKNetworkStatus shareNetworkStatus;
 @end
 
 /**
+ * @class ZMVideoSDKYUVRawDataI420
  * @brief YUV raw data 420 infomation interface.
  */
 @interface ZMVideoSDKYUVRawDataI420 : NSObject
@@ -161,7 +174,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign, readonly) unsigned int rotation;
 
-
 /**
  * @brief Get the source_id of current YUV raw data.
  */
@@ -190,6 +202,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (int)releaseRef;
 @end
 
+
+/**
+ * @class ZMVideoSDKShareCursorData
+ * @brief Represents the cursor position data during screen sharing.
+ */
 @interface ZMVideoSDKShareCursorData : NSObject
 
 /**
@@ -209,6 +226,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @protocol ZMVideoSDKRawDataPipeDelegate
  * @brief Raw data pipe delegate interface.
  */
 @protocol ZMVideoSDKRawDataPipeDelegate <NSObject>
@@ -234,6 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @class ZMVideoSDKRawDataPipe
  * @brief Video/share raw data pipe interface.
  */
 @interface ZMVideoSDKRawDataPipe : NSObject
@@ -255,7 +274,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the raw data data type.
- * @return Share or Video data type. Refer to ZoomVideoSDKRawDataType for the list of enum \link ZoomVideoSDKRawDataType \endlink.
+ * @return Share or Video data type.
  */
 - (ZMVideoSDKRawDataType)getRawdataType;
 
@@ -278,6 +297,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (ZMVideoSDKShareStatus)getShareStatus;
 
 /**
+ * @brief Gets the reason why the share capture is paused.
+ * @return The current pause reason of the ongoing share.
+ * @note If sharing is not paused, the return value is @c ZMVideoSDKShare_Capture_Pause_None.
+ */
+- (ZMVideoSDKShareCapturePauseReason)getShareCapturePauseReason;
+
+/**
  * @brief Get share type.
  * @return If the function succeeds, the return value is current share type.
  */
@@ -285,12 +311,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get video statistic information.
- * @return If the function succeeds, the return value is the object of ZMVideoSDKVideoStatisticInfo. For more information, see \link ZMVideoSDKVideoStatisticInfo \endlink.
+ * @return If the function succeeds, the return value is the object of ZMVideoSDKVideoStatisticInfo.
  */
 - (ZMVideoSDKVideoStatisticInfo* _Nullable)getVideoStatisticInfo;
 @end
 
 /**
+ * @class ZMVideoSDKCameraControlRequestHandler
  * @brief Camera control request handler object interface.
  */
 @interface ZMVideoSDKCameraControlRequestHandler : NSObject
@@ -309,6 +336,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * @class ZMVideoSDKRemoteCameraControlHelper
  * @brief Remote camera control helper object interface.
  */
 @interface ZMVideoSDKRemoteCameraControlHelper : NSObject
@@ -370,6 +398,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ * @class ZMVideoSDKUser
  * @brief Zoom Video SDK user information.
  */
 @interface ZMVideoSDKUser : NSObject
@@ -398,7 +427,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the user's audio status.
- * @return Audio status. For more information, see \link ZMVideoSDKAudioStatus \endlink.
+ * @return Audio status object.
  */
 - (ZMVideoSDKAudioStatus* _Nullable)getAudioStatus;
     
@@ -416,19 +445,19 @@ NS_ASSUME_NONNULL_BEGIN
     
 /**
  * @brief Get the user's video statistic information.
- * @return Video statistic information. For more information, see \link ZMVideoSDKVideoStatisticInfo \endlink.
+ * @return Video statistic information object.
  */
 - (ZMVideoSDKVideoStatisticInfo* _Nullable)getVideoStatisticInfo;
     
 /**
  * @brief Get the user's share statistic information.
- * @return Share statistic information. For more information, see \link ZMVideoSDKShareStatisticInfo \endlink.
+ * @return Share statistic information object.
  */
 - (ZMVideoSDKShareStatisticInfo* _Nullable)getShareStatisticInfo;
     
 /**
  * @brief Get the user's video pipe.
- * @return Video pipe. For more information, see \link ZMVideoSDKRawDataPipe \endlink.
+ * @return Video pipe object.
  */
 - (ZMVideoSDKRawDataPipe* _Nullable)getVideoPipe;
 
@@ -440,7 +469,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the user's share-action list.
- * @return A list of all share information, For more information, see \link ZMVideoSDKShareAction \endlink.
+ * @return A list of all share action object.
  */
 - (NSArray<ZMVideoSDKShareAction*>* _Nullable)getShareActionList;
 
@@ -452,7 +481,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the user's multi-camera stream list.
- * @return A list of all streaming cameras pipe. For more information, see \link ZMVideoSDKRawDataPipe \endlink.
+ * @return A list of all streaming cameras pipe object.
  */
 - (NSArray<ZMVideoSDKRawDataPipe *>* _Nullable)getMultiCameraStreamList;
 
@@ -461,26 +490,59 @@ NS_ASSUME_NONNULL_BEGIN
  * @param volume Value can be >= 0 and <=10. If volume is 0, the user won't be able to hear the related audio.
  * @param isSharingAudio YES means sets the volume of shared audio (such as shared computer audio), otherwise sets the volume of the microphone.
  * @return If successful return YES, otherwise NO.
+ * @deprecated Use \link setUserPlaybackVolume:isSharingAudio: \endlink instead.
  */
-- (BOOL)setUserVolume:(float)volume isSharingAudio:(BOOL)isSharingAudio;
+- (BOOL)setUserVolume:(float)volume isSharingAudio:(BOOL)isSharingAudio DEPRECATED_MSG_ATTRIBUTE("Use -setUserPlaybackVolume:isSharingAudio: instead");
 
 /**
  * @brief Get user volume.
  * @param volume The user volume.
  * @param isSharingAudio YES means gets the volume of shared audio (such as shared computer audio), otherwise gets the volume of the microphone.
  * @return If success return YES, otherwise NO.
+ * @deprecated Use \link getUserPlaybackVolume:isSharingAudio: \endlink instead.
  */
-- (BOOL)getUserVolume:(float*)volume isSharingAudio:(BOOL)isSharingAudio;
+- (BOOL)getUserVolume:(float*)volume isSharingAudio:(BOOL)isSharingAudio DEPRECATED_MSG_ATTRIBUTE("Use -getUserPlaybackVolume:isSharingAudio: instead");
 
 /**
  * @brief Determine which audio you can set, shared audio or microphone.
  * @param isShareAudio YES means checks whether you can set the volume of shared audio, otherwise you can set the volume of the microphone.
  * @return If success return YES, otherwise NO.
+ * @deprecated Use \link canSetUserPlaybackVolume: \endlink instead.
  */
-- (BOOL)canSetUserVolume:(BOOL)isShareAudio;
+- (BOOL)canSetUserVolume:(BOOL)isShareAudio DEPRECATED_MSG_ATTRIBUTE("Use -canSetUserPlaybackVolume: instead");
+
+/**
+ * @brief Sets the user's local volume. This does not affect how other participants hear the user.
+ * @param volume Value can between 0 and 10. If 0, the user won't hear the related audio.
+ * @param isSharingAudio YES to set the volume of shared audio (such as shared computer audio; otherwise, sets the microphone volume.
+ * @return YES if the operation succeeds; otherwise, NO.
+ */
+- (BOOL)setUserPlaybackVolume:(float)volume isSharingAudio:(BOOL)isSharingAudio;
+
+/**
+ * @brief Gets the local volume.
+ * @param volume The user volume.
+ * @param isShareAudio YES to get the volume of shared audio(such as shared computer audio); otherwise gets the microphone volume.
+ * @return YES if the operation succeeds; otherwise, NO.
+ */
+- (BOOL)getUserPlaybackVolume:(float*)volume isSharingAudio:(BOOL)isSharingAudio;
+
+/**
+ * @brief Checks whether you can set the volume for shared audio or microphone.
+ * @param isShareAudio YES to check if you can set the volume of shared audio; otherwise, you can set the volume of the microphone.
+ * @return YES if you can set the volume of shared audio; otherwise, NO.
+ */
+- (BOOL)canSetUserPlaybackVolume:(BOOL)isShareAudio;
+
+/**
+ * @brief Gets the current audio level of a remote user.
+ * @return The current audio level.
+ */
+- (unsigned int)getAudioLevel;
 
 /**
  * @brief Used to determine whether I agree to individual video recording.
+ * @return YES if the user has individual video recording consent. Otherwise NO.
  */
 - (BOOL)hasIndividualRecordingConsent;
 
@@ -508,9 +570,29 @@ NS_ASSUME_NONNULL_BEGIN
  * @return YES indicates that the user is currently in a subsession, otherwise NO.
  */
 - (BOOL)isInSubSession;
+
+/**
+ * @brief Get the whiteboard sharing status of the user.
+ * @return The whiteboard sharing status.
+ */
+- (ZMVideoSDKWhiteboardStatus)getWhiteboardStatus;
+
+/**
+ * @brief Gets the network quality level of the specified data type for the user.
+ * @param type The data type, such as audio, video, or share.
+ * @return The current network status level for the specified data type.
+ */
+- (ZMVideoSDKNetworkStatus)getNetworkLevel:(ZMVideoSDKDataType)type;
+
+/**
+ * @brief Gets the overall network quality level of the user.
+ * @return The overall network status level.
+ */
+- (ZMVideoSDKNetworkStatus)getOverallNetworkLevel;
 @end
 
 /**
+ * @class ZMVideoSDKUserHelper
  * @brief User control interface.
  */
 @interface ZMVideoSDKUserHelper: NSObject
@@ -540,9 +622,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief Revoke manager rights from a user.
  * @param user User in the session.
- * @return YES indicates that the user no longer has manager rights. Otherwise, this function returns NO.
+ * @return If the function succeeds, it will return ZMVideoSDKErrors_Success, otherwise not.
  */
-- (BOOL)revokeManager:(ZMVideoSDKUser*)user;
+- (ZMVideoSDKErrors)revokeManager:(ZMVideoSDKUser*)user;
     
 /**
  * @brief Remove user from session.

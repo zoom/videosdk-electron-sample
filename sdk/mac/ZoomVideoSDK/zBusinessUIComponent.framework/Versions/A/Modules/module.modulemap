@@ -1,0 +1,6 @@
+framework module zBusinessUIComponent {
+  umbrella header "zBusinessUIComponent.h"
+  export *
+
+  module * { export * }
+}

@@ -1,11 +1,15 @@
-
+/**
+ * @file ZMVideoSDKAudioSettingHelper.h
+ * @brief Interfaces for audio device test and audio setting controls.
+ */
 
 #import <Foundation/Foundation.h>
 #import <ZMVideoSDK/ZMVideoSDKDef.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /**
- * @brief Test audio device interface.
+ * @class ZMVideoSDKAudioDeviceTestHelper
+ * @brief Interface for testing audio input and output devices.
  */
 @interface ZMVideoSDKAudioDeviceTestHelper : NSObject
 /**
@@ -52,7 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Audio helper interface.
+ * @class ZMVideoSDKAudioSettingHelper
+ * @brief Interface for managing audio settings in Zoom Video SDK.
  */
 @interface ZMVideoSDKAudioSettingHelper : NSObject
     
@@ -142,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Call this method to enable or disable the auto adjust input of microphone volume.
- * @param bEnable True to enable auto adjust input or false to disable it.
+ * @param bEnable YES to enable auto adjust input. NO to disable it.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
  */
 - (ZMVideoSDKErrors)enableAutoAdjustMicVolume:(BOOL)bEnable;

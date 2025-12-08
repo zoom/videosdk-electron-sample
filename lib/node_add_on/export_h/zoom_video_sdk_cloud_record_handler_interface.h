@@ -1,8 +1,7 @@
-/*!
-* \file zoom_video_sdk_cloud_record_handler_interface.h
-* \brief cloud record handler interface.
-*
-*/
+/**
+ * @file zoom_video_sdk_cloud_record_handler_interface.h
+ * @brief cloud record handler interface.
+ */
 
 #ifndef _ZOOM_VIDEO_SDK_CLOUD_RECORD_HANDLER_INTERFACE_H_
 #define _ZOOM_VIDEO_SDK_CLOUD_RECORD_HANDLER_INTERFACE_H_
@@ -12,13 +11,18 @@ BEGIN_ZOOM_VIDEO_SDK_NAMESPACE
 
 enum ConsentType
 {
-	ConsentType_Invalid,         ///< Invalid type.
-	ConsentType_Traditional,     ///< In this case, 'accept' means agree to be recorded to gallery and speaker mode, 'decline' means leave session.
-	ConsentType_Individual,      ///< In this case, 'accept' means agree to be recorded to a separate file, 'decline' means stay in session and can't be recorded.
+	/** Invalid type. */
+	ConsentType_Invalid,         
+	/** In this case, 'accept' means agree to be recorded to gallery and speaker mode, 'decline' means leave session. */
+	ConsentType_Traditional,     
+	/** In this case, 'accept' means agree to be recorded to a separate file, 'decline' means stay in session and can't be recorded. */
+	ConsentType_Individual,      
+	
 };
-
-/// \brief cloud record handle interface.
-///
+/**
+ * @class IZoomVideoSDKRecordingConsentHandler
+ * @brief cloud record handle interface.
+ */
 class IZoomVideoSDKRecordingConsentHandler
 {
 public:

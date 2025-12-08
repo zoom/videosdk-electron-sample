@@ -1,0 +1,11 @@
+framework module zVideoUIBridge {
+  umbrella header "zVideoUIBridge.h"
+  export *
+
+  module * { export * }
+}
+
+module zVideoUIBridge.Swift {
+  header "zVideoUIBridge-Swift.h"
+  requires objc
+}

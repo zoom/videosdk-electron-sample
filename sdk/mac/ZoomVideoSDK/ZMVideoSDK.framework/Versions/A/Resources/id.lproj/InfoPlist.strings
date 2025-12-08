@@ -1,0 +1,8 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "Agar dapat berbicara ke peserta, Zoom membutuhkan akses ke mikrofon Anda.";
+NSCameraUsageDescription = "Agar peserta dapat melihat Anda, Zoom membutuhkan akses ke kamera Anda.";
+
+NSCalendarsFullAccessUsageDescription= "Untuk dapat menampilkan acara Anda, Zoom Workplace perlu mengakses Kalender Anda.";
+NSLocalNetworkUsageDescription= "Proses ini diperlukan untuk mengaktifkan AirPlay dan rapat peer-to-peer di klien Zoom.";
+NSBluetoothAlwaysUsageDescription= "Ini akan memungkinkan Zoom Workplace untuk menemukan Zoom Rooms terdekat.";

@@ -1,0 +1,1073 @@
+/*
+ Localizable_att.strings
+ SaasBeeRes
+ 
+ Created by Justin Fang on 4/8/14.
+ Copyright (c) 2014 Zipow. All rights reserved.
+ */
+
+"ZOOM Cloud Meetings" = "BBM Meetings";
+"ZOOM Cloud Meetings - Schedule a Meeting" = "BBM Meetings - Schedule a Meeting";
+"About Zoom" = "About BBM Meetings";
+"Provide Zoom Feedback..." = "Provide BBM Meetings Feedback...";
+"Hide Zoom" = "Hide BBM Meetings";
+"Quit Zoom" = "Quit BBM Meetings";
+
+"STR_RINGCENTRAL_NO_ZOOM" = "This service is not available with your plan. Please call sales for more information.";
+"STR_RINGCENTRAL_LOGIN_FAILED" = "Sorry, your login failed. There was an error with your Phone Number/Password combination. Please try again.";
+
+"Participant ID: %d   Meeting ID: %@" = "BBM Meeting ID: %@ Participant ID: %d";
+"Participant ID: %d   %d-Minutes Meeting ID: %@" = "BBM Meeting %d-Minutes Meeting ID: %@ Participant ID: %d";
+"Zoom Meeting ID: %@" = "BBM Meeting ID: %@";
+
+"'s Zoom Meeting" = "'s BBM Meeting";
+"' Zoom Meeting" = "' BBM Meeting";
+"Zoom Group Chat" = "BBM Meetings Group Chat";
+"Zoom Update" = "BBM Meetings Update";
+"A new version of Zoom is available!" = "A new version of BBM Meetings is available!";
+"A new version of Zoom is available! Please update now." = "A new version of BBM Meetings is available! Please update now.";
+"I'd like to give feedback to Zoom" =  "I'd like to give feedback to BBM Meetings";
+"We also welcome your ideas, requests or comments about Zoom.\nPlease enter your feedback here:" = "We also welcome your ideas, requests or comments about BBM Meetings.\nPlease enter your feedback here:";
+"Zoom is up to date." = "BBM Meetings is up to date.";
+"BBM_HELP_LINK" = "http://docs.blackberry.com/meetings/desktop/en-us";
+
+//copy right string
+"Copyright ©2012-2015 Zoom Video Communications, Inc." = "Copyright ©2014 BlackBerry Limited.";
+
+"The scheduled meetings will be listed here." = "View upcoming BBM Meetings in your calendar.";
+
+//Help url string
+"http://support.zoom.us/" = "http://docs.blackberry.com/meetings/desktop/en-us";
+
+//audo share
+"To share your computer audio, please install the Zoom audio device.\n\n" = "To share your computer audio, please install the BBM audio device.\n\n";
+"PT_LOGIN_PRE_LOGIN_BBM_SLOGAN" = "Welcome to BBM Meetings";
+"Login SSO" = "Login";
+
+
+/* Invite message */
+"INVITE_MESSAGE" = "%s is calling you from BBM Meetings, click link to join.\r\n%s";
+"%@ has been invited." = "%@ has been invited.";
+"%@ and %@ have been invited." = "%@ and %@ have been invited.";
+"%@, %@ and another person have been invited." = "%@, %@ and another person have been invited.";
+"%@, %@ and %d others have been invited." = "%@, %@ and %d others have been invited.";
+"Click to invite participants" = "Click to invite participants";
+"The invitation URL has been copied to the clipboard" = "The invitation URL has been copied to the clipboard";
+
+/* Notification in chat window */
+"%@ invited you to join a meeting." = "%@ invited you to join a meeting.";
+"You invited %@ to join a meeting." = "You invited %@ to join a meeting.";
+
+
+/* Message in CMD window */
+"is calling..." = "is calling...";
+"are calling..." = "are calling...";
+"are calling you. You are already in this meeting." = "are calling you. You are already in this meeting.";
+"is calling you. You are already in this meeting." = "is calling you. You are already in this meeting.";
+"are calling you. You are already in another meeting, do you want to leave and join this meeting?" = "are calling you. You are already in another meeting, do you want to leave and join this meeting?";
+"is calling you. You are already in another meeting, do you want to leave and join this meeting?" = "is calling you. You are already in another meeting, do you want to leave and join this meeting?";
+
+/* Online offline notification */
+"came online" = "came online";
+"went offline" = "went offline";
+
+
+/* Main window menu text */
+"Start with video" = "Start with video";
+"Start without video" = "Start without video";
+"Back to Meeting" = "Back to Meeting";
+"Computer audio and video start automatically" = "Computer audio and video start automatically";
+
+
+/* Main window menu text */
+"Invite to Meeting" = "Invite to Meeting";
+"Start Video Meeting" = "Start Video Meeting";
+"Video Meeting" = "Video Meeting";
+"View Profile" = "View Profile";
+"Join Meeting..." = "Join Meeting...";
+
+
+/* Main Menu */
+"Log Out" = "Log Out";
+"Log In" = "Log In";
+
+"Facebook IM" = "Facebook IM";
+"Google IM" = "Google IM";
+"IM" = "IM";
+"Chats" = "Chats";
+"Tell Others About Zoom" = "Tell Others About BBM Meetings";
+"Home" = "Home";
+"Meetings" = "Meetings";
+
+/* Login status */
+"Login..." = "Login...";
+"Connecting..." = "Connecting...";
+"Authenticating..." = "Authenticating...";
+"Negotiating..." = "Negotiating...";
+
+"Cannot get your favorite information, Please check your network connection." = "Cannot get your favorite information, Please check your network connection.";
+"Login to Facebook was cancelled." = "Login to Facebook was cancelled.";
+
+/* Login links */
+"Sign Up" = "Sign Up";
+"Forgot your password?" = "Forgot your password?";
+
+/* Setting */
+"General" = "General";
+"Feedback" = "Feedback";
+"Record" = "Record";
+"Account" = "Account";
+"Video" = "Video";
+"The free disk space is less than 1G. Please select another folder or delete some files" = "The free disk space is less than 1G. Please select another folder or delete some files";
+"%.2f GB remaining" = "%.2f GB remaining";
+"Work Email" = "Work Email";
+"Gmail Account" = "Gmail Account";
+"Facebook Account" = "Facebook Account";
+"Single Sign On" = "Single Sign On";
+"Upgrade to Pro" = "Upgrade to PRO";
+"Change Subscription Plan" = "Change Subscription Plan";
+
+/* Meeting info */
+"1. Go to %@\r\n2. Enter ID: %@" = "1. Go to %@\r\n2. Enter ID: %@";
+"The invitation URL has been copied to Clipboard." = "The invitation URL has been copied to Clipboard.";
+"The invitation Email has been copied to Clipboard." = "The invitation Email has been copied to Clipboard.";
+
+/* About window */
+"Version:%@" = "Version:%@";
+"Send Feedback" = "Send Feedback";
+"Sending..." = "Sending...";
+"Failed to send your feedback. Please try again later." = "Failed to send your feedback. Please try again later.";
+"Thanks for your feedback!\r\n\r\nYour feedback is very important to us, and we're working hard to improve our service." = "Thanks for your feedback!\r\n\r\nYour feedback is very important to us, and we're working hard to improve our service.";
+
+"Please join Zoom meeting in progress" = "Please join BBM meeting in progress";
+"Please join my meeting.\r\n%@" = "Please join my meeting.\r\n%@";
+
+
+/* In meeting */
+"Panelist(%d)  Viewer(%d)" = "Panelist(%d)  Viewer(%d)";
+"Waiting for %s to join..." = "Waiting for %s to join...";
+"Please use the Invite button to invite more people" = "Please use the Invite button to invite more people";
+"Your invitees do not need to have Zoom pre-installed to accept your meeting invitation." = "Your invitees do not need to have BBM Meetings pre-installed to accept your meeting invitation.";
+"URL: " = "URL: ";
+"Invite people to join meeting" = "Invite people to join meeting";
+"Zoom Number: %@" = "BBM Meeting Number: %@";
+"Copy" = "Copy";
+"Meeting ID" = "Meeting ID";
+"Spotlight Video" = "Spotlight Video";
+"Cancel the Spotlight Video" = "Cancel the Spotlight Video";
+"You are the host now" = "You are the host now";
+"%@ is the host now" = "%@ is the host now";
+"Less than a minute" = "Less than a minute";
+"Remaining Meeting Time" = "Remaining Meeting Time";
+
+//join meeting dialog
+"Join Meeting" = "Join Meeting";
+"Please enter your meeting ID and your name" = "Please enter your meeting ID and your name";
+"Your Name" = "Your Name";
+"Invalid video meeting ID!" = "Invalid video meeting ID!";
+"Please input your screen name here" = "Please input your screen name here";
+"Please enter your name." = "Please enter your name.";
+
+//leave meeting dialog
+"Leave Meeting" = "Leave Meeting";
+"Do you want to leave this meeting?" = "Do you want to leave this meeting?";
+"End Meeting" = "End Meeting";
+"If you want to keep this meeting open, please assign another Host before you click Leave Meeting." = "If you want to keep this meeting open, please assign another Host before you click Leave Meeting.";
+"\nClick Cancel if you want to keep this meeting open." = "\nClick Cancel if you want to keep this meeting open.";
+"Please enter your feedback here" = "Please enter your feedback here";
+"End Meeting for All" = "End Meeting for All";
+
+//join schedual meeting dialog
+"Please enter the meeting password" = "Please enter the meeting password";
+"Password" = "Password";
+"Password error!" = "Password error!";
+"Please wait for the host to start this meeting" = "Please wait for the host to start this meeting";
+"Meeting Detail" = "Meeting Detail";
+"While waiting, please check your audio and video setting." = "While waiting, please check your audio and video setting.";
+"If you are the host, please login to start this meeting" = "If you are the host, please login to start this meeting";
+"Topic" = "Topic";
+"Time" = "Time";
+"Date" = "Date";
+"Verifying password..." = "Verifying password...";
+"This is a recurring meeting" = "This is a recurring meeting";
+"Waiting for Host %@" = "Waiting for Host %@";
+
+//
+"Stop Screen Share" = "Stop Screen Share";
+"Stop Share"= "Stop Share";
+"Share Screen" = "Share Screen";
+"Share" = "Share";
+"Share a New Window" = "Share a New Window";
+"Participants" = "Participants";
+"Manage Participants" = "Manage Participants";
+"Chat" = "Chat";
+"Chat with All" = "Chat with All";
+"People (%d)" = "People (%d)";
+"End" = "End";
+"Settings" = "Settings";
+"Hide Video Panel" = "Hide Video Panel";
+"Show Video Panel" = "Show Video Panel";
+"Exit Full Screen. Meeting ID:%@" = "Exit Full Screen. Meeting ID:%@";
+"Gallery View" = "Gallery View";
+"Speaker View" = "Speaker View";
+"Enter Minimal View" = "Enter Minimal View";
+"Exit Minimal View" = "Exit Minimal View";
+"Enter Full Screen" = "Enter Full Screen";
+"Exit Full Screen" = "Exit Full Screen";
+"Rename" = "Rename";
+"More" = "More";
+"Meeting Information" = "Meeting Information";
+"Meeting" = "Meeting";
+"Put Attendee On Hold" = "Put Attendee On Hold";
+"Stop attendee on hold" = "Stop attendee on hold";
+"You are on hold" = "You are on hold";
+"On Hold" = "On Hold";
+"Stop on-hold" = "Stop on-hold";
+"Raise Hand" = "Raise Hand";
+"Lower Hand" = "Lower Hand";
+"Lower All Hands" = "Lower All Hands";
+"raised hand" = "raised hand";
+"participants raised hand" = "participants raised hand";
+"Show Non-Video Participants" = "Show Non-Video Participants";
+"is talking ..." = "is talking ...";
+"Total non-video participants:" = "Total non-video participants:";
+"Connected" = "Connected";
+"Calling..." = "Calling...";
+"Ringing..." = "Ringing...";
+"Call accepted" = "Call accepted";
+"Failed to Call" = "Failed to Call";
+"Success" = "Success";
+"Disconnection Call" = "Disconnection Call";
+"Claim Host" = "Claim Host";
+"Attendee List" = "Attendee List";
+
+/* Audio */
+"Mute All" = "Mute All";
+"Unmute All" = "Unmute All";
+"Unmute Audio" = "Unmute Audio";
+"Mute Audio" = "Mute Audio";
+"Audio" = "Audio";
+"Unmute Telephone" = "Unmute Telephone";
+"Mute Telephone" = "Mute Telephone";
+"Mute" = "Mute";
+"Unmute" = "Unmute";
+"muted" = "muted";
+"Mute On Entry" = "Mute On Entry";
+"Play Enter/Exit Chime" = "Play Enter/Exit Chime";
+"You are muted now. Press Command+Shift+A to unmute your microphone if you want to speak." = "You are muted now. Press Command+Shift+A to unmute your microphone if you want to speak.";
+"You are using the computer audio" = "You are using the computer audio";
+"You are using the phone" = "You are using the phone";
+"Join Teleconference" = "Join Teleconference";
+"All and new participants are muted" = "All and new participants are muted";
+"All participants are unmuted" = "All participants are unmuted";
+"Allow participants unmute themselves" = "Allow participants unmute themselves";
+"You are muted by host" = "You are muted by host";
+"You are unmuted by host" = "You are unmuted by host";
+"The host has muted all participants" = "The host has muted all participants";
+"The host has unmuted all participants" = "The host has unmuted all participants";
+"You are using computer mic & speaker now" = "You are using computer mic & speaker now";
+"You are using phone now" = "You are using phone now";
+"Mute My Audio" = "Mute My Audio";
+"Unmute My Audio" = "Unmute My Audio";
+"Mute My Phone" = "Mute My Phone";
+"Unmute My Phone" = "Unmute My Phone";
+"Join Audio Conference via Mic & Speaker" = "Join Audio Conference via Mic & Speaker";
+"Leave Audio Conference" = "Leave Audio Conference";
+"Disconnected" = "Disconnected";
+"Press Command-Shift-A to mute or unmute your audio" = "Press Command-Shift-A to mute or unmute your audio";
+"Click to check your audio conference options" = "Click to check your audio conference options";
+"Audio Options" = "Audio Options";
+"Audio Conference" = "Audio Conference";
+"Audio Settings" = "Audio Settings";
+"Use Computer Mic & Speaker" = "Use Computer Mic & Speaker";
+"Use Telephone" = "Use Telephone";
+"You are not in the audio conference yet." = "You are not in the audio conference yet.";
+"Computer Audio Connected" = "Computer Audio Connected";
+"Phone Connected" = "Phone Connected";
+"Test Computer Audio" = "Test Computer Audio";
+"Participants in the meeting may have problem hearing your audio.\nConsider switching to phone" = "Participants in the meeting may have problem hearing your audio.\nConsider switching to phone";
+"You may have problem hearing the audio from other participants.\nConsider switching to phone." = "You may have problem hearing the audio from other participants.\nConsider switching to phone.";
+"Total %d phone call-in listener" = "Total %d phone call-in listener";
+"Total %d phone call-in listeners" = "Total %d phone call-in listeners";
+"Zoom detects a problem with your audio. If you enter your Mac computer password, we will attempt to restart your audio service to fix it.\n\n" = "BBM Meetings detects a problem with your audio. We will attempt to restart your audio service to fix it.\n\n";
+"Follow the instructions below to join audio conference." = "Follow the instructions below to join audio conference.";
+"Computer Audio" = "Computer Audio";
+"Dial In" = "Dial In";
+"Call Me" = "Call Me";
+"Hang Up" = "Hang Up";
+"Already joined by telephone? Press " = "Already joined by telephone? Press ";
+"on your phone." = "on your phone.";
+"Dial" = "Dial";
+"Toll free" = "Toll free";
+"(US or Canda only)" = "(US or Canda only)";
+"The number you want us to call you" = "The number you want us to call you";
+"Remember the number on this computer" = "Remember the number on this computer";
+"Failed to disconnect call" = "Failed to disconnect call";
+"Your computer audio is disconnected as we detected an echo." = "Your computer audio is disconnected as we detected an echo.";
+"Follow the instructions below to join audio." = "Follow the instructions below to join audio.";
+"Detected poor audio connection" = "Detected poor audio connection";
+"I'm fine" = "I'm fine";
+"Switch to Phone" = "Switch to Phone";
+
+//close audio without join audio dialog
+"No Audio" = "No Audio";
+"Do you want to continue without audio?" = "Do you want to continue without audio?";
+"You won't be able to hear other participants in the meeting, nor will they hear you." = "You won't be able to hear other participants in the meeting, nor will they hear you.";
+"Join Audio" = "Join Audio";
+
+/* Video */
+"Start Video" = "Start Video";
+"Stop Video" = "Stop Video";
+"Click to check your video conference options" = "Click to check your video conference options";
+"Host has stopped your video" = "Host has stopped your video";
+"Collapse Active Video" = "Collapse Active Video";
+"Exit Minimal Video" = "Exit Minimal Video";
+"Mute Video" = "Mute Video";
+
+"Resume" = "Resume";
+"Talking: " = "Talking: ";
+
+"Lock Meeting" = "Lock Meeting";
+"Unlock Meeting" = "Unlock Meeting";
+"Lock screen sharing" = "Lock screen sharing";
+"Unlock screen sharing" = "Unlock screen sharing";
+"Start Recording" = "Start Recording";
+"Stop Recording" = "Stop Recording";
+"Allow Record" = "Allow Record";
+"Forbid Record" = "Forbid Record";
+"Make Host" = "Make Host";
+"Remove" = "Remove";
+"Select Window" = "Select Window";
+"Pause" = "Pause";
+"Annotate" = "Annotate";
+"Share Control to" = "Share Control to";
+"Cancel Remote Control" = "Cancel Remote Control";
+"Enable Attendee Annotation" = "Enable Attendee Annotation";
+"Disable Attendee Annotation" = "Disable Attendee Annotation";
+
+"Show Call In Users" = "Show Call In Users";
+"Hide Call In Users" = "Hide Call In Users";
+
+"Double-click to enter full screen mode." = "Double-click to enter full screen mode.";
+"Press ESC or double-click to exit full screen mode" = "Press ESC or double-click to exit full screen mode";
+"Login as Host" = "Login as Host";
+
+/* In meeting chat */
+"to %@ (privately)" = "to %@ (privately)";
+"from %@ (privately)" = "from %@ (privately)";
+"from %@ to All" = "from %@ to All";
+"Host" = "Host";
+"me" = "me";
+"participant ID" = "participant ID";
+"Participant ID:" = "Participant ID:";
+"Send to:" = "Send to:";
+
+/* Error in meeting */
+"The meeting has problem. Error code : %d" = "The meeting has problem. Error code : %d";
+"This meeting ID is not valid. Please check and try again." = "This meeting ID is not valid. Please check and try again.";
+"This meeting has ended." = "This meeting has ended.";
+"Our service is currently busy. Please try again later." = "Our service is currently busy. Please try again later.";
+"Can't connect to our service, please check your network connection and try again." = "Can't connect to our service, please check your network connection and try again.";
+"Can't connect to our service, please check your network connection and try again. Error code %d" = "Can't connect to our service, please check your network connection and try again. Error code %d";
+"This meeting has reached a maximum of %d participants. Please try again later." = "This meeting has reached a maximum of %d participants. Please try again later.";
+"This meeting has been locked by host." = "This meeting has been locked by host.";
+"You have a meeting that is currently in-progress. Please end it to start a new meeting." = "You have a meeting that is currently in-progress. Please end it to start a new meeting.";
+"The host has a meeting that is currently in-progress. Once that meeting ends, you can join this meeting." = "The host has a meeting that is currently in-progress. Once that meeting ends, you can join this meeting.";
+
+"You are removed by host." = "You are kicked by host.";
+"Host ended the meeting." = "Host end the meeting.";
+"Timed out before host join." = "Time out before host join.";
+"No free time left." = "No free time left.";
+"End Other Meeting" = "End Other Meeting";
+"This meeting has ended as someone has started a new meeting with this account." = "This meeting has ended as someone has started a new meeting with this account.";
+"The meeting has ended after 40 minutes idle time." = "The meeting has ended after 40 minutes idle time.";
+
+"ID" = "ID";
+"Your screen sharing is paused" = "Your screen sharing is paused";
+"You are viewing %@'s screen" = "You are viewing %@'s screen";
+"You are viewing %@' screen" = "You are viewing %@' screen";
+"You are controlling %@'s screen" = "You are controlling %@'s screen";
+"'s screen" = "'s screen";
+"Sharing is paused. Bring your shared window to front" = "Sharing is paused. Bring your shared window to front";
+"Select a Window to Share" = "Select a Window to Share";
+"Click here to change to window view" = "Click here to change to window view";
+"Click here to change to 1:1 view" = "Click here to change to 1:1 view";
+"Fit to Window" = "Fit to Window";
+"Original Size" = "Original Size";
+"View Mode" = "View Mode";
+"Give Mouse/Keyboard Control to" = "Give Mouse/Keyboard Control to";
+"Cancel Mouse/Keyboard control" = "Cancel Mouse/Keyboard control";
+"Choose what you want to share" = "Choose what you want to share";
+"Click to Share Screen" = "Click to Share Screen";
+"Start Share" = "Start Share";
+"This will stop other's screen sharing, do you want to continue?" = "This will stop other's screen sharing, do you want to continue?";
+"Select a window or an application that you want to share" = "Select a window or an application that you want to share";
+"Share Screen with Computer Sound" = "Share Screen with Computer Sound";
+"Share Screen Only" = "Share Screen Only";
+"Screen sharing has failed to start. Please try again later.\n\nError Code: %d" = "Screen sharing has failed to start. Please try again later.";
+" has started screen sharing.\n\nDouble-click to enter full screen mode." = " has started screen sharing.\n\nDouble-click to enter full screen mode.";
+" has started screen sharing" = " has started screen sharing";
+
+/* Audio Share */
+"Share computer audio during screen sharing" = "Share computer audio during screen sharing";
+"Disable computer audio during screen sharing" = "Disable computer audio during screen sharing";
+"Your microphone is muted so others can hear remote audio during screen sharing." = "Your microphone is muted so others can hear remote audio during screen sharing.";
+"Your microphone is muted so you can hear remote audio during screen sharing." = "Your microphone is muted so you can hear remote audio during screen sharing.";
+"Your microphone is unmuted. Screen sharing with remote audio has stopped." = "Your microphone is unmuted. Screen sharing with remote audio has stopped.";
+"You cannot unmute yourself because the host mute all attendees." = "You cannot unmute yourself because the host mute all attendees.";
+"Your speaker is muted for audio sharing. It will recover when audio sharing ends." = "Your speaker is muted for audio sharing. It will recover when audio sharing ends.";
+
+/* Lead Mode */
+"Your microphone is muted to focus on %@ as the spotlight video." = "Your microphone is muted to focus on %@ as the spotlight video.";
+"Your microphone is unmuted. Spotlight video has stopped." = "Your microphone is unmuted. Spotlight video has stopped.";
+
+/* */
+"Me" = "Me";
+"Pin Video" = "Pin Video";
+"Switch to Active Speaker" = "Switch to Active Speaker";
+"Pin video on first screen" = "Pin video on first screen";
+"Switch to active speaker on first screen" = "Switch to active speaker on first screen";
+"Pin video on second screen" = "Pin video on second screen";
+"Switch to active speaker on second screen" = "Switch to active speaker on second screen";
+
+"Your default microphone has changed to %@ and will now be used." = "Your default microphone has changed to %@ and will now be used.";
+"Default audio device has changed" = "Default audio device has changed";
+"Your speaker %@ is not working. Please go to Settings to try a different one." = "Your speaker %@ is not working. Please go to Settings to try a different one.";
+"Speaker Error" = "Speaker Error";
+"Microphone Error" = "Microphone Error";
+"Microphone status" = "Microphone status";
+"Your microphone %@ is not working. Please go to Settings to try a different one." = "Your microphone %@ is not working. Please go to Settings to try a different one.";
+"Zoom can't detect your Microphone. Please check the Microphone setup." = "BBM Meetings can't detect your Microphone. Please check the Microphone setup.";
+"Zoom can't detect your Speaker. Please check the Speaker setup." = "BBM Meetings can't detect your Speaker. Please check the Speaker setup.";
+"Zoom can't detect the sound from your Microphone %@." = "BBM Meetings can't detect the sound from your Microphone %@.";
+"Your default speaker has changed to %@ and will now be used." = "Your default speaker has changed to %@ and will now be used.";
+
+/* Schedule Email Body */
+"Your meeting is scheduled." = "Your meeting is scheduled.";
+"Your recurring meetings are scheduled." = "Your recurring meetings are scheduled.";
+"Your meeting is updated." = "Your meeting is updated.";
+"Your recurring meetings are updated." = "Your recurring meetings are updated.";
+"Please join my scheduled meeting.\r\n%@\r\n\r\n" = "Please join my scheduled meeting.\r\n%@\r\n\r\n";
+//at %@.\r\n%@\r\n\r\nMeeting password: %@\r\nMeeting ID: %@\r\n\r\nZoom®\r\nWe can see clearly now™";
+"Meeting password: %@\r\n" = "Meeting password: %@\r\n";
+"Meeting time: %@ at %@\r\n" = "Meeting time: %@ at %@\r\n";
+"Meeting time: Recurring\r\n" = "Meeting time: Recurring\r\n";
+"Meeting ID: %@\r\n" = "Meeting ID: %@\r\n";
+"Can't schedule meeting. Please check your network connection and try again." = "Can't schedule meeting. Please check your network connection and try again.";
+"Can't schedule the meeting. Error code : %d" = "Can't schedule the meeting. Error code : %d";
+"Zoom meeting invitation - %@" = "BBM meeting invitation - %@";
+"Update Meeting Info error for meeting ID: %@, error code: %d." = "Update Meeting Info error for meeting ID: %@, error code: %d.";
+
+"This meeting is scheduled for %@" = "This meeting is scheduled for %@";
+"This Meeting ID is taken. Please choose a different ID." = "This Meeting ID is taken. Please choose a different ID.";
+"Sorry, your request is rejected." = "Sorry, your request is rejected.";
+"Failed to apply Personal Meeting ID. Unknown error." = "Failed to apply Personal Meeting ID. Unknown error.";
+"Failed to apply personal meeting ID. Error code: %d." = "Failed to apply personal meeting ID. Error code: %d.";
+"Can not edit meeting ID while meeting is in progress." = "Can not edit meeting ID while meeting is in progress.";
+
+
+"My Meeting" = "My Meeting";
+
+/* Subscribe Buddy */
+"%@ wants to be able to chat with you. Okay?" = "%@ wants to be able to chat with you. Okay?";
+"Your invitation has been sent successfully." = "Your invitation has been sent successfully.";
+"Your invitation failed to sent." = "Your invitation fail to sent.";
+"%@ will be removed from your IM list." = "%@ will be removed from your IM list.";
+"%@ will be removed from your favorite list." = "%@ will be removed from your favorite list.";
+"Test Speaker" = "Test Speaker";
+"Stop" = "Stop";
+"Your" = "Your";
+"'s" = "'s";
+"%@ network bandwidth is low." = "%@ network bandwidth is low.";
+
+
+/*Timeout Dialog*/
+"Your free meeting will end in 10 minutes, please upgrade to a paid account at $9.99 per month for unlimited minutes." = "Your free meeting will end in 10 minutes, please upgrade to a paid account at $9.99 per month for unlimited minutes.";
+"Meeting Alert" = "Meeting Alert";
+"This free meeting will end in 10 minutes. The meeting host needs to upgrade to a paid account at $9.99 per month for unlimited minutes." = "This free meeting will end in 10 minutes. The meeting host needs to upgrade to a paid account at $9.99 per month for unlimited minutes.";
+"This meeting will be ended in %d minutes as the host does not join yet." = "This meeting will be ended in %d minutes as the host does not join yet.";
+"This free HD meeting has ended. Thank you for choosing Zoom!" = "This free HD meeting has ended. Thank you for choosing BBM Meetings!";
+"The meeting has ended because the host doesn't show up." = "The meeting has ended because the host doesn't show up.";
+"You are removed from this meeting." = "You are removed from this meeting.";
+"This meeting has been ended by host." = "This meeting has been ended by host.";
+"Do you want to upgrade your account?" = "Do you want to upgrade your account?";
+"Do you want to change the host to %@?" = "Do you want to change the host to %@?";
+"Do you want to remove %@?" = "Do you want to remove %@?";
+"No new attendees can join this meeting once locked." = "No new attendees can join this meeting once locked.";
+"New attendees can join this meeting once unlocked." = "New attendees can join this meeting once unlocked.";
+"You have left this meeting." = "You have left this meeting.";
+"Upgrade Account" = "Upgrade Account";
+"OK" = "OK";
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"Upgrade" = "Upgrade";
+"Request" = "Request";
+"Select" = "Select";
+"Search" = "Search";
+"Check" = "Check";
+"Login" = "Login";
+
+/*Record*/
+"Host allows you to record the meeting." = "Host allows you to record the meeting.";
+"Host disallows you to record the meeting." = "Host disallows you to record the meeting.";
+"Your recording is stopped. The disk space is insufficient." = "Your recording is stopped. The disk space is insufficient.";
+"The recorded file will be converted to MP4 when the meeting ends." = "The recorded file will be converted to MP4 when the meeting ends.";
+"Please request record permission from the meeting host." = "Please request record permission from the meeting host.";
+"No speaker is detected for this recording that is in-progress. Please check your speaker settings." = "No speaker is detected for this recording that is in-progress. Please check your speaker settings.";
+
+//transcode
+"Zoom - Converting meeting recording" = "BBM - Converting meeting recording";
+"You have a recording that needs to be converted before viewing" = "You have a recording that needs to be converted before viewing";
+"You may convert your recording later by double clicking .bbmm file located in the recording folder." = "You may convert your recording later by double clicking .bbmm file located in the recording folder.";
+"Save my recordings at:" = "Save my recordings at:";
+"Choose a new location..." = "Choose a new location...";
+"Save" = "Save";
+"Transcode will be stopped. Would you like to continue?" = "Transcode will be stopped. Would you like to continue?";
+"Quit" = "Quit";
+"Choose" = "Choose";
+
+//
+"No Upcoming Meetings" = "No Upcoming Meetings";
+"No Recorded Files" = "No Recorded Files";
+"The recorded files will be listed here." = "The recorded files will be listed here.";
+"No online buddies" = "No online buddies";
+"No Favorite Contacts" = "No Favorite Contacts";
+"Free Account" = "Free Account";
+"Pro Account" = "Pro Account";
+"My Profile" = "My Profile";
+"Change My Picture" = "Change My Picture";
+
+//warning
+"All attendees will be muted to hear the remote computer audio." = "All attendees will be muted to hear the remote computer audio.";
+"This action will unmute all attendees, do you want to continue?" = "This action will unmute all attendees, do you want to continue?";
+"Your account has been upgraded successfully. Your meeting has no time limitation any more." = "Your account has been upgraded successfully. Your meeting has no time limitation any more.";
+"The meeting host has upgraded to Pro account. This meeting has no time limitation anymore." = "The meeting host has upgraded to Pro account. This meeting has no time limitation anymore.";
+"Host disabled attendee screen sharing." = "Host disabled attendee screen sharing.";
+"Only host can screen share once locked." = "Only host can screen share once locked.";
+"Attendee can now screen share once unlocked." = "Attendee can now screen share once unlocked.";
+"You cannot start screen share while the other participant is sharing." = "You cannot start screen share while the other participant is sharing.";
+"Meeting host %@ is not in the meeting, please login as %@ to claim the host role." = "Meeting host %@ is not in the meeting, please login as %@ to claim the host role.";
+"Meeting host is not in the meeting, please login as host to claim the host role" = "Meeting host is not in the meeting, please login as host to claim the host role";
+"Enter new name here:" = "Enter new name here:";
+"Finish registration to join the webinar." = "Click \"OK\" to register this webinar.";
+
+/* Annotation */
+"Mouse" = "Mouse";
+"Pen" = "Pen";
+"Highlighter" = "Highlighter";
+"Spotlight" = "Spotlight";
+"Arrow" = "Arrow";
+"Erase All" = "Erase All";
+"Clear All Drawing" = "Clear All Drawing";
+"Clear My Drawing" = "Clear My Drawing";
+"Clear Other's Drawing" = "Clear Other's Drawing";
+"Eraser" = "Eraser";
+"Choose Color" = "Choose Color";
+"Color" = "Color";
+"Draw" = "Draw";
+"Undo" = "Undo";
+"Redo" = "Redo";
+
+/* Remote Control */
+"Remote Control"= "Remote Control";
+"Click to start the remote control of the shared screen" = "Click to start the remote control of the shared screen";
+"%@ is requesting remote control." = "%@ is requesting remote control.";
+"Request remote control" = "Request remote control";
+"Give up remote control right" = "Give up remote control right";
+"Exit fullscreen will stop your remote control. Do you want to continue?" = "Exit fullscreen will stop your remote control. Do you want to continue?";
+"%@ requesting remote control of your shared content." = "%@ requesting remote control of your shared content.";
+"If you approve the request, %@ will have access to your entire shared content. You can regain control at any time by clicking anywhere." = "If you approve the request, %@ will have access to your entire shared content. You can regain control at any time by clicking anywhere.";
+"Decline" = "Decline";
+"Approve" = "Approve";
+"Remote Control Request" = "Remote Control Request";
+"You are about to request remote control of %@'s shared content." = "You are about to request remote control of %@'s shared content.";
+"and wait for %@'s approval.\n" = "and wait for %@'s approval.\n";
+"if you don't want to send a request." = "if you don't want to send a request.";
+"Select Request to try again" = "Select Request to try again";
+"to try again" = "to try again";
+"%@ declined your request." = "%@ declined your request.";
+"Forbid remote control" = "Forbid remote control";
+"Allow remote control" = "Allow remote control";
+
+"Switching to gallery view will degrade the recording quality. Do you want to continue?" = "Switching to gallery view will degrade the recording quality. Do you want to continue?";
+"Switching to speaker view will improve the recording quality. Do you want to continue?" = "Switching to speaker view will improve the recording quality. Do you want to continue?";
+"You cannot minimize Zoom when you are recording this meeting." = "You cannot minimize BBM Meetings when you are recording this meeting.";
+"To enable dual stream, you need a higher performance computer." = "To enable dual stream, you need a higher performance computer.";
+
+"Do you want to delete this meeting?" = "Do you want to delete this meeting?";
+"Do you want to delete this recorded file?" = "Do you want to delete this recorded file?";
+"Screen sharing has stopped as the shared window is closed." = "Screen sharing has stopped as the shared window is closed.";
+"Click Test Speaker to make sure you can hear others" =  "Click Test Speaker to make sure you can hear others";
+"If you can not hear the test sound, select a different speaker" =  "If you can not hear the test sound, select a different speaker";
+"If you can't make your Speaker or Mic work, click Join Teleconference" = "If you can't make your Speaker or Mic work, click Join Teleconference";
+"The invitation has been copied to the Clipboard." = "The invitation has been copied to the Clipboard.";
+"%@ is controlling your screen" = "%@ is controlling your screen";
+"Click below to change your picture and name." = "Click below to change your picture and name.";
+
+"Convert" = "Convert";
+
+"Hide thumbnail video" = "Hide thumbnail video";
+"Show active speaker video" = "Show active speaker video";
+"Show small active speaker video" = "Show small active speaker video";
+"Show large active speaker video" = "Show large active speaker video";
+"Show thumbnail video" = "Show thumbnail video";
+"Previous Page" = "Previous Page";
+"Next Page" = "Next Page";
+"Start a Meeting" = "Start a Meeting";
+"Start a Group Meeting" = "Start a Group Meeting";
+"Cannot delete this meeting. Error code: %d." = "Cannot delete this meeting. Error code: %d.";
+
+//PT MENUS STARTS
+"Preferences..." = "Preferences...";
+"Hide Others" = "Hide Others";
+"Show All" = "Show All";
+
+"Cut" = "Cut";
+"Paste" = "Paste";
+"Paste and Match Style" = "Paste and Match Style";
+"Select All" = "Select All";
+"Find" = "Find";
+"Find…" = "Find…";
+"Find and Replace…" = "Find and Replace…";
+"Find Next" = "Find Next";
+"Find Previous" = "Find Previous";
+"Use Selection for Find" = "Use Selection for Find";
+"Jump to Selection" = "Jump to Selection";
+
+"Window" = "Window";
+"Minimize" = "Minimize";
+"Bring All to Front" = "Bring All to Front";
+
+"Recommend Zoom to Friends" = "Recommend BBM Meetings to Friends";
+//PT MENUS ENDS
+
+//PT About Window starts
+" All rights reserved." = " All rights reserved.";
+" Terms" = " Terms";
+"Privacy Policy" = "Privacy Policy";
+//PT About Window ends
+
+//Q&A
+"You are logged in from another device. Your Q&A session is inactive." = "You are logged in from another device. Your Q&A session is inactive.";
+"Q&A" = "Q&A";
+"Questions and Answers" = "Questions and Answers";
+"Send Anonymously" = "Send Anonymously";
+"You have no question." = "You have no question.";
+"All" = "All";
+"Answered" = "Answered";
+" answered:" = " answered:";
+"Please input your question" = "Please input your question";
+"Answer by Text" = "Answer by Text";
+"Answer Live" = "Answer Live";
+"Submit" = "Submit";
+"Send privately" = "Send privately";
+"You would like to answer this question live." = "You would like to answer this question live.";
+"Done" = "Done";
+"Anonymous Attendee" = "Anonymous Attendee";
+"You" = "You";
+" ask:" = " ask:";
+" answered (privately):" = " answered (privately):";
+"You have" = "You have";
+" has" = " has";
+" answered this question live." = " answered this question live.";
+" is going to answer this question live." = " is going to answer this question live.";
+
+//quick start
+"Invitation URL:" = "Invitation URL:";
+"Host Name:" = "Host Name:";
+"Meeting Topic:" = "Meeting Topic:";
+"Copy URL" = "Copy URL";
+
+//H323
+"Device connected." = "Device connected.";
+"This meeting is not existed or has expired." = "This meeting is not existed or has expired.";
+"Invalid pairing code" = "Invalid pairing code";
+"The meeting host has not subscribed H.323/SIP Room Connector Plan." = "The meeting host has not subscribed H.323/SIP Room Connector Plan.";
+"Pair code failed. Error:%d" = "Pair code failed. Error:%d";
+
+//add by Ryan for IM
+"You have been removed from this group." = "You have been removed from this group.";
+"Chat History" = "Chat History";
+"Clear chat history on this computer?" = "Clear chat history on this computer?";
+"Clear" = "Clear";
+"Leave this group?" = "Leave this group?";
+"This will also clear your chat history in this group." = "This will also clear your chat history in this group.";
+"This will also clear your chat history with this user." = "This will also clear your chat history with this user.";
+"Leave" = "Leave";
+"You cleared all past messages." = "You cleared all past messages.";
+"With Video On" = "With Video On";
+"With Video Off" = "With Video Off";
+"Capture Screen" = "Capture Screen";
+"Send Image" = "Send Image";
+"Edit Group" = "Edit Group";
+"Invite others" = "Invite others";
+"Clear History" = "Clear History";
+"Leave Group" = "Leave Group";
+"Delete Contact" = "Delete Contact";
+"On Desktop" = "On Desktop";
+"On Mobile" = "On Mobile";
+"Desktop" = "Desktop";
+"Mobile" = "Mobile";
+"Away" = "Away";
+"Busy" = "Busy";
+"You have reached the Maximum number of group members." = "You have reached the Maximum number of group members.";
+"Group Members" = "Group Members";
+"%@'s group chat" = "%@'s group chat";
+"Save Changes" = "Save Changes";
+"Invite" = "Invite";
+"Create Group" = "Create Group";
+"Can't create a new group, please check your network." = "Can't create a new group, please check your network.";
+"Can't edit the group, please check your network." = "Can't edit the group, please check your network.";
+"Voice Message" = "Voice Message";
+"Your message \"%@\" send failed.   Resend" = "Your message \"%@\" send failed.   Resend";
+"Your message \"%@...\" send failed.   Resend" = "Your message \"%@...\" send failed.   Resend";
+"Resend" = "Resend";
+"You have %d new %@" = "You have %d new %@";
+"message" = "message";
+"messages" = "messages";
+"%@ is typing..." = "%@ is typing...";
+"Contacts" = "Contacts";
+"No results" = "No results";
+"You have logged in from another device. Messenger is now inactive." = "You have logged in from another device. Messenger is now inactive.";
+"Available" = "Available";
+"(Admin)" = "(Admin)";
+"Not in Contacts" = "Not in Contacts";
+"(Invite)" = "(Invite)";
+"Add to Contacts List" = "Add to Contacts List";
+"1 contact request" = "1 contact request";
+"%d contact requests" = "%d contact requests";
+"Your request has been sent successfully!" = "Your request has been sent successfully!";
+"New Group Chat" = "New Group Chat";
+"Favorites" = "Favorites";
+"Company, Phone, and Other Contacts" = "Company, Phone, and Other Contacts";
+"Company and Phone Contacts" = "Company and Phone Contacts";
+"Company and Other Contacts" = "Company and Other Contacts";
+"Company Contacts" = "Company Contacts";
+"Phone and Other Contacts" = "Phone and Other Contacts";
+"Phone Contacts" = "Phone Contacts";
+"Contacts" = "Contacts";
+"Right-click a contact to add to Favorites." = "Right-click a contact to add to Favorites.";
+
+//audio error for record
+"Audio Error" = "Audio Error";
+"No audio is detected. Check audio settings or continue to record with no audio." = "No audio is detected. Check audio settings or continue to record with no audio.";
+"Check Audio" = "Check Audio";
+"Continue Recording" = "Continue Recording";
+
+//add by Ryan for L10;
+"Upcoming" = "Upcoming";
+"Recorded" = "Recorded";
+"Join" = "Join";
+"Open" = "Open";
+"Schedule" = "Schedule";
+"Update" = "Update";
+"Help" = "Help";
+"Switch Account" = "Switch Account";
+"Exit" = "Exit";
+"Check for Updates..." = "Check for Updates...";
+"Please check your network connection. Then click Retry to re-connect." = "Please check your network connection. Then click Retry to re-connect.";
+"Install" = "Install";
+"Manual Update" = "Manual Update";
+"Retry" = "Retry";
+"Downloading file" = "Downloading file";
+"Updating" = "Updating";
+"Thanks for joining a Zoom video call!\n\nYou can login to start your own Zoom video call." = "Thanks for joining a BBM video call!\n\nYou can login to start your own BBM video call.";
+"Don't remind me again" = "Don't remind me again";
+"Your invitees do not need to have Zoom pre-installed to accept your meeting invitation" = "Your invitees do not need to have BBM Meetings pre-installed to accept your meeting invitation";
+"Did you know?" = "Did you know?";
+"Later" = "Later";
+"Update now" = "Update now";
+"Release Notes:" = "Release Notes:";
+"Join Video Call" = "Join Video Call";
+"You are already in another meeting, do you want to leave and join this meeting?" = "You are already in another meeting, do you want to leave and join this meeting?";
+"No" = "No";
+"Yes" = "Yes";
+"Camera:" = "Camera:";
+"Enable mirror effect for my video" = "Enable mirror effect for my video";
+"Always show name on video window" = "Always show name on video window";
+"Update to PRO" = "Update to PRO";
+"Store my recordings at:" = "Store my recordings at:";
+"Choose a location for recorded files when meeting ends" = "Choose a location for recorded files when meeting ends";
+"Open Recordings in Finder" = "Open Recordings in Finder";
+"Choose a new location..." = "Choose a new location...";
+"Speaker" = "Speaker";
+"Microphone" = "Microphone";
+"Output Level:" = "Output Level:";
+"Output Volume:" = "Output Volume:";
+"Input Level:" = "Input Level:";
+"Input Volume:" = "Input Volume:";
+"Please speak to your microphone. If you can not see the volume indicator blinking, select a different mic." = "Please speak to your microphone. If you can not see the volume indicator blinking, select a different mic.";
+"Select Mic" = "Select Mic";
+"Automatically adjust microphone settings" = "Automatically adjust microphone settings";
+"Automatically join audio conference via Mic & Speaker when joining a meeting" = "Automatically join audio conference via Mic & Speaker when joining a meeting";
+"Alert me when friends go online" = "Alert me when friends go online";
+"Alert me when friends go offline" = "Alert me when friends go offline";
+"Pop out the chat window when I receive a chat message" = "Pop out the chat window when I receive a chat message";
+"Show offline contacts" = "Show offline contacts";
+"Enter full screen mode automatically when viewing the shared screen" = "Enter full screen mode automatically when viewing the shared screen";
+"Play sound when I receive a chat message" = "Play sound when I receive a chat message";
+"Enter full screen mode automatically when starting video" = "Enter full screen mode automatically when starting video";
+"Enable dual stream for dual monitor" = "Enable dual stream for dual monitor";
+"Fit to window automatically when viewing the shared screen" = "Fit to window automatically when viewing the shared screen";
+"Automatically copy Invitation URL to Clipboard after meeting starts" = "Automatically copy Invitation URL to Clipboard after meeting starts";
+"Meeting Option" = "Meeting Option";
+"Instant Message" = "Instant Message";
+"For technical support, please visit " = "For technical support, please visit ";
+"Support." = "Support.";
+"Always use PMI for instant meetings on this computer" = "Always use PMI for instant meetings on this computer";
+"Delete" = "Delete";
+"Start" = "Start";
+"Edit" = "Edit";
+"Play Video" = "Play Video";
+"Play Audio Only" = "Play Audio Only";
+"Accept" = "Accept";
+"Checking for updates..." = "Checking for updates...";
+"What's new?" = "What's new?";
+"Network error!" = "Network error!";
+
+//hard code string
+"Download failed, please try it again" = "Download failed, please try it again";
+"Download failed" = "Download failed";
+"Choose" = "Choose";
+"Personal Meeting ID (PMI)" = "Personal Meeting ID (PMI)";
+"Today" = "Today";
+"Recurring - %@" = "Recurring - %@";
+"Topic: %@\n" = "Topic: %@\n";
+"Topic: %@" = "Topic: %@";
+"Meeting ID: %@\n" = "Meeting ID: %@\n";
+"Meeting Password: %@\n" = "Meeting Password: %@\n";
+"%@ to %@" = "%@ to %@";
+"Duration: %d minutes" = "Duration: %d minutes";
+"Meeting ID: %@" = "Meeting ID: %@";
+"Meeting Password: %@" = "Meeting Password: %@";
+"New version is available!" = "New version is available!";
+"New version available!" = "New version available!";
+"Last Name" = "Last Name";
+"First Name" = "First Name";
+"Change" = "Change";
+"Enter your own audio conference information" = "Enter your own audio conference information";
+
+//PT Invite Dialog
+"Invite By Email" = "Invite By Email";
+"Choose your email service to send invitation" = "Choose your email service to send invitation";
+"Default Email" = "Default Email";
+"Gmail" = "Gmail";
+"Yahoo Mail" = "Yahoo Mail";
+
+"Facebook Friends" = "Facebook Friends";
+"Facebook Group" = "Facebook Group";
+
+"Invite By Phone" = "Invite By Phone";
+"Calling" = "Calling";
+"Invitee Name:" = "Invitee Name:";
+" Name to be displayed in the meeting" = " Name to be displayed in the meeting";
+"Phone Number:" = "Phone Number:";
+" Input the number you want to call" = " Input the number you want to call";
+
+"Invite a Room System" = "Invite a Room System";
+"Enter the pairing code below" = "Enter the pairing code below";
+"Or Enter the pairing code below" = "Or Enter the pairing code below";
+
+"Copy Invitation" = "Copy Invitation";
+"Copy URL to Clipboard" = "Copy URL to Clipboard";
+"Copy Invitation to Clipboard" = "Copy Invitation to Clipboard";
+
+"Call" = "Call";
+
+"From your H.323/SIP Room System" = "From your H.323/SIP Room System";
+"Enter Meeting ID: " = "Enter Meeting ID: ";
+"Enter Meeting Password: " = "Enter Meeting Password: ";
+
+"Google Friends" = "Google Friends";
+"Invite by IM" = "Invite by IM";
+//PT Invite Dialog end
+
+
+//PT Login Dialog begin
+"(or" = "(or";
+"Email" = "Email";
+"Email or password error!" = "Email or password error!";
+"Remember me" = "Remember me";
+"Back" = "Back";
+"Or" = "Or";
+"Login with Google" = "Login with Google";
+"Login with Facebook" = "Login with Facebook";
+"Login with SSO" = "Login with SSO";
+"PT_LOGIN_LOGIN_ACK_INFO" = "By proceeding beyond this screen, you are agreeing to the";
+"PT_LOGIN_LOGIN_ACK_TERMS" = "Terms of Service";
+"PT_LOGIN_LOGIN_ACK_SEPARATOR" = "and";
+"PT_LOGIN_LOGIN_ACK_POLICY" = "Privacy Policy";
+
+"Connection Failed." = "Connection Failed.";
+
+"Join a Meeting" = "Join a Meeting";
+"Sign In" = "Sign In";
+
+"To schedule a BBM meeting, you need to upgrade to a paid account. You are still able to join BBM Meeting." = "To schedule a BBM meeting, you need to upgrade to a paid account. You are still able to join BBM Meeting.";
+"Not Now" = "Not Now";
+"Upgrade to BBM Meetings" = "Upgrade to BBM Meetings";
+
+//PT SSO Login Dialog begin
+"https://companyname.zoom.us" = "https://companyname.zoom.us";
+"SSO URL:" = "SSO URL:";
+//PT SSO Login Dialog end
+
+
+//PT Proxy Auth Dialog begin
+"Name:" = "Name:";
+"Password:" = "Password:";
+//PT Proxy Auth Dialog end
+
+//copy right string
+
+//Help url string
+
+
+//PT Schedule Dialog begin
+"Topic:" = "Topic:";
+"When" = "When";
+"Start:" = "Start:";
+"Duration:" = "Duration:";
+"Hr" = "Hr";
+"Min" = "Min";
+"Time Zone:" = "Time Zone:";
+"Please remember to check recurrence or repeat in your calendar invitation to your attendees. " = "Please remember to check recurrence or repeat in your calendar invitation to your attendees. ";
+"Recurring meeting" = "Recurring meeting";
+"Host:" = "Host:";
+"Participant:" = "Participant:";
+"Video (when joining a meeting)" = "Video (when joining a meeting)";
+"On" = "On";
+"Off" = "Off";
+"Telephone Only" = "Telephony Only";
+"Voip Only" = "Voip Only";
+"Both" = "Both";
+"3rd Party Audio" = "3rd Party Audio";
+"Meeting Options" = "Meeting Options";
+"Require meeting password" = "Require meeting password";
+"Enable join before host" = "Enable join before host";
+"Calendar" = "Calendar";
+"iCal" = "iCal";
+"Google Calendar" = "Google Calendar";
+"Other Calendars" = "Other Calendars";
+"Schedule For:" = "Schedule For:";
+"Edit Meeting" = "Edit Meeting";
+"Scheduling..." = "Scheduling...";
+"Click the button below to copy the invitation to clipboard." = "Click the button below to copy the invitation to clipboard.";
+"Copy to Clipboard" = "Copy to Clipboard";
+//PT Schedule Dialog end
+
+
+//PT Edit PMI Dialog begin
+"Personal Meeting ID" = "Personal Meeting ID";
+"Your Personal Meeting ID is changed." = "Your Personal Meeting ID is changed.";
+"Upgrade to Pro to change your Personal Meeting ID" = "Upgrade to Pro to change your Personal Meeting ID";
+"Change Your Personal Meeting ID" = "Change Your Personal Meeting ID";
+
+"Choose your 10-digits ID:" = "Choose your 10-digits ID:";
+"* Your Personal Meeting ID cannot start with 0 or 1." = "* Your Personal Meeting ID cannot start with 0 or 1.";
+"Apply" = "Apply";
+
+"Your Personal Meeting option is updated." = "Your Personal Meeting option is updated.";
+
+"Only Pro user can customize your favorite personal meeting ID. Would like to upgrade to Pro account?" = "Only Pro user can customize your favorite personal meeting ID. Would like to upgrade to Pro account?";
+//PT Edit PMI Dialog end
+
+"Recording Path:" = "Recording Path:";
+
+//New added for Jan Release
+"PT_SETTINGS_MUTE_AUDIO" = "Always mute microphone when joining a meeting";
+"PT_SETTINGS_MUTE_VIDEO" = "Always turn off video when joining a meeting";
+"This file does not exist." = "This file does not exist.";
+
+//Added for 3.5
+"Recording Path:" = "Recording Path:";
+
+"Save Chat" = "Save Chat";
+"Chat saved to:" = "Chat saved to:";
+
+//air host
+"Share an iPhone/iPad screen" = "Share an iPhone/iPad screen";
+"A plugin is required to share an iPhone/iPad screen." = "A plugin is required to share an iPhone/iPad screen.";
+"Installation failed, please check your network and try again. Or " = "Installation failed, please check your network and try again. Or ";
+"download manually" = "download manually";
+
+//diagnostic
+"Zoom Activity Monitor" = "Zoom Activity Monitor";
+"Item Name" = "Item Name";
+"Frequency" = "Frequency";
+"Latency" = "Latency";
+"Jitter" = "Jitter";
+"Packet Loss - Avg(Max)" = "Packet Loss - Avg(Max)";
+"Frame Per Second" = "Frame Per Second";
+"Resolution" = "Resolution";
+"Screen Sharing" = "Screen Sharing";
+"Overall" = "Overall";
+"Send" = "Send";
+"Receive" = "Receive";
+"Bandwidth" = "Bandwidth";
+"Network Type" = "Network Type";
+"Proxy" = "Proxy";
+"CPU" = "CPU";
+"Memory" = "Memory";
+"Your high CPU usage is affecting the meeting quality" = "Your high CPU usage is affecting the meeting quality";
+"Your internet connection is unstable" = "Your internet connection is unstable";
+
+//Conference Remote Camera Control Window
+"Waiting for %@ to approve your request." = "Waiting for %@ to approve your request.";
+"%@ requested to control your camera." = "%@ requested to control your camera.";
+"%@ declined your request of camera control." = "%@ declined your request of camera control.";
+"Request approved. You can now control %@'s camera." = "Request approved. You can now control %@'s camera.";
+"%@ no longer controls your camera." = "%@ no longer controls your camera.";
+
+// for accessibility feature
+"Zoom Logo" = "Zoom Logo";
+"Status Menu" = "Status Menu";
+"Refresh Meeting List" = "Refresh Meeting List";
+"Add Contact" = "Add Contact";
+"button" = "button";
+
+"Auto Answer Group" = "Auto Answer Group";
+"Remove from Auto Answer Group" = "Remove from Auto Answer Group";
+"Add to Auto Answer Group" = "Add to Auto Answer Group";
+
+// for polling
+"Multiple Choice" = "Multiple Choice";
+"Poll closed" = "Poll closed";
+"%d voted" = "%d voted";
+"Add a Question" = "Add a Question";
+"Edit Poll" = "Edit Poll";
+"Failed to launch poll" = "Failed to launch poll";
+"Failed to end poll" = "Failed to end poll";
+"Failed to share poll result" = "Failed to share poll result";
+"Failed to fetch poll" = "Failed to fetch poll";
+"Failed to stop sharing" = "Failed to stop sharing";
+"Failed to submit poll" = "Failed to submit poll";
+"Share Results" = "Share Results";
+"Launch Poll" = "Launch Poll";
+"Polls" = "Polls";
+"End Poll" = "End Poll";
+"%@ in Progress" = "%@ in Progress";
+"%d of %d voted" = "%d of %d voted";
+"Sharing Poll Results" = "Sharing Poll Results";
+"Stop Sharing" = "Stop Sharing";
+"Quick Poll" = "Quick Poll";
+"Host is sharing poll results" = "Host is sharing poll results";
+"Submit" = "Submit";
+"Close" = "Close";
+
+//Main Window Title
+"Zoom - %@" = "Zoom - %@";
+"Use Personal Meeting ID" = "Use Personal Meeting ID";
+"Zoom" = "Zoom";
+"Always mute microphone when joining a meeting" = "Always mute microphone when joining meeting";
+"Always turn off video when joining meeting" = "Always turn off video when joining meeting";
+"(Public to all participants)" = "(Public to all participants)";
+"Topic: %@" = "Topic: %@";
+"Show in Finder" = "Show in Finder";
+"Chat saved." = "Chat saved.";
+"Call Out" = "Call Out";
+"Dial In from a H.323/SIP Room System" = "Dial In from a H.323/SIP Room System";
+"Call a H.323/SIP Room System" = "Call a H.323/SIP Room System";
+"Confirm with me when I leave a meeting" = "Confirm with me when I leave a meeting";
+"Hide Non-Video Participants" = "Hide Non-Video Participants";
+"Ask to Start Video" = "Ask to Start Video";

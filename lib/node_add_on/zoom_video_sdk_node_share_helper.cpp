@@ -156,7 +156,20 @@ void ZoomVideoNodeShareHelperWrap::IsShareLocked(const v8::FunctionCallbackInfo<
 	v8::Local<v8::Boolean> bret = v8::Boolean::New(isolate, zn_bIs);
 	args.GetReturnValue().Set(bret);
 }
-
+void ZoomVideoNodeShareHelperWrap::PauseShare(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().PauseShare();
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::ResumeShare(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().ResumeShare();
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
 void ZoomVideoNodeShareHelperWrap::GetMonitorsList(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
 	v8::Isolate* isolate = args.GetIsolate();
@@ -172,6 +185,27 @@ void ZoomVideoNodeShareHelperWrap::GetMonitorsList(const v8::FunctionCallbackInf
 		node->Set(context, v8::String::NewFromUtf8(isolate, "shareMonitorID", v8::NewStringType::kInternalized).ToLocalChecked(), v8::String::NewFromUtf8(isolate, zs2s(zn_sharemonitor_lst[i]).c_str(), v8::NewStringType::kInternalized).ToLocalChecked());
 		nodes->Set(context, i, node);
 	}
+	args.GetReturnValue().Set(nodes);
+}
+void ZoomVideoNodeShareHelperWrap::GetAppList(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	auto context = isolate->GetCurrentContext();
+	v8::Local<v8::Array> nodes = v8::Array::New(isolate);
+#if (!defined __linux)
+	ZNList<AppInfo> appList = _g_native_wrap.GetShareInfoHelperWrap().GetAppList();
+	for (unsigned int i = 0; i < appList.size(); ++i)
+	{
+		v8::HandleScope scope(isolate);
+		v8::Local<v8::Object> node = v8::Object::New(isolate);
+		node->Set(context, v8::String::NewFromUtf8(isolate, "handle", v8::NewStringType::kInternalized).ToLocalChecked(), v8::Integer::New(isolate, appList[i].handle));
+		node->Set(context, v8::String::NewFromUtf8(isolate, "processId", v8::NewStringType::kInternalized).ToLocalChecked(), v8::Integer::New(isolate, appList[i].processId));
+		node->Set(context, v8::String::NewFromUtf8(isolate, "title", v8::NewStringType::kInternalized).ToLocalChecked(), v8::String::NewFromUtf8(isolate, zs2s(appList[i].title).c_str(), v8::NewStringType::kInternalized).ToLocalChecked());
+		node->Set(context, v8::String::NewFromUtf8(isolate, "appName", v8::NewStringType::kInternalized).ToLocalChecked(), v8::String::NewFromUtf8(isolate, zs2s(appList[i].appName).c_str(), v8::NewStringType::kInternalized).ToLocalChecked());
+		nodes->Set(context, i, node);
+	}
+#endif
+	// For linux platform, return empty array
 	args.GetReturnValue().Set(nodes);
 }
 void ZoomVideoNodeShareHelperWrap::EnableShareDeviceAudio(const v8::FunctionCallbackInfo<v8::Value>& args) {
@@ -285,18 +319,27 @@ void ZoomVideoNodeShareHelperWrap::StartShareWithPreprocessing(const v8::Functio
 			break;
 		}
 
-		if (!proto_param.has_type() || !(proto_param.has_handle() || proto_param.has_monitorid()))
+		ZNZoomVideoSDKSharePreprocessType zn_type = (ZNZoomVideoSDKSharePreprocessType)proto_param.type();
+		ZoomSTRING zn_handle;
+		if (proto_param.has_handle())
 		{
-			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
-			break;
+			zn_handle = s2zs(proto_param.handle());
 		}
 
-		ZNZoomVideoSDKSharePreprocessType zn_type = (ZNZoomVideoSDKSharePreprocessType)proto_param.type();
-		ZoomSTRING zn_handle = s2zs(proto_param.handle());
-		ZoomSTRING zn_monitorid = s2zs(proto_param.monitorid());
+		ZoomSTRING zn_monitorid;
+		if (proto_param.has_monitorid())
+		{
+			zn_monitorid = s2zs(proto_param.monitorid());
+		}
+
+		uint32_t processID = 0;
+		if (proto_param.has_processid())
+		{
+			processID = proto_param.processid();
+		}
 		
 		ZSharePreprocessorHelperWrap& shareSendHelper = _g_native_wrap.GetSharePreprocessorHelperWrap();
-		err = shareSendHelper.StartShareWithPreprocessing(zn_type, zn_handle, zn_monitorid, dynamic_cast<ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor*>(&shareSendHelper));
+		err = shareSendHelper.StartShareWithPreprocessing(zn_type, zn_handle, zn_monitorid, processID, dynamic_cast<ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor*>(&shareSendHelper));
 	} while (false);
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
@@ -341,6 +384,82 @@ void ZoomVideoNodeShareHelperWrap::DestroyAnnotationHelper(const v8::FunctionCal
 	v8::Isolate* isolate = args.GetIsolate();
 
 	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().DestroyAnnotationHelper();
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::SetAnnotationVanishingToolTime(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
+	do
+	{
+		com::electron::zoomvideo::sdk::proto::SetAnnotationVanishingToolTimeParams proto_params;
+		if (!SetProtoParam<com::electron::zoomvideo::sdk::proto::SetAnnotationVanishingToolTimeParams >(args, proto_params))
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+		if (!proto_params.has_displaytime() || !proto_params.has_vanishingtime())
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		unsigned int _displayTime = proto_params.displaytime();
+		unsigned int _vanishingTime = proto_params.vanishingtime();
+		err = _g_native_wrap.GetShareHelperWrap().SetAnnotationVanishingToolTime(_displayTime, _vanishingTime);
+	} while (false);
+
+	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
+	args.GetReturnValue().Set(bret);
+}
+void ZoomVideoNodeShareHelperWrap::GetAnnotationVanishingToolTime(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+	auto context = isolate->GetCurrentContext();
+	unsigned int displayTime = 0; 
+	unsigned int vanishingTime = 0;
+	ZNZoomVideoSDKErrors err = _g_native_wrap.GetShareHelperWrap().GetAnnotationVanishingToolTime(displayTime, vanishingTime);
+	v8::HandleScope scope(isolate);
+	v8::Local<v8::Object> node = v8::Object::New(isolate);
+	node->Set(context, v8::String::NewFromUtf8(isolate, "err", v8::NewStringType::kInternalized).ToLocalChecked(), v8::Integer::New(isolate, (int32_t)err));
+	node->Set(context, v8::String::NewFromUtf8(isolate, "displayTime", v8::NewStringType::kInternalized).ToLocalChecked(), v8::Integer::New(isolate, (int32_t)displayTime));
+	node->Set(context, v8::String::NewFromUtf8(isolate, "vanishingTime", v8::NewStringType::kInternalized).ToLocalChecked(), v8::Integer::New(isolate, (int32_t)vanishingTime));
+	args.GetReturnValue().Set(node);
+}
+void ZoomVideoNodeShareHelperWrap::StartShareApplication(const v8::FunctionCallbackInfo<v8::Value>& args) {
+
+	v8::Isolate* isolate = args.GetIsolate();
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Success;
+	do
+	{
+		com::electron::zoomvideo::sdk::proto::StartShareApplicationParams proto_param;
+		if (!SetProtoParam<com::electron::zoomvideo::sdk::proto::StartShareApplicationParams >(args, proto_param))
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		if (!proto_param.has_processid())
+		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
+			break;
+		}
+
+		uint32_t _processID = proto_param.processid();
+		ZNZoomVideoSDKShareOption zn_shareOption;
+		if (proto_param.has_iswithdeviceaudio())
+		{
+			convertBool(proto_param.iswithdeviceaudio(), zn_shareOption.isWithDeviceAudio);
+		}
+		if (proto_param.has_isoptimizeforsharedvideo())
+		{
+			convertBool(proto_param.isoptimizeforsharedvideo(), zn_shareOption.isOptimizeForSharedVideo);
+		}
+
+		err = _g_native_wrap.GetShareHelperWrap().StartShareApplication(_processID, zn_shareOption);
+	} while (false);
+	
 	v8::Local<v8::Integer> bret = v8::Integer::New(isolate, (int32_t)err);
 	args.GetReturnValue().Set(bret);
 }

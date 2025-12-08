@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "Damit Sie mit den Teilnehmern sprechen können, ist bei Zoom der Zugriff auf Ihr Mikrofon erforderlich.";
+NSCalendarsFullAccessUsageDescription= "Um Ihre Termine anzeigen zu können, muss Zoom Workplace auf Ihren Kalender zugreifen.";
+NSLocalNetworkUsageDescription= "Dieser Vorgang ist erforderlich, um AirPlay und Peer-to-Peer-Meetings in der Zoom-Anwendung zu aktivieren.";
+NSBluetoothAlwaysUsageDescription= "Dadurch kann Zoom Workplace Zoom Rooms in der Nähe finden.";
+NSCameraUsageDescription = "Damit die Teilnehmer Sie sehen können, ist bei Zoom der Zugriff auf Ihre Kamera erforderlich.";

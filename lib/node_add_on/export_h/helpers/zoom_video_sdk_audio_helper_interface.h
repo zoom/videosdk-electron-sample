@@ -1,8 +1,7 @@
-/*!
-* \file zoom_video_sdk_audio_helper_interface.h
-* \brief audio helper
-*
-*/
+/**
+ * @file zoom_video_sdk_audio_helper_interface.h
+ * @brief audio helper
+ */
 
 #ifndef _ZOOM_VIDEO_SDK_AUDIO_HELPER_INTERFACE_H_
 #define _ZOOM_VIDEO_SDK_AUDIO_HELPER_INTERFACE_H_
@@ -11,8 +10,11 @@
 
 BEGIN_ZOOM_VIDEO_SDK_NAMESPACE
 class IZoomVideoSDKUser;
-/// \brief Speaker device interface.
-///
+
+/**
+ * @class IZoomVideoSDKSpeakerDevice
+ * @brief Speaker device interface.
+ */
 class IZoomVideoSDKSpeakerDevice
 {
 public:
@@ -22,8 +24,10 @@ public:
 	virtual ~IZoomVideoSDKSpeakerDevice() {};
 };
 
-/// \brief Mic device interface.
-///
+/**
+ * @class IZoomVideoSDKMicDevice
+ * @brief Mic device interface.
+ */
 class IZoomVideoSDKMicDevice
 {
 public:
@@ -33,88 +37,116 @@ public:
 	virtual ~IZoomVideoSDKMicDevice() {};
 };
 
-/// \brief Audio helper interface.
-///
+/**
+ * @class IZoomVideoSDKAudioHelper
+ * @brief Audio helper interface.
+ */
 class IZoomVideoSDKAudioHelper
 {
 public:
-	/// \brief Start audio with voip.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Start audio with voip.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
     virtual ZoomVideoSDKErrors startAudio() = 0;
-    
-	/// \brief Stop voip.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+	 * @brief Stop voip.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
     virtual ZoomVideoSDKErrors stopAudio() = 0;
 	
-	/// \brief Mute user's voip audio. 0 means current user (myself).
-	/// \param pUser The user which you want to mute.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Mute user's voip audio. 0 means current user (myself).
+	 * @param pUser The user which you want to mute.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors muteAudio(IZoomVideoSDKUser* pUser) = 0;
 	
-	/// \brief Unmute user's voip audio.
-	/// \param pUser The user which you want to unMute.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
-    ///This function will trigger the callback \link onHostAskUnmute() \endlink.
+	/**
+	 * @brief Unmute user's voip audio.
+	 * @param pUser The user which you want to unMute.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+     * @note This function will trigger the callback \link onHostAskUnmute() \endlink.
+	 */
 	virtual ZoomVideoSDKErrors unMuteAudio(IZoomVideoSDKUser* pUser) = 0;
-    
-    /// \brief Mute all user's VOIP audio except my self.
-    /// \param allowUnmute True means allow the user to unmute themself, otherwise false.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+     * @brief Mute all user's VOIP audio except my self.
+     * @param allowUnmute True means allow the user to unmute themself, otherwise false.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */   
     virtual ZoomVideoSDKErrors muteAllAudio(bool allowUnmute) = 0;
-    
-    /// \brief Allow the others unmute themselves or not.
-    /// \param allowUnmute True means allow the user to unmute themself, otherwise false.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+     * @brief Allow the others unmute themselves or not.
+     * @param allowUnmute True means allow the user to unmute themself, otherwise false.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */    
     virtual ZoomVideoSDKErrors allowAudioUnmutedBySelf(bool allowUnmute) = 0;
-    
-    /// \brief Ask unmute all user's VOIP audio.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
-    ///This function will trigger the callback \link onHostAskUnmute() \endlink.
+	
+	/**
+     * @brief Ask unmute all user's VOIP audio.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+     * @note This function will trigger the callback \link onHostAskUnmute() \endlink.
+	 */
     virtual ZoomVideoSDKErrors unMuteAllAudio() = 0;
 
 #if (defined ANDROID) || (defined __IOS__)
-    virtual int setSpeaker(bool speaker) = 0; //Set audio speaker
-    virtual bool getSpeakerStatus() = 0;      //Get audio speaker status
-    virtual bool canSwitchSpeaker() = 0;      //Query is audio speaker enable.
-#endif
+	/**
+	 * @brief Set audio speaker
+	 */
+    virtual int setSpeaker(bool speaker) = 0; 
 	
-	/// \brief Get speaker device list.
-	/// \return If the function succeeds, the return value is speaker device list, Otherwise nullptr.
+	/**
+	 * @brief Get audio speaker status
+	 */
+    virtual bool getSpeakerStatus() = 0; 
+	
+	/**
+	 * @brief Query is audio speaker enable.
+	 */
+    virtual bool canSwitchSpeaker() = 0;  
+    
+#endif
+	/**
+	 * @brief Get speaker device list.
+	 * @return If the function succeeds, the return value is speaker device list, Otherwise nullptr.
+	 */
 	virtual IVideoSDKVector<IZoomVideoSDKSpeakerDevice*>* getSpeakerList() = 0;
 	
-	/// \brief Get mic device list.
-	/// \return If the function succeeds, the return value is mic device list, Otherwise nullptr.
+	/**
+	 * @brief Get mic device list.
+	 * @return If the function succeeds, the return value is mic device list, Otherwise nullptr.
+	 */
 	virtual IVideoSDKVector<IZoomVideoSDKMicDevice*>* getMicList() = 0;
 	
-	/// \brief Select some speaker device as default device.
-	/// \param deviceId Device id.
-	/// \param deviceName Device name.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Select some speaker device as default device.
+	 * @param deviceId Device id.
+	 * @param deviceName Device name.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors selectSpeaker(const zchar_t* deviceId, const zchar_t* deviceName) = 0;
 	
-	/// \brief Select some mic device as default device.
-	/// \param deviceId Device id.
-	/// \param deviceName Device name.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Select some mic device as default device.
+	 * @param deviceId Device id.
+	 * @param deviceName Device name.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors selectMic(const zchar_t* deviceId, const zchar_t* deviceName) = 0;
 	
-	/// \brief Subscribe audio raw data.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Subscribe audio raw data.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors subscribe() = 0;
 	
-	/// \brief UnSubscribe audio raw data.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief UnSubscribe audio raw data.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors unSubscribe() = 0;
 };
 END_ZOOM_VIDEO_SDK_NAMESPACE

@@ -1,9 +1,14 @@
+/**
+ * @file ZMVideoSDKVideoHelper.h
+ * @brief Defines video control, camera device management, virtual background, and video preference interfaces in Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 #import "ZMVideoSDKUserHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /**
+ * @class ZMVideoSDKVirtualBackgroundItem
  * @brief Virtual background Item interface.
  */
 @interface ZMVideoSDKVirtualBackgroundItem : NSObject
@@ -33,7 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- * @brief Camera device information interface.
+ * @class ZMVideoSDKCameraDevice
+ * @brief Represents a camera device and its state.
  */
 @interface ZMVideoSDKCameraDevice : NSObject
 /**
@@ -64,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ * @class ZMVideoSDKPreferenceSetting
  * @brief Video preference interface. When setting custom modes, the maximum and minimum frame rates are provided by the developer. If the current bandwidth cannot maintain the minimum frame rate, the video system will drop to the next lower resolution. The default maximum and minimum frame rates for other modes are 0.
  */
 @interface ZMVideoSDKPreferenceSetting : NSObject
@@ -87,6 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ * @class ZMVideoSDKVideoHelper
  * @brief An interface to control video and manage cameras during a video session.
  */
 @interface ZMVideoSDKVideoHelper : NSObject
@@ -130,7 +138,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (unsigned int)getNumberOfCameras;
     
 /**
- * @brief Returns a collection of camera devices available to share the video as an object of type \link ZMVideoSDKCameraDevice \endlink.
+ * @brief Returns a collection of camera devices available to share the video as an object of ZMVideoSDKCameraDevice.
  * @return Camera devices list.
  */
 - (NSArray<ZMVideoSDKCameraDevice *>* _Nullable)getCameraList;
@@ -236,10 +244,19 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief Subscribe preview video raw data with a callback.
  * @param listener The callback sink object.
  * @param cameraDeviceID The camera id.
- * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
+ * @return If the function succeeds, it will return @c ZMVideoSDKErrors_Success.
+ * @deprecated Use \link ZMVideoSDKVideoHelper::startVideoPreview:deviceID: resolution:\endlink instead.
  */
-- (ZMVideoSDKErrors)startVideoPreview:(id<ZMVideoSDKRawDataPipeDelegate>)listener deviceID:(NSString* _Nullable)cameraDeviceID;
+- (ZMVideoSDKErrors)startVideoPreview:(id<ZMVideoSDKRawDataPipeDelegate>)listener deviceID:(NSString* _Nullable)cameraDeviceID DEPRECATED_MSG_ATTRIBUTE("Use -startVideoPreview:deviceID:resolution: instead");
 
+/**
+ * @brief Subscribe to preview video raw data with a callback.
+ * @param listener The callback object.
+ * @param cameraDeviceID Camera device ID.
+ * @param resolution Specify the resolution at which to open the camera.
+ * @return If the function succeeds, the return value is ZMVideoSDKErrors_Success.
+ */
+- (ZMVideoSDKErrors)startVideoPreview:(id<ZMVideoSDKRawDataPipeDelegate>)listener deviceID:(NSString* _Nullable)cameraDeviceID resolution:(ZMVideoSDKResolution)resolution;
 /**
  * @brief UnSubscribe preview video raw data with the subscribed callback.
  * @param listener The callback sink object.
@@ -265,7 +282,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief Add virtual background object.
  * @param imagePath The path of image.
- * @param imageItem An object of type \link ZMVideoSDKVirtualBackgroundItem \endlink. Once the function is called successfully, this parameter will store the pointer to the ZMVideoSDKVirtualBackgroundItem*.
+ * @param imageItem An object of ZMVideoSDKVirtualBackgroundItem. Once the function is called successfully, this parameter will store the pointer to the ZMVideoSDKVirtualBackgroundItem*.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
  */
 - (ZMVideoSDKErrors)addVirtualBackgroundItem:(NSString *)imagePath imageItem:(ZMVideoSDKVirtualBackgroundItem * _Nullable * _Nonnull)imageItem;
@@ -278,7 +295,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (ZMVideoSDKErrors)removeVirtualBackgroundItem:(ZMVideoSDKVirtualBackgroundItem *)imageItem;
 
 /**
- * @brief Returns a collection of virtual background item as an object of type \link ZMVideoSDKVirtualBackgroundItem \endlink.
+ * @brief Returns a collection of virtual background item as an object of ZMVideoSDKVirtualBackgroundItem.
  * @return If the function succeeds, it will return a list of virtual background items.
  */
 - (NSArray<ZMVideoSDKVirtualBackgroundItem* >* _Nullable)getVirtualBackgroundItemList;
@@ -292,7 +309,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get a selected virtual background item.
- * @return If the function succeeds, it will return the object of type \link ZMVideoSDKVirtualBackgroundItem \endlink.
+ * @return If the function succeeds, it will return the object of ZMVideoSDKVirtualBackgroundItem.
  */
 - (ZMVideoSDKVirtualBackgroundItem* _Nullable)getSelectedVirtualBackgroundItem;
 

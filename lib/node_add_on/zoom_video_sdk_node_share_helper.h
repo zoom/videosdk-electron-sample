@@ -25,7 +25,10 @@ public:
 	static void IsOtherSharing(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void LockShare(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void IsShareLocked(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void PauseShare(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void ResumeShare(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetMonitorsList(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void GetAppList(const v8::FunctionCallbackInfo<v8::Value>& args);
 
 	static void EnableShareDeviceAudio(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void IsShareDeviceAudioEnabled(const v8::FunctionCallbackInfo<v8::Value>& args);
@@ -36,6 +39,10 @@ public:
 	static void SendPreprocessedData(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void CreateAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void DestroyAnnotationHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void SetAnnotationVanishingToolTime(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void GetAnnotationVanishingToolTime(const v8::FunctionCallbackInfo<v8::Value>& args);
+
+	static void StartShareApplication(const v8::FunctionCallbackInfo<v8::Value>& args);
 
 	static v8::Persistent<v8::Function> constructor;
 };
@@ -56,7 +63,10 @@ void InitClassAttribute<ZoomVideoNodeShareHelperWrap >(const v8::Local<v8::Funct
 	NODE_SET_PROTOTYPE_METHOD(tpl, "IsOtherSharing", ZoomVideoNodeShareHelperWrap::IsOtherSharing);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "LockShare", ZoomVideoNodeShareHelperWrap::LockShare);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "IsShareLocked", ZoomVideoNodeShareHelperWrap::IsShareLocked);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "PauseShare", ZoomVideoNodeShareHelperWrap::PauseShare);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "ResumeShare", ZoomVideoNodeShareHelperWrap::ResumeShare);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetMonitorsList", ZoomVideoNodeShareHelperWrap::GetMonitorsList);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "GetAppList", ZoomVideoNodeShareHelperWrap::GetAppList);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "EnableShareDeviceAudio", ZoomVideoNodeShareHelperWrap::EnableShareDeviceAudio);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "IsShareDeviceAudioEnabled", ZoomVideoNodeShareHelperWrap::IsShareDeviceAudioEnabled);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "EnableOptimizeForSharedVideo", ZoomVideoNodeShareHelperWrap::EnableOptimizeForSharedVideo);
@@ -66,6 +76,9 @@ void InitClassAttribute<ZoomVideoNodeShareHelperWrap >(const v8::Local<v8::Funct
 	NODE_SET_PROTOTYPE_METHOD(tpl, "SendPreprocessedData", ZoomVideoNodeShareHelperWrap::SendPreprocessedData);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "CreateAnnotationHelper", ZoomVideoNodeShareHelperWrap::CreateAnnotationHelper);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "DestroyAnnotationHelper", ZoomVideoNodeShareHelperWrap::DestroyAnnotationHelper);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "SetAnnotationVanishingToolTime", ZoomVideoNodeShareHelperWrap::SetAnnotationVanishingToolTime);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "GetAnnotationVanishingToolTime", ZoomVideoNodeShareHelperWrap::GetAnnotationVanishingToolTime);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "StartShareApplication", ZoomVideoNodeShareHelperWrap::StartShareApplication);
 }
 template<> inline 
 v8::Persistent<v8::Function>* GetConstructor<ZoomVideoNodeShareHelperWrap >() {

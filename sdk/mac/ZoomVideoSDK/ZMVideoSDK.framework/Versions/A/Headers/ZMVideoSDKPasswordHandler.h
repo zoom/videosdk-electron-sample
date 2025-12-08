@@ -1,9 +1,13 @@
-
+/**
+ * @file ZMVideoSDKPasswordHandler.h
+ * @brief This file defines the interface for handling session password input within the Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
 /**
- * @brief Pasword handle interface.
+ * @class ZMVideoSDKPasswordHandler
+ * @brief Provides methods to manage session password entry when joining a session.
  */
 @interface ZMVideoSDKPasswordHandler : NSObject
 

@@ -81,9 +81,9 @@ bool ZUserHelperWrap::MakeManager(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* p
 	} while (false);
 	return bSucc;
 }
-bool ZUserHelperWrap::RevokeManager(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser)
+ZNZoomVideoSDKErrors ZUserHelperWrap::RevokeManager(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser)
 {
-	bool bSucc = false;
+	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
 	do
 	{
 		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDK* pVideoSDK = _g_native_wrap.GetVideoSDKObj();
@@ -93,6 +93,7 @@ bool ZUserHelperWrap::RevokeManager(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser*
 		}
 		if (!_g_native_wrap.IsValidUser(pUser))
 		{
+			err = ZNZoomVideoSDKErrors_Invalid_Parameter;
 			break;
 		}
 		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUserHelper* pUserHelper = pVideoSDK->getUserHelper();
@@ -100,9 +101,9 @@ bool ZUserHelperWrap::RevokeManager(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser*
 		{
 			break;
 		}
-		bSucc = pUserHelper->revokeManager(pUser);
+		err = (ZNZoomVideoSDKErrors)pUserHelper->revokeManager(pUser);
 	} while (false);
-	return bSucc;
+	return err;
 }
 bool ZUserHelperWrap::RemoveUser(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser)
 {

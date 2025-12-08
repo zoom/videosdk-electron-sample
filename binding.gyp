@@ -28,13 +28,13 @@
 		  [
 		  'OS=="mac"',
 		  {
-		      'defines':['__MACOS__'],
+		     'defines':['__MACOS__'],
 		      "xcode_settings":{
                     "DEBUG_INFORMATION_FORMAT": "dwarf-with-dsym",
                     "BUILD_DIR":"<(module_mac)",
                     "OTHER_CPLUSPLUSFLAGS" : [ '-ObjC++', "-std=c++20", "-stdlib=libc++",  '-fvisibility=hidden','-frtti'],
                     "DEPLOYMENT_POSTPROCESSING": "YES",
-        
+  
 	        }
 		  },
 		  ],
@@ -61,7 +61,7 @@
 		},
       {
       'target_name':"<(module_name)",
-      
+
       'conditions':[
       [
 		  'OS=="mac"',
@@ -88,15 +88,16 @@
 			  "./lib/node_add_on/zoom_video_sdk_node_live_transcription_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_share_setting.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_annotation_helper.cpp",
+			  "./lib/node_add_on/zoom_video_sdk_node_rtms_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_v8_to_c.cpp",
-			  
+
 			  "./lib/node_add_on/zoom_video_sdk_node_video_raw_data.cpp",
 			  #"./lib/node_add_on/zoom_instant_node_audio_raw_data.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_rawdata_server_mgr.cpp",
 			   "./lib/node_add_on/raw_data_format.cpp",
 			  "./lib/node_add_on/uv_ipc_common.cpp",
 			  "./lib/node_add_on/raw_data_uv_ipc_server.cpp",
-			  
+
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_sdk_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_session_info_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_helper_wrap_core.cpp",
@@ -115,9 +116,10 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_live_transcription_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_setting_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_annotation_helper_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_rtms_helper_wrap_core.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_napi_util_exporter.cpp",
-			  
-			  
+
+
 			  "./lib/node_add_on/mac/share_info_helper.mm",
 			  ],
 			 'defines':['__MACOS__'],
@@ -146,12 +148,12 @@
                     "DEPLOYMENT_POSTPROCESSING": "YES",
                     # "BUILT_PRODUCTS_DIR":"$(SRCROOT)/../../../../../../Bin/Mac",
 	        }
-			   
+
 		  },
 		  ],
       [
 		  'OS=="linux"',
-		  { 
+		  {
 			  'sources':[
 			  "./lib/node_add_on/electron_zoomvideosdk.pb.cc",
 			  "./lib/node_add_on/zoom_video_sdk_node_addon.cpp",
@@ -224,7 +226,7 @@
 					'VCCLCompilerTool': {
                      'RuntimeLibrary': '2',
                     },
-				  }, 
+				  },
 				},
 		  }, # configurations
 		   'link_settings':{
@@ -249,7 +251,7 @@
 					'VCCLCompilerTool': {
                      'RuntimeLibrary': '2',
                     },
-				  }, 
+				  },
 				},
 		  }, # configurations
 		   'link_settings':{
@@ -285,8 +287,9 @@
 			  "./lib/node_add_on/zoom_video_sdk_node_live_transcription_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_share_setting.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_annotation_helper.cpp",
+			  "./lib/node_add_on/zoom_video_sdk_node_rtms_helper.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_v8_to_c.cpp",
-			  
+
 			  "./lib/node_add_on/zoom_video_sdk_node_video_raw_data.cpp",
 			  #"./lib/node_add_on/zoom_video_sdk_node_audio_raw_data.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_node_rawdata_server_mgr.cpp",
@@ -294,7 +297,7 @@
 			  "./lib/node_add_on/uv_ipc_common.cpp",
 			  "./lib/node_add_on/raw_data_uv_ipc_server.cpp",
 			  "./lib/node_add_on/zoom_video_sdk_napi_util_exporter.cpp",
-			  
+
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_sdk_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_session_info_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_audio_helper_wrap_core.cpp",
@@ -314,24 +317,25 @@
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_live_transcription_helper_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_share_setting_wrap_core.cpp",
 			  "./lib/node_add_on/node_core/zoom_video_sdk_native_annotation_helper_wrap_core.cpp",
+			  "./lib/node_add_on/node_core/zoom_video_sdk_native_rtms_helper_wrap_core.cpp",
 		  ],
 			  'defines':['BUILD_WIN'],
-			  
+
 			   'include_dirs':[
 			   "./lib/node_add_on/protobuf_src",
 			   "./lib/node_add_on",
 			   "./lib/node_add_on/export_h",
 				],
 		  }
-		  
+
 		  ]
 
 		 ]
       },
-	  
+
 	   {
 	 'target_name':"<(render_module_name)",
-	 
+
 	 'conditions':[
 	  [
 		  'OS=="mac"',
@@ -369,7 +373,7 @@
                     "OTHER_LDFLAGS": [ "-stdlib=libc++"],
                     "DEPLOYMENT_POSTPROCESSING": "YES",
 	        }
-			   
+
 		  },
 		  ],
       [
@@ -408,7 +412,7 @@
 					'VCCLCompilerTool': {
                      'RuntimeLibrary': '2',
                     },
-				  }, 
+				  },
 				},
 		  }, # configurations
 		  'link_settings':{
@@ -433,7 +437,7 @@
 					'VCCLCompilerTool': {
                      'RuntimeLibrary': '2',
                     },
-				  }, 
+				  },
 				},
 		  }, # configurations
 		  'link_settings':{
@@ -449,23 +453,23 @@
 		  {
 		  "dependencies": [ "<(napi_util_module_name)" ],
 		  "sources":[
-			
+
 			  "./lib/node_add_on/zoom_video_sdk_node_libuv_addon.cpp",
 			  "./lib/node_add_on/uv_ipc_common.cpp",
 			  "./lib/node_add_on/electron_zoomvideosdk.pb.cc",
 			  "./lib/node_add_on/zoom_video_sdk_napi_util_exporter.cpp",
 		  ],
-			  
-			'defines':['BUILD_WIN'],  
-			 
+
+			'defines':['BUILD_WIN'],
+
 			   'include_dirs':[
 			   "./lib/node_add_on/protobuf_src",
 			   "./lib/node_add_on",
 			   "./lib/node_add_on/export_h",
 				],
-		  
+
 		  }
-		  
+
 		  ]
 	 ]
 	 },
@@ -478,7 +482,7 @@
 		'OS=="win" and target_arch=="ia32"',
 		{
 		"dependencies": [ "<(module_name)", "<(render_module_name)" ],
-			"copies": 
+			"copies":
 			[
 				{
 					"files": [ "<(PRODUCT_DIR)/zoomvideosdk.node", "<(PRODUCT_DIR)/zoomvideosdk.lib", "<(PRODUCT_DIR)/zoomvideosdk_libuv.node", "<(PRODUCT_DIR)/zoomvideosdk_libuv.lib" ],
@@ -491,7 +495,7 @@
 		'OS=="win" and target_arch=="x64"',
 		{
 		"dependencies": [ "<(module_name)", "<(render_module_name)" ],
-			"copies": 
+			"copies":
 			[
 				{
 					"files": [ "<(PRODUCT_DIR)/zoomvideosdk.node", "<(PRODUCT_DIR)/zoomvideosdk.lib", "<(PRODUCT_DIR)/zoomvideosdk_libuv.node", "<(PRODUCT_DIR)/zoomvideosdk_libuv.lib" ],
@@ -500,7 +504,7 @@
 			]
 		}
 		]
-	  ]	
+	  ]
     }
       ]
 }

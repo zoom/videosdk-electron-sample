@@ -107,7 +107,7 @@ ZNZoomVideoSDKErrors ZAnnotationHelperWrap::GetToolColor(unsigned long& zn_color
 		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* m_AnnotationHelper = _g_native_wrap.GetShareHelperWrap().GetAnnotationHelper();
 		if (m_AnnotationHelper)
 		{
-			unsigned long sdk_toolColor;
+			unsigned long sdk_toolColor = 0;
 			err = (ZNZoomVideoSDKErrors)m_AnnotationHelper->getToolColor(sdk_toolColor);
 			if (ZNZoomVideoSDKErrors_Success == err)
 			{
@@ -140,7 +140,7 @@ ZNZoomVideoSDKErrors ZAnnotationHelperWrap::GetToolWidth(long& zn_lineWidth)
 		ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKAnnotationHelper* m_AnnotationHelper = _g_native_wrap.GetShareHelperWrap().GetAnnotationHelper();
 		if (m_AnnotationHelper)
 		{
-			long sdk_toolWidth;
+			long sdk_toolWidth = 0;
 			err = (ZNZoomVideoSDKErrors)m_AnnotationHelper->getToolWidth(sdk_toolWidth);
 			if (ZNZoomVideoSDKErrors_Success == err)
 			{

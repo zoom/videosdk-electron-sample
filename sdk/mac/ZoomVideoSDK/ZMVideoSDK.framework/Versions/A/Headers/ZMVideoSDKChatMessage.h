@@ -1,3 +1,7 @@
+/**
+ * @file ZMVideoSDKChatMessage.h
+ * @brief Interface for chat message object in Zoom Video SDK.
+ */
 
 
 #import <Foundation/Foundation.h>
@@ -5,7 +9,8 @@
 NS_ASSUME_NONNULL_BEGIN
 @class ZMVideoSDKUser;
 /**
- * @brief Chat message interface.
+ * @class ZMVideoSDKChatMessage
+ * @brief Represents a chat message within a session.
  */
 @interface ZMVideoSDKChatMessage : NSObject
 

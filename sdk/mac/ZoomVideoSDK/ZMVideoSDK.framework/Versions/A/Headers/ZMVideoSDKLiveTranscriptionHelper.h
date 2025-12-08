@@ -1,10 +1,17 @@
+/**
+ * @file ZMVideoSDKLiveTranscriptionHelper.h
+ * @brief This file defines interfaces related to live transcription.
+ */
 
 
 #import <Foundation/Foundation.h>
 #import <ZMVideoSDK/ZMVideoSDKUserHelper.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ * @class ZMVideoSDKLiveTranscriptionLanguage
+ * @brief Represents a language used in live transcription.
+ */
 @interface ZMVideoSDKLiveTranscriptionLanguage : NSObject
 
 /**
@@ -20,8 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+
 /**
- * @brief Live transcription message interface.
+ * @class ZMVideoSDKLiveTranscriptionMessageInfo
+ * @brief Represents a single message information of live transcription.
  */
 @interface ZMVideoSDKLiveTranscriptionMessageInfo : NSObject
 /**
@@ -56,16 +65,21 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/**
+ * @class ZMVideoSDKLiveTranscriptionHelper
+ * @brief Provides methods for controlling and interacting with live transcription.
+ */
 @interface ZMVideoSDKLiveTranscriptionHelper : NSObject
 
 /**
  * @brief Query if the user can start live transcription.
+ * @return YES if the user can start live transcription. NO otherwise.
  */
 - (BOOL)canStartLiveTranscription;
 
 /**
  * @brief Get the current live transcription status.
- * @return If the function succeeds, the return value is the current live transcription status. For more details refer to \link ZMVideoSDKLiveTranscriptionStatus \endlink.
+ * @return If the function succeeds, the return value is the current live transcription status.
  */
 - (ZMVideoSDKLiveTranscriptionStatus)getLiveTranscriptionStatus;
 
@@ -98,6 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the spoken language of the current user.
+ * @return The spoken language of the current user. Otherwise returns nil.
  */
 - (ZMVideoSDKLiveTranscriptionLanguage* _Nullable)getSpokenLanguage;
 
@@ -116,11 +131,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the translation language of the current user.
+ * @return The translation language of the current user. Otherwise returns nil.
  */
 - (ZMVideoSDKLiveTranscriptionLanguage* _Nullable)getTranslationLanguage;
 
 /**
  * @brief Enable or disable to receive original and translated content. If you enable this feature, you must start live transcription.
+ * @param enable Set to YES to receive both spoken language content. NO to disable.
  * @return If the function succeeds, the return value is ZMVideoSDKErrors_Success. Otherwise not.
  */
 - (ZMVideoSDKErrors)enableReceiveSpokenLanguageContent:(BOOL)enable;

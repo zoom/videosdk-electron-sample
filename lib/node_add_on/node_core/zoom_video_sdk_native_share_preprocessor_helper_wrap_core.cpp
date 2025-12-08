@@ -78,7 +78,7 @@ void ZSharePreprocessorHelperWrap::onShareStopped()
 	fn->Call(context, global, argc, argv);
 }
 
-ZNZoomVideoSDKErrors ZSharePreprocessorHelperWrap::StartShareWithPreprocessing(ZNZoomVideoSDKSharePreprocessType zn_type, ZoomSTRING zn_handle, ZoomSTRING zn_monitorid, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor* preprocessor)
+ZNZoomVideoSDKErrors ZSharePreprocessorHelperWrap::StartShareWithPreprocessing(ZNZoomVideoSDKSharePreprocessType zn_type, ZoomSTRING zn_handle, ZoomSTRING zn_monitorid, uint32_t processID, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKSharePreprocessor* preprocessor)
 {
 	ZNZoomVideoSDKErrors err = ZNZoomVideoSDKErrors_Internal_Error;
 	do
@@ -113,6 +113,12 @@ ZNZoomVideoSDKErrors ZSharePreprocessorHelperWrap::StartShareWithPreprocessing(Z
 			param.handle = (void *)windowid;
 #endif  
 		}
+#if defined(__MACOS__)
+		else if (ZNZoomVideoSDKSharePreprocessType_process == zn_type)
+		{
+			param.processID = processID;
+		}
+#endif
 
 		err = (ZNZoomVideoSDKErrors)pShareHelper->startShareWithPreprocessing(param, preprocessor);
 	} while (false);

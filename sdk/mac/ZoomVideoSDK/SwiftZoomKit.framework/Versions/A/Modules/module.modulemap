@@ -1,0 +1,11 @@
+framework module SwiftZoomKit {
+  umbrella header "SwiftZoomKit.h"
+  export *
+
+  module * { export * }
+}
+
+module SwiftZoomKit.Swift {
+  header "SwiftZoomKit-Swift.h"
+  requires objc
+}

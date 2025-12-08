@@ -61,14 +61,15 @@ public:
 #if (!defined __linux)
 	static void GetRemoteControlRequestHandler(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void GetRemoteCtrlHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void GetRTMSHelper(const v8::FunctionCallbackInfo<v8::Value>& args);
 #endif
 
 	static void SetNodeAddonCallbacks(const v8::FunctionCallbackInfo<v8::Value>& args);
-	
+
 
 	static v8::Persistent<v8::Function> constructor;
 };
-template<> inline 
+template<> inline
 void InitClassAttribute<ZoomVideoNodeWrap >(const v8::Local<v8::FunctionTemplate>& tpl, v8::Isolate* isolate)
 {
 	tpl->SetClassName(v8::String::NewFromUtf8(
@@ -111,12 +112,13 @@ void InitClassAttribute<ZoomVideoNodeWrap >(const v8::Local<v8::FunctionTemplate
 #if (!defined __linux)
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetRemoteControlRequestHandler", ZoomVideoNodeWrap::GetRemoteControlRequestHandler);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "GetRemoteCtrlHelper", ZoomVideoNodeWrap::GetRemoteCtrlHelper);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "GetRTMSHelper", ZoomVideoNodeWrap::GetRTMSHelper);
 #endif
 
 	NODE_SET_PROTOTYPE_METHOD(tpl, "SetNodeAddonCallbacks", ZoomVideoNodeWrap::SetNodeAddonCallbacks);
 
 }
-template<> inline 
+template<> inline
 v8::Persistent<v8::Function>* GetConstructor<ZoomVideoNodeWrap >() {
 	return &ZoomVideoNodeWrap::constructor;
 }

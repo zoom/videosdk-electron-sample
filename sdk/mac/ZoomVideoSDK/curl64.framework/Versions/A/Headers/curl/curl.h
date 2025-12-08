@@ -637,6 +637,9 @@ typedef enum {
   CURLE_UNRECOVERABLE_POLL,      /* 99 - poll/select returned fatal error */
   CURLE_TOO_LARGE,               /* 100 - a value/data met its maximum */
   CURLE_ECH_REQUIRED,            /* 101 - ECH tried but failed */
+//@@zoom_changes_insert_point_begin
+  CURLE_DNS_RESOLVE_TIMEOUT = 998, /* 998 - timed out resolving the host's name */
+//@@zoom_changes_insert_point_end
   CURL_LAST /* never use! */
 } CURLcode;
 
@@ -2231,6 +2234,9 @@ typedef enum {
 //@@zoom_changes_insert_point_begin
   /* Enable EPA with OpenSSL for windows */
   CURLOPT(CURLOPT_ENABLE_EPA_OPENSSL, CURLOPTTYPE_LONG, 327),
+
+  /* DNS resolution timeout in milliseconds */
+  CURLOPT(CURLOPT_DNS_TIMEOUT_MS, CURLOPTTYPE_LONG, 328),
 //@@zoom_changes_insert_point_end
 
   CURLOPT_LASTENTRY /* the last unused */

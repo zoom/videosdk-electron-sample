@@ -1,8 +1,7 @@
-/*!
-* \file zoom_video_sdk_livestream_helper_interface.h
-* \brief live stream helper
-*
-*/
+/**
+ * @file zoom_video_sdk_livestream_helper_interface.h
+ * @brief live stream helper
+ */
 
 #ifndef _ZOOM_VIDEO_SDK_LIVESTREAM_HELPER_INTERFACE_H_
 #define _ZOOM_VIDEO_SDK_LIVESTREAM_HELPER_INTERFACE_H_
@@ -10,38 +9,75 @@
 #include "zoom_video_sdk_vector_interface.h"
 
 BEGIN_ZOOM_VIDEO_SDK_NAMESPACE
-/// \brief Live stream helper interface.
-///
+/**
+ * @class IZoomVideoSDKLiveStreamHelper
+ * @brief Live stream helper interface.
+ */
 class IZoomVideoSDKLiveStreamHelper
 {
 public:
-    
-	/// \brief Start live stream.
-    /// \param streamUrl The live stream url.
-    /// \param key The live stream key.
-    /// \param broadcastUrl The live stream broadcast url.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Start live stream.
+     * @param streamUrl The live stream url.
+     * @param key The live stream key.
+     * @param broadcastUrl The live stream broadcast url.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 * @deprecated This method is deprecated. Use startLiveStream(const ZoomVideoSDKLiveStreamParams& param) instead.
+	 */
     virtual ZoomVideoSDKErrors startLiveStream(const zchar_t* streamUrl, const zchar_t* key, const zchar_t* broadcastUrl) = 0;
-    
-	/// \brief Stop live stream.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
-    virtual ZoomVideoSDKErrors stopLiveStream() = 0;
-    
-	/// \brief Determin if can start the live stream.
-    /// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-    ///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
-    virtual ZoomVideoSDKErrors canStartLiveStream() = 0;
-};
 
-/// \brief incoming live stream status.
-///
+	/**
+	 * @brief Starts a live stream for the current session using the specified parameters. See ZoomVideoSDKLiveStreamParams.
+     * @param param The live stream parameters containing stream URL, key, broadcast URL, and settings.
+     * @return {@link ZoomVideoSDKErrors#ZoomVideoSDKErrors_Success} If the operation succeeds; otherwise, the method failed.
+	 */
+    virtual ZoomVideoSDKErrors startLiveStream(const ZoomVideoSDKLiveStreamParams& param) = 0;
+	/**
+	 * @brief Stop live stream.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
+    virtual ZoomVideoSDKErrors stopLiveStream() = 0;
+	
+    /**
+	 * @brief Determin if can start the live stream.
+     * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
+    virtual ZoomVideoSDKErrors canStartLiveStream() = 0;
+
+	/**
+	 * @brief Gets the current live stream settings.
+     * @param setting The parameter to store the current live stream settings
+     * @return {@link ZoomVideoSDKErrors#ZoomVideoSDKErrors_Success} If the operation succeeds; otherwise, the method failed.
+	 */
+    virtual ZoomVideoSDKErrors getCurrentLiveStreamSetting(ZoomVideoSDKLiveStreamSetting& setting) = 0;
+
+	/**
+	 * @brief Updates the live stream settings.
+     * @param setting The new live stream settings to apply.
+     * @return {@link ZoomVideoSDKErrors#ZoomVideoSDKErrors_Success} If the operation succeeds; otherwise, the method failed.
+     * @note If the same settings as the previous call are passed, this function will return ZoomVideoSDKErrors_Wrong_Usage.
+	 */
+    virtual ZoomVideoSDKErrors updateLiveStreamSetting(const ZoomVideoSDKLiveStreamSetting& setting) = 0;
+
+	/**
+	 * @brief Checks if the current user has permission to get or update live stream settings.
+     * @return true if the user can get or update live stream settings; otherwise, the method failed.
+     * @note The live stream must be started, and only the user who started the live stream can modify the setting.
+	 */
+    virtual bool canGetOrUpdateLiveStreamSetting() = 0;
+
+};
+/**
+ * @brief incoming live stream status.
+ */
 struct IncomingLiveStreamStatus
 {
-	const zchar_t* strStreamKeyID; ///<The incoming live stream ID
-	bool isRTMPConnected; ///<Is the streaming software(such as OBS) connected to the Zoom platform? If false: no, if true: yes
-	bool isStreamPushed;  ///<Has the video stream been pushed to the session? If false: no, if true: yes
+	 /** The incoming live stream ID */
+	const zchar_t* strStreamKeyID; 
+	 /** Is the streaming software(such as OBS) connected to the Zoom platform? If false: no, if true: yes */
+	bool isRTMPConnected; 
+	 /** Has the video stream been pushed to the session? If false: no, if true: yes */
+	bool isStreamPushed;  
 
 	IncomingLiveStreamStatus()
 	{
@@ -50,40 +86,46 @@ struct IncomingLiveStreamStatus
 		isStreamPushed = false;
 	}
 };
-
-/// \brief Incoming live stream helper interface.
-///	Note: Currently only supports one stream.
+/**
+ * @class IZoomVideoSDKIncomingLiveStreamHelper
+ * @brief Incoming live stream helper interface.
+ * @note Currently only supports one stream.
+ */
 class IZoomVideoSDKIncomingLiveStreamHelper
 {
 public:
-
-	/// \brief Bind incoming live stream with a stream key ID.
-	/// \param strStreamKeyID The stream key ID to bind.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	/**
+	 * @brief Bind incoming live stream with a stream key ID.
+	 * @param strStreamKeyID The stream key ID to bind.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors bindIncomingLiveStream(const zchar_t* strStreamKeyID) = 0;
-
-	/// \brief Unbind the bound incoming live stream.
-	/// \param strStreamKeyID The stream key ID to unbind.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+	 * @brief Unbind the bound incoming live stream.
+	 * @param strStreamKeyID The stream key ID to unbind.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors unbindIncomingLiveStream(const zchar_t* strStreamKeyID) = 0;
-
-	/// \brief Get the status of bound streams.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+	 * @brief Get the status of bound streams.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors getIncomingLiveStreamStatus() = 0;
-
-	/// \brief Start the bound stream as a special participant.
-	/// \param strStreamKeyID The stream key ID to start.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+	 * @brief Start the bound stream as a special participant.
+	 * @param strStreamKeyID The stream key ID to start.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors startIncomingLiveStream(const zchar_t* strStreamKeyID) = 0;
-
-	/// \brief Stop the bound stream as a special participant.
-	/// \param strStreamKeyID The stream key ID to stop.
-	/// \return If the function succeeds, the return value is ZoomVideoSDKErrors_Success.
-	///Otherwise failed. To get extended error information, see \link ZoomVideoSDKErrors \endlink enum.
+	
+	/**
+	 * @brief Stop the bound stream as a special participant.
+	 * @param strStreamKeyID The stream key ID to stop.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
+	 */
 	virtual ZoomVideoSDKErrors stopIncomingLiveStream(const zchar_t* strStreamKeyID) = 0;
 };
 

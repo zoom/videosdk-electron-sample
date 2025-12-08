@@ -27,6 +27,10 @@ message VideoSDKUser {
 	optional string userReference = 21;
 	optional bool isVideoSpotLighted = 22;
 	optional bool isIncomingLiveStreamUser = 23;
+	optional int32 audioNetworkLevel = 24; // the network quality level of audio for the user.
+	optional int32 videoNetworkLevel = 25; // the network quality level of video for the user.
+	optional int32 shareNetworkLevel = 26; // the network quality level of share for the user.
+	optional int32 overallNetworkLevel = 27; // The overall network quality level of the user.
 }
 
 message UserList{
@@ -39,6 +43,7 @@ message ShareAction{
 	optional int32 subscribeFailReason = 3; // ZNZoomVideoSDKSubscribeFailReason
 	optional bool isAnnotationPrivilegeEnabled = 4;
 	optional int32 shareType = 5; // ZNZoomVideoSDKShareType
+	optional int32 shareCapturePauseReason = 6; // ZNZoomVideoSDKShareCapturePauseReason
 }
 
 message ShareActionList{
@@ -106,6 +111,10 @@ message IncomingLiveStreamStatusList{
 	repeated IncomingLiveStreamStatus status = 1;
 }
 
+message UnsharingWindow{
+	optional uint64 window = 1;
+}
+
 // CallbackBody
 message CallbackBody{
 	message onErrorParams {
@@ -144,8 +153,23 @@ message CallbackBody{
 		optional ShareAction shareAction = 2;
 	}
 
+	message onUnsharingWindowsChangedParams{
+		repeated UnsharingWindow windowsList = 1;
+		optional VideoSDKUser user = 2;
+		optional ShareAction shareAction = 3;
+	}
+
 	message onFailedToStartShareParams{
 		optional VideoSDKUser user = 1;
+	}
+
+	message onShareSettingChangedParams{
+		optional int32 setting = 1;
+	}
+
+	message onShareNetworkStatusChangedParams{
+		optional int32 shareNetworkStatus = 1;
+		optional bool isSendingShare = 2;
 	}
 
 	message onLiveStreamStatusChangedParams{
@@ -153,15 +177,15 @@ message CallbackBody{
 	}
 
 	message onUserHostChangedParams{
-		optional VideoSDKUser user = 1; 
+		optional VideoSDKUser user = 1;
 	}
-	
+
 	message onUserNameChangedParams{
-		optional VideoSDKUser user = 1; 
+		optional VideoSDKUser user = 1;
 	}
-	
+
 	message onUserManagerChangedParams{
-		optional VideoSDKUser user = 1; 
+		optional VideoSDKUser user = 1;
 	}
 
 	message onUserActiveAudioChangedParams{
@@ -179,7 +203,7 @@ message CallbackBody{
 		optional bool isSelfSend = 8;
 		optional string messageID = 9;
 	}
-	
+
 	message onChatMsgDeleteNotificationParams{
 		optional string messageID = 1;
 		optional int32 deleteBy = 2;
@@ -197,16 +221,16 @@ message CallbackBody{
 		optional int64 recv_handle = 1;
 		optional int32 status = 2;
 	}
-	
+
 	message onCommandReceivedParams{
 		optional VideoSDKUser pSender = 1;
 		optional string strCmd = 2;
 	}
-	
+
 	message onCommandChannelConnectResultParams{
 		optional bool isSuccess = 1;
 	}
-	
+
 	message onInviteByPhoneStatusParams{
 		optional int32 status = 1;
 		optional int32 reason = 2;
@@ -215,12 +239,12 @@ message CallbackBody{
 	message onCloudRecordingStatusParams{
 		optional int32 status = 1;
 	}
-	
+
 	message onCameraControlRequestResultParams{
 		optional VideoSDKUser pUser = 1;
 		optional bool isApproved = 2;
 	}
-	
+
 	message onCameraControlRequestReceivedParams{
 		optional VideoSDKUser pUser = 1;
 		optional int32 requestType = 2;
@@ -240,23 +264,40 @@ message CallbackBody{
 	message onRemoteControlServiceInstallResultParams{
 		optional bool bSuccess = 1;
 	}
-	
+
 	message onMultiCameraStreamStatusChangedParams{
 		optional int32 status = 1;
 		optional VideoSDKUser user = 2;
 		optional int64 cameraStreamID = 3;
 	}
-	
+
 	message onMicSpeakerVolumeChangedParams{
 		optional uint32 MicVolume = 1;
 		optional uint32 SpeakerVolume = 2;
 	}
-	
+
+	message onAudioLevelChangedParams{
+		optional uint32 level = 1;
+		optional bool bAudioSharing = 2;
+		optional VideoSDKUser user = 3;
+	}
+
+	message onUserNetworkStatusChangedParams {
+		optional uint32 type = 1;
+		optional uint32 level = 2;
+		optional VideoSDKUser user = 3;
+	}
+
+	message onUserOverallNetworkStatusChangedParams {
+		optional uint32 level = 1;
+		optional VideoSDKUser user = 2;
+	}
+
 	message onAudioDeviceStatusChangedParams{
 		optional int32 type = 1;
 		optional int32 status = 2;
 	}
-	
+
 	message onTestMicStatusChangedParams{
 		optional int32 status = 1;
 	}
@@ -264,11 +305,12 @@ message CallbackBody{
 	message onLiveTranscriptionStatusParams{
 		optional int32 status = 1;
 	}
+
 	message onLiveTranscriptionMsgErrorParams {
 		optional LTTLanguage spokenLanguage = 1;
 		optional LTTLanguage transcriptLanguage = 2;
 	}
-	
+
 	message liveTranscriptionMsgInfoParams{
 		optional int64 timeStamp = 1;
 		optional string messageID = 2;
@@ -320,18 +362,28 @@ message CallbackBody{
 		optional string strStreamKeyID = 2;
 	}
 
+	message onRealTimeMediaStreamsStatusParams {
+		optional uint32 status = 1;
+	}
+
+	message onRealTimeMediaStreamsFailParams {
+		optional uint32 failReason = 1;
+	}
+
 	optional int32 msgtype = 1; // 0:onSessionJoin 1:onSessionLeave 2:onError 3:onUserJoin 4:onUserLeave 5:onUserVideoStatusChanged  6:onUserAudioStatusChanged 7:onUserShareStatusChanged
 								// 8:onLiveStreamStatusChanged 9:onChatNewMessageNotify 10:onUserHostChanged 11:onUserActiveAudioChanged 12:onSessionNeedPassword 13:onSessionPasswordWrong
 								// 14:onInitialize 15:onPropertyChange 16:onStartSend 17:onStopSend 18:onUninitialized 19:onRawDataStatusChanged 20:onUserManagerChanged
 								// 21:onUserNameChanged 22:onCommandReceived 23:onCloudRecordingStatus 24:onCameraControlRequestResult 25:onCameraControlRequestReceived 26:onCommandChannelConnectResult
-								// 27:onHostAskUnmute 28:onInviteByPhoneStatus 29:onMultiCameraStreamStatusChanged 30:onMicSpeakerVolumeChanged 
+								// 27:onHostAskUnmute 28:onInviteByPhoneStatus 29:onMultiCameraStreamStatusChanged 30:onMicSpeakerVolumeChanged
 								// 31:onAudioDeviceStatusChanged 32:onTestMicStatusChanged 33:onSelectedAudioDeviceChanged
 								// 34:onLiveTranscriptionStatus 36:onLiveTranscriptionMsgError
 								// 37:onChatMsgDeleteNotification 38:onLiveTranscriptionMsgInfoReceived 39:onOriginalLanguageMsgReceived
 								// 40:onCalloutJoinSuccess 41:onShareCursorDataReceived
 								// 42:onRemoteControlStatus 43:onRemoteControlRequestReceived 44:onRemoteControlServiceInstallResult 45:onSpotlightVideoChanged
 								// 46:onBindIncomingLiveStreamResponse 47:onUnbindIncomingLiveStreamResponse 48:onIncomingLiveStreamStatusResponse 49:onStartIncomingLiveStreamResponse 50:onStopIncomingLiveStreamResponse
-								// 51:onFailedToStartShare 52:onCameraListChanged 53:onShareContentChanged 54:onShareContentSizeChanged 55:onCapturedRawDataReceived 56:onCapturedShareStopped
+								// 51:onFailedToStartShare 52:onCameraListChanged 53:onShareContentChanged 54:onShareContentSizeChanged 55:onCapturedRawDataReceived 56:onCapturedShareStopped 57:onShareSettingChanged
+								// 58:onShareNetworkStatusChanged 59:onAudioLevelChanged 60:onUserNetworkStatusChanged 61:onUserOverallNetworkStatusChanged 62:onRealTimeMediaStreamsStatus 63:onRealTimeMediaStreamsFail
+								// 64:onUnsharingWindowsChanged
 	optional onErrorParams onErrorParam = 2;
 	optional onUserJoinParams onUserJoinParam = 3;
 	optional onUserLeaveParams onUserLeaveParam = 4;
@@ -376,11 +428,20 @@ message CallbackBody{
 	optional onFailedToStartShareParams onFailedToStartShareParam = 46;
 	optional onShareContentChangedParams onShareContentChangedParam = 47;
 	optional onShareContentSizeChangedParams onShareContentSizeChangedParam = 48;
+	optional onShareSettingChangedParams onShareSettingChangedParam = 49;
+	optional onShareNetworkStatusChangedParams onShareNetworkStatusChangedParam = 50;
+	optional onAudioLevelChangedParams onAudioLevelChangedParam = 51;
+	optional onUserNetworkStatusChangedParams onUserNetworkStatusChangedParam = 52;
+	optional onUserOverallNetworkStatusChangedParams onUserOverallNetworkStatusChangedParam = 53;
+	optional onRealTimeMediaStreamsStatusParams onRealTimeMediaStreamsStatusParam = 54;
+	optional onRealTimeMediaStreamsFailParams onRealTimeMediaStreamsFailParam = 55;
+	optional onUnsharingWindowsChangedParams onUnsharingWindowsChangedParam = 56;
 }
 
 message CreateVideoSDKObjParam {
 	optional string path = 1; // path
 }
+
 message VideoSDKInitParams {
 	optional string domain = 1; // param.domain
 	optional string logFilePrefix = 2; // param.logFilePrefix
@@ -389,7 +450,10 @@ message VideoSDKInitParams {
 	optional int32 zn_videoRawDataMemoryMode = 5; // param.zn_videoRawDataMemoryMode
 	optional int32 zn_shareRawDataMemoryMode = 6; // param.zn_shareRawDataMemoryMode
 	optional string speakerTestFilePath = 7;
+	optional bool disableKeychainAccess = 8;
+	optional bool permonitorAwarenessMode = 9;
 }
+
 message VideoSDKSessionContext {
 	optional string sessionName = 1; // zn_sessionContext.sessionName
 	optional string sessionPassword = 2; // zn_sessionContext.sessionPassword
@@ -464,6 +528,12 @@ message StartShareScreenParams {
 	optional bool isOptimizeForSharedVideo = 3;
 }
 
+message StartShareApplicationParams {
+	optional uint32 processID = 1;
+	optional bool isWithDeviceAudio = 2;
+	optional bool isOptimizeForSharedVideo = 3;
+}
+
 message LockShareParams {
 	optional bool zn_bLock = 1; // zn_bLock
 }
@@ -530,7 +600,7 @@ message SubscribeParams {
 	optional VideoSDKUser zn_user = 1; // zn_user
 	optional int32 zn_type = 2; // zn_type
 	optional int64 zn_recv_handle = 3; // zn_recv_handle
-	optional int32 zn_resolution = 4; 
+	optional int32 zn_resolution = 4;
 }
 
 message UnSubscribeParams {
@@ -624,10 +694,24 @@ message GetPhoneSupportCountryList {
 	repeated PhoneSupportCountryInfos PhoneSupportCountryInfo = 1;
 }
 
+message SessionDialInNumbersInfos {
+	optional string countryID = 1;
+	optional string countryName = 2;
+	optional string countryCode = 3;
+	optional string number = 4;
+	optional string displayNumber = 5;
+	optional int32 type = 6;
+	optional bool isDedicateID = 7;
+}
+
+message GetSessionDialInNumbersList {
+	repeated SessionDialInNumbersInfos SessionDialInNumbersInfo = 1;
+}
+
 message InviteByPhoneParams {
 	optional string countryCode = 1;
 	optional string phoneNumber = 2;
-	optional string name = 3;	
+	optional string name = 3;
 }
 
 message InvitePhoneUserParams {
@@ -641,18 +725,23 @@ message InvitePhoneUserParams {
 message LocalCameraCtrlTurnLeftParams {
 	optional uint32 range = 1;
 }
+
 message LocalCameraCtrlTurnRightParams {
 	optional uint32 range = 1;
 }
+
 message LocalCameraCtrlTurnUpParams {
 	optional uint32 range = 1;
 }
+
 message LocalCameraCtrlTurnDownParams {
 	optional uint32 range = 1;
 }
+
 message LocalCameraCtrlZoomInParams {
 	optional uint32 range = 1;
 }
+
 message LocalCameraCtrlZoomOutParams {
 	optional uint32 range = 1;
 }
@@ -669,22 +758,27 @@ message RemoteCameraCtrlTurnLeftParams {
 	optional uint32 range = 1;
 	optional VideoSDKUser user = 2;
 }
+
 message RemoteCameraCtrlTurnRightParams {
 	optional uint32 range = 1;
 	optional VideoSDKUser user = 2;
 }
+
 message RemoteCameraCtrlTurnUpParams {
 	optional uint32 range = 1;
-	optional VideoSDKUser user = 2; 
+	optional VideoSDKUser user = 2;
 }
+
 message RemoteCameraCtrlTurnDownParams {
 	optional uint32 range = 1;
 	optional VideoSDKUser user = 2;
 }
+
 message RemoteCameraCtrlZoomInParams {
 	optional uint32 range = 1;
 	optional VideoSDKUser user = 2;
 }
+
 message RemoteCameraCtrlZoomOutParams {
 	optional uint32 range = 1;
 	optional VideoSDKUser user = 2;
@@ -695,49 +789,64 @@ message SetVideoQualityPreferenceParams {
 	optional uint32 minimum_frame_rate = 2;
 	optional uint32 maximum_frame_rate = 3;
 }
+
 message SetSuppressBackgroundNoiseLevelParams {
 	optional int32 level = 1;
 }
+
 message SetEchoCancellationLevelParams {
 	optional int32 level = 1;
 }
+
 message EnableMicOriginalInputParams {
 	optional bool bEnable = 1;
 }
+
 message EnableHighFidelityMusicModeParams {
 	optional bool bEnable = 1;
 }
+
 message EnableEchoCancellationParams {
 	optional bool bEnable = 1;
 }
+
 message EnableStereoAudioParams {
 	optional bool bEnable = 1;
 }
+
 message StartMicTestRecordingParams {
 	optional string deviceID = 1;
 }
+
 message StartSpeakerTestParams {
 	optional string deviceID = 1;
 }
+
 message SetTimerIntervalParams {
 	optional uint32 timerInterval = 1;
 }
+
 message EnableMultiStreamVideoParams {
 	optional string deviceID = 1;
 }
+
 message DisableMultiStreamVideoParams {
 	optional string deviceID = 1;
 }
+
 message StartVideoPreviewParams {
 	optional int64 zn_recv_handle = 1;
 	optional string cameraDeviceID = 2;
 }
+
 message StopVideoPreviewParams {
 	optional int64 zn_recv_handle = 1;
 }
+
 message SpotLightVideoParams {
 	optional VideoSDKUser user = 1;
 }
+
 message UnSpotLightVideoParams {
 	optional VideoSDKUser user = 1;
 }
@@ -749,7 +858,6 @@ message SetSpokenLanguageParams {
 message LTTLanguagesList {
 	repeated LTTLanguage lttLanguageInfo = 1;
 }
-
 
 message SetTranslationLanguageParams {
 	optional int32 languageID = 1;
@@ -796,17 +904,18 @@ message SetScreenCaptureModeParams {
 }
 
 message EnableGreenBorderParams {
-	optional bool bEnable = 1; 
+	optional bool bEnable = 1;
 }
 
 message EnableAdminRemoteControlParams {
-	optional bool bEnable = 1; 
+	optional bool bEnable = 1;
 }
 
 message StartShareWithPreprocessingParams {
 	optional int32 type = 1;
 	optional string handle = 2;
 	optional string monitorID = 3;
+	optional uint32 processID = 4;
 }
 
 message SendPreprocessedDataParams {
@@ -828,4 +937,9 @@ message SetToolWidthParams {
 
 message ClearAnnotationParams {
 	optional int32 clearType = 1;
+}
+
+message SetAnnotationVanishingToolTimeParams {
+	optional uint32 displayTime = 1;
+	optional uint32 vanishingTime = 2;
 }

@@ -1,9 +1,17 @@
-//
+/**
+ * @file ZMVideoSDKNetworkConnectionHelper.h
+ * @brief This file provides classes and methods to manage proxy configuration and SSL certificate information within the Zoom Video SDK.
+ */
+
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * @class ZMVideoSDKProxySettings
+ * @brief Represents the proxy configuration settings used for network connections.
+ */
 @interface ZMVideoSDKProxySettings : NSObject
 
 /**
@@ -17,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL autoDetect;
 @end
 
+
+/**
+ * @class ZMVideoSDKProxySettingHandler
+ * @brief Handles proxy authentication input and provides metadata about the proxy connection.
+ */
 @interface ZMVideoSDKProxySettingHandler : NSObject
 
 /**
@@ -48,6 +61,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+/**
+ * @class ZMVideoSDKSSLCertificateInfo
+ * @brief Provides details about the SSL certificate used for secure connections.
+ */
 @interface ZMVideoSDKSSLCertificateInfo : NSObject
 
 /**
@@ -72,6 +90,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+/**
+ * @class ZMVideoSDKNetworkConnectionHelper
+ * @brief A helper class used to configure proxy settings for SDK network connections.
+ */
 @interface ZMVideoSDKNetworkConnectionHelper : NSObject
 
 /**

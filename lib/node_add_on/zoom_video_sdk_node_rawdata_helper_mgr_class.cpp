@@ -35,6 +35,10 @@ void ZoomVideoNodeUtilityHelper::ConvertSDKUserToProtoUser(ZOOM_VIDEO_SDK_NAMESP
 		pProtoUser->set_audiotype((int)pSdkUser->getAudioStatus().audioType);
 		pProtoUser->set_isaudiomuted(pSdkUser->getAudioStatus().isMuted);
 		pProtoUser->set_isaudiotalking(pSdkUser->getAudioStatus().isTalking);
+		pProtoUser->set_audionetworklevel((int)pSdkUser->getNetworkLevel(ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKDataType_Audio));
+		pProtoUser->set_videonetworklevel((int)pSdkUser->getNetworkLevel(ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKDataType_Video));
+		pProtoUser->set_sharenetworklevel((int)pSdkUser->getNetworkLevel(ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKDataType_Share));
+		pProtoUser->set_overallnetworklevel((int)pSdkUser->getOverallNetworkLevel());
 
 		if (pSdkUser->GetVideoPipe())
 		{
@@ -88,6 +92,7 @@ void ZoomVideoNodeUtilityHelper::ConvertSDKShareActionToProtoShareAction(ZOOM_VI
 		pProtoShareAction->set_subscribefailreason((int)pShareAction->getSubscribeFailReason());
 		pProtoShareAction->set_isannotationprivilegeenabled(pShareAction->isAnnotationPrivilegeEnabled());
 		pProtoShareAction->set_sharetype((int)pShareAction->getShareType());
+		pProtoShareAction->set_sharecapturepausereason((int)pShareAction->getShareCapturePauseReason());
 	}
 }
 ZoomVideoNodePipeServerMgr _g_video_pipe_server;

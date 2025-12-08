@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "참가자에게 이야기하려면 Zoom에는 귀하의 마이크에 대한 액세스 권한이 필요합니다.";
+NSCameraUsageDescription = "참가자가 귀하의 모습을 볼 수 있도록 하려면 Zoom에는 귀하의 카메라에 대한 액세스 권한이 필요합니다.";
+NSCalendarsFullAccessUsageDescription= "이벤트를 표시하려면 Zoom Workplace에서 캘린더에 액세스해야 합니다.";
+NSLocalNetworkUsageDescription= "이 프로세스는 Zoom 클라이언트에서 AirPlay 및 피어 투 피어 회의를 활성화하는 데 필요합니다.";
+NSBluetoothAlwaysUsageDescription= "이렇게 하면 Zoom Workplace에서 근처의 Zoom Rooms를 찾을 수 있습니다.";

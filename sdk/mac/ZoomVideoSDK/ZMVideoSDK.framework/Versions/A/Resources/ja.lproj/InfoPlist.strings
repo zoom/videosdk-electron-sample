@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "参加者と会話するには、Zoomにマイクへのアクセス権限が要求されます。";
+NSCalendarsFullAccessUsageDescription= "イベントを表示するには、Zoom Workplace にお使いのカレンダーへのアクセスを許可する必要があります。";
+NSLocalNetworkUsageDescription= "この処理は、Zoom クライアントで AirPlay やピアツーピアのミーティングを有効にするために必要です。";
+NSBluetoothAlwaysUsageDescription= "許可すると Zoom Workplace が近くの Zoom Rooms を検出できるようになります。";
+NSCameraUsageDescription = "参加者に画面を表示するには、Zoomにカメラへのアクセス権限が要求されます。";

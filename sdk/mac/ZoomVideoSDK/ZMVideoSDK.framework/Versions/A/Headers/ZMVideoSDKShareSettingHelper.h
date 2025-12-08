@@ -1,3 +1,7 @@
+/**
+ * @file ZMVideoSDKShareSettingHelper.h
+ * @brief Interface for managing share settings in Zoom Video SDK.
+ */
 
 
 #import <Foundation/Foundation.h>
@@ -6,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Share setting helper interface.
+ * @class ZMVideoSDKShareSettingHelper
+ * @brief Helper class to manage share-related settings.
  */
 @interface ZMVideoSDKShareSettingHelper : NSObject
 
@@ -26,14 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Set the visibility of the green border when sharing the screen.
- * @param  bEnable True indicates to display the green border. False hide.
+ * @param bEnable YES to display the green border. NO to hide.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success, otherwise not.
  */
 - (ZMVideoSDKErrors)enableGreenBorder:(BOOL)bEnable;
 
 /**
  * @brief Determine if the green border is enabled when user shares the screen.
- * @return True indicates enabled. False not.
+ * @return YES if the green border is enabled. Otherwise NO.
  */
 - (BOOL)isGreenBorderEnabled;
 @end

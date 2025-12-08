@@ -1,6 +1,6 @@
 {
   "name": "electron-video-sdk",
-  "version": "2.2.10",
+  "version": "2.4.5",
   "author": "zoom <sdk@zoom.us>",
   "description": "electron-video-sdk-demo",
   "homepage": "https://www.zoom.us",
@@ -15,6 +15,7 @@
     "postuninstall": "electron-builder install-app-deps"
   },
   "main": "background.js",
+  "manifest": "app.manifest",
   "dependencies": {
     "@electron/remote": "^2.0.5",
     "electron": "^33.0.0",

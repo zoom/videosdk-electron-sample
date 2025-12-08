@@ -134,3 +134,25 @@ void ZoomVideoNodePhoneHelperWrap::GetInviteByPhoneStatus(const v8::FunctionCall
 	v8::Local<v8::Integer> ret = v8::Integer::New(isolate, (int32_t)zn_status);
 	args.GetReturnValue().Set(ret);
 }
+void ZoomVideoNodePhoneHelperWrap::GetSessionDialInNumbers(const v8::FunctionCallbackInfo<v8::Value>& args)
+{
+	v8::Isolate* isolate = args.GetIsolate();
+
+	com::electron::zoomvideo::sdk::proto::GetSessionDialInNumbersList _DialInList;
+	_g_native_wrap.GetPhoneHelperWrap().GetSessionDialInNumbers(_DialInList);
+	size_t _size = _DialInList.ByteSizeLong();
+	auto array_buf = v8::ArrayBuffer::New(isolate, _size);
+	char* char_temp_param = nullptr;
+	size_t sz_temp_param = 0;
+	fnGetRawArrayBufferPtr pGetRawArrayBufferPtr = NULL;
+	pGetRawArrayBufferPtr = ZoomNodeAPIUtilHelper::GetInst().m_fnGetRawArrayBufferPtr;
+	if (!pGetRawArrayBufferPtr)
+	{
+		return;
+	}
+	pGetRawArrayBufferPtr(array_buf, (void**)(&char_temp_param), sz_temp_param);
+	_DialInList.SerializeToArray(char_temp_param, _size);
+	v8::Local<v8::Uint8Array> uint8_array_buf = v8::Uint8Array::New(array_buf, 0, _size);
+
+	args.GetReturnValue().Set(uint8_array_buf);
+}

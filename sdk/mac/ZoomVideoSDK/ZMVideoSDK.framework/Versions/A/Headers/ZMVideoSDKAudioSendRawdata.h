@@ -1,4 +1,8 @@
-//
+/**
+ * @file ZMVideoSDKAudioSendRawdata.h
+ * @brief Interfaces for sending and receiving virtual audio data in Zoom Video SDK.
+ */
+
 
 #import <Foundation/Foundation.h>
 
@@ -8,14 +12,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Audio raw data sender interface.
+ * @class ZMVideoSDKAudioSender
+ * @brief Interface for sending raw audio data.
  */
 @interface ZMVideoSDKAudioSender : NSObject
 /**
  * @brief Send audio raw data, and sampling bits must be 16.
- * @param data The address of audio data.
- * @param length The length of audio data (it must be even numbers).
- * @param rate The sampling rate of audio data. When the channel is mono, supported sample rates is 8000/11025/16000/32000/44100/48000/50000/50400/96000/192000/2822400. When the channel is stereo, supported sample rates is 8000/16000/32000/44100/48000/50000/50400/96000/192000.
+ * @param data Data Pointer to the audio data buffer.
+ * @param length The length of audio data in bytes (must be an even number).
+ * @param rate Sampling rate of the audio data. Supported rates depend on the channel count:
+ *             - Mono: 8000, 11025, 16000, 32000, 44100, 48000, 50000, 50400, 96000, 192000, 2822400
+ *             - Stereo: 8000, 16000, 32000, 44100, 48000, 50000, 50400, 96000, 192000
  * @param channel Identifies the audio data channel type. default is ZMVideoSDKAudioChannel_Mono.
  * @return If the function succeeds, it will return ZMVideoSDKErrors_Success.
  */
@@ -23,7 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief An interface that handles a virtual audio microphone.
+ * @protocol ZMVideoSDKVirtualAudioMic
+ * @brief Protocol for handling virtual audio microphone events.
  */
 @protocol ZMVideoSDKVirtualAudioMic <NSObject>
 
@@ -51,7 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Virtual audio speaker interface.
+ * @protocol ZMVideoSDKVirtualAudioSpeaker
+ * @brief Protocol for receiving virtual audio speaker events.
  */
 @protocol ZMVideoSDKVirtualAudioSpeaker <NSObject>
 

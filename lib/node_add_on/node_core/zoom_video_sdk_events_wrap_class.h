@@ -289,6 +289,13 @@ public:
 			owner_->onFailedToStartShare(pUser);
 		}
 	}
+	virtual void onShareSettingChanged(ZoomVideoSDKShareSetting setting)
+	{
+		if (owner_)
+		{
+			owner_->onShareSettingChanged((ZNZoomVideoSDKShareSetting)setting);
+		}
+	}
 	virtual void onLiveStreamStatusChanged(IZoomVideoSDKLiveStreamHelper* pLiveStreamHelper, ZoomVideoSDKLiveStreamStatus status)
 	{
 		if (owner_ && pLiveStreamHelper)
@@ -426,6 +433,13 @@ public:
 			owner_->onMicSpeakerVolumeChanged(micVolume, speakerVolume);
 		}
 	}
+	virtual void onAudioLevelChanged(unsigned int level, bool bAudioSharing, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser)
+	{
+		if (owner_ && pUser)
+		{
+			owner_->onAudioLevelChanged(level, bAudioSharing, pUser);
+		}
+	}
 	virtual void onAudioDeviceStatusChanged(ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKAudioDeviceType type, ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKAudioDeviceStatus status)
 	{
 		if (owner_)
@@ -460,6 +474,10 @@ public:
 		{
 			owner_->onLiveTranscriptionMsgError(spokenLanguage, transcriptLanguage);
 		}
+	}
+	virtual void onSpokenLanguageChanged(ILiveTranscriptionLanguage* spokenLanguage)
+	{
+		
 	}
 	virtual void onMixedAudioRawDataReceived(AudioRawData* data_)
 	{
@@ -511,6 +529,27 @@ public:
 	virtual void onUserVideoNetworkStatusChanged(ZoomVideoSDKNetworkStatus status, IZoomVideoSDKUser* pUser)
 	{
 		
+	}
+	virtual void onShareNetworkStatusChanged(ZoomVideoSDKNetworkStatus shareNetworkStatus, bool isSendingShare)
+	{
+		if (owner_)
+		{
+			owner_->onShareNetworkStatusChanged((ZNZoomVideoSDKNetworkStatus)shareNetworkStatus, isSendingShare);
+		}
+	}
+	virtual void onUserNetworkStatusChanged(ZoomVideoSDKDataType type, ZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser)
+	{
+		if (owner_ && pUser)
+		{
+			owner_->onUserNetworkStatusChanged((ZNZoomVideoSDKDataType)type, (ZNZoomVideoSDKNetworkStatus)level, pUser);
+		}
+	}
+	virtual void onUserOverallNetworkStatusChanged(ZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser)
+	{
+		if (owner_ && pUser)
+		{
+			owner_->onUserOverallNetworkStatusChanged((ZNZoomVideoSDKNetworkStatus)level, pUser);
+		}
 	}
 	virtual void onUserRecordingConsent(IZoomVideoSDKUser* pUser)
 	{
@@ -682,6 +721,13 @@ public:
 			owner_->onShareContentSizeChanged(pUser, pShareAction);
 		}
 	}
+	virtual void onUnsharingWindowsChanged(IVideoSDKVector<void*>* windowsList, IZoomVideoSDKShareHelper* pShareHelper, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction)
+	{
+		if (owner_ && pShareHelper && pUser && pShareAction && windowsList)
+		{
+			owner_->onUnsharingWindowsChanged(windowsList, pUser, pShareAction);
+		}
+	}
 	virtual void onSubSessionStatusChanged(ZoomVideoSDKSubSessionStatus status, IVideoSDKVector<ISubSessionKit*>* pSubSessionKitList)
 	{
 
@@ -710,6 +756,22 @@ public:
 	{
 		
 	}
+	virtual void onStartBroadcastResponse(bool bSuccess, const zchar_t* channelID)
+	{
+
+	}
+	virtual void onStopBroadcastResponse(bool bSuccess)
+	{
+
+	}
+	virtual void onGetBroadcastControlStatus(bool bSuccess, ZoomVideoSDKBroadcastControlStatus status)
+	{
+
+	}
+	virtual void onStreamingJoinStatusChanged(ZoomVideoSDKStreamingJoinStatus status)
+	{
+
+	}
 #if (!defined __linux)
 	virtual void onRemoteControlStatus(IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZoomVideoSDKRemoteControlStatus status)
 	{
@@ -731,6 +793,28 @@ public:
 			}
 			owner_->onRemoteControlRequestReceived(pUser, pShareAction);
 		}
+	}
+	virtual void onRealTimeMediaStreamsStatus(RealTimeMediaStreamsStatus status)
+	{
+		if (owner_ )
+		{
+			owner_->onRealTimeMediaStreamsStatus((ZNRealTimeMediaStreamsStatus)status);
+		}
+	}
+	virtual void onRealTimeMediaStreamsFail(RealTimeMediaStreamsFailReason failReason)
+	{
+		if (owner_ )
+		{
+			owner_->onRealTimeMediaStreamsFail((ZNRealTimeMediaStreamsFailReason)failReason);
+		}
+	}
+	virtual void onWhiteboardExported(ZoomVideoSDKExportFormat format, unsigned char* data, long length)
+	{
+
+	}
+	virtual void onUserWhiteboardShareStatusChanged(IZoomVideoSDKUser* pUser, IZoomVideoSDKWhiteboardHelper* pWhiteboardHelper)
+	{
+
 	}
 #endif
 #if (defined _WIN32)

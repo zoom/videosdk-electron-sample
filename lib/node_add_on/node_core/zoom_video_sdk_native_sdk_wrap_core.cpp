@@ -17,7 +17,7 @@ static int find_self_module_path_callback(struct dl_phdr_info *info, size_t size
 		const char *p = strrchr(name, '/');
         if (nullptr == p)
             return 0;
-            
+
         const char* name_ptr = p + 1;
         if (name_ptr == strstr(name_ptr, SELF_MODULE_NAME))
         {
@@ -124,9 +124,9 @@ bool ZNativeVideoSDKWrap::ConfigSDKModule(ZoomSTRING& path)
 		m_fnDestroyZoomVideoSDKObj = (fnDestroyZoomVideoSDKObj)GetProcAddress((HMODULE)video_sdk_so, "DestroyZoomVideoSDKObj");
 #else
 #if (defined __linux)
-#define video_sdk_core "libvideosdk.so" 
+#define video_sdk_core "libvideosdk.so"
 #else
-#define mac_video_sdk "VideoSDK.dylib" 
+#define mac_video_sdk "VideoSDK.dylib"
 #endif
 
 #define func_CreateZoomVideoSDK "CreateZoomVideoSDKObj"
@@ -138,7 +138,7 @@ bool ZNativeVideoSDKWrap::ConfigSDKModule(ZoomSTRING& path)
 		void* video_sdk_so = dlopen(video_sdk_core_path.c_str(), RTLD_LAZY);
 		if (!video_sdk_so)
 			break;
-	
+
 		m_fnCreateZoomVideoSDKObj = (fnCreateZoomVideoSDKObj)dlsym(video_sdk_so, func_CreateZoomVideoSDK);
 		m_fnDestroyZoomVideoSDKObj = (fnDestroyZoomVideoSDKObj)dlsym(video_sdk_so, func_DestroyZoomVideoSDK);
 #else
@@ -165,7 +165,7 @@ bool ZNativeVideoSDKWrap::ConfigSDKModule(ZoomSTRING& path)
 	{
 		if (video_sdk_so)
 		{
-#if (defined WIN32) 
+#if (defined WIN32)
 			FreeLibrary((HMODULE)video_sdk_so);
 #else
 			dlclose(video_sdk_so);
@@ -203,7 +203,7 @@ ZNZoomVideoSDKErrors ZNativeVideoSDKWrap::CreateZoomVideoSDKObj(ZoomSTRING path)
 		return err;
 	}
 	err = ZNZoomVideoSDKErrors_Success;
-	
+
 	return err;
 }
 ZNZoomVideoSDKErrors ZNativeVideoSDKWrap::DestroyZoomVideoSDKObj()
@@ -224,17 +224,23 @@ ZNZoomVideoSDKErrors ZNativeVideoSDKWrap::Initialize(ZNZoomVideoSDKInitParams& i
 	{
 		return ZNZoomVideoSDKErrors_Load_Module_Error;
 	}
-	
+
 	ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKInitParams params;
 	params.domain = initParam.domain.c_str();
 	params.logFilePrefix = initParam.logFilePrefix.c_str();
 	params.enableLog = initParam.enableLog;
 	params.enableIndirectRawdata = true;
+#if defined(WIN32)
+	params.permonitor_awareness_mode = initParam.permonitorAwarenessMode;
+#endif
 	params.audioRawDataMemoryMode = (ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKRawDataMemoryMode)initParam.audioRawDataMemoryMode;
 	params.shareRawDataMemoryMode = (ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKRawDataMemoryMode)initParam.shareRawDataMemoryMode;
 	params.videoRawDataMemoryMode = (ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKRawDataMemoryMode)initParam.videoRawDataMemoryMode;
 	params.extendParam.speakerTestFilePath = initParam.extendParam.speakerTestFilePath.c_str();
 	params.extendParam.wrapperType = initParam.extendParam.wrapperType;
+#if defined __MACOS__
+    params.extendParam.disableKeychainAccess = initParam.extendParam.disableKeychainAccess;
+#endif
 	ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKErrors ret = ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKErrors_Unknown;
 	ret = m_pVideoSDK->initialize(params);
 	if (ZOOM_VIDEO_SDK_NAMESPACE::ZoomVideoSDKErrors_Success == ret)
@@ -297,7 +303,7 @@ ZNZoomVideoSDKErrors ZNativeVideoSDKWrap::JoinSession(ZNZoomVideoSDKSessionConte
 		sessionContex.audioOption.connect = joinParams.audioOption.connect;
 		sessionContex.audioOption.mute = joinParams.audioOption.mute;
 		sessionContex.sessionIdleTimeoutMins = joinParams.sessionIdleTimeoutMins;
-		
+
 		pSessionInfo = m_pVideoSDK->joinSession(sessionContex);
 		if (pSessionInfo)
 		{
@@ -426,6 +432,12 @@ ZAnnotationHelperWrap& ZNativeVideoSDKWrap::GetAnnotationHelperWrap()
 {
 	return m_AnnotationHelper;
 }
+#if (!defined __linux)
+ZRTMSHelperWrap& ZNativeVideoSDKWrap::GetRTMSHelperWrap()
+{
+	return m_RTMSHelper;
+}
+#endif
 //ZNativeVideoSDKVideoSource& ZNativeVideoSDKWrap::GetVideoSourceWrap()
 //{
 //	return m_ExternalVideoSource;
@@ -450,7 +462,7 @@ void ZNativeVideoSDKWrap::onSessionLeave(ZNZoomVideoSDKSessionLeaveReason eReaso
 		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
 		com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onSessionLeaveParams;
 		callBackBody_temp_param->set_ereason((int)eReason);
-		
+
 		callBackBody.set_allocated_onsessionleaveparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onSessionLeave);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
@@ -472,7 +484,7 @@ void ZNativeVideoSDKWrap::onError(ZNZoomVideoSDKErrors errorCode, int detailErro
 }
 void ZNativeVideoSDKWrap::onUserJoin(ZOOM_VIDEO_SDK_NAMESPACE::IVideoSDKVector<IZoomVideoSDKUser*>* userList)
 {
-	do 
+	do
 	{
 		if (!m_pSink || !userList)
 		{
@@ -572,7 +584,6 @@ void ZNativeVideoSDKWrap::onUserVideoStatusChanged(ZOOM_VIDEO_SDK_NAMESPACE::IVi
 		callBackBody.set_msgtype(CallMessageType_onUserVideoStatusChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	} while (false);
-	
 }
 void ZNativeVideoSDKWrap::onUserAudioStatusChanged(ZOOM_VIDEO_SDK_NAMESPACE::IVideoSDKVector<IZoomVideoSDKUser*>* userList)
 {
@@ -600,7 +611,7 @@ void ZNativeVideoSDKWrap::onUserAudioStatusChanged(ZOOM_VIDEO_SDK_NAMESPACE::IVi
 			ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKUserToProtoUser(pUserTemp, callBackBody_VideoSDKUser);
 		}
 		callBackBody_temp_param->set_allocated_zn_userlist(callBackBody_UserList);
-	
+
 		callBackBody.set_allocated_onuseraudiostatuschangedparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onUserAudioStatusChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
@@ -636,6 +647,32 @@ void ZNativeVideoSDKWrap::onFailedToStartShare(IZoomVideoSDKUser* pUser)
 		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
 		callBackBody.set_allocated_onfailedtostartshareparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onFailedToStartShare);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onShareSettingChanged(ZNZoomVideoSDKShareSetting setting)
+{
+	if (m_pSink)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onShareSettingChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onShareSettingChangedParams;
+		callBackBody_temp_param->set_setting((int)setting);
+		
+		callBackBody.set_allocated_onsharesettingchangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onShareSettingChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onShareNetworkStatusChanged(ZNZoomVideoSDKNetworkStatus shareNetworkStatus, bool isSendingShare)
+{
+	if (m_pSink)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onShareNetworkStatusChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onShareNetworkStatusChangedParams;
+		callBackBody_temp_param->set_sharenetworkstatus(shareNetworkStatus);
+		callBackBody_temp_param->set_issendingshare(isSendingShare);
+		callBackBody.set_allocated_onsharenetworkstatuschangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onShareNetworkStatusChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
 }
@@ -744,8 +781,7 @@ void ZNativeVideoSDKWrap::onChatNewMessageNotify(ZNZoomVideoSDKChatMessageInfo m
 	{
 		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
 		com::electron::zoomvideo::sdk::proto::CallbackBody_onChatNewMessageNotifyParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onChatNewMessageNotifyParams;
-		
-		
+
 		callBackBody_temp_param->set_psender(messageInfo.pSender);
 		callBackBody_temp_param->set_sendername(ws2s(messageInfo.senderName).c_str());
 		callBackBody_temp_param->set_preceiver(messageInfo.pReceiver);
@@ -876,7 +912,7 @@ void ZNativeVideoSDKWrap::onMultiCameraStreamStatusChanged(ZNZoomVideoSDKMultiSt
 						i++;
 					}
 					new_key = i + 1;
-					
+
 					iter_user->second.insert(std::make_pair(new_key, temp_pipe));
 					camera_stream_id = new_key;
 				}
@@ -948,6 +984,23 @@ void ZNativeVideoSDKWrap::onMicSpeakerVolumeChanged(unsigned int micVolume, unsi
 
 		callBackBody.set_allocated_onmicspeakervolumechangedparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onMicSpeakerVolumeChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onAudioLevelChanged(unsigned int level, bool bAudioSharing, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser)
+{
+	if (m_pSink && pUser)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioLevelChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onAudioLevelChangedParams;
+		com::electron::zoomvideo::sdk::proto::VideoSDKUser* callBackBody_VideoSDKUser = new com::electron::zoomvideo::sdk::proto::VideoSDKUser;
+		ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKUserToProtoUser(pUser, callBackBody_VideoSDKUser);
+
+		callBackBody_temp_param->set_level(level);
+		callBackBody_temp_param->set_baudiosharing(bAudioSharing);
+		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
+		callBackBody.set_allocated_onaudiolevelchangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onAudioLevelChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
 }
@@ -1083,7 +1136,41 @@ void ZNativeVideoSDKWrap::onSharedAudioRawDataReceived(AudioRawData* data_)
 			_g_audio_pipe_server._uv_ipc_server.SendMessage(rawdata_msg);
 	}
 }
+void ZNativeVideoSDKWrap::onUserNetworkStatusChanged(ZNZoomVideoSDKDataType type, ZNZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser)
+{
+	if (m_pSink && pUser)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onUserNetworkStatusChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onUserNetworkStatusChangedParams;
+		com::electron::zoomvideo::sdk::proto::VideoSDKUser* callBackBody_VideoSDKUser = new com::electron::zoomvideo::sdk::proto::VideoSDKUser;
+		ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKUserToProtoUser(pUser, callBackBody_VideoSDKUser);
 
+		callBackBody_temp_param->set_type((int)type);
+		callBackBody_temp_param->set_level((int)level);
+		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
+
+		callBackBody.set_allocated_onusernetworkstatuschangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onUserNetworkStatusChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onUserOverallNetworkStatusChanged(ZNZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser)
+{
+	if (m_pSink && pUser)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onUserOverallNetworkStatusChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onUserOverallNetworkStatusChangedParams;
+		com::electron::zoomvideo::sdk::proto::VideoSDKUser* callBackBody_VideoSDKUser = new com::electron::zoomvideo::sdk::proto::VideoSDKUser;
+		ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKUserToProtoUser(pUser, callBackBody_VideoSDKUser);
+
+		callBackBody_temp_param->set_level((int)level);
+		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
+
+		callBackBody.set_allocated_onuseroverallnetworkstatuschangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onUserOverallNetworkStatusChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
 void ZNativeVideoSDKWrap::onLiveTranscriptionStatus(ZNZoomVideoSDKLiveTranscriptionStatus status)
 {
 	if (m_pSink)
@@ -1257,7 +1344,7 @@ void ZNativeVideoSDKWrap::onIncomingLiveStreamStatusResponse(bool bSuccess, ZOOM
 		for (int i = 0; i < pStreamsStatusList->GetCount(); ++i)
 		{
 			ZOOM_VIDEO_SDK_NAMESPACE::IncomingLiveStreamStatus pStatusTemp = pStreamsStatusList->GetItem(i);
-			com::electron::zoomvideo::sdk::proto::IncomingLiveStreamStatus* callBackBody_IncomingLiveStreamStatus = callBackBody_IncomingLiveStreamStatusList->add_status();					
+			com::electron::zoomvideo::sdk::proto::IncomingLiveStreamStatus* callBackBody_IncomingLiveStreamStatus = callBackBody_IncomingLiveStreamStatusList->add_status();
 			if (!pStatusTemp.strStreamKeyID || !callBackBody_IncomingLiveStreamStatus)
 			{
 				continue;
@@ -1334,7 +1421,33 @@ void ZNativeVideoSDKWrap::onShareContentSizeChanged(IZoomVideoSDKUser* pUser, IZ
 		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
 		callBackBody_temp_param->set_allocated_shareaction(callBackBody_ShareAction);
 		callBackBody.set_allocated_onsharecontentsizechangedparam(callBackBody_temp_param);
-		callBackBody.set_msgtype(CallMessageType_onShareContentSizeChange);
+		callBackBody.set_msgtype(CallMessageType_onShareContentSizeChanged);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onUnsharingWindowsChanged(IVideoSDKVector<void*>* windowsList, IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction)
+{
+	if (m_pSink && pUser && windowsList)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onUnsharingWindowsChangedParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onUnsharingWindowsChangedParams;
+
+		for (int i = 0; i < windowsList->GetCount(); i++)
+		{
+			void* windowHandle = windowsList->GetItem(i);
+			com::electron::zoomvideo::sdk::proto::UnsharingWindow* windowInfo = callBackBody_temp_param->add_windowslist();
+			windowInfo->set_window(reinterpret_cast<uint64_t>(windowHandle));
+		}
+		
+		com::electron::zoomvideo::sdk::proto::VideoSDKUser* callBackBody_VideoSDKUser = new com::electron::zoomvideo::sdk::proto::VideoSDKUser;
+		ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKUserToProtoUser(pUser, callBackBody_VideoSDKUser);
+		com::electron::zoomvideo::sdk::proto::ShareAction* callBackBody_ShareAction = new com::electron::zoomvideo::sdk::proto::ShareAction;
+		ZoomVideoNodeUtilityHelper::GetInst().ConvertSDKShareActionToProtoShareAction(pShareAction, callBackBody_ShareAction);
+
+		callBackBody_temp_param->set_allocated_user(callBackBody_VideoSDKUser);
+		callBackBody_temp_param->set_allocated_shareaction(callBackBody_ShareAction);
+		callBackBody.set_allocated_onunsharingwindowschangedparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onUnsharingWindowsChanged);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
 }
@@ -1372,9 +1485,35 @@ void ZNativeVideoSDKWrap::onRemoteControlRequestReceived(ZOOM_VIDEO_SDK_NAMESPAC
 
 		callBackBody_temp_param->set_allocated_puser(callBackBody_VideoSDKUser);
 		callBackBody_temp_param->set_allocated_shareaction(callBackBody_ShareAction);
-		
+
 		callBackBody.set_allocated_onremotecontrolrequestreceivedparam(callBackBody_temp_param);
 		callBackBody.set_msgtype(CallMessageType_onRemoteControlRequestReceived);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onRealTimeMediaStreamsStatus(ZNRealTimeMediaStreamsStatus status)
+{
+	if (m_pSink)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onRealTimeMediaStreamsStatusParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onRealTimeMediaStreamsStatusParams;
+		callBackBody_temp_param->set_status((int)status);
+
+		callBackBody.set_allocated_onrealtimemediastreamsstatusparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onRealTimeMediaStreamsStatus);
+		m_pSink->onNodeAddonCallbacks(callBackBody);
+	}
+}
+void ZNativeVideoSDKWrap::onRealTimeMediaStreamsFail(ZNRealTimeMediaStreamsFailReason failReason)
+{
+	if (m_pSink)
+	{
+		com::electron::zoomvideo::sdk::proto::CallbackBody callBackBody;
+		com::electron::zoomvideo::sdk::proto::CallbackBody_onRealTimeMediaStreamsFailParams* callBackBody_temp_param = new com::electron::zoomvideo::sdk::proto::CallbackBody_onRealTimeMediaStreamsFailParams;
+		callBackBody_temp_param->set_failreason((int)failReason);
+
+		callBackBody.set_allocated_onrealtimemediastreamsfailparam(callBackBody_temp_param);
+		callBackBody.set_msgtype(CallMessageType_onRealTimeMediaStreamsFail);
 		m_pSink->onNodeAddonCallbacks(callBackBody);
 	}
 }

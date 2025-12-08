@@ -15,4 +15,5 @@ public:
 	ZNZoomVideoSDKErrors InvitePhoneUser(ZNInvitePhoneUserInfo& inviteInfo);
 	ZNZoomVideoSDKErrors CancelInviteByPhone();
 	ZNPhoneStatus GetInviteByPhoneStatus();
+	void GetSessionDialInNumbers(com::electron::zoomvideo::sdk::proto::GetSessionDialInNumbersList& sessionDialInNumbersList);
 };

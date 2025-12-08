@@ -1,8 +1,7 @@
-/*!
-* \file zoom_video_sdk_def.h
-* \brief Zoom Video SDK Common Definition File.
-*
-*/
+/**
+ * @file zoom_video_sdk_def.h
+ * @brief Zoom Video SDK Common Definition File.
+ */
 
 #ifndef _ZOOM_VIDEO_SDK_DEF_H_
 #define _ZOOM_VIDEO_SDK_DEF_H_
@@ -109,12 +108,16 @@ typedef enum
 	ZoomVideoSDKErrors_Session_Client_Incompatible,
 	/** Session ended due to exceeding free minutes. */
 	ZoomVideoSDKErrors_Session_Account_FreeMinutesExceeded,
+	/** Join session failed because the account's free credit has been exceeded. */
+	ZoomVideoSDKErrors_Session_Account_FreeCreditExceeded,
 	/** Audio module error. */
 	ZoomVideoSDKErrors_Session_Audio_Error = 3000,
 	/** No microphone detected. */
 	ZoomVideoSDKErrors_Session_Audio_No_Microphone,
 	/** No speaker detected. */
 	ZoomVideoSDKErrors_Session_Audio_No_Speaker,
+	/** Bluetooth sco connect fail. Android Only. */
+	ZoomVideoSDKErrors_Session_Bluetooth_SCO_Connection_Failed,
 	/** General video error. */
 	ZoomVideoSDKErrors_Session_Video_Error = 4000,
 	/** Video device error. */
@@ -168,6 +171,10 @@ typedef enum
 	ZoomVideoSDKErrors_RAWDATA_SEND_TOO_FREQUENTLY,
 	/** Virtual microphone has been terminated. */
 	ZoomVideoSDKErrors_RAWDATA_VIRTUAL_MIC_IS_TERMINATE,
+	/** The share preprocessing data object is invalid. */
+	ZoomVideoSDKErrors_RAWDATA_INVALID_SHARE_PREPROCESSING_DATA_OBJECT,
+	/** Share preprocessing has stopped. */
+	ZoomVideoSDKErrors_RAWDATA_SHARE_PREPROCESSING_IS_STOPPED,
 	/** General share error. */
 	ZoomVideoSDKErrors_Session_Share_Error = 7001,
 	/** Share module is not ready. */
@@ -184,12 +191,16 @@ typedef enum
 	ZoomVideoSDKErrors_Fail_Assign_User_Privilege,
 	/** No recording in process. */
 	ZoomVideoSDKErrors_No_Recording_In_Process,
+	/** Recording is connecting. */
+	ZoomVideoSDKErrors_Recording_Is_Connecting,
 	/** Failed to set virtual background. */
 	ZoomVideoSDKErrors_Set_Virtual_Background_Fail,
 	/** Failed to start camera share due to video not started. */
 	ZoomVideoSDKErrors_Session_Share_Camera_Video_Not_Start,
 	/** Camera share conflicts with video effects. */
 	ZoomVideoSDKErrors_Session_Share_Camera_Conflict_With_Video_Effects,
+	/** Share conflicts with whiteboard share. */
+	ZoomVideoSDKErrors_Session_Share_Conflict_With_Whiteboard,
 	/** Unknown file transfer error. */
 	ZoomVideoSDKErrors_Filetransfer_UnknowError = 7500,
 	/** File type is blocked for transfer. */
@@ -205,7 +216,7 @@ typedef enum
 	/** User does not have video to be spotlighted. */
 	ZoomVideoSDKErrors_Spotlight_UserWithoutVideo,
 	/** User is not currently spotlighted. */
-	ZoomVideoSDKErrors_Spotlight_UserNotSpotlighted
+	ZoomVideoSDKErrors_Spotlight_UserNotSpotlighted,
 
 }ZoomVideoSDKErrors;
 
@@ -257,6 +268,21 @@ typedef enum
 	/** Camera sharing. */
 	ZoomVideoSDKShareType_Camera, 
 }ZoomVideoSDKShareType;
+
+/**
+ * @brief Enumeration of reasons why screen sharing capture is paused in the Zoom Video SDK.
+ */
+typedef enum
+{
+    /** No pause reason; used for initialization. */
+    ZoomVideoSDKShare_Capture_Pause_None,
+    /** Sharing is paused because the shared window is being moved. */
+    ZoomVideoSDKShare_Capture_Pause_WindowMoving,
+    /** Sharing is paused because the shared window is covered by another window. */
+    ZoomVideoSDKShare_Capture_Pause_WindowCovered,
+    /** Sharing is paused because the shared window is minimized. */
+    ZoomVideoSDKShare_Capture_Pause_WindowMinimized
+}ZoomVideoSDKShareCapturePauseReason;
 
 /**
  * @brief Enumeration of live streaming status in Zoom Video SDK.
@@ -353,6 +379,8 @@ enum RecordingStatus
 	Recording_DiskFull,
 	/** The recording has been paused. */
 	Recording_Pause,
+	/** The recording is connecting. */
+	Recording_Connecting,
 };
 
 /**
@@ -369,6 +397,21 @@ typedef	enum
 }ZoomVideoSDK_TESTMIC_STATUS;
 
 /**
+ * @brief Enumeration of preferred video resolution in Zoom Video SDK.
+ */
+enum ZoomVideoSDKPreferVideoResolution
+{
+	/** Invalid value */
+	ZoomVideoSDKPreferVideoResolution_None,
+	/** The camera opens in 360p by default. */
+	ZoomVideoSDKPreferVideoResolution_360P,
+	/** The camera opens in 720p by default. */
+	ZoomVideoSDKPreferVideoResolution_720P,
+	/** The camera opens in 1080p by default. */
+	ZoomVideoSDKPreferVideoResolution_1080P
+};
+
+/**
  * @brief The extended parameters for Zoom Video SDK initialization.
  */
 struct ZoomVideoSDKExtendParams
@@ -379,11 +422,19 @@ struct ZoomVideoSDKExtendParams
 	 */
 	const zchar_t* speakerTestFilePath; 
 	int wrapperType;
+	ZoomVideoSDKPreferVideoResolution preferVideoResolution;
+#if defined __MACOS__
+    bool disableKeychainAccess;
+#endif
 
 	ZoomVideoSDKExtendParams()
 	{
 		speakerTestFilePath = nullptr;
 		wrapperType = 0;
+		preferVideoResolution = ZoomVideoSDKPreferVideoResolution_None;
+#if defined __MACOS__
+        disableKeychainAccess = false;
+#endif
 	}
 };
 
@@ -400,6 +451,12 @@ struct ZoomVideoSDKInitParams
 	bool  enableLog; 
 	/** Whether to enable indirect raw data access. Optional. Default is false. */
 	bool  enableIndirectRawdata; 
+#if defined(WIN32)
+	/** Whether to enable per-monitor awareness mode. Optional. Default is false. 
+	 *	This parameter is ignored if the application is already enabled high-DPI awareness or per-monitor DPI awareness.
+	 */
+	bool  permonitor_awareness_mode;
+#endif
 	/** Memory allocation mode for audio raw data (stack or heap). Optional. Default is stack. */
 	ZoomVideoSDKRawDataMemoryMode audioRawDataMemoryMode; 
 	/** Memory allocation mode for video raw data (stack or heap). Optional. Default is stack. */
@@ -407,7 +464,7 @@ struct ZoomVideoSDKInitParams
 	/** Memory allocation mode for share raw data (stack or heap). Optional. Default is stack. */
 	ZoomVideoSDKRawDataMemoryMode shareRawDataMemoryMode; 
 
-	/** Extended optional parameters for SDK initialization. For more details, see the \link ZoomVideoSDKExtendParams \endlink. */
+	/** Extended optional parameters for SDK initialization. */
 	ZoomVideoSDKExtendParams extendParam;
 	ZoomVideoSDKInitParams()
 	{
@@ -415,6 +472,9 @@ struct ZoomVideoSDKInitParams
 		logFilePrefix = nullptr;
 		enableLog = false;
 		enableIndirectRawdata = false;
+#if defined(WIN32)
+		permonitor_awareness_mode = false;
+#endif
 		audioRawDataMemoryMode = ZoomVideoSDKRawDataMemoryModeStack;
 		videoRawDataMemoryMode = ZoomVideoSDKRawDataMemoryModeStack;
 		shareRawDataMemoryMode = ZoomVideoSDKRawDataMemoryModeStack;
@@ -688,7 +748,7 @@ public:
 	virtual IZoomVideoSDKUser* getReceiver() = 0;
 	/**
 	 * @brief Cancel the ongoing file transfer.
-	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed. For detailed error codes, see the \link ZoomVideoSDKErrors \endlink enum.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
 	 */
 	virtual ZoomVideoSDKErrors cancelSend() = 0;
 };
@@ -708,13 +768,13 @@ public:
 	virtual IZoomVideoSDKUser* getSender() = 0;
 	/**
 	 * @brief Cancel the ongoing file receive operation.
-	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed. For detailed error codes, see the \link ZoomVideoSDKErrors \endlink enum.
+	 * @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
 	 */
 	virtual ZoomVideoSDKErrors cancelReceive() = 0;
    /**
 	* @brief Start receiving the file and specify the download path.
 	* @param path The local file system path where the file will be saved.
-	* @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed. For detailed error codes, see the \link ZoomVideoSDKErrors \endlink enum.
+	* @return If the function succeeds, the return value is ZoomVideoSDKErrors_Success. Otherwise failed.  
 	*/
 	virtual ZoomVideoSDKErrors startReceive(const zchar_t* path) = 0;
 };
@@ -741,5 +801,122 @@ enum ZoomVideoSDKSessionType
 	ZoomVideoSDKSessionType_SubSession,
 };
 
+/**
+ * @brief Enumeration of Zoom Video SDK share setting types.
+ */
+enum ZoomVideoSDKShareSetting
+{
+    /** For initialization. */
+    ZoomVideoSDKShareSetting_None = 0,
+    /** Only host and manager can share. */
+    ZoomVideoSDKShareSetting_LockedShare,
+    /** Anyone can share, but only one at a time. Only host and manager can take over. */
+    ZoomVideoSDKShareSetting_SingleShare,
+    /** Multiple participants can share simultaneously. */
+    ZoomVideoSDKShareSetting_MultiShare
+};
+
+/**
+ * @brief Enumeration of the status of whiteboard sharing.
+ */
+enum ZoomVideoSDKWhiteboardStatus
+{
+	/** The whiteboard has started. */
+	WhiteboardStatus_Started,
+
+	/** The whiteboard has stopped. */
+	WhiteboardStatus_Stopped
+};
+
+/**
+ * @brief Enumeration of supported export formats for content, like whiteboard.
+ */
+enum ZoomVideoSDKExportFormat
+{
+	/** Export the content as a PDF document. */
+	EXPORT_FORMAT_PDF,
+};
+
+/**
+ * @brief Enumeration of Zoom Video SDK live stream layout types.
+ */
+enum ZoomVideoSDKLiveStreamLayout {
+    /** Speaker view layout for the live stream. */
+    ZoomVideoSDKLiveStreamLayout_SpeakerView = 1,
+    /** Gallery view layout for the live stream. */
+    ZoomVideoSDKLiveStreamLayout_GalleryView
+};
+
+/**
+ * @brief Enumeration of Zoom Video SDK live stream close caption options.
+ */
+enum ZoomVideoSDKLiveStreamCloseCaption {
+    /** Close caption is disabled. */
+    ZoomVideoSDKLiveStreamCloseCaption_OFF = 0,
+    /** Close caption is burnt into the video stream. */
+    ZoomVideoSDKLiveStreamCloseCaption_BurntIn,
+    /** Close caption is embedded in the stream data. */
+    ZoomVideoSDKLiveStreamCloseCaption_Embedded
+};
+
+/**
+ * @brief Represents the settings for a Zoom Video SDK live stream.
+ */
+struct ZoomVideoSDKLiveStreamSetting {
+    /** The layout type for the live stream. */
+    ZoomVideoSDKLiveStreamLayout layout;
+    /** The close caption setting for the live stream. */
+    ZoomVideoSDKLiveStreamCloseCaption closeCaption;
+
+    /**
+     * @brief Default constructor for ZoomVideoSDKLiveStreamSetting.
+     * Initializes with speaker view layout and burnt-in close captions.
+     */
+    ZoomVideoSDKLiveStreamSetting() {
+        layout = ZoomVideoSDKLiveStreamLayout_SpeakerView;
+        closeCaption = ZoomVideoSDKLiveStreamCloseCaption_BurntIn;
+    }
+};
+
+/**
+ * @brief Represents the parameters needed to start a Zoom Video SDK live stream.
+ */
+struct ZoomVideoSDKLiveStreamParams {
+    /** The URL of the live stream platform (e.g., YouTube, Facebook). */
+    const zchar_t* streamUrl;
+    /** The stream key for authentication with the live stream platform. */
+    const zchar_t* key;
+    /** The broadcast URL where viewers can watch the live stream. */
+    const zchar_t* broadcastUrl;
+    /** The live stream settings including layout and close caption options. */
+    ZoomVideoSDKLiveStreamSetting setting;
+
+    /**
+     * @brief Default constructor for ZoomVideoSDKLiveStreamParams.
+     * Initializes all pointers to nullptr and creates default settings.
+     */
+    ZoomVideoSDKLiveStreamParams()
+    {
+        streamUrl = nullptr;
+        key = nullptr;
+        broadcastUrl = nullptr;
+        setting = ZoomVideoSDKLiveStreamSetting();
+    }
+};
+
+/**
+ * @brief Enumeration of the data type for network quality monitoring.
+ */
+enum ZoomVideoSDKDataType
+{
+    /** Unknown data type. */
+    ZoomVideoSDKDataType_Unknown,
+    /** Audio data type. */
+    ZoomVideoSDKDataType_Audio,
+    /** Video data type. */
+    ZoomVideoSDKDataType_Video,
+    /** Share data type. */
+    ZoomVideoSDKDataType_Share
+};
 END_ZOOM_VIDEO_SDK_NAMESPACE
 #endif

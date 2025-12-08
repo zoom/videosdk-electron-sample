@@ -1,0 +1,8 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "In order to speak to participants, Zoom requires access to your microphone.";
+NSCameraUsageDescription = "In order for participants to see you, Zoom requires access to your camera.";
+NSCalendarsFullAccessUsageDescription = "To be able to show your events, Zoom Workplace needs to access your Calendar.";
+NSBluetoothAlwaysUsageDescription = "This will allow Zoom Workplace to find nearby Zoom Rooms.";
+NSLocalNetworkUsageDescription = "This process is needed to enable AirPlay and peer-to-peer meetings in Zoom client.";
+NSAudioCaptureUsageDescription = "Please allow access in order to capture audio from other apps.";

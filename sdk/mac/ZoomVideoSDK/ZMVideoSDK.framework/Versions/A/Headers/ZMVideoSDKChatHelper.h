@@ -1,4 +1,7 @@
-
+/**
+ * @file ZMVideoSDKChatHelper.h
+ * @brief Interface for chat-related functionalities in Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 #import <ZMVideoSDK/ZMVideoSDKUserHelper.h>
@@ -6,6 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ * @class ZMVideoSDKChatHelper
  * @brief Chat helper interface.
  */
 @interface ZMVideoSDKChatHelper : NSObject

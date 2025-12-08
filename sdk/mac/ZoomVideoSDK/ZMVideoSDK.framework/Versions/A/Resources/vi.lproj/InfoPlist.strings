@@ -1,0 +1,7 @@
+/* Localized versions of Info.plist keys */
+
+NSMicrophoneUsageDescription = "Để có thể nói chuyện với người tham gia, Zoom cần có quyền truy cập vào micrô của bạn.";
+NSCameraUsageDescription = "Để người tham gia nhìn thấy bạn, Zoom cần có quyền truy cập vào camera của bạn.";
+NSCalendarsFullAccessUsageDescription= "Zoom Workplace cần truy cập Lịch của bạn để hiển thị sự kiện.";
+NSLocalNetworkUsageDescription= "Cần tiến trình này để bật AirPlay và các cuộc họp ngang hàng trong máy khách Zoom.";
+NSBluetoothAlwaysUsageDescription= "Tính năng này sẽ cho phép Zoom Workplace tìm Zoom Rooms lân cận.";

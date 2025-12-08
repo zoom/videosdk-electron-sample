@@ -1,7 +1,8 @@
-//
-//  ZMVideoSDKSubSessionHelper.h
-//  ZMVideoSDK
-//
+/**
+ * @file ZMVideoSDKSubSessionHelper.h
+ * @brief This file declares the interfaces for managing Zoom Video SDK subsessions,
+ */
+
 
 #import <Foundation/Foundation.h>
 
@@ -9,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Subsession user.
+ * @class ZMVideoSDKSubSessionUser
+ * @brief Represents a user within a subsession.
  */
 @interface ZMVideoSDKSubSessionUser : NSObject
 /**
@@ -23,7 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Subsession kit.
+ * @class ZMVideoSDKSubSessionKit
+ * @brief Represents a subsession instance.
  */
 @interface ZMVideoSDKSubSessionKit : NSObject
 /**
@@ -36,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy, readonly)NSString* subSessionID;
 /**
  * @brief Get the list of users in this subsession.
- * @return If the function succeeds, it returns an array of ZMVideoSDKSubSessionUser. Otherwise returns NULL. For more details, see \link ZMVideoSDKSubSessionUser \endlink.
+ * @return If the function succeeds, it returns an array of ZMVideoSDKSubSessionUser. Otherwise returns nil.
  */
 - (NSArray<ZMVideoSDKSubSessionUser*>* _Nullable)getSubSessionUserList;
 
@@ -48,7 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Subsession user help request handler.
+ * @class ZMVideoSDKSubSessionUserHelpRequestHandler
+ * @brief Handler for user help requests in subsessions.
  */
 @interface ZMVideoSDKSubSessionUserHelpRequestHandler : NSObject
 /**
@@ -74,7 +78,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Subsession manager helper interface.
+ * @class ZMVideoSDKSubSessionManager
+ * @brief Manages subsession lifecycle and communication.
  */
 @interface ZMVideoSDKSubSessionManager : NSObject
 /**
@@ -107,7 +112,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Subsession participant helper interface.
+ * @class ZMVideoSDKSubSessionParticipant
+ * @brief Interface for subsession participants.
  */
 @interface ZMVideoSDKSubSessionParticipant : NSObject
 /**
@@ -124,9 +130,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (ZMVideoSDKErrors)requestForHelp;
 @end
 
+
 /**
- * @brief Subsession helper interface.
- * @note Only session host and manager can get this helper.
+ * @class ZMVideoSDKSubSessionHelper
+ * @brief Helper class for managing subsessions.
+ * @note Only available to session hosts and managers.
  */
 @interface ZMVideoSDKSubSessionHelper : NSObject
 
@@ -145,7 +153,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the list of commited subsessions.
- * @return If the function succeeds, it returns an array of ZMVideoSDKSubSessionKit. Otherwise returns NULL. For more details, see \link ZMVideoSDKSubSessionKit \endlink.
+ * @return If the function succeeds, it returns an array of ZMVideoSDKSubSessionKit. Otherwise returns nil.
  */
 - (NSArray<ZMVideoSDKSubSessionKit*>* _Nullable)getCommittedSubSessionList;
 @end

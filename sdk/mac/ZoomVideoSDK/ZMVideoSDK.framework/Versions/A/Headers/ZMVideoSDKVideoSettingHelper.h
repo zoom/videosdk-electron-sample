@@ -1,9 +1,15 @@
-//
+/**
+ * @file ZMVideoSDKVideoSettingHelper.h
+ * @brief Declares the interface for managing video settings in Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ * @class ZMVideoSDKVideoSettingHelper
+ * @brief Provides settings-related functions to configure video enhancement options.
+ */
 @interface ZMVideoSDKVideoSettingHelper : NSObject
 
 /**

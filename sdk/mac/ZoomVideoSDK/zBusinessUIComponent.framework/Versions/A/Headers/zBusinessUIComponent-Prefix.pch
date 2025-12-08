@@ -1,0 +1,52 @@
+//
+//  zBusinessUIComponent-Prefix.pch
+//  zBusinessUIComponent
+//
+//  Created by Giannis Ge on 2023/6/5.
+//
+
+#ifndef zBusinessUIComponent_Prefix_pch
+#define zBusinessUIComponent_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#import <Prism/Prism.h>
+#import <ZoomUnit/ZoomUnit.h>
+#define SUPPORT_LAYER ([ZMMetalHelper isMeetingSupportLayer])
+
+#pragma mark - safe call delegate
+#define ZBCUISafeCallDelegate_WithReturn(returnValue, method, methodWithParam)        \
+    if (self.delegate && [self.delegate respondsToSelector:@selector(method)]) {    \
+        returnValue = [self.delegate methodWithParam];                              \
+    }
+
+#define ZBCUISafeCallDelegate(method, methodWithParam)                                \
+    if (self.delegate && [self.delegate respondsToSelector:@selector(method)]) {    \
+        [self.delegate methodWithParam];                                            \
+    }
+
+#pragma mark - safe call handler
+#define ZBCUISafeCallHandler_WithReturn(returnValue, method, methodWithParam)        \
+    if (self.handler && [self.handler respondsToSelector:@selector(method)]) {    \
+        returnValue = [self.handler methodWithParam];                              \
+    }
+
+#define ZBCUISafeCallHandler(method, methodWithParam)                                \
+    if (self.handler && [self.handler respondsToSelector:@selector(method)]) {    \
+        [self.handler methodWithParam];                                            \
+    }
+
+#pragma mark - publish or subscribe event
+#define ZBCUIPublishEvent(eventCenter, eventProtocol) [eventCenter posterForProtocol:@protocol(eventProtocol)];
+
+#define ZBCUISubscribeEvent(eventCenter, target, eventProtocol) [eventCenter registerTartget:target forProtocol:@protocol(eventProtocol)];
+
+#define ZBCUIUnsubscribeEvent(eventCenter, target, eventProtocol) [eventCenter unregisterTartget:target forProtocol:@protocol(eventProtocol)];
+
+#define ZBCUIUnsubscribeAllEvents(eventCenter, target) [eventCenter unregisterTartget:target];
+
+#endif
+
+#endif /* zBusinessUIComponent_Prefix_pch */

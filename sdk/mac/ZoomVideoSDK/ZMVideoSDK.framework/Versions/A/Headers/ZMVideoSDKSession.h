@@ -1,3 +1,7 @@
+/**
+ * @file ZMVideoSDKSession.h
+ * @brief Interfaces related to session, file transfer, and statistic info in Zoom Video SDK.
+ */
 
 
 #import <Foundation/Foundation.h>
@@ -6,7 +10,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ZMVideoSDKUser;
 
-
+/**
+ * @class ZMFileTransferProgress
+ * @brief Represents the progress details of a file transfer.
+ */
 @interface ZMFileTransferProgress : NSObject
 /**
  * @brief The ratio of the file transfer completed.
@@ -22,6 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign, readonly) unsigned int bitPreSecond;
 @end
 
+
+/**
+ * @class ZMVideoSDKFileStatus
+ * @brief Represents the status of a file transfer, including current state and progress.
+ */
 @interface ZMVideoSDKFileStatus : NSObject
 /**
  * @brief The status of the file transfer.
@@ -33,6 +45,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, retain, readonly) ZMFileTransferProgress *transProgress;
 @end
 
+
+/**
+ * @class ZMVideoSDKSendFile
+ * @brief Represents a file being sent in the session.
+ */
 @interface ZMVideoSDKSendFile : NSObject
 /**
  * @brief The timestamp of the file transfer.
@@ -66,6 +83,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (ZMVideoSDKErrors)cancelSend;
 @end
 
+
+/**
+ * @class ZMVideoSDKReceiveFile
+ * @brief Represents a file being received in the session.
+ */
 @interface ZMVideoSDKReceiveFile : NSObject
 /**
  * @brief The timestamp of the file transfer.
@@ -105,8 +127,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (ZMVideoSDKErrors)cancelReceive;
 @end
 
+
 /**
- * @brief Session audio statistic information interface.
+ * @class ZMVideoSDKSessionAudioStatisticInfo
+ * @brief Provides audio statistics for the session such as latency, jitter, and packet loss.
  */
 @interface ZMVideoSDKSessionAudioStatisticInfo : NSObject
 
@@ -162,7 +186,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Share statistic information such as FPS, latency, data loss, etc.
+ * @class ZMVideoSDKSessionASVStatisticInfo
+ * @brief Provides video/share statistics such as resolution, FPS, latency, and packet loss.
  */
 @interface ZMVideoSDKSessionASVStatisticInfo : NSObject
 
@@ -238,7 +263,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Video session information interface.
+ * @class ZMVideoSDKSession
+ * @brief Provides access to session-level information and operations.
  */
 @interface ZMVideoSDKSession : NSObject
 
@@ -281,7 +307,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @brief Get the session's host user object.
- * @return Remote users list.
+ * @return If the function succeeds, the return value is host user object. Otherwise return nil.
  */
 - (ZMVideoSDKUser* _Nullable)getSessionHost;
 

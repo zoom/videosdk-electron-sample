@@ -1,8 +1,17 @@
 
+/**
+ * @file ZMVideoSDKVideoCanvas.h
+ * @brief Interface for video/share canvas rendering in Zoom Video SDK.
+ */
 
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+/**
+ * @class ZMVideoSDKVideoCanvas
+ * @brief Manages the rendering of video or screen share content in the Zoom Video SDK.
+ */
 @interface ZMVideoSDKVideoCanvas : NSObject
 /**
  * @brief The canvas type.

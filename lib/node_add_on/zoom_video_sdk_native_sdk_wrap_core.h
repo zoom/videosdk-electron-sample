@@ -19,6 +19,7 @@
 #include "zoom_video_sdk_native_live_transcription_helper_wrap_core.h"
 #include "zoom_video_sdk_native_share_setting_wrap_core.h"
 #include "zoom_video_sdk_native_annotation_helper_wrap_core.h"
+#include "zoom_video_sdk_native_rtms_helper_wrap_core.h"
 
 
 USING_ZOOM_VIDEO_SDK_NAMESPACE;
@@ -64,6 +65,9 @@ public:
 	ZLiveTranscriptionHelperWrap& GetLiveTranscriptionHelperWrap();
 	ZShareSettingWrap& GetShareSettingWrap();
 	ZAnnotationHelperWrap& GetAnnotationHelperWrap();
+#if (!defined __linux)
+	ZRTMSHelperWrap& GetRTMSHelperWrap();
+#endif
 	//ZNativeVideoSDKVideoSource& GetVideoSourceWrap();
 
 	void onSessionJoin();
@@ -95,9 +99,11 @@ public:
 	void onHostAskUnmute();
 	void onInviteByPhoneStatus(ZNPhoneStatus status, ZNPhoneFailedReason reason);
 	void onMultiCameraStreamStatusChanged(ZNZoomVideoSDKMultiStreamStatus status, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKRawDataPipe* pVideoPipe);
-	/// \brief Notify the current mic or speaker volume when testing.
-	/// \param micVolume Specify the volume of the mic when testing or in session.
-	/// \param speakerVolume Specify the volume of the speaker when testing.
+	/**
+	 * @brief Notify the current mic or speaker volume when testing.
+	 * @param micVolume Specify the volume of the mic when testing or in session.
+	 * @param speakerVolume Specify the volume of the speaker when testing.
+	 */
 	void onMicSpeakerVolumeChanged(unsigned int micVolume, unsigned int speakerVolume);
 	void onAudioDeviceStatusChanged(ZNZoomVideoSDKAudioDeviceType type, ZNZoomVideoSDKAudioDeviceStatus status);
 	void onTestMicStatusChanged(ZNZoomVideoSDK_TESTMIC_STATUS status);
@@ -114,14 +120,22 @@ public:
 	void onStartIncomingLiveStreamResponse(bool bSuccess, ZoomSTRING strStreamKeyID);
 	void onStopIncomingLiveStreamResponse(bool bSuccess, ZoomSTRING strStreamKeyID);
 	void onFailedToStartShare(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser);
+	void onShareSettingChanged(ZNZoomVideoSDKShareSetting setting);
+	void onShareNetworkStatusChanged(ZNZoomVideoSDKNetworkStatus shareNetworkStatus, bool isSendingShare);
 	void onCameraListChanged();
 	void onShareContentChanged(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareAction* pShareAction);
 	void onShareContentSizeChanged(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareAction* pShareAction);
+	void onUnsharingWindowsChanged(ZOOM_VIDEO_SDK_NAMESPACE::IVideoSDKVector<void*>* windowsList, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKShareAction* pShareAction);
 	void onCapturedRawDataReceived();
-	void onCapturedShareStopped(); 
+	void onCapturedShareStopped();
+	void onAudioLevelChanged(unsigned int level, bool bAudioSharing, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser);
+	void onUserNetworkStatusChanged(ZNZoomVideoSDKDataType type, ZNZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser);
+	void onUserOverallNetworkStatusChanged(ZNZoomVideoSDKNetworkStatus level, ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser *pUser);
 #if (!defined __linux)
 	void onRemoteControlStatus(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction, ZNZoomVideoSDKRemoteControlStatus status);
 	void onRemoteControlRequestReceived(ZOOM_VIDEO_SDK_NAMESPACE::IZoomVideoSDKUser* pUser, IZoomVideoSDKShareAction* pShareAction);
+	void onRealTimeMediaStreamsStatus(ZNRealTimeMediaStreamsStatus status);
+	void onRealTimeMediaStreamsFail(ZNRealTimeMediaStreamsFailReason failReason);
 #endif
 #if (defined _WIN32)
 	void onRemoteControlServiceInstallResult(bool bSuccess);
@@ -153,6 +167,9 @@ private:
 	ZLiveTranscriptionHelperWrap m_LTTHelper;
 	ZShareSettingWrap m_ShareSetting;
 	ZAnnotationHelperWrap m_AnnotationHelper;
+#if (!defined __linux)
+	ZRTMSHelperWrap m_RTMSHelper;
+#endif
 	ZNativeZoomVideoSDKSinksWrap* m_pSink;
 
 };

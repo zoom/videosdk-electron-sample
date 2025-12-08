@@ -1,9 +1,13 @@
-
+/**
+ * @file ZMVideoSDKVideoSourceHelper.h
+ * @brief Provides interfaces for custom video source integration in Zoom Video SDK.
+ */
 
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
 /**
- * @brief YUV process data information interface.
+ * @class ZMVideoSDKYUVProcessDataI420
+ * @brief Represents I420 YUV raw data and its metadata for preprocessing.
  */
 @interface ZMVideoSDKYUVProcessDataI420 : NSObject
 
@@ -63,8 +67,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (char* _Nullable)getVBuffer:(unsigned int)lineNum;
 @end
+
+
 /**
- * @brief Video source preprocessor sink interface.
+ * @protocol ZMVideoSDKVideoSourcePreProcessor
+ * @brief Protocol to receive raw video frames for preprocessing before sending.
  */
 @protocol ZMVideoSDKVideoSourcePreProcessor <NSObject>
 
@@ -76,7 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Video raw data sender interface.
+ * @class ZMVideoSDKVideoSender
+ * @brief Interface for sending custom raw video data to the Zoom Video SDK.
  */
 @interface ZMVideoSDKVideoSender : NSObject
 
@@ -93,7 +101,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Some infomation about video capability.
+ * @class ZMVideoSDKVideoCapability
+ * @brief Represents the video resolution, frame rate, and data mode capabilities.
  */
 @interface ZMVideoSDKVideoCapability : NSObject
 /**
@@ -118,7 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * @brief Video source sink interface.
+ * @protocol ZMVideoSDKVideoSource
+ * @brief Protocol defining lifecycle events for a custom video source.
  */
 @protocol ZMVideoSDKVideoSource <NSObject>
 

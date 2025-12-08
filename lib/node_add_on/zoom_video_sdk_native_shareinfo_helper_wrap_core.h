@@ -4,6 +4,27 @@
 #endif
 #include "zoom_video_sdk_sinks_wrap_class.h"
 
+
+struct AppInfo
+{
+	uint64_t handle;
+	int32_t processId;
+	ZoomSTRING appName;
+	ZoomSTRING title;
+	AppInfo()
+	{
+		handle = -1;
+		processId = -1;
+	}
+};
+
+typedef std::vector<AppInfo> AppList;
+
+enum WindowsMajorVersions 
+{
+	kWindows10 = 10,
+};
+
 class ZShareInfoHelperWrap
 {
 public:
@@ -11,7 +32,8 @@ public:
 	virtual ~ZShareInfoHelperWrap();
 
 	ZNList<ZoomSTRING> GetMonitorsList();
+	ZNList<AppInfo> GetAppList();
 private:
 	ZNList<ZoomSTRING> m_monitorsList;
-
+	ZNList<AppInfo> m_appsList;
 };

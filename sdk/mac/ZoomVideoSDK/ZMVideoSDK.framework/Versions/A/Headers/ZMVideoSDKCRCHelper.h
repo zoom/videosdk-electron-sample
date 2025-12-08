@@ -1,9 +1,16 @@
-//
+/**
+ * @file ZMVideoSDKCRCHelper.h
+ * @brief Interface for managing CRC (Cloud Room Connector) features in Zoom Video SDK.
+ */
+
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ * @class ZMVideoSDKCRCHelper
+ * @brief Helper interface for Cloud Room Connector (CRC) features.
+ */
 @interface ZMVideoSDKCRCHelper : NSObject
 
 /**

@@ -64,7 +64,7 @@ void ZoomVideoNodeAnnotationHelperWrap::GetToolType(const v8::FunctionCallbackIn
 {
 	v8::Isolate* isolate = args.GetIsolate();
 	auto context = isolate->GetCurrentContext();
-	ZNZoomVideoSDKAnnotationToolType zn_tooltype;
+	ZNZoomVideoSDKAnnotationToolType zn_tooltype = ZNZoomVideoSDKAnnotationToolType_None;
 	ZNZoomVideoSDKErrors err = _g_native_wrap.GetAnnotationHelperWrap().GetToolType(zn_tooltype);
 	v8::HandleScope scope(isolate);
 	v8::Local<v8::Object> node = v8::Object::New(isolate);
@@ -103,7 +103,7 @@ void ZoomVideoNodeAnnotationHelperWrap::GetToolColor(const v8::FunctionCallbackI
 {
 	v8::Isolate* isolate = args.GetIsolate();
 	auto context = isolate->GetCurrentContext();
-	unsigned long zn_toolcolor;
+	unsigned long zn_toolcolor = 0;
 	ZNZoomVideoSDKErrors err = _g_native_wrap.GetAnnotationHelperWrap().GetToolColor(zn_toolcolor);
 	v8::HandleScope scope(isolate);
 	v8::Local<v8::Object> node = v8::Object::New(isolate);
@@ -141,7 +141,7 @@ void ZoomVideoNodeAnnotationHelperWrap::GetToolWidth(const v8::FunctionCallbackI
 {
 	v8::Isolate* isolate = args.GetIsolate();
 	auto context = isolate->GetCurrentContext();
-	long zn_toolwidth;
+	long zn_toolwidth = 0;
 	ZNZoomVideoSDKErrors err = _g_native_wrap.GetAnnotationHelperWrap().GetToolWidth(zn_toolwidth);
 	v8::HandleScope scope(isolate);
 	v8::Local<v8::Object> node = v8::Object::New(isolate);

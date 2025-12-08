@@ -4,10 +4,482 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Resources/Base.lproj/Localizable_bbm.strings</key>
+		<data>
+		3ll7h7p88NGo3gqyqxOUJjOOV0k=
+		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		BzmBtmQSYqNnpCH7LXrvRgDvTtE=
+		SbAwjO/0+EUoRziyN8Q5BfgzTFo=
 		</data>
+		<key>Resources/de.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EHnmpLzDySGi7FyuLhR++PHhXEE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YxQPVmwGRzpC1l24uXmXdCYyCTY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/de.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7uW3vNvP9Qasan55Nt0zEOKwV/s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/Credits.rtf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YKJIFIsxneJuNkJNJQIcJIjiPOg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DguG9t5o+pWIX+WpfIa3W+BQVbo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FodIkM/tUh7GGll3mJe+92pKbC8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FQ+aU+u1XUFXalenj7Pgcim5Utg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gRMAcIFP/g50XH3Qry8gmEMvn7s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WouPcphujknja2T3gOaFsZ5G+Ak=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oupW28UppAc25H4/AgcXLhugYyo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Eid2T7me/O+QvP2FAmUgTjlkNnQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9H7ZKz86wYsS+awsytddDOgTozM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XPkbTqgZyZSFh/C5dx+YGseaobE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SpQq8o6uB11ErUe/pVmal9mZvF4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ceDRCN96zhpBS6pS59mqWVzMSOI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0v8sFMyHd4dwLe0CvIFdtzIiAwo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zXE3tjrRymXASev5JpbhYremnqI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TQOjXkH9X238Qz4YHlLEBW4aVWc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fe69iHk91LHmqeZseKIEwAwM6mA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7YvhhzdvS/PhvQFPO01yB+BgtEg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			27Fjqu6S4pwZuGQGnyp8oMB3KxA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XYQ8DcqeUEFGs/ehw3uBx+ni6sk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sn+tHUIL/FysdzxZC4A2ihyaadQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			o/PcqM3h0E0odVafCdZ4zYrXj7Y=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			L+Rg+rRKUC4aPFdemZYXQYQNEb0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fjLCNsrXrXf4ItSXNwwHcSegbkg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aRjGiKG0ydSv66xzt/VVAOoScbI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			S6PP7GVw4Tm5/QYMyvP+gDPI1TU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Bx4dxRzRrj7AAgOOfKLhIL6NKxQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			c8cjLZSdOlMvHzEZWvzXGcAThQs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aptxCbwv7s1XTRf+gznGs41U0EA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			M0kSQg1b0+kQeMbmzFypAoiYVa8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			auQGP7OW1iVm7am9l4wdv5tihfo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ERKy/TtJwhv2+Aa2CF9L+2wwTDs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			k32fJO0zmiuJNnx4t3PeQ2p1IAQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			klNDCcEI3ADUAFivKzAbtsm4yGU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Z0A59CNIiPDWXG8g/uwoWf3dMnc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			V4/mf8x8uZHrEbMrvGiKxFB3nVM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wbARGwWEgCV5zo/7E7YulVaU0Mk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			avDegy/F00CyH02NV1n+k4wl/bQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			b3H3wTduAbRJpuF2O3ehHfc5sPQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C/9UWoM8xaWx4EZsEXG+c/pdyhI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Xni/jZdCC+ogNGUsEtjWJjX/Vjw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9U7iEKNeCRJ5CftUfN1vsehh3gA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HuYvRXoqwdjBB+/Cz0n2U/lPwvQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			v5/42mxi/aGFh2SIqoVnw+D7494=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/E0L6VLtLo7HGIpt3YioF48LkoM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JA5+F2DT5gph8Qm/uiC78CyC5CY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PDnj4RUUy2OVN7yENI/asQ7YT/Y=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hAwFft0RNdvvmmvFqTXOCGz9XCc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			P/+7fr/e26j3AqyEBhe4JnQndco=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/timezones.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yx5c9Xeg6k61w3iFDKnhz+KhyuI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -15,196 +487,224 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r0ny9zeXxlHKUAC67lh4fbQ0NQv6tdB11gvUXca4MIw=
+			VuB1GbuovDbFKrSRDwmKA1+JEHhS8jVCndCcwbB+M6g=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAnnotationHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWpCNywiPPoFeOt9T8XIRHjzCzP2LfbXPynhRYWioX0=
+			fpzBvy6Ir+cFKRkamujh2Q/b/+1TbvvJKRZZ89kODPI=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pRVSCaRBIk4ahSV7lV5lggu9k/w1rGpadAx/cH4a80U=
+			8zsSuwJNvHTrNgAMtyi820Tc04x7NtbaHu6K5B3E5ww=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioSendRawdata.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dUvI024SFGVl7G82dcO336Tzy7m2YxYVoLErIpc0muU=
+			AV78CG/b38hgslvT4VXdlJ7zMyY9I1oJ81JXmOV0JEo=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKAudioSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/kV69Y+/Qtm9Nxzip6mGEZXpw6khkZz2LfMbXFhhnSY=
+			dVCVxSDd4/tr3FB5K1fBhO3P2q1Zv4Scgl0SfjN/7IQ=
+			</data>
+		</dict>
+		<key>Headers/ZMVideoSDKBroadcastStreamingController.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FiQRD2E9i6sIsugeyf7Dn5++hUKE8vdZq0bR0tInexg=
+			</data>
+		</dict>
+		<key>Headers/ZMVideoSDKBroadcastStreamingViewer.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			56jfJTQ5QoC5EIvQy0ge6afNRcYA2VaQUkhiHLNivD0=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKCRCHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7u46/e6dEl8vCF3pT9E3pAGOCJ+7Feuhi1ak28WyjuA=
+			j2nSUVN1KsOzBseQTsYsDOmY+3RTggIxrcX8C1DpPhQ=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKChatHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dlGCdB2Vseh5bMClPhLjrge7V6pFVVIKy0EbdaD+7ZU=
+			R5C9hvWuup+UL1UkyMyGyOuKbQGJNUFhxLZNoash9Jw=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKChatMessage.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vwENPIzugWDwQ0xtZmw7q1E/6Ggud0+Saazyw/oj4S0=
+			UGavxezUaOuAMNHvmgAurONRcxGsiA8uymecrRJP2T8=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKCmdChannel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3THX02B9d7+tVbmNf3eOIICQCz+/abXc8QeUL3TcUMo=
+			Rmz4Zz8zAbiHa9jA/BO6CQnd3y715Nf2DOSpB25xKeQ=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKDef.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yPwJILTIPHvwPxTqQnMOcnaRMzTjiF4V3nJCc6rvQmA=
+			FtD0Wx1gh9NsLMYLOt95Cs0ZOU09DQFHfG7jFmN6c4w=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKDelegate.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k/+K+Ufs9OmniVtD0oUapvdqILEUFphw8n8o6zoubTs=
+			V8TFyAvHm86e7IxG0E0ip3/YA6gS9gSP9nEdBugckVw=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKLiveStreamHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dnPDbxVcmJnlaKUOCJdl95OJGEcR2Fmte4BLZ+U8no8=
+			JGxGdLtwpJgqQDABO/J2XdQRZ7j9YK7MXwTZIbOR7yA=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKLiveTranscriptionHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F6KNoXLRGXvJuvIU0kNxc/KtiPoePtUp7w0q5VjWTus=
+			Muv6+3wa4HGbJjRxmdnm2TCIRr8eUR3Ir6RLJgmCxHI=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKNetworkConnectionHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QPiRnEDNx0LU3GhJkWVs0djyvcX9rR61RbdCmauLyfM=
+			0bDrkSfH5lsiaWr5LlmRsZ73AU1c8cRsC9stKDayY9c=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKPasswordHandler.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IqUNWsMoFlg9T+G6tKF2gA3ngYgUzwDgYayYQqhBe5w=
+			KPL2J8MkT69chBv432cPB5RUeIo0NKbAj2vPlcp5Z5s=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKPhoneHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jwz0zgv82jlH9VtpRYg2FIQt5Rk9AV3VxKPlFPWeIxw=
+			z80XykcVxHs9ERDMqAilxGa/0B2QMK7vlgVJNIBtfi8=
+			</data>
+		</dict>
+		<key>Headers/ZMVideoSDKRTMSHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iysZ7ZkhH8GGFsXOxCXDAbzkr5gwJpeCAOi2wqYTSuQ=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRecordingConsentHandler.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fVUqLcWtTyLTuXrBFpgfnawX7kFDAhoo7HEsCIOIVPE=
+			T/PVia/xR/K8VTAFBiuBSmBNNL4IruorjPf7C8X6ytU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRecordingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2jpafhglCv8qmv8cpknHPyNCzvVbBvvBOIQ/TV+u00w=
+			ktp8EmDmnoEZgFGDIW0ZXBCzxj+0b7v3XOyNs5xXgxA=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKRemoteControlHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UtlnRvabV4CoPm5fkJ2DAISIDcsR+w4YHXWHIlyrYFU=
+			csp3JmXGL6EXR7uC4lwYRMq2zzX6Snh3ktYXnna9ovU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKSession.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NPiztzHSQB8N0Hba/gJrIIc4txFW5sa0206EmWx5r0Y=
+			9v2vy95/gHx42omhZJ/XZ7YpolBzvZggNiapS0IZdUE=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKShareHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			awxMAckTaDpscIVPCKN5AogMhXKIGBhniaOaUTCOi80=
+			+hVca2fyQ3Z7FHoL5gRXsuLXVuAcj64zUcmL2PMrIjY=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKShareSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EBlFPW/BAjIw8iUfn2gWAgJFUdTDCB7gNUNryxJWY9Y=
+			7epVhpsCpFS6I84HsRUGY4/ECdEl60XaOjCHohsRDPo=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKSubsessionHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7FSmEQQ5xgz4JNLBXSGxib+4Ig5bqk+ffBvAVF0h6Kg=
+			fRSleJVu1ER86UH7Xpa4GTRxSu8Btm3udLU7c6yoZt0=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKUserHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UrgHBn72Zlnx4jgmGHVamE0NiBD1Rpktd9aLWdtvmRs=
+			F7EFzNXKvninQJYxPbCcZbq0QlKb2Sa5joqmDUipHUU=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoCanvas.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IEPvIctHIwOBc9l4GNpsAgTJkHOSINVhNOeGW8K+3mU=
+			3EFGI+QiJ/XYzgZutRZbm6R0+Wfg75Y1BQ5WoEwSMbE=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3HtDjmBziA+4E5B1dfG36Lm4XzM9307MSV0YybmMaec=
+			VvFFF+BajYcvhGkI+TI/+t3Q/0uNbFiH7HOkYowRmu8=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoSettingHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FqI33mvMxIfaDvv7U+/GmU4UmBn2+ek6Qus13q5U2SY=
+			Q381qr9+0ZM6Os5kUZ2n6zntsWV19W45+NCE+samIpw=
 			</data>
 		</dict>
 		<key>Headers/ZMVideoSDKVideoSourceHelper.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N6FbBp1qzXGbonwZkVr4Yx23kNgUFSA+szcFC5dC3Fc=
+			dsRXeenkaK8O4w5sL/D9hZ9gseVpTpwSmwuZasrolTs=
+			</data>
+		</dict>
+		<key>Headers/ZMVideoSDKWhiteboardHelper.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HaLkFs2eOC3DMheoxXsZXdzI4JkC/vTYMG0kKLaYK4E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -214,12 +714,487 @@
 			W5DPkGRemlWC+IdNpFrmE/PxwvQiJatYvyA+3BTW0Zc=
 			</data>
 		</dict>
+		<key>Resources/Base.lproj/Localizable_bbm.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZGyzU4b/6PCN+cWIVILppOUWjUdydXwWreDN2MrweDs=
+			</data>
+		</dict>
 		<key>Resources/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D9XNtHVTlyDY2qtxPvKm0scLmvZj72INrcV+YCI6yPo=
+			chK+TzknFg3bUBc8gxsE0Bob1s5eFQgoPyanFuDf5N8=
 			</data>
+		</dict>
+		<key>Resources/de.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			16ekX5z79dP3BMv33zqpMAdj4DKmOyhJfFKpraiBuIc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/de.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			luVcRKDBqI4S/6tjaoUAwQyMlkgHV31cC2BoBJoW7CA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/de.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JjQj+iXigRCPeZiry39w7+EccsAtzG4N2H4S9xDQu1E=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/Credits.rtf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tDhv4c72XNkebI7MBl0RcIkIP5G3ytvww+Xq4g6LlkA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gi4nX86ap7FrWUccPS2hA15PZImpwzGjXtK6LcnJ/NA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EWcqnm4zyVVJjzaSiNWKvtQco/eD6wyuP3BKnrGSQY8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RLuR+3Y2XhSjp/qVM62p1H0s9pmosjftBl4ieu7u6Pg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZWEmBm6hwZwbb22uQ/LmCn5PnkF3XNxhOBzbEhqin/M=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pebYMdIfBXGJBVtwl9kawR+Qz5545vwi7uJWi+zkcuY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/es.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O8uKLh7PxuvRc97YbqiNwnUj5Xr+p6n2CWHSkThKg3Y=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4MEeBGxPhx/VDWhYiaf2PCtHg9DhJjaq9NvpCZq9/e8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			atrAFuxwMsZo5wZBTmTOs8U+8do8s6DE9CMV4edMtmg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3c50SCHDVsTHT0X33QhwloJy6din7A+U8dU9myVqPzE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			o50z2LKROGxKTlIkt+lGOS7aYuSRwKQWDSul6/lvKMg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Gpn/EoQ9Kkc/zFiDGwERJK2MoFUZOGBFldawroPUG4Q=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/id.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N8/z1TThExZ7LFW7TnfvOlJXzAnzqxyz9nkXtXCFgto=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wMYT7f296htgCa4ww9YGkNAfu9mCXKt/JzGm1tI13HY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t1zgwjLJQQn7k/7Bmo7J5jdSY80q5MV5in3oU6IMDX4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/it.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uWV7B8ZXzitm3++AQBh06qYbENhKeDKXulYhCBwJNJ8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hsjsyrA1iis9dUr/tVl3414Ps8vsXH1c+5Bj9I/rKAE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OQ5QFtEYs41+bNgDwOahBrkbFww2jRzdrhZGf6vkPYk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ja.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			qKFsD4nsvhcBD+nVHMMRe18wWRUrTopwrvfEY1Eo/yY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZCEl4/tqrvSyVqVrpXVwdyuWvSO+2uWM3lbHILqOav8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UPz4XvGZZ7/JhT4Y6+a2qWs6WTZz6FxVQOmCQRNWmNQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ko-KR.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RwDiFuzDA3mqxHwD0fuhE8DLRtGz3oDbOTuOGFJZIlQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O8TNLXkMvcs3h53XznmOZAoT9R+Pifc3x3+ZlCj1g3I=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4A0FwKFkZE43wvUvjf1oG9i5JImuaDmw78ltI7gX9aU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/nl.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EU7mpaK+sz1rZQYp86W/CoGSj7YBxkT0mL3yHfLykQU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8Z9w+uc8Ve/LlcC7MFMCTqlAa13fX1b1enwEDnovY+I=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oUBHRAKI+pel5PT5OHqQa7niLurA53QD9QEk39i/km8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pl.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QCmpahwzFA45U/473rQXSZ7bctBa8OE8La4N90faHUM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l7Zkw3b3sfCuG230G251bv6PMDoQdhHXxtj3A/Qqhrc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cseF9yfc6SfjujZayWhNy8reyy3X0cJImL2weEctQeg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/pt-PT.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XiVlSksNA3NXBnctKKLViJJLSwLBE3YSqVs14gKju34=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			USMibNv1ON0P/MJyzX1pykwwNzZb0q2Rp44jgpImBfo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VDDpg3AGM2PhpAx+C2KCE+02F73e4u4gdhC0sngCDFE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/ru.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IX5G3PF6eQGwrAZTN3kYS3RTvgIHXDolupI3ef12NCI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7fU6p6BRuc3SLshjfaUfJAMoBebIYVJgktWgj+4yKSg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eehaIFPmKYA437FN4VII84x4OX9yujLRHpmOxcwX32k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/sv.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sjGi9HlEgtMeF9C8AnQDmN4smWJW9TQ++w8hnCzH9Jg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			srbo6SrRpinIKWgPmb4igWagmOp0Q3AjMzsSxtB9wxY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			L56tMfNDmD7JpiVcNi5Gk9NokHfXtujOjuPsDee3IvQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/tr.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VA1zAA6tspN6SmeVgLI0PA7Bzge2TNW6+Vi0tNpEYLU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZvOsHzPQER58EHM+dNNWBFFe0nO7DRy1jkmHrfMmDGM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2S4EPJTQugYVoMsaNfu/czd09QSvE1lYqhPUCrRq9iA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/vi.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			J11/XtNma7IV8n9wQ93eeeb9HhhAqCq3d8zuO2tKPsM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LZmxrC4dPVcUsdLiavZNQnCnHQU+MNXzT98kNQwm0Yo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sF1dMrMrOtUuFagVJelJAvxNjqFEYjMJrCwVCfFgYFE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hans.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CnwQzaUmmoVLdaoEfPtaR/eEKoP2wh0QZRhFnmUKLqQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LxsLWcI+c5VUQ8+3OHwWLBpS+keo7OWGsUnTrKqfD+w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0bdMxGVO6jwyM4qEh0tqTei5uGxewzPDZWITKmDsBic=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/zh-Hant.lproj/timezones.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OA8liTMHDdoFjy0lfb0tffQeM55hTBw1597d2OOKrTc=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>

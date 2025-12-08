@@ -399,6 +399,14 @@ export const Meeting_HandleCallbackEvents = {
       let type = data.getShareaction().getSharetype()
       console.log('onShareContentSizeChanged', userInfo, shareStatus, type) 
     },
+    onUnsharingWindowsChanged(data) {
+      let userInfo = getUserInfo(data.getUser())
+      let shareStatus = data.getShareaction().getSharestatus()
+      let type = data.getShareaction().getSharetype()
+      let windowsList = data.getWindowslistList()
+      let windowHandles = windowsList.map(window => window.getWindow())
+      console.log('onUnsharingWindowsChanged', userInfo, shareStatus, type, windowHandles) 
+    },
     onNodeAddonCallbacks(result) {
       let message = messages.CallbackBody.deserializeBinary(result)
       let callback = findKey(ZoomVideoSDKCallback, message.getMsgtype())
@@ -463,6 +471,9 @@ export const Meeting_HandleCallbackEvents = {
           break;
         case 'onShareContentSizeChanged':
           this.onShareContentSizeChanged(message.getOnsharecontentsizechangedparam())
+          break;
+        case 'onUnsharingWindowsChanged':
+          this.onUnsharingWindowsChanged(message.getOnunsharingwindowschangedparam())
           break;
       }
     }

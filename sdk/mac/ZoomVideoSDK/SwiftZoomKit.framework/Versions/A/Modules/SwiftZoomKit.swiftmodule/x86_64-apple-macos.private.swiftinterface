@@ -1,0 +1,170 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target x86_64-apple-macos10.13 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-bare-slash-regex -module-name SwiftZoomKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AppKit
+import Cocoa
+import CoreGraphics
+import Foundation
+import Prism
+import Swift
+@_exported import SwiftZoomKit
+import ZoomKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum LogModule : Swift.String {
+  case Clips
+  case ChatUI_Clips
+  case VideoUI_Clips
+  case ZoomSetting_Clips
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public func ztsLog(_ module: SwiftZoomKit.LogModule, _ log: Swift.String = "", _ functionName: Swift.String = #function, _ line: Swift.Int32 = #line, _ filePath: Swift.String = #file)
+public func ztsLog(_ module: Swift.String, _ log: Swift.String, _ functionName: Swift.String = #function, _ line: Swift.Int32 = #line, _ filePath: Swift.String = #file)
+public protocol Then {
+}
+extension SwiftZoomKit.Then {
+  @inlinable public func with(_ builder: (inout Self) throws -> Swift.Void) rethrows -> Self {
+    var temp = self
+    try builder(&temp)
+    return temp
+  }
+  @inlinable public func `do`(_ actionClosure: (Self) throws -> Swift.Void) rethrows {
+    try actionClosure(self)
+  }
+}
+extension SwiftZoomKit.Then where Self : AnyObject {
+  @inlinable public func then(_ builder: (Self) throws -> Swift.Void) rethrows -> Self {
+    try builder(self)
+    return self
+  }
+}
+extension ObjectiveC.NSObject : SwiftZoomKit.Then {
+}
+extension CoreFoundation.CGPoint : SwiftZoomKit.Then {
+}
+extension CoreFoundation.CGRect : SwiftZoomKit.Then {
+}
+extension CoreFoundation.CGSize : SwiftZoomKit.Then {
+}
+extension CoreFoundation.CGVector : SwiftZoomKit.Then {
+}
+extension Swift.Array : SwiftZoomKit.Then {
+}
+extension Swift.Dictionary : SwiftZoomKit.Then {
+}
+extension Swift.Set : SwiftZoomKit.Then {
+}
+extension Foundation.JSONDecoder : SwiftZoomKit.Then {
+}
+extension Foundation.JSONEncoder : SwiftZoomKit.Then {
+}
+@_inheritsConvenienceInitializers @objc(ZMHyperlinkTextView) @_Concurrency.MainActor @preconcurrency public class HyperlinkTextView : AppKit.NSTextView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var frame: Foundation.NSRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidMoveToWindow()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func mouseDown(with event: AppKit.NSEvent)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func resetCursorRects()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame frameRect: Foundation.NSRect, textContainer container: AppKit.NSTextContainer?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame frameRect: Foundation.NSRect)
+  @objc deinit
+}
+@objc extension SwiftZoomKit.WebLinkDetectorReference {
+  @objc public static let commonAppTagKeys: [Foundation.NSAttributedString.Key]
+  @objc(parseURLs:forCommonApp:urlOnly:) public static func parseURLs(in msg: Foundation.NSMutableAttributedString?, forCommonApp isCommonApp: Swift.Bool, urlOnly: Swift.Bool) -> [Swift.String]
+  @objc(parseURLs:forCommonApp:) public static func parseURLs(in msg: Foundation.NSMutableAttributedString?, forCommonApp isCommonApp: Swift.Bool) -> [Swift.String]
+  @objc(parseURLs:urlOnly:) public static func parseURLs(in msg: Foundation.NSMutableAttributedString?, urlOnly: Swift.Bool) -> [Swift.String]
+  @objc(parseURLs:) public static func parseURLs(in msg: Foundation.NSMutableAttributedString?) -> [Swift.String]
+}
+extension AppKit.NSScreen {
+  public var screenDisplayID: CoreGraphics.CGDirectDisplayID? {
+    get
+  }
+}
+@objc public enum ZMSortingLabelArrowState : Swift.Int, Swift.RawRepresentable {
+  case up
+  case down
+  case both
+  public init?(value: Foundation.NSNumber)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol ZMSortingLabelDelegate {
+  @objc func processSortingEvent(sender: SwiftZoomKit.ZMSortingLabel, event: SwiftZoomKit.ZMSortingLabelArrowState)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class ZMSortingLabel : Prism.ZMBaseView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var acceptsFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var canBecomeKeyView: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var wantsUpdateLayer: Swift.Bool {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var accessibilityRolePrefix: Swift.String?
+  @objc @_Concurrency.MainActor @preconcurrency public var label: Prism.ZMLabel
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any SwiftZoomKit.ZMSortingLabelDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame frameRect: Foundation.NSRect)
+  @objc deinit
+  @objc @_Concurrency.MainActor @preconcurrency public class func label(string: Swift.String) -> SwiftZoomKit.ZMSortingLabel
+  @objc @_Concurrency.MainActor @preconcurrency public class func label(string: Swift.String, state: SwiftZoomKit.ZMSortingLabelArrowState) -> SwiftZoomKit.ZMSortingLabel
+  @objc @_Concurrency.MainActor @preconcurrency public func setArrowDirection(state: SwiftZoomKit.ZMSortingLabelArrowState)
+  @objc @_Concurrency.MainActor @preconcurrency public func setAccessibilityStateDescription(_ description: Foundation.NSString, forState state: SwiftZoomKit.ZMSortingLabelArrowState)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func accessibilityLabel() -> Swift.String?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func accessibilityValueDescription() -> Swift.String?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func mouseDown(with event: AppKit.NSEvent)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func mouseEntered(with event: AppKit.NSEvent)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func mouseExited(with event: AppKit.NSEvent)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func updateLayer()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func keyDown(with event: AppKit.NSEvent)
+}
+@_inheritsConvenienceInitializers @objc(ZMClockWatcherTextView) @_Concurrency.MainActor @preconcurrency public class ClockWatcherTextView : SwiftZoomKit.HyperlinkTextView, Prism.ZMClockWatcher {
+  @objc(ZMClockWatcherTextViewTickType) public enum TickType : Swift.Int, Swift.RawRepresentable {
+    case second
+    case minute
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public typealias TickHandler = (_ sender: SwiftZoomKit.ClockWatcherTextView, _ now: Foundation.NSDate) -> Swift.Void
+  @objc @_Concurrency.MainActor @preconcurrency public func setHandler(_ handler: @escaping SwiftZoomKit.ClockWatcherTextView.TickHandler, for type: SwiftZoomKit.ClockWatcherTextView.TickType)
+  @objc @_Concurrency.MainActor @preconcurrency public var informativeDate: Foundation.NSDate?
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidMoveToWindow()
+  @_Concurrency.MainActor @preconcurrency @objc public func ticktack()
+  @_Concurrency.MainActor @preconcurrency @objc public func minuteChanged()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame frameRect: Foundation.NSRect, textContainer container: AppKit.NSTextContainer?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame frameRect: Foundation.NSRect)
+}
+public struct WebLinkDetector {
+  public func matches(in string: Swift.String) -> [Foundation.NSTextCheckingResult]
+}
+@_inheritsConvenienceInitializers @objc(ZMKWebLinkDetector) public class WebLinkDetectorReference : ObjectiveC.NSObject {
+  @objc(matchesInString:) public func matches(in string: Swift.String) -> [Foundation.NSTextCheckingResult]
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension SwiftZoomKit.LogModule : Swift.Equatable {}
+extension SwiftZoomKit.LogModule : Swift.Hashable {}
+extension SwiftZoomKit.LogModule : Swift.RawRepresentable {}
+extension SwiftZoomKit.ZMSortingLabelArrowState : Swift.Equatable {}
+extension SwiftZoomKit.ZMSortingLabelArrowState : Swift.Hashable {}
+extension SwiftZoomKit.ClockWatcherTextView.TickType : Swift.Equatable {}
+extension SwiftZoomKit.ClockWatcherTextView.TickType : Swift.Hashable {}
